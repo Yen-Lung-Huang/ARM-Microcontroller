@@ -1,0 +1,127 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: uVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Yan Long Huang, National Ilan Universsity, LIC=6XJT4-FC6BX-JPNZQ-NLHS7-ZUPXT-MK439
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.35.0.2
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\Code\ARM Microcontroller\GD32F303\gd32f303_uart\uart_time.uvprojx
+Project File Date:  08/19/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling systick.c...
+compiling main.c...
+compiling uart.c...
+compiling gd32f30x_it.c...
+compiling gd32f30x_gpio.c...
+compiling gd32f30x_dma.c...
+compiling gd32f30x_misc.c...
+compiling gd32f30x_pmu.c...
+compiling gd32f30x_rcu.c...
+compiling gd32f30x_rtc.c...
+compiling gd32f30x_usart.c...
+compiling system_gd32f30x.c...
+linking...
+Program Size: Code=10032 RO-data=996 RW-data=4 ZI-data=2932  
+".\Objects\uart_time.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: USART Version: 2.4.0
+   * Component: Custom Version: 1.0.0
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: GigaDevice
+                http://gd32mcu.com/data/documents/pack/GigaDevice.GD32F30x_DFP.2.0.0.pack
+                GigaDevice.GD32F30x_DFP.2.0.0
+                GigaDevice GD32F30x Series Device Support and Examples
+   * Component: DMA Version: 1.0.2
+   * Component: GPIO Version: 1.0.2
+   * Component: MISC Version: 1.0.2
+   * Component: PMU Version: 1.0.2
+   * Component: RCU Version: 1.0.2
+   * Component: RTC Version: 1.0.2
+   * Component: USART Version: 1.0.2
+   * Component: GD32F30x_libopt Version: 1.0.2
+   * Component: Startup Version: 1.0.2
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include
+  D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc
+  D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include
+  D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS Driver:USART:2.4.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_USART.h
+
+   * Component: ARM::CMSIS Driver:USART:Custom:1.0.0
+      Include file:  CMSIS\Driver\Include\Driver_USART.h
+      Source file:   CMSIS\Driver\DriverTemplates\Driver_USART.c
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:DMA:1.0.2
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_dma.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_dma.c
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:GPIO:1.0.2
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_gpio.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_gpio.c
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:MISC:1.0.2
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_misc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_misc.c
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:PMU:1.0.2
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_pmu.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_pmu.c
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:RCU:1.0.2
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_rcu.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_rcu.h
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:RTC:1.0.2
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_rtc.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_rtc.h
+
+   * Component: GigaDevice::Device:GD32F30x_StdPeripherals:USART:1.0.2
+      Include file:  Device\Firmware\Peripherals\inc\gd32f30x_usart.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f30x_usart.c
+
+   * Component: GigaDevice::Device:GD32F30x_libopt:1.0.2
+      Include file:  Device\Template\gd32f30x_libopt.h
+
+   * Component: GigaDevice::Device:Startup:1.0.2
+      Source file:   Device\Source\ARM\startup_gd32f30x_hd.s
+      Source file:   Device\Source\system_gd32f30x.c
+      Include file:  Device\Include\gd32f30x.h
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

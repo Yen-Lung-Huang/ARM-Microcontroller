@@ -1,0 +1,13 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\led.o"
+"D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib"
+".\objects\rtx_lib.o"
+".\objects\rtx_config.o"
+".\objects\retarget_io.o"
+".\objects\startup_stm32f407xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\first_try.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\first_try.map" -o .\Objects\first_try.axf

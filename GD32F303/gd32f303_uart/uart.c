@@ -7,12 +7,13 @@ uint8_t UART0_TX_BUF[UART0_TX_LEN]; 		/* 發送緩衝區 */
 uint8_t DMA_BUF_BUSY = 0 ;					/* 緩衝區是否已被佔用 */
 
 #ifdef UART0_RX
-/* 接收緩存 */
-#define UART0_RX_LEN		256				/* 單個緩存區位元組數 */
-uint8_t UART0_RX_BUF[UART0_RX_LEN*2]; 		/* 雙接收緩衝區 */
-uint8_t UART0_RX_STAT = 0;					/* 接受狀態 0x01:已接收到資料  0x03:接收緩衝區半滿  0x07:接收緩衝區全滿 */
-uint32_t UART0_RX_NUM = 0;					/* 接收到的資料個數 */
+	/* 接收緩存 */
+	#define UART0_RX_LEN		256				/* 單個緩存區位元組數 */
+	uint8_t UART0_RX_BUF[UART0_RX_LEN*2]; 		/* 雙接收緩衝區 */
+	uint8_t UART0_RX_STAT = 0;					/* 接受狀態 0x01:已接收到資料  0x03:接收緩衝區半滿  0x07:接收緩衝區全滿 */
+	uint32_t UART0_RX_NUM = 0;					/* 接收到的資料個數 */
 #endif
+
 
 /* USART0串口初始化函數
  * 參數：串列傳輸速率
@@ -30,22 +31,22 @@ void uart0_init(uint32_t bound)
 
     /* PA10 複用為 USARTx_Rx */
     gpio_init(GPIOA, GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ,GPIO_PIN_10);
-					
+
     /* USART0 初始化配置 */
     usart_deinit(USART0);
     usart_baudrate_set(USART0, bound);						/* 設置串列傳輸速率 */
     usart_receive_config(USART0, USART_RECEIVE_ENABLE);		/* 使能接收 */
     usart_transmit_config(USART0, USART_TRANSMIT_ENABLE);	/* 使能發送 */	
-	usart_enable(USART0);									/* 使能串口0 */
+		usart_enable(USART0); /* 使能串口0 */
 	
 
-#ifdef UART0_DMA
-	/* 定義一個DMA配置結構體 */
-	dma_parameter_struct dma_init_struct;
+	#ifdef UART0_DMA
+		/* 定義一個DMA配置結構體 */
+		dma_parameter_struct dma_init_struct;
     /* 使能 DMA 時鐘 */
     rcu_periph_clock_enable(RCU_DMA0);
 	
-	/* 初始化 DMA0 通道3 */
+		/* 初始化 DMA0 通道3 */
     dma_deinit(DMA0, DMA_CH3);
     dma_init_struct.direction = DMA_MEMORY_TO_PERIPHERAL;		/* 記憶體到外設方向 */
     dma_init_struct.memory_addr = (uint32_t)UART0_TX_BUF;		/* 記憶體基底位址 */
@@ -60,28 +61,28 @@ void uart0_init(uint32_t bound)
     
     /* DMA迴圈模式配置，不使用迴圈模式 */
     dma_circulation_disable(DMA0, DMA_CH3);
-	/* DMA記憶體到記憶體模式模式配置，不使用記憶體到記憶體模式*/
+		/* DMA記憶體到記憶體模式模式配置，不使用記憶體到記憶體模式*/
     dma_memory_to_memory_disable(DMA0, DMA_CH3);
 
     /* USART DMA 發送使能 */
     usart_dma_transmit_config(USART0, USART_DENT_ENABLE);
-	/* DMA0 通道3 中斷優先順序設置並使能 */
-	nvic_irq_enable(DMA0_Channel3_IRQn, 0, 0);
-	/* 使能 DMA0 通道3 傳輸完成、傳輸錯誤中斷 */
+		/* DMA0 通道3 中斷優先順序設置並使能 */
+		nvic_irq_enable(DMA0_Channel3_IRQn, 0, 0);
+		/* 使能 DMA0 通道3 傳輸完成、傳輸錯誤中斷 */
     dma_interrupt_enable(DMA0, DMA_CH3, DMA_INT_FTF|DMA_INT_ERR);
     /* 使能 DMA0 通道3 */
     dma_channel_enable(DMA0, DMA_CH3);
-#endif
+	#endif
 
-#ifdef UART0_RX
-#ifndef UART0_DMA
-	/* 定義一個DMA配置結構體 */
-	dma_parameter_struct dma_init_struct;
-    /* 使能 DMA 時鐘 */
-    rcu_periph_clock_enable(RCU_DMA0);
-#endif
-	
-	/* 初始化 DMA0 通道4 */
+	#ifdef UART0_RX
+		#ifndef UART0_DMA
+			/* 定義一個DMA配置結構體 */
+			dma_parameter_struct dma_init_struct;
+			/* 使能 DMA 時鐘 */
+			rcu_periph_clock_enable(RCU_DMA0);
+		#endif
+		
+		/* 初始化 DMA0 通道4 */
     dma_deinit(DMA0, DMA_CH4);
     dma_init_struct.direction = DMA_PERIPHERAL_TO_MEMORY;		/* 外設到記憶體方向 */
     dma_init_struct.memory_addr = (uint32_t)UART0_RX_BUF;		/* 記憶體基底位址 */
@@ -96,24 +97,23 @@ void uart0_init(uint32_t bound)
     
     /* DMA迴圈模式配置，不使用迴圈模式 */
     dma_circulation_disable(DMA0, DMA_CH4);
-	/* DMA記憶體到記憶體模式模式配置，不使用記憶體到記憶體模式*/
+		/* DMA記憶體到記憶體模式模式配置，不使用記憶體到記憶體模式*/
     dma_memory_to_memory_disable(DMA0, DMA_CH4);
 
     /* USART DMA 發送和接收使能 */
     usart_dma_transmit_config(USART0, USART_DENT_ENABLE|USART_DENR_ENABLE);
-	/* DMA0 通道4 中斷優先順序設置並使能 */
-	nvic_irq_enable(DMA0_Channel4_IRQn, 0, 0);
-	/* 使能 DMA0 通道4 半傳輸、傳輸完成、傳輸錯誤中斷 */
+		/* DMA0 通道4 中斷優先順序設置並使能 */
+		nvic_irq_enable(DMA0_Channel4_IRQn, 0, 0);
+		/* 使能 DMA0 通道4 半傳輸、傳輸完成、傳輸錯誤中斷 */
     dma_interrupt_enable(DMA0, DMA_CH4, DMA_INT_FTF|DMA_INT_HTF|DMA_INT_ERR);
     /* 使能 DMA0 通道4 */
     dma_channel_enable(DMA0, DMA_CH4);
-	
-	/* USART中斷設置，搶佔優先順序0，子優先順序0 */
-	nvic_irq_enable(USART0_IRQn, 0, 0); 
-	/* 使能USART0空閒中斷 */
-    usart_interrupt_enable(USART0, USART_INT_IDLE);
-#endif
 
+		/* USART中斷設置，搶佔優先順序0，子優先順序0 */
+		nvic_irq_enable(USART0_IRQn, 0, 0); 
+		/* 使能USART0空閒中斷 */
+    usart_interrupt_enable(USART0, USART_INT_IDLE);
+	#endif
 }
 
 #ifdef UART0_DMA

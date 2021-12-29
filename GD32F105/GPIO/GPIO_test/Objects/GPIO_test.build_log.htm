@@ -22,12 +22,35 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 D:\Code\ARM Microcontroller\GD32F105\GPIO\GPIO_test\GPIO_test.uvprojx
-Project File Date:  08/05/2021
+Project File Date:  12/20/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Target 1'
-".\Objects\GPIO_test.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling gd32f10x_misc.c...
+compiling gd32f10x_gpio.c...
+compiling gd32f10x_pmu.c...
+assembling startup_gd32f10x_cl.s...
+RTE/Device/GD32F105VC/gd32f10x_rcu.c(884): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+    default:
+    ^
+RTE/Device/GD32F105VC/gd32f10x_rcu.c(964): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+    default:
+    ^
+RTE/Device/GD32F105VC/gd32f10x_rcu.c(1003): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+    default:
+    ^
+RTE/Device/GD32F105VC/gd32f10x_rcu.c(1189): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+    default:
+    ^
+4 warnings generated.
+compiling gd32f10x_rcu.c...
+compiling system_gd32f10x.c...
+linking...
+Program Size: Code=1008 RO-data=352 RW-data=0 ZI-data=16480  
+FromELF: creating hex file...
+".\Objects\GPIO_test.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,16 +82,16 @@ Package Vendor: GigaDevice
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: GigaDevice::Device:GD32F10x_StdPeripherals:GPIO:2.0.1
-      Include file:  Device\Firmware\Peripherals\inc\gd32f10x_gpio.h
       Source file:   Device\Firmware\Peripherals\src\gd32f10x_gpio.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f10x_gpio.h
 
    * Component: GigaDevice::Device:GD32F10x_StdPeripherals:MISC:2.0.1
       Include file:  Device\Firmware\Peripherals\inc\gd32f10x_misc.h
       Source file:   Device\Firmware\Peripherals\src\gd32f10x_misc.c
 
    * Component: GigaDevice::Device:GD32F10x_StdPeripherals:PMU:2.0.1
-      Include file:  Device\Firmware\Peripherals\inc\gd32f10x_pmu.h
       Source file:   Device\Firmware\Peripherals\src\gd32f10x_pmu.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f10x_pmu.h
 
    * Component: GigaDevice::Device:GD32F10x_StdPeripherals:RCU:2.0.1
       Include file:  Device\Firmware\Peripherals\inc\gd32f10x_rcu.h
@@ -78,9 +101,9 @@ Package Vendor: GigaDevice
       Include file:  Device\Include\gd32f10x_libopt.h
 
    * Component: GigaDevice::Device:Startup:2.0.1
+      Source file:   Device\Source\ARM\startup_gd32f10x_cl.s
       Include file:  Device\Include\gd32f10x.h
       Source file:   Device\Source\system_gd32f10x.c
-      Source file:   Device\Source\ARM\startup_gd32f10x_cl.s
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

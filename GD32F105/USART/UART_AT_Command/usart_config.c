@@ -7,9 +7,9 @@
 
 uint8_t USART1_TX_BUF[USART1_BUF_LEN];   // DMA發送緩衝區
 uint8_t USART1_RX_BUF[USART1_BUF_LEN];   // DMA接收緩衝區
-uint8_t USART1_RX_STAT = 0;	 // 接受狀態 0x01:已接收到資料  0x03:接收緩衝區半滿  0x07:接收緩衝區全滿
+uint8_t USART1_RX_STAT = 0;	  // 接受狀態 0x01:已接收到資料  0x03:接收緩衝區半滿  0x07:接收緩衝區全滿
 uint32_t USART1_RX_NUM = 0;   // 待處理數據個數：大於1為有數據待處理，0為沒有數據待處理
-bool DMA_BUF_BUSY = 0;
+bool DMA0CH6_BUF_BUSY = 0;
 
 void USART1_init(uint32_t baudrate)
 {
@@ -54,7 +54,7 @@ void USART1_init(uint32_t baudrate)
 	dma_init_struct.memory_addr = (uint32_t)USART1_RX_BUF;			   // 設定記憶體接收Base地址
 	dma_init_struct.memory_inc = DMA_MEMORY_INCREASE_ENABLE;	     // 記憶體地址遞增
 	dma_init_struct.memory_width = DMA_MEMORY_WIDTH_8BIT;		       // 記憶體位寬為8位
-	dma_init_struct.number = sizeof(USART1_RX_BUF);              // 傳輸數據數
+	dma_init_struct.number = sizeof(USART1_RX_BUF);                // 傳輸數據數
 	dma_init_struct.periph_addr = ((uint32_t)USART1_RDATA_ADDRESS);// 外設基地址,USART數據暫存器地址
 	dma_init_struct.periph_inc = DMA_PERIPH_INCREASE_DISABLE;			 // 外設地址不遞增
 	dma_init_struct.periph_width = DMA_PERIPHERAL_WIDTH_8BIT;      // 外設數據位寬爲8位
@@ -89,7 +89,7 @@ void USART1_transmit(uint8_t* data)
 void DMA0_Channel6_IRQHandler(void)
 {
 	dma_interrupt_flag_clear(DMA0, DMA_CH6, DMA_INT_FLAG_G); // 清除DMA0通道6中斷標誌位
-	if(DMA_BUF_BUSY == 1) DMA_BUF_BUSY = 0; // 進入中斷，表示已經傳輸完成緩衝區，釋放緩衝區
+	if(DMA0CH6_BUF_BUSY == 1) DMA0CH6_BUF_BUSY = 0; // 進入中斷，表示已經傳輸完成緩衝區，釋放緩衝區
 }
 
 void DMA0_Channel5_IRQHandler(void)

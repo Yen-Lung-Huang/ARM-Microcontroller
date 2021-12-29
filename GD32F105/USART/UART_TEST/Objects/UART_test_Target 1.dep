@@ -1,6 +1,6 @@
 Dependencies for Project 'UART_test', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (.\main.c)(0x6141F2D1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/main.o -MD)
+F (.\main.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/main.o -MD)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -9,7 +9,7 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
@@ -17,12 +17,12 @@ I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\in
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
-I (usart_config.h)(0x6141EBC1)
+I (usart_config.h)(0x61721130)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
-F (.\usart_config.h)(0x6141EBC1)()
-F (.\usart_config.c)(0x6141EDE2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/usart_config.o -MD)
-I (usart_config.h)(0x6141EBC1)
+F (.\usart_config.h)(0x61721130)()
+F (.\usart_config.c)(0x617210D7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/usart_config.o -MD)
+I (usart_config.h)(0x61721130)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -34,14 +34,14 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_dma.c)(0x5B62B116)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_dma.o -MD)
+F (RTE\Device\GD32F105VC\gd32f10x_dma.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_dma.o -MD)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
@@ -51,13 +51,13 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_gpio.c)(0x5B62B114)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_gpio.o -MD)
+F (RTE\Device\GD32F105VC\gd32f10x_gpio.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_gpio.o -MD)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
@@ -67,13 +67,13 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_misc.c)(0x5B62B114)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_misc.o -MD)
+F (RTE\Device\GD32F105VC\gd32f10x_misc.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_misc.o -MD)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
@@ -83,13 +83,13 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_pmu.c)(0x5B62B116)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_pmu.o -MD)
+F (RTE\Device\GD32F105VC\gd32f10x_pmu.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_pmu.o -MD)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
@@ -99,30 +99,14 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_rcu.c)(0x5B62B114)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_rcu.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_usart.c)(0x5B62B114)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_usart.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
+F (RTE\Device\GD32F105VC\gd32f10x_rcu.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_rcu.o -MD)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -131,14 +115,14 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\startup_gd32f10x_cl.s)(0x5B62B116)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto -c-gdwarf-3-I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 535" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"GD32F10X_CL SETA 1" -Wa,armasm,--pd,"USE_STDPERIPH_DRIVER SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_gd32f10x_cl.o)
-F (RTE\Device\GD32F105VC\system_gd32f10x.c)(0x5B62B116)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/system_gd32f10x.o -MD)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
+F (RTE\Device\GD32F105VC\gd32f10x_usart.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/gd32f10x_usart.o -MD)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -147,7 +131,23 @@ I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E
 I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (RTE\_Target_1\RTE_Components.h)(0x61306CDD)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
+F (RTE\Device\GD32F105VC\startup_gd32f10x_cl.s)(0x61441473)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto -c-gdwarf-3-I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 535" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"GD32F10X_CL SETA 1" -Wa,armasm,--pd,"USE_STDPERIPH_DRIVER SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_gd32f10x_cl.o)
+F (RTE\Device\GD32F105VC\system_gd32f10x.c)(0x61441473)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F10x_DFP/2.0.2/Device/Include-D__UVISION_VERSION="535" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o ./objects/system_gd32f10x.o -MD)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
+I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
+I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
+I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
+I (RTE\_Target_1\RTE_Components.h)(0x61441473)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
 I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)

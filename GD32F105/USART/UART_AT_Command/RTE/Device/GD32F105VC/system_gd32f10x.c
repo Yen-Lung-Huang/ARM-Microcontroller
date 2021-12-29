@@ -837,7 +837,7 @@ static void system_clock_108m_hxtal(void)
     /* enable PLL1 */
     RCU_CTL |= RCU_CTL_PLL1EN;
     /* wait till PLL1 is ready */
-    while(0U == (RCU_CTL & RCU_CTL_PLL1STB)){
+    while(0U == !(RCU_CTL & RCU_CTL_PLL1STB)){
     }
 #endif /* GD32F10X_MD and GD32F10X_HD and GD32F10X_XD */
 

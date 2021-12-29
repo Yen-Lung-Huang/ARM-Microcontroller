@@ -1,0 +1,13 @@
+--cpu Cortex-M3
+".\objects\gd32103c_start.o"
+".\objects\main.o"
+".\objects\gd32f10x_gpio.o"
+".\objects\gd32f10x_misc.o"
+".\objects\gd32f10x_pmu.o"
+".\objects\gd32f10x_rcu.o"
+".\objects\startup_gd32f10x_hd.o"
+".\objects\system_gd32f10x.o"
+--strict --scatter ".\Objects\gpio_button_led_test.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\gpio_button_led_test.map" -o .\Objects\gpio_button_led_test.axf

@@ -1,0 +1,10 @@
+.\objects\gd32f3x0_it.o: ..\src\gd32f3x0_it.c
+.\objects\gd32f3x0_it.o: ..\inc\gd32f3x0_it.h
+.\objects\gd32f3x0_it.o: ..\..\..\..\GD32F10x_Firmware_Library\CMSIS\GD\GD32F10x\Include\gd32f10x.h
+.\objects\gd32f3x0_it.o: ..\..\..\..\GD32F10x_Firmware_Library\CMSIS\core_cm3.h
+.\objects\gd32f3x0_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gd32f3x0_it.o: ..\..\..\..\GD32F10x_Firmware_Library\CMSIS\core_cmInstr.h
+.\objects\gd32f3x0_it.o: ..\..\..\..\GD32F10x_Firmware_Library\CMSIS\core_cmFunc.h
+.\objects\gd32f3x0_it.o: ..\..\..\..\GD32F10x_Firmware_Library\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h
+.\objects\gd32f3x0_it.o: C:\Users\user\AppData\Local\Arm\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h
+.\objects\gd32f3x0_it.o: ..\inc\systick.h

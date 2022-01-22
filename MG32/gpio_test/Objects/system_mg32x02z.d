@@ -1,0 +1,11 @@
+.\objects\system_mg32x02z.o: RTE\Device\MG32F02U128\system_MG32x02z.c
+.\objects\system_mg32x02z.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\system_mg32x02z.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_CSC.h
+.\objects\system_mg32x02z.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\system_MG32x02z.h

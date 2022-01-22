@@ -2,7 +2,7 @@
 .\objects\main.o: ..\inc\main.h
 .\objects\main.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h
 .\objects\main.o: ..\..\..\Firmware\CMSIS\core_cm3.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: ..\..\..\Firmware\CMSIS\core_cmInstr.h
 .\objects\main.o: ..\..\..\Firmware\CMSIS\core_cmFunc.h
 .\objects\main.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h
@@ -30,11 +30,11 @@
 .\objects\main.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h
 .\objects\main.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_can.h
 .\objects\main.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_misc.h
 .\objects\main.o: ..\inc\systick.h
 .\objects\main.o: ..\inc\spi_sd.h
 .\objects\main.o: ..\fat_fs\inc\ff.h
 .\objects\main.o: ..\fat_fs\inc\ffconf.h
 .\objects\main.o: ..\fat_fs\inc\diskio.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

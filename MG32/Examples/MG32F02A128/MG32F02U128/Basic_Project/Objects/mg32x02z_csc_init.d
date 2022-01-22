@@ -1,0 +1,12 @@
+.\objects\mg32x02z_csc_init.o: RTE\ChipInit_Wizard\MG32F02U128\MG32x02z_CSC_Init.c
+.\objects\mg32x02z_csc_init.o: RTE\ChipInit_Wizard\MG32F02U128\MG32x02z_CSC_Init.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_CSC.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_MEM.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_GPIO.h
+.\objects\mg32x02z_csc_init.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_CFG.h

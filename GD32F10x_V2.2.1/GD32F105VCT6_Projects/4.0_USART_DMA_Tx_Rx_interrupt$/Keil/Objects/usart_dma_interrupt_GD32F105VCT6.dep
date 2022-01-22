@@ -68,7 +68,7 @@ I (..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_spi.h)(0x60B5
 I (..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_timer.h)(0x60B5E9B2)
 I (..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_usart.h)(0x60B5E9B2)
 I (..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_wwdgt.h)(0x60B5E9B2)
-F (..\..\..\Firmware\CMSIS\GD\GD32F10x\Source\system_gd32f10x.c)(0x60B5E9B2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\..\..\Firmware\CMSIS -I ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include -I ..\..\..\Firmware\GD32F10x_standard_peripheral\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="535" -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -DUSE_STDPERIPH_DRIVER -DGD32F10X_CL-o .\objects\system_gd32f10x.o --omf_browse .\objects\system_gd32f10x.crf --depend .\objects\system_gd32f10x.d)
+F (..\..\..\Firmware\CMSIS\GD\GD32F10x\Source\system_gd32f10x.c)(0x61C0A341)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\..\..\Firmware\CMSIS -I ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include -I ..\..\..\Firmware\GD32F10x_standard_peripheral\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="535" -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -DUSE_STDPERIPH_DRIVER -DGD32F10X_CL-o .\objects\system_gd32f10x.o --omf_browse .\objects\system_gd32f10x.crf --depend .\objects\system_gd32f10x.d)
 I (..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h)(0x60B5E9B2)
 I (..\..\..\Firmware\CMSIS\core_cm3.h)(0x60B5E9B2)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)

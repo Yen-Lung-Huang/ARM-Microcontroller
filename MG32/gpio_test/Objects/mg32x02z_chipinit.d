@@ -1,0 +1,11 @@
+.\objects\mg32x02z_chipinit.o: RTE\ChipInit_Wizard\MG32F02U128\MG32x02z_ChipInit.c
+.\objects\mg32x02z_chipinit.o: RTE\ChipInit_Wizard\MG32F02U128\MG32x02z_ChipInit.h
+.\objects\mg32x02z_chipinit.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\mg32x02z_chipinit.o: RTE\ChipInit_Wizard\MG32F02U128\MG32x02z_GPIO_Init.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\mg32x02z_chipinit.o: D:\Keil_v5\Packs\Megawin\CM0_DFP\3.0.0\Device\MG32x02z\MG32F02A128\Include\MG32x02z_GPIO.h

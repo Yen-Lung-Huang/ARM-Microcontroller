@@ -56,7 +56,7 @@ Section Cross References
     system_gd32f10x.o(i.SystemCoreClockUpdate) refers to system_gd32f10x.o(.data) for SystemCoreClock
     system_gd32f10x.o(i.SystemInit) refers to system_gd32f10x.o(i.system_clock_config) for system_clock_config
     system_gd32f10x.o(i.SystemInit) refers to gd32f10x_misc.o(i.nvic_vector_table_set) for nvic_vector_table_set
-    system_gd32f10x.o(i.system_clock_config) refers to system_gd32f10x.o(i.system_clock_108m_hxtal) for system_clock_108m_hxtal
+    system_gd32f10x.o(i.system_clock_config) refers to system_gd32f10x.o(i.system_clock_96m_hxtal) for system_clock_96m_hxtal
     gd32f10x_adc.o(i.adc_deinit) refers to gd32f10x_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
     gd32f10x_adc.o(i.adc_deinit) refers to gd32f10x_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
     gd32f10x_bkp.o(i.bkp_deinit) refers to gd32f10x_rcu.o(i.rcu_bkp_reset_enable) for rcu_bkp_reset_enable
@@ -1837,8 +1837,8 @@ Image Symbol Table
     sync_fs                                  0x08003ba9   Thumb Code   134  ff.o(i.sync_fs)
     i.sync_window                            0x08003c38   Section        0  ff.o(i.sync_window)
     sync_window                              0x08003c39   Thumb Code    74  ff.o(i.sync_window)
-    i.system_clock_108m_hxtal                0x08003c84   Section        0  system_gd32f10x.o(i.system_clock_108m_hxtal)
-    system_clock_108m_hxtal                  0x08003c85   Thumb Code   212  system_gd32f10x.o(i.system_clock_108m_hxtal)
+    i.system_clock_96m_hxtal                 0x08003c84   Section        0  system_gd32f10x.o(i.system_clock_96m_hxtal)
+    system_clock_96m_hxtal                   0x08003c85   Thumb Code   212  system_gd32f10x.o(i.system_clock_96m_hxtal)
     i.system_clock_config                    0x08003d6c   Section        0  system_gd32f10x.o(i.system_clock_config)
     system_clock_config                      0x08003d6d   Thumb Code     8  system_gd32f10x.o(i.system_clock_config)
     i.systick_config                         0x08003d74   Section        0  systick.o(i.systick_config)
@@ -2233,7 +2233,7 @@ Memory Map of the image
     0x08003ba8   0x08003ba8   0x00000090   Code   RO         4703    i.sync_fs           ff.o
     0x08003c38   0x08003c38   0x0000004a   Code   RO         4704    i.sync_window       ff.o
     0x08003c82   0x08003c82   0x00000002   PAD
-    0x08003c84   0x08003c84   0x000000e8   Code   RO          329    i.system_clock_108m_hxtal  system_gd32f10x.o
+    0x08003c84   0x08003c84   0x000000e8   Code   RO          329    i.system_clock_96m_hxtal  system_gd32f10x.o
     0x08003d6c   0x08003d6c   0x00000008   Code   RO          330    i.system_clock_config  system_gd32f10x.o
     0x08003d74   0x08003d74   0x00000050   Code   RO          216    i.systick_config    systick.o
     0x08003dc4   0x08003dc4   0x0000004c   Code   RO         4705    i.tchar2uni         ff.o
@@ -2280,24 +2280,24 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       162          0          0          0          0       4529   diskio.o
-         4          0          0          0          0       1110   fattime.o
-     11008        118         52          2         20      66354   ff.o
-       396         28      59806          0          0       3060   ffunicode.o
-       180          0          0          0          0       2176   gd32f10x_gpio.o
-        32          0          0          0          0       4102   gd32f10x_it.o
-        20          8          0          0          0        648   gd32f10x_misc.o
-       464         46          0          0          0       3188   gd32f10x_rcu.o
-        88          0          0          0          0       4078   gd32f10x_spi.o
-       448         16          0          0          0       8222   gd32f10x_usart.o
-      1212        450          0         93       1676      47040   main.o
-      1272         44          0          0          0       8543   spi_sd.o
-        36          8        336          0       8192        900   startup_gd32f10x_cl.o
-       380         40          0          4          0       2091   system_gd32f10x.o
-       164         24          0          4          0      24666   systick.o
+       162          0          0          0          0       4701   diskio.o
+         4          0          0          0          0       1158   fattime.o
+     11008        118         52          2         20      67902   ff.o
+       396         28      59806          0          0       3184   ffunicode.o
+       180          0          0          0          0       2252   gd32f10x_gpio.o
+        32          0          0          0          0       4330   gd32f10x_it.o
+        20          8          0          0          0        676   gd32f10x_misc.o
+       464         46          0          0          0       3292   gd32f10x_rcu.o
+        88          0          0          0          0       4226   gd32f10x_spi.o
+       448         16          0          0          0       8518   gd32f10x_usart.o
+      1212        450          0         93       1676      47532   main.o
+      1272         44          0          0          0       8835   spi_sd.o
+        36          8        336          0       8192        924   startup_gd32f10x_cl.o
+       380         40          0          4          0       2195   system_gd32f10x.o
+       164         24          0          4          0      24834   systick.o
 
     ----------------------------------------------------------------------
-     15894        782      60226        108       9888     180707   Object Totals
+     15894        782      60226        108       9888     184559   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         28          0          0          5          0          0   (incl. Padding)
 
@@ -2342,8 +2342,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     16194        806      60226        112       9888     174651   Grand Totals
-     16194        806      60226        112       9888     174651   ELF Image Totals
+     16194        806      60226        112       9888     178503   Grand Totals
+     16194        806      60226        112       9888     178503   ELF Image Totals
      16194        806      60226        112          0          0   ROM Totals
 
 ==============================================================================

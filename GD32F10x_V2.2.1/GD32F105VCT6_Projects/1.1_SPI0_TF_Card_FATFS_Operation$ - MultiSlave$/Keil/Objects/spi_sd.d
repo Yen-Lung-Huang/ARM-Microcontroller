@@ -1,7 +1,7 @@
 .\objects\spi_sd.o: ..\src\spi_sd.c
 .\objects\spi_sd.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h
 .\objects\spi_sd.o: ..\..\..\Firmware\CMSIS\core_cm3.h
-.\objects\spi_sd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\spi_sd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\spi_sd.o: ..\..\..\Firmware\CMSIS\core_cmInstr.h
 .\objects\spi_sd.o: ..\..\..\Firmware\CMSIS\core_cmFunc.h
 .\objects\spi_sd.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h
@@ -29,7 +29,7 @@
 .\objects\spi_sd.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h
 .\objects\spi_sd.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_can.h
 .\objects\spi_sd.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h
-.\objects\spi_sd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\spi_sd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\spi_sd.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_misc.h
 .\objects\spi_sd.o: ..\inc\spi_sd.h
-.\objects\spi_sd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\spi_sd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,7 +1,7 @@
 ./objects/lcd_log.o: ..\src\lcd_log.c ..\inc\lcd_log.h \
   ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h \
   ..\..\..\Firmware\CMSIS\core_cm3.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\..\Firmware\CMSIS\core_cmInstr.h \
   ..\..\..\Firmware\CMSIS\core_cmFunc.h \
   ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h \
@@ -13,7 +13,7 @@
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_dac.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_dma.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exti.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_fmc.h \
@@ -30,6 +30,6 @@
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_timer.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_usart.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_wwdgt.h \
-  ..\inc\lcd_conf.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\inc\lcd_conf.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   ..\inc\driver_lcd.h ..\inc\lcd_font.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

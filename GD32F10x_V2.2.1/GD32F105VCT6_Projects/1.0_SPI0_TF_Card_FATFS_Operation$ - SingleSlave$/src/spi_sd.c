@@ -134,7 +134,7 @@ sd_error_enum sd_card_capacity_get(void)
     uint32_t device_size_temp=0;
     sd_error_enum status = SD_RESPONSE_FAILURE;
     /* get sd card cid and csd register value */
-    status = sd_cid_register_get(sd_cid_table);  
+    status = sd_cid_register_get(sd_cid_table);
     status = sd_csd_register_get(sd_csd_table);
     /* in csd register(csd version 2.0), device size define at bits[69:48],memory capacity = (device size+1) * 512K byte */
     /* bits[69:64] */

@@ -3,7 +3,7 @@
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_bkp.h \
   ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h \
   ..\..\..\Firmware\CMSIS\core_cm3.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\..\Firmware\CMSIS\core_cmInstr.h \
   ..\..\..\Firmware\CMSIS\core_cmFunc.h \
   ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h \
@@ -14,7 +14,7 @@
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_dac.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_dma.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exti.h \
   ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_fmc.h \

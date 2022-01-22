@@ -2,7 +2,7 @@
 .\objects\diskio.o: ..\fat_fs\inc\diskio.h
 .\objects\diskio.o: ..\fat_fs\inc\ff.h
 .\objects\diskio.o: ..\fat_fs\inc\ffconf.h
-.\objects\diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\diskio.o: ..\fat_fs\inc\ff_gen_drv.h
 .\objects\diskio.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h
 .\objects\diskio.o: ..\..\..\Firmware\CMSIS\core_cm3.h
@@ -33,7 +33,7 @@
 .\objects\diskio.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h
 .\objects\diskio.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_can.h
 .\objects\diskio.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h
-.\objects\diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\diskio.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_misc.h
 .\objects\diskio.o: ..\inc\spi_sd.h
-.\objects\diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

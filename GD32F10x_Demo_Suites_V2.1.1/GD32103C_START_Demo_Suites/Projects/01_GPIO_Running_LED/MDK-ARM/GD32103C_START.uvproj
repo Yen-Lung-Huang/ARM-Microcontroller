@@ -378,7 +378,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\GD32F10x_Firmware_Library\GD32F10x_standard_peripheral\Include;..\..\..\..\GD32F10x_Firmware_Library\CMSIS\GD\GD32F10x\Include;..\..\..\Utilities;..\;..\..\..\..\GD32F10x_Firmware_Library\CMSIS;..\..\..\..\GD32F10x_Firmware_Library\CMSIS\GD\GD32F10x\Include;..\..\..\..\GD32F10x_Firmware_Library\GD32F10x_standard_peripheral\Include</IncludePath>
+              <IncludePath>..\..\..\..\GD32F10x_Firmware_Library\GD32F10x_standard_peripheral\Include;..\..\..\..\GD32F10x_Firmware_Library\CMSIS\GD\GD32F10x\Include;..\..\..\Utilities;..\;..\..\..\..\GD32F10x_Firmware_Library\CMSIS</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

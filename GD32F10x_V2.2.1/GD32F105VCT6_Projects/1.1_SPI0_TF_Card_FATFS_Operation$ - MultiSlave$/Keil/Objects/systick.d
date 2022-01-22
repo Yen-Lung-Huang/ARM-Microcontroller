@@ -1,7 +1,7 @@
 .\objects\systick.o: ..\src\systick.c
 .\objects\systick.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\gd32f10x.h
 .\objects\systick.o: ..\..\..\Firmware\CMSIS\core_cm3.h
-.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\systick.o: ..\..\..\Firmware\CMSIS\core_cmInstr.h
 .\objects\systick.o: ..\..\..\Firmware\CMSIS\core_cmFunc.h
 .\objects\systick.o: ..\..\..\Firmware\CMSIS\GD\GD32F10x\Include\system_gd32f10x.h
@@ -29,6 +29,6 @@
 .\objects\systick.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_exmc.h
 .\objects\systick.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_can.h
 .\objects\systick.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_enet.h
-.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\systick.o: ..\..\..\Firmware\GD32F10x_standard_peripheral\Include\gd32f10x_misc.h
 .\objects\systick.o: ..\inc\systick.h

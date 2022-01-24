@@ -24,8 +24,13 @@
  *
  */
 
+<<<<<<< HEAD
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
+=======
+#ifndef FREERTOS_CONFIG_H
+#define FREERTOS_CONFIG_H
+>>>>>>> 16c66438 (Upload from PC.)
 
 /*-----------------------------------------------------------
  * Application specific definitions.
@@ -38,7 +43,11 @@
  *
  * See https://www.freertos.org/a00110.html
  *----------------------------------------------------------*/
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 16c66438 (Upload from PC.)
 #define configASSERT_DEFINED 1
 extern void vAssertCalled( void );
 #define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled( )
@@ -65,10 +74,17 @@ extern void vAssertCalled( void );
 #define configUSE_COUNTING_SEMAPHORES 1
 #define configSUPPORT_DYNAMIC_ALLOCATION 1
 #define  configNUM_TX_DESCRIPTORS 15
+<<<<<<< HEAD
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
 
+=======
+
+/* Set the following definitions to 1 to include the API function, or zero
+to exclude the API function. */
+
+>>>>>>> 16c66438 (Upload from PC.)
 #define configUSE_MALLOC_FAILED_HOOK    1
 #define configUSE_MUTEXES               1
 #define configUSE_RECURSIVE_MUTEXES     1
@@ -127,4 +143,8 @@ extern void vLoggingPrintf( const char *pcFormatString, ... );
     vLoggingPrintf X
 #endif
 
+<<<<<<< HEAD
 #endif /* FREERTOS_CONFIG_H */
+=======
+#endif /* FREERTOS_CONFIG_H */
+>>>>>>> 16c66438 (Upload from PC.)

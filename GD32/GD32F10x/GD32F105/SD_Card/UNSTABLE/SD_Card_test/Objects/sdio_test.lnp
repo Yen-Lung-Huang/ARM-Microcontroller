@@ -1,0 +1,22 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\user_diskio.o"
+".\objects\fatfs.o"
+".\objects\diskio.o"
+".\objects\ff.o"
+".\objects\ff_gen_drv.o"
+".\objects\syscall.o"
+".\objects\ccsbcs.o"
+".\objects\gd32f10x_dma.o"
+".\objects\gd32f10x_gpio.o"
+".\objects\gd32f10x_misc.o"
+".\objects\gd32f10x_pmu.o"
+".\objects\gd32f10x_rcu.o"
+".\objects\gd32f10x_sdio.o"
+".\objects\gd32f10x_usart.o"
+".\objects\startup_gd32f10x_cl.o"
+".\objects\system_gd32f10x.o"
+--strict --scatter ".\Objects\sdio_test.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\sdio_test.map" -o .\Objects\sdio_test.axf

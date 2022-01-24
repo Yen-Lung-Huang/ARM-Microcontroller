@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (c) 2015, Freescale Semiconductor, Inc.
  * Copyright 2016-2017 NXP
@@ -21,3 +22,28 @@ void BOARD_InitBootPeripherals(void);
 #endif /*_cplusplus. */
 
 #endif /* _PERIPHERALS_H_ */
+=======
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+#ifndef _PERIPHERALS_H_
+#define _PERIPHERALS_H_
+
+#if defined(__cplusplus)
+extern "C" {
+#endif /*_cplusplus. */
+/*******************************************************************************
+ * BOARD_InitBootPeripherals function
+ ******************************************************************************/
+void BOARD_InitBootPeripherals(void);
+
+#if defined(__cplusplus)
+}
+#endif /*_cplusplus. */
+
+#endif /* _PERIPHERALS_H_ */
+>>>>>>> 16c66438 (Upload from PC.)

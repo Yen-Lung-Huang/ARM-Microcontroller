@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 The FreeRTOS GCC port layer also builds and works with the ARMClang compiler.
+=======
+The FreeRTOS GCC port layer also builds and works with the ARMClang compiler.
+>>>>>>> 16c66438 (Upload from PC.)
 To use the ARMClang compiler build the port files from FreeRTOS/Source/portable/GCC.

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
  -p virtex5 -msg __xps/ise/xmsgprops.lst
+=======
+ -p virtex5 -msg __xps/ise/xmsgprops.lst
+>>>>>>> 16c66438 (Upload from PC.)

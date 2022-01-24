@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -g
 -w 3
 -INF LIST
@@ -15,3 +16,22 @@
 -cwno
 -cpu MB96F356RSA
 -INF srcin  
+=======
+-g
+-w 3
+-INF LIST
+-D _16FX_SOFTUNE
+-I "."
+-I "..\Common\Include"
+-I "..\..\Source\Include"
+-O 1
+-model MEDIUM
+-B
+-K NOEOPT
+-K NOLIB
+-K NOUNROLL
+-c
+-cwno
+-cpu MB96F356RSA
+-INF srcin  
+>>>>>>> 16c66438 (Upload from PC.)

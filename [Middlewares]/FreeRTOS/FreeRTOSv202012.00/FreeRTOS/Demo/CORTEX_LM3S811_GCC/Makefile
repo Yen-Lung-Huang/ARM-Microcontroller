@@ -32,6 +32,7 @@ CFLAGS+=-I hw_include -I . -I ${RTOS_SOURCE_DIR}/include -I ${RTOS_SOURCE_DIR}/p
 
 VPATH=${RTOS_SOURCE_DIR}:${RTOS_SOURCE_DIR}/portable/MemMang:${RTOS_SOURCE_DIR}/portable/GCC/ARM_CM3:${DEMO_SOURCE_DIR}:init:hw_include
 
+<<<<<<< HEAD
 OBJS=${COMPILER}/main.o	\
 	  ${COMPILER}/list.o    \
       ${COMPILER}/queue.o   \
@@ -43,6 +44,19 @@ OBJS=${COMPILER}/main.o	\
 	  ${COMPILER}/integer.o	\
 	  ${COMPILER}/semtest.o \
 	  ${COMPILER}/osram96x16.o
+=======
+OBJS=${COMPILER}/main.o	\
+	  ${COMPILER}/list.o    \
+      ${COMPILER}/queue.o   \
+      ${COMPILER}/tasks.o   \
+      ${COMPILER}/port.o    \
+      ${COMPILER}/heap_1.o  \
+	  ${COMPILER}/BlockQ.o	\
+	  ${COMPILER}/PollQ.o	\
+	  ${COMPILER}/integer.o	\
+	  ${COMPILER}/semtest.o \
+	  ${COMPILER}/osram96x16.o
+>>>>>>> 16c66438 (Upload from PC.)
 
 INIT_OBJS= ${COMPILER}/startup.o
 

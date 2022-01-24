@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 execUserReset()
 {
     __message("Executing __hwReset");
@@ -13,3 +14,20 @@ execUserPreload()
 {
     __writeMemory32(0x1FFFC000, 0xE000ED08, "Memory"); //Vector table remap at 0x1FFFC000
 }
+=======
+execUserReset()
+{
+    __message("Executing __hwReset");
+    __hwReset(0);
+    __message("__hwReset done");
+     
+    __hwResetWithStrategy(0, 2);
+	
+	__writeMemory32(0x1FFFC000, 0xE000ED08, "Memory"); //Vector table remap at 0x1FFFC000
+}
+
+execUserPreload()
+{
+    __writeMemory32(0x1FFFC000, 0xE000ED08, "Memory"); //Vector table remap at 0x1FFFC000
+}
+>>>>>>> 16c66438 (Upload from PC.)

@@ -155,8 +155,13 @@ namespace wolfSSL.CSharp {
             }
             public void free()
             {
+<<<<<<< HEAD
                 log(INFO_LOG, "freeing ssl handle");
 
+=======
+                log(INFO_LOG, "freeing ssl handle");
+
+>>>>>>> 16c66438 (Upload from PC.)
                 if (!Object.Equals(this.fd_pin, default(GCHandle)))
                 {
                     this.fd_pin.Free();
@@ -304,9 +309,15 @@ namespace wolfSSL.CSharp {
         private extern static int wolfSSL_get_error(IntPtr ssl, int err);
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void loggingCb(int lvl, StringBuilder msg);
+<<<<<<< HEAD
         private static loggingCb internal_log;
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static void wolfSSL_Debugging_ON();
+=======
+        private static loggingCb internal_log;
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static void wolfSSL_Debugging_ON();
+>>>>>>> 16c66438 (Upload from PC.)
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static void wolfSSL_Debugging_OFF();
 
@@ -319,17 +330,27 @@ namespace wolfSSL.CSharp {
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static int wolfSSL_SetTmpDH_file(IntPtr ssl, StringBuilder dhParam, int type);
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+<<<<<<< HEAD
         private extern static int wolfSSL_CTX_SetTmpDH_file(IntPtr ctx, StringBuilder dhParam, int type);
 
 
         /********************************
          * Verify Callback
          */
+=======
+        private extern static int wolfSSL_CTX_SetTmpDH_file(IntPtr ctx, StringBuilder dhParam, int type);
+
+
+        /********************************
+         * Verify Callback
+         */
+>>>>>>> 16c66438 (Upload from PC.)
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int CallbackVerify_delegate(int ret, IntPtr x509_ctx);
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static void wolfSSL_CTX_set_verify(IntPtr ctx, int mode, CallbackVerify_delegate vc);
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+<<<<<<< HEAD
         private extern static void wolfSSL_set_verify(IntPtr ssl, int mode, CallbackVerify_delegate vc);
 
 
@@ -346,6 +367,24 @@ namespace wolfSSL.CSharp {
         private extern static int wolfSSL_sk_X509_num(IntPtr sk);
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static void wolfSSL_sk_X509_free(IntPtr sk);
+=======
+        private extern static void wolfSSL_set_verify(IntPtr ssl, int mode, CallbackVerify_delegate vc);
+
+
+        /********************************
+         * X509 Store
+         */
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static IntPtr wolfSSL_X509_STORE_CTX_get_current_cert(IntPtr x509Ctx);
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static int wolfSSL_X509_STORE_CTX_get_error(IntPtr sk);
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static IntPtr wolfSSL_X509_STORE_GetCerts(IntPtr x509Ctx);
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static int wolfSSL_sk_X509_num(IntPtr sk);
+        [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
+        private extern static void wolfSSL_sk_X509_free(IntPtr sk);
+>>>>>>> 16c66438 (Upload from PC.)
         [DllImport(wolfssl_dll, CallingConvention = CallingConvention.Cdecl)]
         private extern static IntPtr wolfSSL_sk_X509_pop(IntPtr sk);
 
@@ -355,8 +394,13 @@ namespace wolfSSL.CSharp {
          */
         public static readonly int SSL_FILETYPE_PEM = 1;
         public static readonly int SSL_FILETYPE_ASN1 = 2;
+<<<<<<< HEAD
         public static readonly int SSL_FILETYPE_RAW = 3;
 
+=======
+        public static readonly int SSL_FILETYPE_RAW = 3;
+
+>>>>>>> 16c66438 (Upload from PC.)
         public static readonly int SSL_VERIFY_NONE = 0;
         public static readonly int SSL_VERIFY_PEER = 1;
         public static readonly int SSL_VERIFY_FAIL_IF_NO_PEER_CERT = 2;
@@ -1152,8 +1196,13 @@ namespace wolfSSL.CSharp {
             if (ssl == IntPtr.Zero)
             {
                 return FAILURE;
+<<<<<<< HEAD
             }
 
+=======
+            }
+
+>>>>>>> 16c66438 (Upload from PC.)
             try
             {
                 if (!fd.Equals(null))
@@ -1879,9 +1928,15 @@ namespace wolfSSL.CSharp {
                 log(ERROR_LOG, "wolfssl set verify error " + e.ToString());
                 return FAILURE;
             }
+<<<<<<< HEAD
         }
 
 
+=======
+        }
+
+
+>>>>>>> 16c66438 (Upload from PC.)
         /// <summary>
         /// Set the certificate verification mode and optional callback function
         /// </summary>
@@ -1900,7 +1955,11 @@ namespace wolfSSL.CSharp {
                 }
                 IntPtr x509 = wolfSSL_X509_STORE_CTX_get_current_cert(x509Ctx);
                 if (x509 != IntPtr.Zero) {
+<<<<<<< HEAD
                     return new X509(x509, false);
+=======
+                    return new X509(x509, false);
+>>>>>>> 16c66438 (Upload from PC.)
                 }
                 return ret;
             }
@@ -1909,9 +1968,15 @@ namespace wolfSSL.CSharp {
                 log(ERROR_LOG, "wolfssl WOLFSSL_X509_STORE_CTX error " + e.ToString());
                 return ret;
             }
+<<<<<<< HEAD
         }
 
 
+=======
+        }
+
+
+>>>>>>> 16c66438 (Upload from PC.)
         /// <summary>
         /// Gets all of the certificates from store
         /// </summary>
@@ -1929,6 +1994,7 @@ namespace wolfSSL.CSharp {
                 IntPtr sk = wolfSSL_X509_STORE_GetCerts(x509Ctx);
                 if (sk != IntPtr.Zero) {
                     int i;
+<<<<<<< HEAD
                     int numCerts = wolfSSL_sk_X509_num(sk);
                     ret = new X509[numCerts];
 
@@ -1940,6 +2006,19 @@ namespace wolfSSL.CSharp {
                         }
                     }
                     wolfSSL_sk_X509_free(sk);
+=======
+                    int numCerts = wolfSSL_sk_X509_num(sk);
+                    ret = new X509[numCerts];
+
+                    for (i = 0; i < numCerts; i++) {
+                        IntPtr current = wolfSSL_sk_X509_pop(sk);
+                        if (current != IntPtr.Zero)
+                        {
+                            ret[i] = new X509(current, true);
+                        }
+                    }
+                    wolfSSL_sk_X509_free(sk);
+>>>>>>> 16c66438 (Upload from PC.)
                 }
                 return ret;
                 
@@ -1949,9 +2028,15 @@ namespace wolfSSL.CSharp {
                 log(ERROR_LOG, "wolfssl WOLFSSL_X509_STORE_CTX error " + e.ToString());
                 return ret;
             }
+<<<<<<< HEAD
         }
 
 
+=======
+        }
+
+
+>>>>>>> 16c66438 (Upload from PC.)
         /// <summary>
         /// Get the current WOLFSSL_X509_STORE_CTX error value
         /// </summary>
@@ -1965,13 +2050,18 @@ namespace wolfSSL.CSharp {
                     log(ERROR_LOG, "pointer passed in was not set");
                     return -1;
                 }
+<<<<<<< HEAD
                 return wolfSSL_X509_STORE_CTX_get_error(x509Ctx);
+=======
+                return wolfSSL_X509_STORE_CTX_get_error(x509Ctx);
+>>>>>>> 16c66438 (Upload from PC.)
             }
             catch (Exception e)
             {
                 log(ERROR_LOG, "wolfssl WOLFSSL_X509_STORE_CTX error " + e.ToString());
                 return -1;
             }
+<<<<<<< HEAD
         }
 
         /// <summary>
@@ -1988,6 +2078,24 @@ namespace wolfSSL.CSharp {
         public static void Debugging_OFF()
         {
             wolfSSL_Debugging_OFF();
+=======
+        }
+
+        /// <summary>
+        /// Print low level C library debug messages to stdout when compiled with macro DEBUG_WOLFSSL
+        /// </summary>
+        public static void Debugging_ON()
+        {
+            wolfSSL_Debugging_ON();
+        }
+
+        /// <summary>
+        /// Turn off low level C debug messages
+        /// </summary>
+        public static void Debugging_OFF()
+        {
+            wolfSSL_Debugging_OFF();
+>>>>>>> 16c66438 (Upload from PC.)
         }
 
         /// <summary>

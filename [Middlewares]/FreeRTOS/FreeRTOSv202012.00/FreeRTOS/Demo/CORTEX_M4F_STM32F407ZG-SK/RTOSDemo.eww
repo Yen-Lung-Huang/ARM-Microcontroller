@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <workspace>
@@ -16,3 +17,23 @@
 </workspace>
 
 
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\RTOSDemo.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>All</name>
+      <member>
+        <project>RTOSDemo</project>
+        <configuration>Flash Debug</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+
+>>>>>>> 16c66438 (Upload from PC.)

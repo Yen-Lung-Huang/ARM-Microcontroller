@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 [{000214A0-0000-0000-C000-000000000046}]
 Prop3=19,11
 [InternetShortcut]
 IDList=
 URL=https://github.com/sifive/freedom-metal-docs
+=======
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11
+[InternetShortcut]
+IDList=
+URL=https://github.com/sifive/freedom-metal-docs
+>>>>>>> 16c66438 (Upload from PC.)

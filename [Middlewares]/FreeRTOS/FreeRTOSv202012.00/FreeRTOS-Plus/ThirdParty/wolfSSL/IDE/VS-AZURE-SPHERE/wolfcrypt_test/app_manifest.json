@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "SchemaVersion": 1,
   "Name": "wolfCrypt_Test",
@@ -8,3 +9,15 @@
   },
   "ApplicationType": "Default"
 }
+=======
+{
+  "SchemaVersion": 1,
+  "Name": "wolfCrypt_Test",
+  "ComponentId": "00000000-0000-0000-0000-000000000003",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+  },
+  "ApplicationType": "Default"
+}
+>>>>>>> 16c66438 (Upload from PC.)

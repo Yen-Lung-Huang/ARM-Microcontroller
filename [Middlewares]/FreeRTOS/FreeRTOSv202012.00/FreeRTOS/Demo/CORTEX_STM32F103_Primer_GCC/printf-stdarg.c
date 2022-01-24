@@ -122,9 +122,15 @@ static int print( char **out, const char *format, va_list args )
 {
 	register int width, pad;
 	register int pc = 0;
+<<<<<<< HEAD
 	char scr[2];
 
 	for (; *format != 0; ++format) {
+=======
+	char scr[2];
+
+	for (; *format != 0; ++format) {
+>>>>>>> 16c66438 (Upload from PC.)
 		if (*format == '%') {
 			++format;
 			width = pad = 0;
@@ -172,9 +178,15 @@ static int print( char **out, const char *format, va_list args )
 			}
 		}
 		else {
+<<<<<<< HEAD
 		out:
 			printchar (out, *format);
 			++pc;
+=======
+		out:
+			printchar (out, *format);
+			++pc;
+>>>>>>> 16c66438 (Upload from PC.)
 		}
 	}
 	if (out) **out = '\0';
@@ -197,6 +209,7 @@ int sprintf(char *out, const char *format, ...)
         va_start( args, format );
         return print( &out, format, args );
 }
+<<<<<<< HEAD
 
 
 int snprintf( char *buf, unsigned int count, const char *format, ... )
@@ -209,6 +222,20 @@ int snprintf( char *buf, unsigned int count, const char *format, ... )
         return print( &buf, format, args );
 }
 
+=======
+
+
+int snprintf( char *buf, unsigned int count, const char *format, ... )
+{
+        va_list args;
+        
+        ( void ) count;
+        
+        va_start( args, format );
+        return print( &buf, format, args );
+}
+
+>>>>>>> 16c66438 (Upload from PC.)
 
 #ifdef TEST_PRINTF
 int main(void)

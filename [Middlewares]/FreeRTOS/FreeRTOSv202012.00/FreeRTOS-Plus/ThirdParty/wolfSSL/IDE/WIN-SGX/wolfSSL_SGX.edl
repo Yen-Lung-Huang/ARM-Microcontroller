@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 enclave {
 
     trusted {
@@ -9,3 +10,16 @@ enclave {
     
     };
 };
+=======
+enclave {
+
+    trusted {
+
+    };
+
+    untrusted {
+        /* define OCALLs here. */
+    
+    };
+};
+>>>>>>> 16c66438 (Upload from PC.)

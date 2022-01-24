@@ -37,7 +37,11 @@ void WaitMinUS( volatile uint32_t us, uint32_t SystemClock )
 void WaitMinMS( uint32_t ms, uint32_t SystemClock )
 {
 	WaitMinUS( ( ms * 1000 ), SystemClock );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 16c66438 (Upload from PC.)
 
 /* hardware-control routine used by spifi_rom_api.c */
 void pullMISO(int high) {

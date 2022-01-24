@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 if CONFIG_CSKY
 source "../../csi/csi_driver/csky/Kconfig"
 endif
@@ -5,3 +6,12 @@ endif
 if CONFIG_SANECHIPS
 source "../../csi/csi_driver/sanechips/Kconfig"
 endif
+=======
+if CONFIG_CSKY
+source "../../csi/csi_driver/csky/Kconfig"
+endif
+
+if CONFIG_SANECHIPS
+source "../../csi/csi_driver/sanechips/Kconfig"
+endif
+>>>>>>> 16c66438 (Upload from PC.)

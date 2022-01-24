@@ -31,10 +31,17 @@
 #define SWITCHES_API_HEADER_FILE
 
 /***********************************************************************************************************************
+<<<<<<< HEAD
 Includes   <System Includes> , "Project Includes"
 ***********************************************************************************************************************/
 /* Fixed width integer support. */
 #include <stdint.h>
+=======
+Includes   <System Includes> , "Project Includes"
+***********************************************************************************************************************/
+/* Fixed width integer support. */
+#include <stdint.h>
+>>>>>>> 16c66438 (Upload from PC.)
 /* Used for configuring the code */
 #include "r_switches_config.h"
 

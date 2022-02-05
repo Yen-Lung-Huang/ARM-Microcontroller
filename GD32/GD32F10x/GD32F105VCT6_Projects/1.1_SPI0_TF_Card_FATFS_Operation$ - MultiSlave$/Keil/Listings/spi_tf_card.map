@@ -2280,24 +2280,24 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       162          0          0          0          0       4697   diskio.o
-         4          0          0          0          0       1158   fattime.o
-     11008        118         52          2         20      67818   ff.o
-       396         28      59806          0          0       3180   ffunicode.o
-       180          0          0          0          0       2248   gd32f10x_gpio.o
-        32          0          0          0          0       4318   gd32f10x_it.o
+       162          0          0          0          0       4677   diskio.o
+         4          0          0          0          0       1154   fattime.o
+     11008        118         52          2         20      67702   ff.o
+       396         28      59806          0          0       3172   ffunicode.o
+       180          0          0          0          0       2240   gd32f10x_gpio.o
+        32          0          0          0          0       4302   gd32f10x_it.o
         20          8          0          0          0        672   gd32f10x_misc.o
-       464         46          0          0          0       3284   gd32f10x_rcu.o
-        88          0          0          0          0       4222   gd32f10x_spi.o
-       448         16          0          0          0       8510   gd32f10x_usart.o
-      1208        446          0         93       1676      47616   main.o
-      1300         52          0          0          0       8839   spi_sd.o
+       464         46          0          0          0       3280   gd32f10x_rcu.o
+        88          0          0          0          0       4206   gd32f10x_spi.o
+       448         16          0          0          0       8474   gd32f10x_usart.o
+      1208        446          0         93       1676      47564   main.o
+      1300         52          0          0          0       8811   spi_sd.o
         36          8        336          0       8192        924   startup_gd32f10x_cl.o
        380         40          0          4          0       2191   system_gd32f10x.o
-       164         24          0          4          0      24834   systick.o
+       164         24          0          4          0      24818   systick.o
 
     ----------------------------------------------------------------------
-     15918        786      60226        108       9888     184511   Object Totals
+     15918        786      60226        108       9888     184187   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         28          0          0          5          0          0   (incl. Padding)
 
@@ -2342,8 +2342,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     16218        810      60226        112       9888     178455   Grand Totals
-     16218        810      60226        112       9888     178455   ELF Image Totals
+     16218        810      60226        112       9888     178131   Grand Totals
+     16218        810      60226        112       9888     178131   ELF Image Totals
      16218        810      60226        112          0          0   ROM Totals
 
 ==============================================================================

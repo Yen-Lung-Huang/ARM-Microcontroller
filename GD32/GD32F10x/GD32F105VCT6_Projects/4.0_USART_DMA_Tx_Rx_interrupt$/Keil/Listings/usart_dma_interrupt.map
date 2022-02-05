@@ -47,7 +47,7 @@ Section Cross References
     system_gd32f10x.o(i.SystemCoreClockUpdate) refers to system_gd32f10x.o(.data) for SystemCoreClock
     system_gd32f10x.o(i.SystemInit) refers to system_gd32f10x.o(i.system_clock_config) for system_clock_config
     system_gd32f10x.o(i.SystemInit) refers to gd32f10x_misc.o(i.nvic_vector_table_set) for nvic_vector_table_set
-    system_gd32f10x.o(i.system_clock_config) refers to system_gd32f10x.o(i.system_clock_108m_hxtal) for system_clock_108m_hxtal
+    system_gd32f10x.o(i.system_clock_config) refers to system_gd32f10x.o(i.system_clock_96m_hxtal) for system_clock_96m_hxtal
     gd32f10x_adc.o(i.adc_deinit) refers to gd32f10x_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
     gd32f10x_adc.o(i.adc_deinit) refers to gd32f10x_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
     gd32f10x_bkp.o(i.bkp_deinit) refers to gd32f10x_rcu.o(i.rcu_bkp_reset_enable) for rcu_bkp_reset_enable
@@ -1301,8 +1301,8 @@ Image Symbol Table
     i.rcu_periph_clock_enable                0x08000c60   Section        0  gd32f10x_rcu.o(i.rcu_periph_clock_enable)
     i.rcu_periph_reset_disable               0x08000c80   Section        0  gd32f10x_rcu.o(i.rcu_periph_reset_disable)
     i.rcu_periph_reset_enable                0x08000ca0   Section        0  gd32f10x_rcu.o(i.rcu_periph_reset_enable)
-    i.system_clock_108m_hxtal                0x08000cc0   Section        0  system_gd32f10x.o(i.system_clock_108m_hxtal)
-    system_clock_108m_hxtal                  0x08000cc1   Thumb Code   212  system_gd32f10x.o(i.system_clock_108m_hxtal)
+    i.system_clock_96m_hxtal                 0x08000cc0   Section        0  system_gd32f10x.o(i.system_clock_96m_hxtal)
+    system_clock_96m_hxtal                   0x08000cc1   Thumb Code   212  system_gd32f10x.o(i.system_clock_96m_hxtal)
     i.system_clock_config                    0x08000da8   Section        0  system_gd32f10x.o(i.system_clock_config)
     system_clock_config                      0x08000da9   Thumb Code     8  system_gd32f10x.o(i.system_clock_config)
     i.usart_baudrate_set                     0x08000db0   Section        0  gd32f10x_usart.o(i.usart_baudrate_set)
@@ -1595,7 +1595,7 @@ Memory Map of the image
     0x08000c60   0x08000c60   0x00000020   Code   RO         2802    i.rcu_periph_clock_enable  gd32f10x_rcu.o
     0x08000c80   0x08000c80   0x00000020   Code   RO         2805    i.rcu_periph_reset_disable  gd32f10x_rcu.o
     0x08000ca0   0x08000ca0   0x00000020   Code   RO         2806    i.rcu_periph_reset_enable  gd32f10x_rcu.o
-    0x08000cc0   0x08000cc0   0x000000e8   Code   RO          252    i.system_clock_108m_hxtal  system_gd32f10x.o
+    0x08000cc0   0x08000cc0   0x000000e8   Code   RO          252    i.system_clock_96m_hxtal  system_gd32f10x.o
     0x08000da8   0x08000da8   0x00000008   Code   RO          253    i.system_clock_config  system_gd32f10x.o
     0x08000db0   0x08000db0   0x00000090   Code   RO         4052    i.usart_baudrate_set  gd32f10x_usart.o
     0x08000e40   0x08000e40   0x00000008   Code   RO         4054    i.usart_data_transmit  gd32f10x_usart.o
@@ -1634,18 +1634,18 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       806          6          0          0          0       7959   gd32f10x_dma.o
+       806          6          0          0          0       7931   gd32f10x_dma.o
        172          0          0          0          0        932   gd32f10x_gpio.o
-       262         36          0          4          0      39586   gd32f10x_it.o
-       212         28          0          0          0       2180   gd32f10x_misc.o
-       464         46          0          0          0       3216   gd32f10x_rcu.o
-       464         16          0          0          0       8993   gd32f10x_usart.o
-       490         74          6          3       3516       5113   main.o
-        36          8        336          0       8192        908   startup_gd32f10x_cl.o
-       380         40          0          0          0       1805   system_gd32f10x.o
+       262         36          0          4          0      39562   gd32f10x_it.o
+       212         28          0          0          0       2176   gd32f10x_misc.o
+       464         46          0          0          0       3212   gd32f10x_rcu.o
+       464         16          0          0          0       8977   gd32f10x_usart.o
+       490         74          6          3       3516       5105   main.o
+        36          8        336          0       8192        904   startup_gd32f10x_cl.o
+       380         40          0          0          0       1797   system_gd32f10x.o
 
     ----------------------------------------------------------------------
-      3296        254        376          8      11708      70692   Object Totals
+      3296        254        376          8      11708      70596   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         10          0          2          1          0          0   (incl. Padding)
 
@@ -1687,8 +1687,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3632        280        376         12      11708      68592   Grand Totals
-      3632        280        376         12      11708      68592   ELF Image Totals
+      3632        280        376         12      11708      68496   Grand Totals
+      3632        280        376         12      11708      68496   ELF Image Totals
       3632        280        376         12          0          0   ROM Totals
 
 ==============================================================================

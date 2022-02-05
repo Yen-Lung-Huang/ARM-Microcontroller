@@ -40,8 +40,7 @@ OF SUCH DAMAGE.
 /* system frequency define */
 #define __IRC8M           (IRC8M_VALUE)            /* internal 8 MHz RC oscillator frequency */
 #define __HXTAL           (HXTAL_VALUE)            /* high speed crystal oscillator frequency */
-//#define __SYS_OSC_CLK     (__IRC8M)                /* main oscillator frequency */
-#define __SYS_OSC_CLK     (__HXTAL)                /* main oscillator frequency */
+#define __SYS_OSC_CLK     (__IRC8M)                /* main oscillator frequency */
 
 #define VECT_TAB_OFFSET  (uint32_t)0x00            /* vector table base offset */
 
@@ -58,8 +57,20 @@ OF SUCH DAMAGE.
 //#define __SYSTEM_CLOCK_48M_PLL_HXTAL            (uint32_t)(48000000)
 //#define __SYSTEM_CLOCK_56M_PLL_HXTAL            (uint32_t)(56000000)
 //#define __SYSTEM_CLOCK_72M_PLL_HXTAL            (uint32_t)(72000000)
-#define __SYSTEM_CLOCK_96M_PLL_HXTAL            (uint32_t)(96000000)
-//#define __SYSTEM_CLOCK_108M_PLL_HXTAL           (uint32_t)(108000000)
+//#define __SYSTEM_CLOCK_96M_PLL_HXTAL            (uint32_t)(96000000)
+#define __SYSTEM_CLOCK_108M_PLL_HXTAL           (uint32_t)(108000000)
+
+#define RCU_MODIFY(__delay)     do{                                     \
+                                    volatile uint32_t i;                \
+                                    if(0 != __delay){                   \
+                                        RCU_CFG0 |= RCU_AHB_CKSYS_DIV2; \
+                                        for(i=0; i<__delay; i++){       \
+                                        }                               \
+                                        RCU_CFG0 |= RCU_AHB_CKSYS_DIV4; \
+                                        for(i=0; i<__delay; i++){       \
+                                        }                               \
+                                    }                                   \
+                                }while(0)
 
 #define SEL_IRC8M       0x00U
 #define SEL_HXTAL       0x01U
@@ -150,7 +161,9 @@ void SystemInit(void)
     /* reset the RCC clock configuration to the default reset state */
     /* enable IRC8M */
     RCU_CTL |= RCU_CTL_IRC8MEN;
-    
+    while(0U == (RCU_CTL & RCU_CTL_IRC8MSTB)){
+    }
+    RCU_MODIFY(0x50);
     RCU_CFG0 &= ~RCU_CFG0_SCS;
     /* reset HXTALEN, CKMEN, PLLEN bits */
     RCU_CTL &= ~(RCU_CTL_HXTALEN | RCU_CTL_CKMEN | RCU_CTL_PLLEN);

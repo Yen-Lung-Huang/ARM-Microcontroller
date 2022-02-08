@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\usart_printf.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\usart_printf.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Jan 26 11:07:12 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Feb 08 11:39:29 2022
 <BR><P>
 <H3>Maximum Stack Usage =        132 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -386,7 +386,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_gd32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[4d]"></a>SystemInit</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, system_gd32f10x.o(i.SystemInit))
+<P><STRONG><a name="[4d]"></a>SystemInit</STRONG> (Thumb, 200 bytes, Stack size 8 bytes, system_gd32f10x.o(i.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SystemInit &rArr; system_clock_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_vector_table_set
@@ -553,7 +553,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
 </UL>
 
-<P><STRONG><a name="[59]"></a>nvic_vector_table_set</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gd32f10x_misc.o(i.nvic_vector_table_set))
+<P><STRONG><a name="[59]"></a>nvic_vector_table_set</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gd32f10x_misc.o(i.nvic_vector_table_set))
 <BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
@@ -661,14 +661,14 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_config
 </UL>
 
-<P><STRONG><a name="[79]"></a>system_clock_96m_hxtal</STRONG> (Thumb, 212 bytes, Stack size 0 bytes, system_gd32f10x.o(i.system_clock_96m_hxtal))
+<P><STRONG><a name="[79]"></a>system_clock_108m_hxtal</STRONG> (Thumb, 212 bytes, Stack size 0 bytes, system_gd32f10x.o(i.system_clock_108m_hxtal))
 <BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_config
 </UL>
 
 <P><STRONG><a name="[58]"></a>system_clock_config</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_gd32f10x.o(i.system_clock_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = system_clock_config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_96m_hxtal
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_108m_hxtal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>

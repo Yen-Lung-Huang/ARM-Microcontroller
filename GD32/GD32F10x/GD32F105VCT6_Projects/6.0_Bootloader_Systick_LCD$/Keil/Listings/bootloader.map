@@ -2686,15 +2686,15 @@ Removing Unused input sections from the image.
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_deinit), (8 bytes).
     Removing gd32f10x_wwdgt.o(.text.wwdgt_enable), (18 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_enable), (8 bytes).
-    Removing gd32f10x_wwdgt.o(.text.wwdgt_counter_update), (18 bytes).
+    Removing gd32f10x_wwdgt.o(.text.wwdgt_counter_update), (16 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_counter_update), (8 bytes).
-    Removing gd32f10x_wwdgt.o(.text.wwdgt_config), (50 bytes).
+    Removing gd32f10x_wwdgt.o(.text.wwdgt_config), (24 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_config), (8 bytes).
     Removing gd32f10x_wwdgt.o(.text.wwdgt_interrupt_enable), (18 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_interrupt_enable), (8 bytes).
     Removing gd32f10x_wwdgt.o(.text.wwdgt_flag_get), (16 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_flag_get), (8 bytes).
-    Removing gd32f10x_wwdgt.o(.text.wwdgt_flag_clear), (18 bytes).
+    Removing gd32f10x_wwdgt.o(.text.wwdgt_flag_clear), (14 bytes).
     Removing gd32f10x_wwdgt.o(.ARM.exidx.text.wwdgt_flag_clear), (8 bytes).
     Removing driver_lcd.o(.text), (0 bytes).
     Removing driver_lcd.o(.ARM.exidx.text.gd_eval_lcd_init), (8 bytes).
@@ -2758,7 +2758,7 @@ Removing Unused input sections from the image.
     Removing lcd_log.o(.text.LCD_LOG_UpdateDisplay), (164 bytes).
     Removing lcd_log.o(.ARM.exidx.text.LCD_LOG_UpdateDisplay), (8 bytes).
     Removing lcd_log.o(.bss.LCD_CacheBuffer), (1056 bytes).
-    Removing startup_gd32f10x_cl.o(HEAP), (8192 bytes).
+    Removing startup_gd32f10x_cl.o(HEAP), (512 bytes).
     Removing dadd.o(.text), (334 bytes).
     Removing dmul.o(.text), (228 bytes).
     Removing ddiv.o(.text), (222 bytes).
@@ -2766,7 +2766,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-1396 unused section(s) (total 70534 bytes) removed from the image.
+1396 unused section(s) (total 62822 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2928,47 +2928,47 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800118c   Section        0  gd32f10x_misc.o(.text.nvic_irq_enable)
     [Anonymous Symbol]                       0x080011f4   Section        0  gd32f10x_misc.o(.text.nvic_priority_group_set)
     [Anonymous Symbol]                       0x08001208   Section        0  gd32f10x_misc.o(.text.nvic_vector_table_set)
-    [Anonymous Symbol]                       0x08001220   Section        0  gd32f10x_rcu.o(.text.rcu_clock_freq_get)
-    [Anonymous Symbol]                       0x08001328   Section        0  main.o(.text.rcu_config)
-    [Anonymous Symbol]                       0x08001364   Section        0  gd32f10x_rcu.o(.text.rcu_periph_clock_disable)
-    [Anonymous Symbol]                       0x08001384   Section        0  gd32f10x_rcu.o(.text.rcu_periph_clock_enable)
-    [Anonymous Symbol]                       0x080013a4   Section        0  gd32f10x_rcu.o(.text.rcu_periph_reset_disable)
-    [Anonymous Symbol]                       0x080013c4   Section        0  gd32f10x_rcu.o(.text.rcu_periph_reset_enable)
-    system_clock_96m_hxtal                   0x080013e5   Thumb Code   188  system_gd32f10x.o(.text.system_clock_96m_hxtal)
-    [Anonymous Symbol]                       0x080013e4   Section        0  system_gd32f10x.o(.text.system_clock_96m_hxtal)
-    system_clock_config                      0x080014a1   Thumb Code     8  system_gd32f10x.o(.text.system_clock_config)
-    [Anonymous Symbol]                       0x080014a0   Section        0  system_gd32f10x.o(.text.system_clock_config)
-    [Anonymous Symbol]                       0x080014a8   Section        0  systick.o(.text.systick_config)
-    [Anonymous Symbol]                       0x080014d4   Section        0  gd32f10x_usart.o(.text.usart_baudrate_set)
-    [Anonymous Symbol]                       0x08001540   Section        0  gd32f10x_usart.o(.text.usart_data_transmit)
-    [Anonymous Symbol]                       0x08001548   Section        0  gd32f10x_usart.o(.text.usart_deinit)
-    [Anonymous Symbol]                       0x080015c0   Section        0  gd32f10x_usart.o(.text.usart_enable)
-    [Anonymous Symbol]                       0x080015cc   Section        0  gd32f10x_usart.o(.text.usart_flag_get)
-    [Anonymous Symbol]                       0x080015dc   Section        0  gd32f10x_usart.o(.text.usart_hardware_flow_cts_config)
-    [Anonymous Symbol]                       0x080015e8   Section        0  gd32f10x_usart.o(.text.usart_hardware_flow_rts_config)
-    [Anonymous Symbol]                       0x080015f4   Section        0  gd32f10x_usart.o(.text.usart_parity_config)
-    [Anonymous Symbol]                       0x08001604   Section        0  gd32f10x_usart.o(.text.usart_receive_config)
-    [Anonymous Symbol]                       0x08001610   Section        0  gd32f10x_usart.o(.text.usart_stop_bit_set)
-    [Anonymous Symbol]                       0x08001620   Section        0  gd32f10x_usart.o(.text.usart_transmit_config)
-    [Anonymous Symbol]                       0x0800162c   Section        0  gd32f10x_usart.o(.text.usart_word_length_set)
-    i.__0printf$1                            0x0800163c   Section        0  printf1.o(i.__0printf$1)
-    i.__0sprintf$1                           0x0800165c   Section        0  printf1.o(i.__0sprintf$1)
-    i.__scatterload_copy                     0x08001684   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08001692   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08001694   Section       14  handlers.o(i.__scatterload_zeroinit)
-    _printf_core                             0x080016a5   Thumb Code   336  printf1.o(i._printf_core)
-    i._printf_core                           0x080016a4   Section        0  printf1.o(i._printf_core)
-    _sputc                                   0x080017f9   Thumb Code    10  printf1.o(i._sputc)
-    i._sputc                                 0x080017f8   Section        0  printf1.o(i._sputc)
-    .L.str.3                                 0x08002429   Data          37  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08002429   Section        0  main.o(.rodata.str1.1)
-    .L.str.2                                 0x0800244e   Data          33  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08001224   Section        0  gd32f10x_rcu.o(.text.rcu_clock_freq_get)
+    [Anonymous Symbol]                       0x0800132c   Section        0  main.o(.text.rcu_config)
+    [Anonymous Symbol]                       0x08001368   Section        0  gd32f10x_rcu.o(.text.rcu_periph_clock_disable)
+    [Anonymous Symbol]                       0x08001388   Section        0  gd32f10x_rcu.o(.text.rcu_periph_clock_enable)
+    [Anonymous Symbol]                       0x080013a8   Section        0  gd32f10x_rcu.o(.text.rcu_periph_reset_disable)
+    [Anonymous Symbol]                       0x080013c8   Section        0  gd32f10x_rcu.o(.text.rcu_periph_reset_enable)
+    system_clock_96m_hxtal                   0x080013e9   Thumb Code   188  system_gd32f10x.o(.text.system_clock_96m_hxtal)
+    [Anonymous Symbol]                       0x080013e8   Section        0  system_gd32f10x.o(.text.system_clock_96m_hxtal)
+    system_clock_config                      0x080014a5   Thumb Code     8  system_gd32f10x.o(.text.system_clock_config)
+    [Anonymous Symbol]                       0x080014a4   Section        0  system_gd32f10x.o(.text.system_clock_config)
+    [Anonymous Symbol]                       0x080014ac   Section        0  systick.o(.text.systick_config)
+    [Anonymous Symbol]                       0x080014d8   Section        0  gd32f10x_usart.o(.text.usart_baudrate_set)
+    [Anonymous Symbol]                       0x08001544   Section        0  gd32f10x_usart.o(.text.usart_data_transmit)
+    [Anonymous Symbol]                       0x0800154c   Section        0  gd32f10x_usart.o(.text.usart_deinit)
+    [Anonymous Symbol]                       0x080015c4   Section        0  gd32f10x_usart.o(.text.usart_enable)
+    [Anonymous Symbol]                       0x080015d0   Section        0  gd32f10x_usart.o(.text.usart_flag_get)
+    [Anonymous Symbol]                       0x080015e0   Section        0  gd32f10x_usart.o(.text.usart_hardware_flow_cts_config)
+    [Anonymous Symbol]                       0x080015ec   Section        0  gd32f10x_usart.o(.text.usart_hardware_flow_rts_config)
+    [Anonymous Symbol]                       0x080015f8   Section        0  gd32f10x_usart.o(.text.usart_parity_config)
+    [Anonymous Symbol]                       0x08001608   Section        0  gd32f10x_usart.o(.text.usart_receive_config)
+    [Anonymous Symbol]                       0x08001614   Section        0  gd32f10x_usart.o(.text.usart_stop_bit_set)
+    [Anonymous Symbol]                       0x08001624   Section        0  gd32f10x_usart.o(.text.usart_transmit_config)
+    [Anonymous Symbol]                       0x08001630   Section        0  gd32f10x_usart.o(.text.usart_word_length_set)
+    i.__0printf$1                            0x08001640   Section        0  printf1.o(i.__0printf$1)
+    i.__0sprintf$1                           0x08001660   Section        0  printf1.o(i.__0sprintf$1)
+    i.__scatterload_copy                     0x08001688   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08001696   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08001698   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _printf_core                             0x080016a9   Thumb Code   336  printf1.o(i._printf_core)
+    i._printf_core                           0x080016a8   Section        0  printf1.o(i._printf_core)
+    _sputc                                   0x080017fd   Thumb Code    10  printf1.o(i._sputc)
+    i._sputc                                 0x080017fc   Section        0  printf1.o(i._sputc)
+    .L.str.3                                 0x0800242d   Data          37  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800242d   Section        0  main.o(.rodata.str1.1)
+    .L.str.2                                 0x08002452   Data          33  main.o(.rodata.str1.1)
     .data                                    0x20000000   Section        4  stdout.o(.data)
     cur_fonts                                0x20000030   Data           4  driver_lcd.o(.bss.cur_fonts)
     [Anonymous Symbol]                       0x20000030   Section        0  driver_lcd.o(.bss.cur_fonts)
     delay                                    0x20000038   Data           4  systick.o(.bss.delay)
     [Anonymous Symbol]                       0x20000038   Section        0  systick.o(.bss.delay)
-    STACK                                    0x20000040   Section     8192  startup_gd32f10x_cl.o(STACK)
+    STACK                                    0x20000040   Section     1024  startup_gd32f10x_cl.o(STACK)
 
     Global Symbols
 
@@ -3159,40 +3159,40 @@ Image Symbol Table
     nvic_irq_disable                         0x0800116d   Thumb Code    30  gd32f10x_misc.o(.text.nvic_irq_disable)
     nvic_irq_enable                          0x0800118d   Thumb Code   102  gd32f10x_misc.o(.text.nvic_irq_enable)
     nvic_priority_group_set                  0x080011f5   Thumb Code    20  gd32f10x_misc.o(.text.nvic_priority_group_set)
-    nvic_vector_table_set                    0x08001209   Thumb Code    24  gd32f10x_misc.o(.text.nvic_vector_table_set)
-    rcu_clock_freq_get                       0x08001221   Thumb Code   240  gd32f10x_rcu.o(.text.rcu_clock_freq_get)
-    rcu_config                               0x08001329   Thumb Code    60  main.o(.text.rcu_config)
-    rcu_periph_clock_disable                 0x08001365   Thumb Code    32  gd32f10x_rcu.o(.text.rcu_periph_clock_disable)
-    rcu_periph_clock_enable                  0x08001385   Thumb Code    30  gd32f10x_rcu.o(.text.rcu_periph_clock_enable)
-    rcu_periph_reset_disable                 0x080013a5   Thumb Code    32  gd32f10x_rcu.o(.text.rcu_periph_reset_disable)
-    rcu_periph_reset_enable                  0x080013c5   Thumb Code    30  gd32f10x_rcu.o(.text.rcu_periph_reset_enable)
-    systick_config                           0x080014a9   Thumb Code    42  systick.o(.text.systick_config)
-    usart_baudrate_set                       0x080014d5   Thumb Code   106  gd32f10x_usart.o(.text.usart_baudrate_set)
-    usart_data_transmit                      0x08001541   Thumb Code     8  gd32f10x_usart.o(.text.usart_data_transmit)
-    usart_deinit                             0x08001549   Thumb Code   118  gd32f10x_usart.o(.text.usart_deinit)
-    usart_enable                             0x080015c1   Thumb Code    10  gd32f10x_usart.o(.text.usart_enable)
-    usart_flag_get                           0x080015cd   Thumb Code    16  gd32f10x_usart.o(.text.usart_flag_get)
-    usart_hardware_flow_cts_config           0x080015dd   Thumb Code    12  gd32f10x_usart.o(.text.usart_hardware_flow_cts_config)
-    usart_hardware_flow_rts_config           0x080015e9   Thumb Code    12  gd32f10x_usart.o(.text.usart_hardware_flow_rts_config)
-    usart_parity_config                      0x080015f5   Thumb Code    16  gd32f10x_usart.o(.text.usart_parity_config)
-    usart_receive_config                     0x08001605   Thumb Code    12  gd32f10x_usart.o(.text.usart_receive_config)
-    usart_stop_bit_set                       0x08001611   Thumb Code    16  gd32f10x_usart.o(.text.usart_stop_bit_set)
-    usart_transmit_config                    0x08001621   Thumb Code    12  gd32f10x_usart.o(.text.usart_transmit_config)
-    usart_word_length_set                    0x0800162d   Thumb Code    16  gd32f10x_usart.o(.text.usart_word_length_set)
-    __0printf$1                              0x0800163d   Thumb Code    22  printf1.o(i.__0printf$1)
-    __1printf$1                              0x0800163d   Thumb Code     0  printf1.o(i.__0printf$1)
-    __2printf                                0x0800163d   Thumb Code     0  printf1.o(i.__0printf$1)
-    __0sprintf$1                             0x0800165d   Thumb Code    34  printf1.o(i.__0sprintf$1)
-    __1sprintf$1                             0x0800165d   Thumb Code     0  printf1.o(i.__0sprintf$1)
-    __2sprintf                               0x0800165d   Thumb Code     0  printf1.o(i.__0sprintf$1)
-    __scatterload_copy                       0x08001685   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08001693   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08001695   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    ASCII8x16_Table                          0x08001802   Data        3072  lcd_font.o(.rodata.ASCII8x16_Table)
-    MSG_HOST_FOOTER                          0x08002402   Data          23  lcd_usr.o(.rodata.MSG_HOST_FOOTER)
-    MSG_HOST_HEADER                          0x08002419   Data          16  lcd_usr.o(.rodata.MSG_HOST_HEADER)
-    Region$$Table$$Base                      0x08002470   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002490   Number         0  anon$$obj.o(Region$$Table)
+    nvic_vector_table_set                    0x08001209   Thumb Code    28  gd32f10x_misc.o(.text.nvic_vector_table_set)
+    rcu_clock_freq_get                       0x08001225   Thumb Code   240  gd32f10x_rcu.o(.text.rcu_clock_freq_get)
+    rcu_config                               0x0800132d   Thumb Code    60  main.o(.text.rcu_config)
+    rcu_periph_clock_disable                 0x08001369   Thumb Code    32  gd32f10x_rcu.o(.text.rcu_periph_clock_disable)
+    rcu_periph_clock_enable                  0x08001389   Thumb Code    30  gd32f10x_rcu.o(.text.rcu_periph_clock_enable)
+    rcu_periph_reset_disable                 0x080013a9   Thumb Code    32  gd32f10x_rcu.o(.text.rcu_periph_reset_disable)
+    rcu_periph_reset_enable                  0x080013c9   Thumb Code    30  gd32f10x_rcu.o(.text.rcu_periph_reset_enable)
+    systick_config                           0x080014ad   Thumb Code    42  systick.o(.text.systick_config)
+    usart_baudrate_set                       0x080014d9   Thumb Code   106  gd32f10x_usart.o(.text.usart_baudrate_set)
+    usart_data_transmit                      0x08001545   Thumb Code     8  gd32f10x_usart.o(.text.usart_data_transmit)
+    usart_deinit                             0x0800154d   Thumb Code   118  gd32f10x_usart.o(.text.usart_deinit)
+    usart_enable                             0x080015c5   Thumb Code    10  gd32f10x_usart.o(.text.usart_enable)
+    usart_flag_get                           0x080015d1   Thumb Code    16  gd32f10x_usart.o(.text.usart_flag_get)
+    usart_hardware_flow_cts_config           0x080015e1   Thumb Code    12  gd32f10x_usart.o(.text.usart_hardware_flow_cts_config)
+    usart_hardware_flow_rts_config           0x080015ed   Thumb Code    12  gd32f10x_usart.o(.text.usart_hardware_flow_rts_config)
+    usart_parity_config                      0x080015f9   Thumb Code    16  gd32f10x_usart.o(.text.usart_parity_config)
+    usart_receive_config                     0x08001609   Thumb Code    12  gd32f10x_usart.o(.text.usart_receive_config)
+    usart_stop_bit_set                       0x08001615   Thumb Code    16  gd32f10x_usart.o(.text.usart_stop_bit_set)
+    usart_transmit_config                    0x08001625   Thumb Code    12  gd32f10x_usart.o(.text.usart_transmit_config)
+    usart_word_length_set                    0x08001631   Thumb Code    16  gd32f10x_usart.o(.text.usart_word_length_set)
+    __0printf$1                              0x08001641   Thumb Code    22  printf1.o(i.__0printf$1)
+    __1printf$1                              0x08001641   Thumb Code     0  printf1.o(i.__0printf$1)
+    __2printf                                0x08001641   Thumb Code     0  printf1.o(i.__0printf$1)
+    __0sprintf$1                             0x08001661   Thumb Code    34  printf1.o(i.__0sprintf$1)
+    __1sprintf$1                             0x08001661   Thumb Code     0  printf1.o(i.__0sprintf$1)
+    __2sprintf                               0x08001661   Thumb Code     0  printf1.o(i.__0sprintf$1)
+    __scatterload_copy                       0x08001689   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08001697   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08001699   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    ASCII8x16_Table                          0x08001806   Data        3072  lcd_font.o(.rodata.ASCII8x16_Table)
+    MSG_HOST_FOOTER                          0x08002406   Data          23  lcd_usr.o(.rodata.MSG_HOST_FOOTER)
+    MSG_HOST_HEADER                          0x0800241d   Data          16  lcd_usr.o(.rodata.MSG_HOST_HEADER)
+    Region$$Table$$Base                      0x08002474   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002494   Number         0  anon$$obj.o(Region$$Table)
     __stdout                                 0x20000000   Data           4  stdout.o(.data)
     SystemCoreClock                          0x20000004   Data           4  system_gd32f10x.o(.data.SystemCoreClock)
     cur_back_color                           0x20000008   Data           2  driver_lcd.o(.data.cur_back_color)
@@ -3210,7 +3210,7 @@ Image Symbol Table
     LCD_Scrolled                             0x2000002c   Data           1  lcd_log.o(.bss.LCD_Scrolled)
     cur_text_color                           0x20000034   Data           2  driver_lcd.o(.bss.cur_text_color)
     cur_text_direction                       0x20000036   Data           2  driver_lcd.o(.bss.cur_text_direction)
-    __initial_sp                             0x20002040   Data           0  startup_gd32f10x_cl.o(STACK)
+    __initial_sp                             0x20000440   Data           0  startup_gd32f10x_cl.o(STACK)
 
 
 
@@ -3220,9 +3220,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000151
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000024a8, Max: 0x00004000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000024b0, Max: 0x00004000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002490, Max: 0x00004000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002494, Max: 0x00004000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3323,65 +3323,65 @@ Memory Map of the image
     0x0800118c   0x0800118c   0x00000066   Code   RO          979    .text.nvic_irq_enable  gd32f10x_misc.o
     0x080011f2   0x080011f2   0x00000002   PAD
     0x080011f4   0x080011f4   0x00000014   Code   RO          977    .text.nvic_priority_group_set  gd32f10x_misc.o
-    0x08001208   0x08001208   0x00000018   Code   RO          983    .text.nvic_vector_table_set  gd32f10x_misc.o
-    0x08001220   0x08001220   0x00000108   Code   RO         1115    .text.rcu_clock_freq_get  gd32f10x_rcu.o
-    0x08001328   0x08001328   0x0000003c   Code   RO            4    .text.rcu_config    main.o
-    0x08001364   0x08001364   0x00000020   Code   RO         1041    .text.rcu_periph_clock_disable  gd32f10x_rcu.o
-    0x08001384   0x08001384   0x0000001e   Code   RO         1039    .text.rcu_periph_clock_enable  gd32f10x_rcu.o
-    0x080013a2   0x080013a2   0x00000002   PAD
-    0x080013a4   0x080013a4   0x00000020   Code   RO         1049    .text.rcu_periph_reset_disable  gd32f10x_rcu.o
-    0x080013c4   0x080013c4   0x0000001e   Code   RO         1047    .text.rcu_periph_reset_enable  gd32f10x_rcu.o
-    0x080013e2   0x080013e2   0x00000002   PAD
-    0x080013e4   0x080013e4   0x000000bc   Code   RO          116    .text.system_clock_96m_hxtal  system_gd32f10x.o
-    0x080014a0   0x080014a0   0x00000008   Code   RO          112    .text.system_clock_config  system_gd32f10x.o
-    0x080014a8   0x080014a8   0x0000002a   Code   RO           81    .text.systick_config  systick.o
-    0x080014d2   0x080014d2   0x00000002   PAD
-    0x080014d4   0x080014d4   0x0000006a   Code   RO         1479    .text.usart_baudrate_set  gd32f10x_usart.o
-    0x0800153e   0x0800153e   0x00000002   PAD
-    0x08001540   0x08001540   0x00000008   Code   RO         1495    .text.usart_data_transmit  gd32f10x_usart.o
-    0x08001548   0x08001548   0x00000076   Code   RO         1477    .text.usart_deinit  gd32f10x_usart.o
-    0x080015be   0x080015be   0x00000002   PAD
-    0x080015c0   0x080015c0   0x0000000a   Code   RO         1487    .text.usart_enable  gd32f10x_usart.o
-    0x080015ca   0x080015ca   0x00000002   PAD
-    0x080015cc   0x080015cc   0x00000010   Code   RO         1551    .text.usart_flag_get  gd32f10x_usart.o
-    0x080015dc   0x080015dc   0x0000000c   Code   RO         1545    .text.usart_hardware_flow_cts_config  gd32f10x_usart.o
-    0x080015e8   0x080015e8   0x0000000c   Code   RO         1543    .text.usart_hardware_flow_rts_config  gd32f10x_usart.o
-    0x080015f4   0x080015f4   0x00000010   Code   RO         1481    .text.usart_parity_config  gd32f10x_usart.o
-    0x08001604   0x08001604   0x0000000c   Code   RO         1493    .text.usart_receive_config  gd32f10x_usart.o
-    0x08001610   0x08001610   0x00000010   Code   RO         1485    .text.usart_stop_bit_set  gd32f10x_usart.o
-    0x08001620   0x08001620   0x0000000c   Code   RO         1491    .text.usart_transmit_config  gd32f10x_usart.o
-    0x0800162c   0x0800162c   0x00000010   Code   RO         1483    .text.usart_word_length_set  gd32f10x_usart.o
-    0x0800163c   0x0800163c   0x00000020   Code   RO         1770    i.__0printf$1       mc_w.l(printf1.o)
-    0x0800165c   0x0800165c   0x00000028   Code   RO         1772    i.__0sprintf$1      mc_w.l(printf1.o)
-    0x08001684   0x08001684   0x0000000e   Code   RO         2035    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08001692   0x08001692   0x00000002   Code   RO         2036    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08001694   0x08001694   0x0000000e   Code   RO         2037    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x080016a2   0x080016a2   0x00000002   PAD
-    0x080016a4   0x080016a4   0x00000154   Code   RO         1777    i._printf_core      mc_w.l(printf1.o)
-    0x080017f8   0x080017f8   0x0000000a   Code   RO         1779    i._sputc            mc_w.l(printf1.o)
-    0x08001802   0x08001802   0x00000c00   Data   RO         1656    .rodata.ASCII8x16_Table  lcd_font.o
-    0x08002402   0x08002402   0x00000017   Data   RO          103    .rodata.MSG_HOST_FOOTER  lcd_usr.o
-    0x08002419   0x08002419   0x00000010   Data   RO          102    .rodata.MSG_HOST_HEADER  lcd_usr.o
-    0x08002429   0x08002429   0x00000046   Data   RO           21    .rodata.str1.1      main.o
-    0x0800246f   0x0800246f   0x00000001   PAD
-    0x08002470   0x08002470   0x00000020   Data   RO         2034    Region$$Table       anon$$obj.o
+    0x08001208   0x08001208   0x0000001c   Code   RO          983    .text.nvic_vector_table_set  gd32f10x_misc.o
+    0x08001224   0x08001224   0x00000108   Code   RO         1115    .text.rcu_clock_freq_get  gd32f10x_rcu.o
+    0x0800132c   0x0800132c   0x0000003c   Code   RO            4    .text.rcu_config    main.o
+    0x08001368   0x08001368   0x00000020   Code   RO         1041    .text.rcu_periph_clock_disable  gd32f10x_rcu.o
+    0x08001388   0x08001388   0x0000001e   Code   RO         1039    .text.rcu_periph_clock_enable  gd32f10x_rcu.o
+    0x080013a6   0x080013a6   0x00000002   PAD
+    0x080013a8   0x080013a8   0x00000020   Code   RO         1049    .text.rcu_periph_reset_disable  gd32f10x_rcu.o
+    0x080013c8   0x080013c8   0x0000001e   Code   RO         1047    .text.rcu_periph_reset_enable  gd32f10x_rcu.o
+    0x080013e6   0x080013e6   0x00000002   PAD
+    0x080013e8   0x080013e8   0x000000bc   Code   RO          116    .text.system_clock_96m_hxtal  system_gd32f10x.o
+    0x080014a4   0x080014a4   0x00000008   Code   RO          112    .text.system_clock_config  system_gd32f10x.o
+    0x080014ac   0x080014ac   0x0000002a   Code   RO           81    .text.systick_config  systick.o
+    0x080014d6   0x080014d6   0x00000002   PAD
+    0x080014d8   0x080014d8   0x0000006a   Code   RO         1479    .text.usart_baudrate_set  gd32f10x_usart.o
+    0x08001542   0x08001542   0x00000002   PAD
+    0x08001544   0x08001544   0x00000008   Code   RO         1495    .text.usart_data_transmit  gd32f10x_usart.o
+    0x0800154c   0x0800154c   0x00000076   Code   RO         1477    .text.usart_deinit  gd32f10x_usart.o
+    0x080015c2   0x080015c2   0x00000002   PAD
+    0x080015c4   0x080015c4   0x0000000a   Code   RO         1487    .text.usart_enable  gd32f10x_usart.o
+    0x080015ce   0x080015ce   0x00000002   PAD
+    0x080015d0   0x080015d0   0x00000010   Code   RO         1551    .text.usart_flag_get  gd32f10x_usart.o
+    0x080015e0   0x080015e0   0x0000000c   Code   RO         1545    .text.usart_hardware_flow_cts_config  gd32f10x_usart.o
+    0x080015ec   0x080015ec   0x0000000c   Code   RO         1543    .text.usart_hardware_flow_rts_config  gd32f10x_usart.o
+    0x080015f8   0x080015f8   0x00000010   Code   RO         1481    .text.usart_parity_config  gd32f10x_usart.o
+    0x08001608   0x08001608   0x0000000c   Code   RO         1493    .text.usart_receive_config  gd32f10x_usart.o
+    0x08001614   0x08001614   0x00000010   Code   RO         1485    .text.usart_stop_bit_set  gd32f10x_usart.o
+    0x08001624   0x08001624   0x0000000c   Code   RO         1491    .text.usart_transmit_config  gd32f10x_usart.o
+    0x08001630   0x08001630   0x00000010   Code   RO         1483    .text.usart_word_length_set  gd32f10x_usart.o
+    0x08001640   0x08001640   0x00000020   Code   RO         1770    i.__0printf$1       mc_w.l(printf1.o)
+    0x08001660   0x08001660   0x00000028   Code   RO         1772    i.__0sprintf$1      mc_w.l(printf1.o)
+    0x08001688   0x08001688   0x0000000e   Code   RO         2035    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08001696   0x08001696   0x00000002   Code   RO         2036    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08001698   0x08001698   0x0000000e   Code   RO         2037    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080016a6   0x080016a6   0x00000002   PAD
+    0x080016a8   0x080016a8   0x00000154   Code   RO         1777    i._printf_core      mc_w.l(printf1.o)
+    0x080017fc   0x080017fc   0x0000000a   Code   RO         1779    i._sputc            mc_w.l(printf1.o)
+    0x08001806   0x08001806   0x00000c00   Data   RO         1656    .rodata.ASCII8x16_Table  lcd_font.o
+    0x08002406   0x08002406   0x00000017   Data   RO          103    .rodata.MSG_HOST_FOOTER  lcd_usr.o
+    0x0800241d   0x0800241d   0x00000010   Data   RO          102    .rodata.MSG_HOST_HEADER  lcd_usr.o
+    0x0800242d   0x0800242d   0x00000046   Data   RO           21    .rodata.str1.1      main.o
+    0x08002473   0x08002473   0x00000001   PAD
+    0x08002474   0x08002474   0x00000020   Data   RO         2034    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002490, Size: 0x00002040, Max: 0x00018000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002498, Size: 0x00000440, Max: 0x00018000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002490   0x00000004   Data   RW         2000    .data               mc_w.l(stdout.o)
-    0x20000004   0x08002494   0x00000004   Data   RW          118    .data.SystemCoreClock  system_gd32f10x.o
-    0x20000008   0x08002498   0x00000002   Data   RW         1644    .data.cur_back_color  driver_lcd.o
-    0x2000000a   0x0800249a   0x00000002   PAD
-    0x2000000c   0x0800249c   0x00000008   Data   RW         1665    .data.font8x16      lcd_font.o
-    0x20000014   0x080024a4   0x00000004   PAD
+    0x20000000   0x08002498   0x00000004   Data   RW         2000    .data               mc_w.l(stdout.o)
+    0x20000004   0x0800249c   0x00000004   Data   RW          118    .data.SystemCoreClock  system_gd32f10x.o
+    0x20000008   0x080024a0   0x00000002   Data   RW         1644    .data.cur_back_color  driver_lcd.o
+    0x2000000a   0x080024a2   0x00000002   PAD
+    0x2000000c   0x080024a4   0x00000008   Data   RW         1665    .data.font8x16      lcd_font.o
+    0x20000014   0x080024ac   0x00000004   PAD
     0x20000018        -       0x00000002   Zero   RW         1691    .bss.LCD_CacheBuffer_xptr  lcd_log.o
     0x2000001a        -       0x00000002   Zero   RW         1693    .bss.LCD_CacheBuffer_yptr_bottom  lcd_log.o
     0x2000001c        -       0x00000002   Zero   RW         1695    .bss.LCD_CacheBuffer_yptr_bottom_bak  lcd_log.o
     0x2000001e        -       0x00000001   Zero   RW         1696    .bss.LCD_CacheBuffer_yptr_invert  lcd_log.o
-    0x2000001f   0x080024a4   0x00000001   PAD
+    0x2000001f   0x080024ac   0x00000001   PAD
     0x20000020        -       0x00000002   Zero   RW         1692    .bss.LCD_CacheBuffer_yptr_top  lcd_log.o
     0x20000022        -       0x00000002   Zero   RW         1694    .bss.LCD_CacheBuffer_yptr_top_bak  lcd_log.o
     0x20000024        -       0x00000004   Zero   RW         1690    .bss.LCD_LineColor  lcd_log.o
@@ -3389,13 +3389,13 @@ Memory Map of the image
     0x20000029        -       0x00000001   Zero   RW         1697    .bss.LCD_ScrollActive  lcd_log.o
     0x2000002a        -       0x00000002   Zero   RW         1700    .bss.LCD_ScrollBackStep  lcd_log.o
     0x2000002c        -       0x00000001   Zero   RW         1699    .bss.LCD_Scrolled   lcd_log.o
-    0x2000002d   0x080024a4   0x00000003   PAD
+    0x2000002d   0x080024ac   0x00000003   PAD
     0x20000030        -       0x00000004   Zero   RW         1646    .bss.cur_fonts      driver_lcd.o
     0x20000034        -       0x00000002   Zero   RW         1643    .bss.cur_text_color  driver_lcd.o
     0x20000036        -       0x00000002   Zero   RW         1645    .bss.cur_text_direction  driver_lcd.o
     0x20000038        -       0x00000004   Zero   RW           91    .bss.delay          systick.o
-    0x2000003c   0x080024a4   0x00000004   PAD
-    0x20000040        -       0x00002000   Zero   RW         1709    STACK               startup_gd32f10x_cl.o
+    0x2000003c   0x080024ac   0x00000004   PAD
+    0x20000040        -       0x00000400   Zero   RW         1709    STACK               startup_gd32f10x_cl.o
 
 
 ==============================================================================
@@ -3405,25 +3405,25 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       130          0          0          0          0       4624   bootloader.o
-      1192          0          0          2          8       8848   driver_lcd.o
-       310          0          0          0          0       7264   gd32f10x_exmc.o
-       190          0          0          0          0       3326   gd32f10x_exti.o
-       398          8          0          0          0       5753   gd32f10x_gpio.o
-        24          0          0          0          0       1042   gd32f10x_it.o
-       176          0          0          0          0       3368   gd32f10x_misc.o
-       388         28          0          0          0      13540   gd32f10x_rcu.o
-       354          0          0          0          0       9625   gd32f10x_usart.o
-         0          0       3072          8          0       1347   lcd_font.o
-       266          0          0          0         20       3749   lcd_log.o
-        40          0         39          0          0        707   lcd_usr.o
-      1234        132         70          0          0       6571   main.o
-        36          8        336          0       8192        916   startup_gd32f10x_cl.o
-       298          0          0          4          0       2143   system_gd32f10x.o
-       142          0          0          0          4       4150   systick.o
+       130          0          0          0          0       4622   bootloader.o
+      1192          0          0          2          8       8846   driver_lcd.o
+       310          0          0          0          0       7262   gd32f10x_exmc.o
+       190          0          0          0          0       3324   gd32f10x_exti.o
+       398          8          0          0          0       5751   gd32f10x_gpio.o
+        24          0          0          0          0       1040   gd32f10x_it.o
+       180          0          0          0          0       3460   gd32f10x_misc.o
+       388         28          0          0          0      13538   gd32f10x_rcu.o
+       354          0          0          0          0       9623   gd32f10x_usart.o
+         0          0       3072          8          0       1345   lcd_font.o
+       266          0          0          0         20       3747   lcd_log.o
+        40          0         39          0          0        705   lcd_usr.o
+      1234        132         70          0          0       6569   main.o
+        36          8        336          0       1024        916   startup_gd32f10x_cl.o
+       298          0          0          4          0       2141   system_gd32f10x.o
+       142          0          0          0          4       4148   systick.o
 
     ----------------------------------------------------------------------
-      5240        176       3550         16       8236      76973   Object Totals
+      5244        176       3550         16       1068      77037   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         62          0          1          2         12          0   (incl. Padding)
 
@@ -3466,15 +3466,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5810        212       3550         20       8236      77261   Grand Totals
-      5810        212       3550         20       8236      77261   ELF Image Totals
-      5810        212       3550         20          0          0   ROM Totals
+      5814        212       3550         20       1068      77325   Grand Totals
+      5814        212       3550         20       1068      77325   ELF Image Totals
+      5814        212       3550         20          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9360 (   9.14kB)
-    Total RW  Size (RW Data + ZI Data)              8256 (   8.06kB)
-    Total ROM Size (Code + RO Data + RW Data)       9380 (   9.16kB)
+    Total RO  Size (Code + RO Data)                 9364 (   9.14kB)
+    Total RW  Size (RW Data + ZI Data)              1088 (   1.06kB)
+    Total ROM Size (Code + RO Data + RW Data)       9384 (   9.16kB)
 
 ==============================================================================
 

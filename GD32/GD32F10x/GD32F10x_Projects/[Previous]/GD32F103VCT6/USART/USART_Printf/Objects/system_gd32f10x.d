@@ -1,0 +1,16 @@
+.\objects\system_gd32f10x.o: RTE\Device\GD32F103VC\system_gd32f10x.c
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h
+.\objects\system_gd32f10x.o: .\RTE\_GD32F105VCT6\RTE_Components.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h
+.\objects\system_gd32f10x.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h

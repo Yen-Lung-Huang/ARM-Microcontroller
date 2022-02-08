@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"rtc_test_hal\startup_stm32f105xc.o"
+"rtc_test_hal\main.o"
+"rtc_test_hal\stm32f1xx_it.o"
+"rtc_test_hal\stm32f1xx_hal_msp.o"
+"rtc_test_hal\stm32f1xx_hal_gpio_ex.o"
+"rtc_test_hal\stm32f1xx_hal_rtc.o"
+"rtc_test_hal\stm32f1xx_hal_rtc_ex.o"
+"rtc_test_hal\stm32f1xx_hal.o"
+"rtc_test_hal\stm32f1xx_hal_rcc.o"
+"rtc_test_hal\stm32f1xx_hal_rcc_ex.o"
+"rtc_test_hal\stm32f1xx_hal_gpio.o"
+"rtc_test_hal\stm32f1xx_hal_dma.o"
+"rtc_test_hal\stm32f1xx_hal_cortex.o"
+"rtc_test_hal\stm32f1xx_hal_pwr.o"
+"rtc_test_hal\stm32f1xx_hal_flash.o"
+"rtc_test_hal\stm32f1xx_hal_flash_ex.o"
+"rtc_test_hal\stm32f1xx_hal_exti.o"
+"rtc_test_hal\stm32f1xx_hal_tim.o"
+"rtc_test_hal\stm32f1xx_hal_tim_ex.o"
+"rtc_test_hal\stm32f1xx_hal_uart.o"
+"rtc_test_hal\system_stm32f1xx.o"
+--strict --scatter "RTC_test_hal\RTC_test_hal.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "RTC_test_hal.map" -o RTC_test_hal\RTC_test_hal.axf

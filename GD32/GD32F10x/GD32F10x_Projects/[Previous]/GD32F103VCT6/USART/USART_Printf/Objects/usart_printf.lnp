@@ -1,0 +1,13 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\gd32f10x_gpio.o"
+".\objects\gd32f10x_misc.o"
+".\objects\gd32f10x_pmu.o"
+".\objects\gd32f10x_rcu.o"
+".\objects\gd32f10x_usart.o"
+".\objects\startup_gd32f10x_hd.o"
+".\objects\system_gd32f10x.o"
+--library_type=microlib --strict --scatter ".\Objects\usart_printf.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\usart_printf.map" -o .\Objects\usart_printf.axf

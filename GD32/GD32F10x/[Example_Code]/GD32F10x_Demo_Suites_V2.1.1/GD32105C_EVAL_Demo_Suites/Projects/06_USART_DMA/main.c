@@ -156,7 +156,7 @@ void usart_dma_config(void)
     dma_init_struct.periph_inc = DMA_PERIPH_INCREASE_DISABLE;
     dma_init_struct.periph_width = DMA_PERIPHERAL_WIDTH_8BIT;
     dma_init_struct.priority = DMA_PRIORITY_ULTRA_HIGH;
-    dma_init(DMA0, DMA_CH3, dma_init_struct);
+    dma_init(DMA0, DMA_CH3, &dma_init_struct);
     /* configure DMA mode */
     dma_circulation_disable(DMA0, DMA_CH3);
     dma_memory_to_memory_disable(DMA0, DMA_CH3);
@@ -164,7 +164,7 @@ void usart_dma_config(void)
     dma_deinit(DMA0, DMA_CH4);
     dma_init_struct.direction = DMA_PERIPHERAL_TO_MEMORY;
     dma_init_struct.memory_addr = (uint32_t)rx_buffer;
-    dma_init(DMA0, DMA_CH4, dma_init_struct);
+    dma_init(DMA0, DMA_CH4, &dma_init_struct);
     /* configure DMA mode */
     dma_circulation_disable(DMA0, DMA_CH4);
     dma_memory_to_memory_disable(DMA0, DMA_CH4);

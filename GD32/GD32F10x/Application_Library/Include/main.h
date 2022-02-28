@@ -6,14 +6,10 @@
 extern "C" {
 #endif
 
-/* Include */
-#include <stdbool.h>
 
-//static bool buttonState = true; // true: The button has been released. false: The button has been pressed.
-//static bool ledState = false; // true: LED on. false: LED off. 
 
-/* FUNCTION (Prototype) DEFINITIONS */
-//e.g. void hello_world(void)...
+#define DATA_BUFFER_SIZE 256
+
 
 
 #ifdef __cplusplus

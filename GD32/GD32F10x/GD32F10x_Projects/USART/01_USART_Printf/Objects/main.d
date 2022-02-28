@@ -1,4 +1,5 @@
 .\objects\main.o: Application\source\main.c
+.\objects\main.o: ..\..\..\Application_Library\Include\gd32f10x_usart_config.h
 .\objects\main.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h
 .\objects\main.o: D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -14,6 +15,6 @@
 .\objects\main.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h
 .\objects\main.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h
 .\objects\main.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h
-.\objects\main.o: ..\..\..\Application_Library\Include\gd32f10x_usart_config.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

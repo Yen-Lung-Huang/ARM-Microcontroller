@@ -17,3 +17,4 @@
 .\objects\gd32f10x_usart_config.o: D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h
 .\objects\gd32f10x_usart_config.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\gd32f10x_usart_config.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\gd32f10x_usart_config.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

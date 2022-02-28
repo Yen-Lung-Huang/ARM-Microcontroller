@@ -165,7 +165,7 @@ void USART0_IRQHandler(void)
             usart_interrupt_disable(USART0, USART_INT_RBNE);
         }
     }
-       
+    
     if(RESET != usart_interrupt_flag_get(USART0, USART_INT_FLAG_TBE)){
         /* write one byte to the transmit data register */
         usart_data_transmit(USART0, tx_buffer[tx_counter++]);

@@ -1,7 +1,5 @@
 #include "gd32f10x_usart_config.h"
 
-bool usart_periph_enable[3] = {false,false,false};
-
 void usart_config(uint32_t usart_periph, uint32_t baudRate)
 {
 	switch(usart_periph){
@@ -55,4 +53,100 @@ int fputc(int ch, FILE *f)
 		while(RESET == usart_flag_get(USART2, USART_FLAG_TBE)||RESET == usart_flag_get(USART2, USART_FLAG_TC));
 	}
 	return ch;
+}
+
+/*printf with the selected USART */
+void printNum(unsigned long num, int base, uint32_t usart_periph)
+{ 
+	if (num == 0){ /* 遞迴結束條件*/
+		return;
+	}
+	printNum(num / base, base, usart_periph); /* 繼續遞迴*/
+	if(usart_periph == ALL)
+		putchar("0123456789abcdef"[num % base]); /* 逆序打印結果*/
+	else{
+		usart_data_transmit(usart_periph, "0123456789abcdef"[num % base]);
+		while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE)){};
+	}
+}
+
+void printFloat(double f, uint32_t usart_periph)
+{
+	int temp;
+	temp = (int)f; /* 先打印整數部分*/
+	printNum(temp, 10, usart_periph);
+	if(usart_periph == ALL)
+		putchar('.'); /* 分隔點*/
+	else{
+		usart_data_transmit(usart_periph, '.');
+		while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE)){};
+	}
+	f -= temp; /* 打印小數部分*/
+	if (f == 0){ /* 浮點型數據至少六位精度*/
+		for (temp = 0; temp < 6; temp++){
+			if(usart_periph == ALL)
+				putchar('0');
+			else{
+				usart_data_transmit(usart_periph, '0');
+				while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE)){}; 
+			}
+		}
+		return;
+	}
+	else{
+		temp = (int)(f * 1000000);
+		printNum(temp, 10, usart_periph);
+	}
+}
+
+void print(uint32_t usart_periph, char *format, ...)
+{
+	va_list arg;
+	char ch;
+	char *str;
+	va_start(arg, format);
+	while ((ch = *format++) != '\0'){
+		if(ch != '%'){
+			if(usart_periph == ALL){
+				putchar(ch);
+			}
+			else{
+				usart_data_transmit(usart_periph, ch);
+				while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE)){};
+			}
+			continue;
+		}
+		switch (*format != '\0' ? *format++ : '\0'){
+			case 'd':
+				printNum(*(int*)arg, 10, usart_periph);
+				arg = (char *)arg + sizeof(format);
+				break;
+			case 'f':
+				printFloat(*(double*)arg, usart_periph);
+				arg = (char*)arg + sizeof(double); //為double型
+				break;
+			case 'c':
+				if(usart_periph == ALL){
+					char c = va_arg(arg, int);
+					putchar(c);
+				}
+				else{
+					char c = va_arg(arg, int);
+					usart_data_transmit(usart_periph, c);
+					while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE)){};
+				}
+				break;
+			case 's':
+				str = va_arg(arg, char*);
+				while (*str != '\0'){
+					if(usart_periph == ALL)
+						putchar(*str++);
+					else{
+						usart_data_transmit(usart_periph, *str++);
+						while(RESET == usart_flag_get(usart_periph, USART_FLAG_TBE));
+					}
+				}
+				break;
+		}
+	}	
 }

@@ -34,6 +34,11 @@ servo\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
 servo\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 servo\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 servo\main.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
+servo\main.o: ../Core/Inc/adc.h
+servo\main.o: ../Core/Inc/dma.h
+servo\main.o: ../Core/Inc/tim.h
+servo\main.o: ../Core/Inc/usart.h
+servo\main.o: ../Core/Inc/gpio.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

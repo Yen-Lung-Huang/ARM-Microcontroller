@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2V8M.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F042x6</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;               ../Drivers/STM32F0xx_HAL_Driver/Inc;               ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy;               ../Drivers/CMSIS/Device/ST/STM32F0xx/Include;               ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F0xx_HAL_Driver/Inc;../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F0xx/Include;../Drivers/CMSIS/Include;..\..\..\..\Application_Library\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -692,6 +692,18 @@
         </Group>
         <Group>
           <GroupName>Application/Custom</GroupName>
+          <Files>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Application_Library\Source\servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>jsmn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Application_Library\Source\jsmn.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Drivers/STM32F0xx_HAL_Driver</GroupName>

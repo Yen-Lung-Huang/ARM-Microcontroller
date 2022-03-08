@@ -8,6 +8,8 @@
 "servo\usart.o"
 "servo\stm32f0xx_it.o"
 "servo\stm32f0xx_hal_msp.o"
+"servo\servo.o"
+"servo\jsmn.o"
 "servo\stm32f0xx_hal_i2c.o"
 "servo\stm32f0xx_hal_i2c_ex.o"
 "servo\stm32f0xx_hal_rcc.o"

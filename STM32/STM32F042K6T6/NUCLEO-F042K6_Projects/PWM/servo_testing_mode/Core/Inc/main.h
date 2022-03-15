@@ -31,9 +31,10 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdlib.h>
 #include "usart.h"
-
+#define JSMN_HEADER
+#include "jsmn.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -46,8 +47,9 @@ extern DMA_HandleTypeDef hdma_usart2_rx;
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-#define RxBuf_SIZE   128
+#define RxBuf_SIZE 256
 #define MainBuf_SIZE RxBuf_SIZE
+#define MAX_TOKENS 100
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

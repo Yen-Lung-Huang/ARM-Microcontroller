@@ -32,6 +32,9 @@ extern "C" {
 
 #include <stdio.h> //printf function
 #include <string.h>
+#include "servo.h"
+
+#define SIZEOF(type) ((char *)(&type + 1) - (char *)(&type))
 
 /* USER CODE END Includes */
 
@@ -44,7 +47,6 @@ extern UART_HandleTypeDef huart2;
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
 #ifdef __GNUC__
   /* With GCC, small printf (option LD Linker->Libraries->Small printf
      set to 'Yes') calls __io_putchar() */
@@ -53,6 +55,7 @@ void MX_USART2_UART_Init(void);
   #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif /* __GNUC__ */
 
+char* substr(const char *src, unsigned int start, unsigned int end);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

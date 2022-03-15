@@ -33,7 +33,12 @@ servo\gpio.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
 servo\gpio.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 servo\gpio.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 servo\gpio.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
+servo\gpio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 servo\gpio.o: ../Core/Inc/usart.h
 servo\gpio.o: ../Core/Inc/main.h
 servo\gpio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 servo\gpio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+servo\gpio.o: ..\..\..\..\Application_Library\Include\servo.h
+servo\gpio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+servo\gpio.o: ../Core/Inc/tim.h
+servo\gpio.o: ..\..\..\..\Application_Library\Include\jsmn.h

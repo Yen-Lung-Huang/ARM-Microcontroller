@@ -33,7 +33,12 @@ servo\i2c.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
 servo\i2c.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 servo\i2c.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 servo\i2c.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
+servo\i2c.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 servo\i2c.o: ../Core/Inc/usart.h
 servo\i2c.o: ../Core/Inc/main.h
 servo\i2c.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 servo\i2c.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+servo\i2c.o: ..\..\..\..\Application_Library\Include\servo.h
+servo\i2c.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+servo\i2c.o: ../Core/Inc/tim.h
+servo\i2c.o: ..\..\..\..\Application_Library\Include\jsmn.h

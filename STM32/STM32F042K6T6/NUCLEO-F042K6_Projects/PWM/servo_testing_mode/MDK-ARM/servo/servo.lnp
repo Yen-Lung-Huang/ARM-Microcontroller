@@ -28,7 +28,7 @@
 "servo\stm32f0xx_hal_uart.o"
 "servo\stm32f0xx_hal_uart_ex.o"
 "servo\system_stm32f0xx.o"
---library_type=microlib --strict --scatter "servo\servo.sct"
+--strict --scatter "servo\servo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "servo.map" -o servo\servo.axf

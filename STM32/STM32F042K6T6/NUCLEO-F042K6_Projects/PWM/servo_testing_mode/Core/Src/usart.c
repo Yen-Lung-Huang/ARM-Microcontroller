@@ -148,6 +148,19 @@ PUTCHAR_PROTOTYPE
   return ch;
 }
 
+/* Substring Function */
+char* substr(const char *src, unsigned int start, unsigned int end)
+{
+    unsigned int subtext_len = end-start+2;
+    char *subtext = malloc(sizeof(char)*subtext_len);
+
+    strncpy(subtext,&src[start],subtext_len-1);
+    subtext[subtext_len-1] = '\0';
+
+    return subtext;
+}
+
+/* When USART RX receive data.*/
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) 
 {
 		if(huart->Instance == USART2){
@@ -162,6 +175,16 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 			
 			/* Do some stuff */
 			printf("%s\r\n",MainBuf);
+			
+			printf("%s\r\n",substr((const char*)MainBuf, 2, 6));
+			
+//			char *p = substr((const char*)MainBuf, 2, 6);
+//			printf("%s\r\n",p);
+//			if(p){
+//				free(p);
+//			}
+			
+			json2servo((char*)MainBuf, MAX_TOKENS );
 		}
 }
 

@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include
+-I.\RTE\_servo
+-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include
+-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6
+-o servo\dma.o --omf_browse servo\dma.crf --depend servo\dma.d --feedback "servo\servo.fed" "../Core/Src/dma.c"

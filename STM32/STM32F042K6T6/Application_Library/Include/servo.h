@@ -14,32 +14,36 @@ extern "C" {
 #include "main.h"
 #include "tim.h"
 
-#define servo_init(...) servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0, .physical_min=-90, .physical_max=90, .reverse=false, __VA_ARGS__});
+
+#define servo_init(...) servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0, .physical_min=-90, .physical_max=90,\
+.reverse=false, .complementary=false, .latch=false, .return_pwm=75, __VA_ARGS__});
 
 typedef struct{
 	TIM_HandleTypeDef* timer;
 	uint32_t channel;
-	unsigned int pwm_min;
-	unsigned int pwm_max;
-	unsigned int pwm_value;
+	uint16_t pwm_min;
+	uint16_t pwm_max;
+	uint16_t pwm_value;
 	short int physical_min;
 	short int physical_max;
 	bool reverse;
+	bool complementary;
+	bool latch;
+	uint16_t return_pwm;
 }ServoTypeDef;
-
 
 extern uint32_t last_time;
 extern uint32_t sub_last_time;
 extern bool rotate_dir;
 extern uint8_t selected_servo;
 extern uint8_t selected_servo_prev;
-extern ServoTypeDef servo[6];
-
 
 ServoTypeDef servo_constructor(ServoTypeDef servo_struct);
 volatile uint32_t* timer_ch2ccr(TIM_HandleTypeDef* timer, uint32_t channel);
-void servo_pwm_set(ServoTypeDef* servo, unsigned int pwm_value);
-bool json2servo(char *JSON_STRING, uint16_t token_size);
+uint16_t reverse_pwm(ServoTypeDef* servo, uint16_t pwm_value);
+void servo_pwm_set(ServoTypeDef* servo, uint16_t pwm_value);
+void servo_wild_set(ServoTypeDef* servo, uint16_t pwm_value);
+void arm_pwm_set(uint16_t pwm_0, uint16_t pwm_1, uint16_t pwm_2, uint16_t pwm_3, uint16_t pwm_4);
 
 #ifdef __cplusplus
 }

@@ -31,8 +31,6 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdlib.h>
-#include "usart.h"
 
 /* USER CODE END Includes */
 

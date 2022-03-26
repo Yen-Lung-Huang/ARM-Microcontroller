@@ -35,14 +35,3 @@ servo\dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
 servo\dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 servo\dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 servo\dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
-servo\dma.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-servo\dma.o: ../Core/Inc/usart.h
-servo\dma.o: ../Core/Inc/main.h
-servo\dma.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-servo\dma.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-servo\dma.o: ..\..\..\..\Application_Library\Include\jsmn.h
-servo\dma.o: ..\..\..\..\Application_Library\Include\servo.h
-servo\dma.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-servo\dma.o: ../Core/Inc/tim.h
-servo\dma.o: ../Core/Inc/adc.h
-servo\dma.o: ..\..\..\..\Application_Library\Include\cJSON.h

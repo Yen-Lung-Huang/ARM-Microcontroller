@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
@@ -100,70 +101,44 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   MX_ADC_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 	
 	/* Servo Motors Configuration--------------------------------------------------------*/
-	servo[0 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_2); // 0_Base
-	servo[1 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_4, .reverse=true); // 1_Shoulder#1
-	servo[2 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_1, .latch=true); // 2_Elbow
-	servo[3 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_1); // 3_Wrist
-	servo[4 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_2); // 4_End-effecter
-	servo[5 ] = servo_init(.timer=&htim14, .channel=TIM_CHANNEL_1); // 5_Shoulder#2
-	servo[6 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_3); // 6_Wheel_FL
-	servo[7 ] = servo_init(.timer=&htim17, .channel=TIM_CHANNEL_1, .complementary=true); // 7_Wheel_FR
-	servo[8 ] = servo_init(.timer=&htim16, .channel=TIM_CHANNEL_1, .complementary=true); // 8_Wheel_RL
-	servo[9 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_4); // 9_Wheel_RR
-	servo[10] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_1); // 10_Wheel_Speed_L
-	servo[11] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_4); // 11_Wheel_Speed_R
+	servos_init(servo);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+arm_set(25,25,25,25,25);
+arm_set(125,125,125,125,125);
+arm_set(25,25,25,25,25);
+//arm_set(125,125,125,125,125);
+//arm_set(25,50,75,100,125);
+//arm_set(125,25,50,75,100);
+//arm_set(25,50,75,100,125);
+//arm_set(125,25,50,75,100);
+//arm_set(75,75,75,75,75);
+//arm_set(25,25,25,25,25);
+
 	
-	uint32_t pwm_count = 25;
-	uint32_t prev_tick=HAL_GetTick();
-	uint32_t tick_count = 1;
-	bool count_state = true;
-	//const uint32_t tick_delay=700;
-	//const uint32_t tick_delay=15;
-	const uint32_t tick_delay=4;
+//	arm_set(25,25,25,25,25);
+//	arm_set(25,75,25,25,25);
+//	arm_set(25,75,125,25,25);
+//	arm_set(25,125,25,25,25);
+//	arm_set(25,125,25,125,25);
+	
+arm_pwm_stop();
 	
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		
-		//servo_pwm_set(&servo[selected_servo],servo[selected_servo].pwm_value);
-		uint32_t temp_tick = HAL_GetTick()-prev_tick;
-		
-		if(temp_tick>=tick_delay*(tick_count) && temp_tick<tick_delay*(tick_count+1)){
-			arm_pwm_set(pwm_count,pwm_count,pwm_count,pwm_count,pwm_count);
-		}
-		printf("pwm_count= %d, tick_count= %d, count_state= %d\n",pwm_count,tick_count,count_state);
-		pwm_count+=count_state*2-1;
-		tick_count ++;
-		if(pwm_count==125 || pwm_count==25){
-			prev_tick=HAL_GetTick();
-			count_state=!count_state;
-			tick_count = 1;
-		}
-		
-		
-//		if(temp_tick>=tick_delay*1 && temp_tick<tick_delay*2){
-//			arm_pwm_set(25,25,25,25,25);
-//		}
-//		if(temp_tick>=tick_delay*2 && temp_tick<tick_delay*3){
-//			arm_pwm_set(75,75,75,75,75);
-//		}
-//		if(temp_tick>=tick_delay*3 && temp_tick<tick_delay*4){
-//			arm_pwm_set(125,125,125,125,125);
-//		}
-//		if(temp_tick>=tick_delay*4 && temp_tick<tick_delay*5){
-//			arm_pwm_set(75,75,75,75,75);
-//			prev_tick=HAL_GetTick();
-//		}
+
   }
 		
   /* USER CODE END 3 */

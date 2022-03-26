@@ -1,10 +1,6 @@
 #include "core.h"
 
-extern ServoTypeDef servo[12];
-
-float map(float x, float in_min, float in_max, float out_min, float out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+extern ServoTypeDef servo[];
 
 bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(JSON_STRING)
 {
@@ -13,7 +9,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
         printf("invalid JSON\n");
         return false;
     }
-
+		
     for (cJSON *token = root->child;token != NULL;token = token->next){
         if(!strcmp(token->string,"mode")){
             if(cJSON_IsString(cJSON_GetObjectItem(root,"mode")) == false){
@@ -61,10 +57,41 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 for(cJSON *obj_token = json_obj->child; obj_token!= NULL; obj_token=obj_token->next){
                     uint8_t servo_num= atoi(obj_token->string); // Desired variable
                     if(/*servo_num>=0 &&*/ servo_num<=11){
-                        uint8_t pwm_val= obj_token->valueint;
+                      uint8_t pwm_val= obj_token->valueint;
+											if(servo_num==1||servo_num==5){
+												shoulder_set(pwm_val);
+											}
+											else{
 												servo_pwm_set(&servo[servo_num],pwm_val);
+											}
+										
+											printf("%d:%d",servo_num,pwm_val);
+											printf("(degree=%g)",servo_get_degree(&servo[servo_num]));
 											
-                        printf("%d:%d",servo_num,pwm_val);
+											if(obj_token->next!= NULL){
+													printf(", ");
+											}
+                    }
+                }
+                printf("}\n");
+            }
+        }
+				else if(!strcmp(token->string,"rc_servo_degree")){
+            cJSON *json_obj = cJSON_GetObjectItem(root, "rc_servo_degree");
+            if(json_obj!=NULL){
+                if(cJSON_IsObject(json_obj) == false){
+                    continue;
+                }
+								printf("%s:",token->string);
+                printf("{");
+								
+                for(cJSON *obj_token = json_obj->child; obj_token!= NULL; obj_token=obj_token->next){
+                    uint8_t servo_num= atoi(obj_token->string); // Desired variable
+                    if(/*servo_num>=0 &&*/ servo_num<=11){
+                        float degree_val= obj_token->valuedouble;
+												servo_degree_set(&servo[servo_num],degree_val);
+											
+                        printf("%d:%g(pwm=%d)",servo_num,degree_val,servo[servo_num].pwm_value);
                         if(obj_token->next!= NULL){
                             printf(", ");
                         }

@@ -13,7 +13,6 @@ extern "C" {
 #include "adc.h"
 
 /* FUNCTION (Prototype) DEFINITIONS */
-float map(float x, float in_min, float in_max, float out_min, float out_max);
 bool json_action(char *JSON_STRING, uint16_t token_size);
 
 #ifdef __cplusplus

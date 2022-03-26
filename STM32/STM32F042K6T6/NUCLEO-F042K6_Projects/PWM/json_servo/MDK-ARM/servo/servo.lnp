@@ -3,6 +3,7 @@
 "servo\main.o"
 "servo\gpio.o"
 "servo\adc.o"
+"servo\dma.o"
 "servo\i2c.o"
 "servo\tim.o"
 "servo\usart.o"

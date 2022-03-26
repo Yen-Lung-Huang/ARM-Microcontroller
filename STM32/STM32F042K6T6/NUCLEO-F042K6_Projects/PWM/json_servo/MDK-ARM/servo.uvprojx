@@ -750,11 +750,6 @@
           <GroupName>Application/Custom</GroupName>
           <Files>
             <File>
-              <FileName>servo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\Application_Library\Source\servo.c</FilePath>
-            </File>
-            <File>
               <FileName>cJSON.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\Application_Library\Source\cJSON.c</FilePath>
@@ -763,6 +758,21 @@
               <FileName>core.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\Application_Library\Source\core.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Application_Library\Source\servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>arm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Application_Library\Source\arm.c</FilePath>
+            </File>
+            <File>
+              <FileName>mobile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Application_Library\Source\mobile.c</FilePath>
             </File>
           </Files>
         </Group>

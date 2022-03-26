@@ -2,7 +2,6 @@ servo\servo.o: ..\..\..\..\Application_Library\Source\servo.c
 servo\servo.o: ..\..\..\..\Application_Library\Include\servo.h
 servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 servo\servo.o: ../Core/Inc/main.h
@@ -41,3 +40,10 @@ servo\servo.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 servo\servo.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 servo\servo.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
 servo\servo.o: ../Core/Inc/tim.h
+servo\servo.o: ..\..\..\..\Application_Library\Include\core.h
+servo\servo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+servo\servo.o: ..\..\..\..\Application_Library\Include\cJSON.h
+servo\servo.o: ..\..\..\..\Application_Library\Include\servo.h
+servo\servo.o: ..\..\..\..\Application_Library\Include\arm.h
+servo\servo.o: ..\..\..\..\Application_Library\Include\mobile.h
+servo\servo.o: ../Core/Inc/adc.h

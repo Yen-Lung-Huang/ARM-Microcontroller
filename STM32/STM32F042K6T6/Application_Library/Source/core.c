@@ -1,7 +1,19 @@
 #include "core.h"
-
 extern ServoTypeDef servo[];
 
+/* Math--------------------------------------------------------*/
+float map(float x, float in_min, float in_max, float out_min, float out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+double max(double a, double b)
+{
+	double q = sqrt((a-b)*(a-b));
+	return ((a + b) + q) / 2;
+}
+
+/* Robot with JSON--------------------------------------------------------*/
 bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(JSON_STRING)
 {
     cJSON *root = cJSON_ParseWithLength(JSON_STRING, token_size);
@@ -35,6 +47,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
             }
             float speed= token->valuedouble; // Desired variable
             printf("%s:%f\n",token->string, speed); // Do some stuff.
+						move(speed);
         }
         
         else if(!strcmp(token->string,"turn")){
@@ -43,6 +56,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
             }
             float speed= token->valuedouble; // Desired variable
             printf("%s:%f\n",token->string, speed); // Do some stuff.
+						turn(speed);
         }
         
         else if(!strcmp(token->string,"rc_servo")){
@@ -89,7 +103,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                     uint8_t servo_num= atoi(obj_token->string); // Desired variable
                     if(/*servo_num>=0 &&*/ servo_num<=11){
                         float degree_val= obj_token->valuedouble;
-												servo_degree_set(&servo[servo_num],degree_val);
+												servo_physical_set(&servo[servo_num],degree_val);
 											
                         printf("%d:%g(pwm=%d)",servo_num,degree_val,servo[servo_num].pwm_value);
                         if(obj_token->next!= NULL){

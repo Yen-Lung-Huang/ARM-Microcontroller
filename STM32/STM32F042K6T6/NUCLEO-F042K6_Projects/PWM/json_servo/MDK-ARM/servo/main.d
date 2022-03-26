@@ -47,4 +47,7 @@ servo\main.o: ..\..\..\..\Application_Library\Include\servo.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 servo\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+servo\main.o: ..\..\..\..\Application_Library\Include\core.h
+servo\main.o: ..\..\..\..\Application_Library\Include\arm.h
+servo\main.o: ..\..\..\..\Application_Library\Include\mobile.h
 servo\main.o: ../Core/Inc/gpio.h

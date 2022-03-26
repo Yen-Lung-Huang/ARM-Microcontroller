@@ -1,5 +1,6 @@
 servo\core.o: ..\..\..\..\Application_Library\Source\core.c
 servo\core.o: ..\..\..\..\Application_Library\Include\core.h
+servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 servo\core.o: ../Core/Inc/main.h
 servo\core.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h
 servo\core.o: ../Core/Inc/stm32f0xx_hal_conf.h
@@ -39,8 +40,10 @@ servo\core.o: ..\..\..\..\Application_Library\Include\cJSON.h
 servo\core.o: ..\..\..\..\Application_Library\Include\servo.h
 servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 servo\core.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 servo\core.o: ../Core/Inc/tim.h
+servo\core.o: ..\..\..\..\Application_Library\Include\core.h
+servo\core.o: ..\..\..\..\Application_Library\Include\arm.h
+servo\core.o: ..\..\..\..\Application_Library\Include\mobile.h
 servo\core.o: ../Core/Inc/adc.h

@@ -44,4 +44,7 @@ servo\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 servo\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 servo\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 servo\usart.o: ../Core/Inc/tim.h
+servo\usart.o: ..\..\..\..\Application_Library\Include\core.h
+servo\usart.o: ..\..\..\..\Application_Library\Include\arm.h
+servo\usart.o: ..\..\..\..\Application_Library\Include\mobile.h
 servo\usart.o: ../Core/Inc/adc.h

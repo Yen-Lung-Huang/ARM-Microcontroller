@@ -113,9 +113,9 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-arm_set(25,25,25,25,25);
-arm_set(125,125,125,125,125);
-arm_set(25,25,25,25,25);
+//arm_set(25,25,25,25,25);
+//arm_set(125,125,125,125,125);
+//arm_set(25,25,25,25,25);
 //arm_set(125,125,125,125,125);
 //arm_set(25,50,75,100,125);
 //arm_set(125,25,50,75,100);
@@ -131,7 +131,7 @@ arm_set(25,25,25,25,25);
 //	arm_set(25,125,25,25,25);
 //	arm_set(25,125,25,125,25);
 	
-arm_pwm_stop();
+all_pwm_stop();
 	
   while (1)
   {

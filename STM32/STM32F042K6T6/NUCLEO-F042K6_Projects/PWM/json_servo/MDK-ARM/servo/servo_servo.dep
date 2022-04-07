@@ -1,10 +1,10 @@
 Dependencies for Project 'servo', Target 'servo': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (startup_stm32f042x6.s)(0x623C0660)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F042x6 SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f042x6.lst --xref -o servo\startup_stm32f042x6.o --depend servo\startup_stm32f042x6.d)
-F (../Core/Src/main.c)(0x623F3BC0)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\main.o --omf_browse servo\main.crf --depend servo\main.d)
-I (../Core/Inc/main.h)(0x623C065B)
+F (startup_stm32f042x6.s)(0x6246EBD6)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F042x6 SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f042x6.lst --xref -o servo\startup_stm32f042x6.o --depend servo\startup_stm32f042x6.d)
+F (../Core/Src/main.c)(0x624D6934)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\main.o --omf_browse servo\main.crf --depend servo\main.d)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -36,27 +36,27 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-I (../Core/Inc/adc.h)(0x623C0658)
-I (../Core/Inc/dma.h)(0x623C0658)
-I (../Core/Inc/i2c.h)(0x623C0658)
-I (../Core/Inc/tim.h)(0x623C0659)
-I (../Core/Inc/usart.h)(0x623C0659)
+I (../Core/Inc/adc.h)(0x6246EBCD)
+I (../Core/Inc/dma.h)(0x6246EBCD)
+I (../Core/Inc/i2c.h)(0x6246EBCE)
+I (../Core/Inc/tim.h)(0x6246EBCE)
+I (../Core/Inc/usart.h)(0x6246EBCF)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (../Core/Inc/gpio.h)(0x623C0655)
-F (../Core/Src/gpio.c)(0x623C0655)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\gpio.o --omf_browse servo\gpio.crf --depend servo\gpio.d)
-I (../Core/Inc/gpio.h)(0x623C0655)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/gpio.h)(0x6246EBCA)
+F (../Core/Src/gpio.c)(0x6246EBCA)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\gpio.o --omf_browse servo\gpio.crf --depend servo\gpio.d)
+I (../Core/Inc/gpio.h)(0x6246EBCA)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -88,11 +88,11 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-F (../Core/Src/adc.c)(0x623C0657)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\adc.o --omf_browse servo\adc.crf --depend servo\adc.d)
-I (../Core/Inc/adc.h)(0x623C0658)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/adc.c)(0x6246EBCC)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\adc.o --omf_browse servo\adc.crf --depend servo\adc.d)
+I (../Core/Inc/adc.h)(0x6246EBCD)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -124,11 +124,11 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-F (../Core/Src/dma.c)(0x623C0658)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\dma.o --omf_browse servo\dma.crf --depend servo\dma.d)
-I (../Core/Inc/dma.h)(0x623C0658)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/dma.c)(0x6246EBCD)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\dma.o --omf_browse servo\dma.crf --depend servo\dma.d)
+I (../Core/Inc/dma.h)(0x6246EBCD)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -160,11 +160,11 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-F (../Core/Src/i2c.c)(0x623C0658)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\i2c.o --omf_browse servo\i2c.crf --depend servo\i2c.d)
-I (../Core/Inc/i2c.h)(0x623C0658)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/i2c.c)(0x6246EBCD)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\i2c.o --omf_browse servo\i2c.crf --depend servo\i2c.d)
+I (../Core/Inc/i2c.h)(0x6246EBCE)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -196,11 +196,11 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-F (../Core/Src/tim.c)(0x623C0659)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\tim.o --omf_browse servo\tim.crf --depend servo\tim.d)
-I (../Core/Inc/tim.h)(0x623C0659)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/tim.c)(0x6246EBCE)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\tim.o --omf_browse servo\tim.crf --depend servo\tim.d)
+I (../Core/Inc/tim.h)(0x6246EBCE)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -232,11 +232,11 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-F (../Core/Src/usart.c)(0x623C0659)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\usart.o --omf_browse servo\usart.crf --depend servo\usart.d)
-I (../Core/Inc/usart.h)(0x623C0659)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/usart.c)(0x6246EBCE)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\usart.o --omf_browse servo\usart.crf --depend servo\usart.d)
+I (../Core/Inc/usart.h)(0x6246EBCF)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -272,18 +272,18 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (../Core/Inc/tim.h)(0x623C0659)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
+I (../Core/Inc/tim.h)(0x6246EBCE)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (../Core/Inc/adc.h)(0x623C0658)
-F (../Core/Src/stm32f0xx_it.c)(0x623C065A)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_it.o --omf_browse servo\stm32f0xx_it.crf --depend servo\stm32f0xx_it.d)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/adc.h)(0x6246EBCD)
+F (../Core/Src/stm32f0xx_it.c)(0x6246EBCF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_it.o --omf_browse servo\stm32f0xx_it.crf --depend servo\stm32f0xx_it.d)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -315,13 +315,13 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_it.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_it.h)(0x6246EBCF)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-F (../Core/Src/stm32f0xx_hal_msp.c)(0x623C065A)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_msp.o --omf_browse servo\stm32f0xx_hal_msp.crf --depend servo\stm32f0xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x623C065B)
+F (../Core/Src/stm32f0xx_hal_msp.c)(0x6246EBCF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_msp.o --omf_browse servo\stm32f0xx_hal_msp.crf --depend servo\stm32f0xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -363,12 +363,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x60252376)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
-F (..\..\..\..\Application_Library\Source\core.c)(0x623F3C5D)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\core.o --omf_browse servo\core.crf --depend servo\core.d)
+F (..\..\..\..\Application_Library\Source\core.c)(0x624D6273)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\core.o --omf_browse servo\core.crf --depend servo\core.d)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -401,24 +401,24 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (../Core/Inc/tim.h)(0x623C0659)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
+I (../Core/Inc/tim.h)(0x6246EBCE)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (../Core/Inc/adc.h)(0x623C0658)
-F (..\..\..\..\Application_Library\Source\servo.c)(0x623F4248)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\servo.o --omf_browse servo\servo.crf --depend servo\servo.d)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (../Core/Inc/adc.h)(0x6246EBCD)
+F (..\..\..\..\Application_Library\Source\servo.c)(0x624D2CD8)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\servo.o --omf_browse servo\servo.crf --depend servo\servo.d)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -450,23 +450,23 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-I (../Core/Inc/tim.h)(0x623C0659)
+I (../Core/Inc/tim.h)(0x6246EBCE)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (../Core/Inc/adc.h)(0x623C0658)
-F (..\..\..\..\Application_Library\Source\arm.c)(0x623F115E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\arm.o --omf_browse servo\arm.crf --depend servo\arm.d)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (../Core/Inc/adc.h)(0x6246EBCD)
+F (..\..\..\..\Application_Library\Source\arm.c)(0x624D6934)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\arm.o --omf_browse servo\arm.crf --depend servo\arm.d)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -498,22 +498,22 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-I (../Core/Inc/tim.h)(0x623C0659)
+I (../Core/Inc/tim.h)(0x6246EBCE)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (../Core/Inc/adc.h)(0x623C0658)
+I (../Core/Inc/adc.h)(0x6246EBCD)
 F (..\..\..\..\Application_Library\Source\mobile.c)(0x623F4131)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\mobile.o --omf_browse servo\mobile.crf --depend servo\mobile.d)
 I (..\..\..\..\Application_Library\Include\mobile.h)(0x623F3C15)
-I (..\..\..\..\Application_Library\Include\servo.h)(0x623F4131)
+I (..\..\..\..\Application_Library\Include\servo.h)(0x624D311B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (../Core/Inc/main.h)(0x623C065B)
+I (../Core/Inc/main.h)(0x6246EBD0)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -545,15 +545,15 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
-I (../Core/Inc/tim.h)(0x623C0659)
+I (../Core/Inc/tim.h)(0x6246EBCE)
 I (..\..\..\..\Application_Library\Include\core.h)(0x623F169D)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (..\..\..\..\Application_Library\Include\cJSON.h)(0x622A0378)
-I (..\..\..\..\Application_Library\Include\arm.h)(0x623F0C0B)
-I (../Core/Inc/adc.h)(0x623C0658)
+I (..\..\..\..\Application_Library\Include\arm.h)(0x624D304F)
+I (../Core/Inc/adc.h)(0x6246EBCD)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_adc.o --omf_browse servo\stm32f0xx_hal_adc.crf --depend servo\stm32f0xx_hal_adc.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -587,7 +587,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_adc_ex.o --omf_browse servo\stm32f0xx_hal_adc_ex.crf --depend servo\stm32f0xx_hal_adc_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -621,7 +621,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_rcc.o --omf_browse servo\stm32f0xx_hal_rcc.crf --depend servo\stm32f0xx_hal_rcc.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -655,7 +655,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_rcc_ex.o --omf_browse servo\stm32f0xx_hal_rcc_ex.crf --depend servo\stm32f0xx_hal_rcc_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -689,7 +689,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal.o --omf_browse servo\stm32f0xx_hal.crf --depend servo\stm32f0xx_hal.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -723,7 +723,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_i2c.o --omf_browse servo\stm32f0xx_hal_i2c.crf --depend servo\stm32f0xx_hal_i2c.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -757,7 +757,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_i2c_ex.o --omf_browse servo\stm32f0xx_hal_i2c_ex.crf --depend servo\stm32f0xx_hal_i2c_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -791,7 +791,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_gpio.o --omf_browse servo\stm32f0xx_hal_gpio.crf --depend servo\stm32f0xx_hal_gpio.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -825,7 +825,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_dma.o --omf_browse servo\stm32f0xx_hal_dma.crf --depend servo\stm32f0xx_hal_dma.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -859,7 +859,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_cortex.o --omf_browse servo\stm32f0xx_hal_cortex.crf --depend servo\stm32f0xx_hal_cortex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -893,7 +893,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_pwr.o --omf_browse servo\stm32f0xx_hal_pwr.crf --depend servo\stm32f0xx_hal_pwr.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -927,7 +927,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_pwr_ex.o --omf_browse servo\stm32f0xx_hal_pwr_ex.crf --depend servo\stm32f0xx_hal_pwr_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -961,7 +961,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_flash.o --omf_browse servo\stm32f0xx_hal_flash.crf --depend servo\stm32f0xx_hal_flash.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -995,7 +995,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_flash_ex.o --omf_browse servo\stm32f0xx_hal_flash_ex.crf --depend servo\stm32f0xx_hal_flash_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1029,7 +1029,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_exti.o --omf_browse servo\stm32f0xx_hal_exti.crf --depend servo\stm32f0xx_hal_exti.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1063,7 +1063,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_tim.o --omf_browse servo\stm32f0xx_hal_tim.crf --depend servo\stm32f0xx_hal_tim.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1097,7 +1097,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_tim_ex.o --omf_browse servo\stm32f0xx_hal_tim_ex.crf --depend servo\stm32f0xx_hal_tim_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1131,7 +1131,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_uart.o --omf_browse servo\stm32f0xx_hal_uart.crf --depend servo\stm32f0xx_hal_uart.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1165,7 +1165,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x61F3582C)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c)(0x61F3582C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\Application_Library\Include-I.\RTE\_servo-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F042x6 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F042x6-o servo\stm32f0xx_hal_uart_ex.o --omf_browse servo\stm32f0xx_hal_uart_ex.crf --depend servo\stm32f0xx_hal_uart_ex.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61F3582C)
@@ -1207,7 +1207,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61F35818)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61F35818)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61F3582C)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x623C065A)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6246EBCF)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61F3582C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61F3582C)

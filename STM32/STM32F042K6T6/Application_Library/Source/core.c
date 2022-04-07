@@ -18,7 +18,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 {
     cJSON *root = cJSON_ParseWithLength(JSON_STRING, token_size);
     if(root == NULL){
-        printf("invalid JSON\n");
+        // printf("invalid JSON\r\n"); // Print for debug.
         return false;
     }
 		
@@ -28,26 +28,32 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 continue;
             }
             if(!strcmp(token->valuestring,"nest")){
-								printf("A\n");
-                //printf("%s:%s\n",token->string,token->valuestring);
+								printf("A\r\n");
+                // printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
             }
             else if(!strcmp(token->valuestring,"grab")){
-								printf("B\n");
-								//printf("%s:%s\n",token->string,token->valuestring);
+								printf("B\r\n");
+								// printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
             }
             else if(!strcmp(token->valuestring,"collect")){
-								printf("C\n");
-                //printf("%s:%s\n",token->string,token->valuestring);
+								printf("C\r\n");
+                // printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
             }
         }
 
         else if(!strcmp(token->string,"move")){
-            if(cJSON_IsNumber(cJSON_GetObjectItem(root,"move")) == false){
-                continue;
+            if(cJSON_IsNumber(cJSON_GetObjectItem(root,"move")) == true){
+							float speed= token->valuedouble; // Desired variable
+							// printf("%s:%f\r\n",token->string, speed); // Do some stuff. // Print for debug.
+							move(speed);
             }
-            float speed= token->valuedouble; // Desired variable
-            printf("%s:%f\n",token->string, speed); // Do some stuff.
-						move(speed);
+						else if(cJSON_IsString(cJSON_GetObjectItem(root,"move")) == true){
+							if(!strcmp(token->valuestring,"wait")){
+								// printf("%s:wait\r\n",token->string); // Do some stuff. // Print for debug.
+								// wheels_stop();
+								all_pwm_stop();
+							}
+					}
         }
         
         else if(!strcmp(token->string,"turn")){
@@ -55,7 +61,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 continue;
             }
             float speed= token->valuedouble; // Desired variable
-            printf("%s:%f\n",token->string, speed); // Do some stuff.
+            // printf("%s:%f\r\n",token->string, speed); // Do some stuff. // Print for debug.
 						turn(speed);
         }
         
@@ -65,29 +71,35 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 if(cJSON_IsObject(json_obj) == false){
                     continue;
                 }
-								printf("%s:",token->string);
-                printf("{");
+								// printf("%s:",token->string); // Print for debug.
+                // printf("{"); // Print for debug.
 								
                 for(cJSON *obj_token = json_obj->child; obj_token!= NULL; obj_token=obj_token->next){
                     uint8_t servo_num= atoi(obj_token->string); // Desired variable
                     if(/*servo_num>=0 &&*/ servo_num<=11){
                       uint8_t pwm_val= obj_token->valueint;
 											if(servo_num==1||servo_num==5){
-												shoulder_set(pwm_val);
+												//servo_pwm_set(&servo[servo_num],pwm_val);
+												//servo_wild_set(&servo[servo_num],pwm_val);
+												//servo_pwm_set(&servo[servo_num],map(pwm_val,0,100,servo[servo_num].pwm_min,servo[servo_num].pwm_max));
+												//shoulder_set(pwm_val);
+												//shoulder_set(map(pwm_val,0,100,servo[servo_num].pwm_min,servo[servo_num].pwm_max));
+												shoulder_set(map(pwm_val,0,100,servo[servo_num].physical_min,servo[servo_num].physical_max));
 											}
 											else{
-												servo_pwm_set(&servo[servo_num],pwm_val);
+												//servo_pwm_set(&servo[servo_num],pwm_val);
+												servo_pwm_set(&servo[servo_num],map(pwm_val,0,100,servo[servo_num].pwm_min,servo[servo_num].pwm_max));
 											}
 										
-											printf("%d:%d",servo_num,pwm_val);
-											printf("(degree=%g)",servo_get_degree(&servo[servo_num]));
+											// printf("%d:%d",servo_num,servo[servo_num].pwm_value); // Print for debug.
+											// printf("(degree=%g, %d%%)",servo_get_physical(&servo[servo_num]),(int)map(servo[servo_num].pwm_value,servo[servo_num].pwm_min,servo[servo_num].pwm_max,0,100)); // Print for debug.
 											
 											if(obj_token->next!= NULL){
-													printf(", ");
+													// printf(", "); // Print for debug.
 											}
                     }
                 }
-                printf("}\n");
+                // printf("}\r\n"); // Print for debug.
             }
         }
 				else if(!strcmp(token->string,"rc_servo_degree")){
@@ -96,8 +108,8 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 if(cJSON_IsObject(json_obj) == false){
                     continue;
                 }
-								printf("%s:",token->string);
-                printf("{");
+								// printf("%s:",token->string); // Print for debug.
+                // printf("{"); // Print for debug.
 								
                 for(cJSON *obj_token = json_obj->child; obj_token!= NULL; obj_token=obj_token->next){
                     uint8_t servo_num= atoi(obj_token->string); // Desired variable
@@ -105,18 +117,19 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                         float degree_val= obj_token->valuedouble;
 												servo_physical_set(&servo[servo_num],degree_val);
 											
-                        printf("%d:%g(pwm=%d)",servo_num,degree_val,servo[servo_num].pwm_value);
+                        // printf("%d:%g(pwm=%d)",servo_num,degree_val,servo[servo_num].pwm_value); // Print for debug.
                         if(obj_token->next!= NULL){
-                            printf(", ");
+                            // printf(", "); // Print for debug.
                         }
                     }
                 }
-                printf("}\n");
+                // printf("}\r\n"); // Print for debug.
             }
         }
         else if(!strcmp(token->string,"adc")){
             //printf("%f\r\n",read_adc()); // send adc value
-						printf("%d\n",(int)map(read_adc(),0,3.26,0,100)); // send adc value by %
+						//printf("%d\n",(int)map(read_adc(),0,3.26,0,100)); // send adc value by %
+						printf("%d\r\n",(int)map((10800000-(float)HAL_GetTick())/10800000,0,1,0,82.5));
         }
         else if(!strcmp(token->string,"rc_request")){
 					printf("[");
@@ -129,7 +142,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							printf(",");
 						}
 					}
-					printf("]\n");
+					printf("]\r\n");
         }
     }
     cJSON_Delete(root);

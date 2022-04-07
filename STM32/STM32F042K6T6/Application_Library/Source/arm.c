@@ -35,11 +35,12 @@ void arm_pwm_set(uint16_t pwm_dest[5])
 			int time_diff = HAL_GetTick()-pwm[i].last_time;
 			if(time_diff>=pwm[i].interval_time){
 				pwm[i].last_time=HAL_GetTick();
+				
 				uint8_t n = 1;
 				if(time_diff>=pwm[i].interval_time*2){
 					n = 2;
 				}
-				else if(time_diff>=pwm[i].interval_time*2.4){
+				else if(time_diff>=pwm[i].interval_time*3){
 					n = 3;
 				}
 				//printf("pwm[%d] -> [n= %d]\n",i,n); // debug print.
@@ -49,40 +50,22 @@ void arm_pwm_set(uint16_t pwm_dest[5])
 					||(pwm[i].crescendo==false && pwm[i].current < pwm[i].destination)){
 					pwm[i].current=pwm[i].destination;
 				}
-				servo_pwm_set(&servo[i],pwm[i].current);
-				if(i==1){
-					servo_pwm_set(&servo[5],pwm[i].current);
+				if(pwm[i].destination!=0){
+					servo_pwm_set(&servo[i],pwm[i].current);
+					if(i==1){
+						servo_pwm_set(&servo[5],pwm[i].current);
+					}
 				}
 			}
 		}
-		if( (pwm[0].current==pwm[0].destination)
-			&&(pwm[1].current==pwm[1].destination)
-			&&(pwm[2].current==pwm[2].destination)
-			&&(pwm[3].current==pwm[3].destination)
-			&&(pwm[4].current==pwm[4].destination)
+		if( (pwm[0].current==pwm[0].destination||pwm[0].destination==0)
+			&&(pwm[1].current==pwm[1].destination||pwm[1].destination==0)
+			&&(pwm[2].current==pwm[2].destination||pwm[2].destination==0)
+			&&(pwm[3].current==pwm[3].destination||pwm[3].destination==0)
+			&&(pwm[4].current==pwm[4].destination||pwm[4].destination==0)
 			&& HAL_GetTick()-start_time >= max_pwm_diff*(ms_per_pwm+2.4)){
 			break;
 		}
-	}
-}
-
-void shoulder_set(uint16_t pwm_value)
-{
-	PwmTypeDef pwm;
-	pwm.destination = pwm_value;
-	pwm.current = servo[1].pwm_value;
-	short int raw_pwm_diff = pwm_value-servo[1].pwm_value;
-	pwm.difference=abs(raw_pwm_diff);
-	pwm.crescendo=(raw_pwm_diff>0)?true:false;
-	
-	while(pwm.current!=pwm.destination){
-		pwm.current+=pwm.crescendo*2-1;
-		if((pwm.crescendo==true && pwm.current > pwm.destination)
-			||(pwm.crescendo==false && pwm.current < pwm.destination)){
-			pwm.current=pwm.destination;
-		}
-		servo_pwm_set(&servo[1],pwm.current);
-		servo_pwm_stop(&servo[5]);
 	}
 }
 
@@ -99,5 +82,43 @@ void arm_pwm_stop(void)
 	}
 }
 
-/* Pose Set Function--------------------------------------------------------*/
+void arm_pwm_return(void)
+{
+	for(int i=0; i<=5; i++){
+		if(i==1||i==5){
+			shoulder_set(servo[1].return_pwm);
+		}
+		else{
+			servo_wild_set(&servo[i], servo[i].return_pwm);
+		}
+	}
+}
 
+void shoulder_set(float physical_value) // servo_physical_set
+{
+	PhysicalTypeDef physical;
+	physical.destination = physical_value;
+	physical.current = servo_get_physical(&servo[1]);
+	float raw_physical_diff = physical_value-servo_get_physical(&servo[1]);
+	physical.difference=fabs(raw_physical_diff);
+	physical.crescendo=(raw_physical_diff>0)?true:false;
+	
+	while(physical.current!=physical.destination){
+		physical.current+=physical.crescendo*2-1;
+		if((physical.crescendo==true && physical.current > physical.destination)
+			||(physical.crescendo==false && physical.current < physical.destination)){
+			physical.current=physical.destination;
+		}
+		servo_pwm_stop(&servo[5]);
+		servo_physical_set(&servo[1],physical.current);
+		servo_pwm_stop(&servo[1]);
+		servo_physical_set(&servo[5],physical.current);
+		servo_physical_set(&servo[1],physical.current);
+	}
+}
+
+/* Pose Set Function--------------------------------------------------------*/
+void nest()
+{
+	
+}

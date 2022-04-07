@@ -130,14 +130,41 @@ int main(void)
 //	arm_set(25,75,125,25,25);
 //	arm_set(25,125,25,25,25);
 //	arm_set(25,125,25,125,25);
-	
-all_pwm_stop();
+
+//arm_set(NULL,25,NULL,NULL,NULL);
+//arm_set(NULL,125,NULL,NULL,NULL);
+//arm_set(NULL,25,NULL,NULL,NULL);
+//arm_set(NULL,125,NULL,NULL,NULL);
+//arm_set(NULL,25,NULL,NULL,NULL);
+
+//arm_set(NULL,25,NULL,NULL,NULL);
+//HAL_Delay(3000);
+//arm_set(NULL,125,NULL,NULL,NULL);
+//arm_set(NULL,75,NULL,NULL,NULL);
+
+
+//arm_set(NULL,NULL,NULL,NULL,27);
+//arm_set(NULL,NULL,NULL,NULL,82);
+//arm_set(NULL,NULL,NULL,NULL,45);
+//arm_set(NULL,NULL,NULL,NULL,82);
+//arm_set(NULL,NULL,NULL,NULL,45);
+
+uint32_t stable_time = HAL_GetTick();
+//all_pwm_stop();
 	
   while (1)
   {
     /* USER CODE END WHILE */
-
+		if(HAL_GetTick()-stable_time>=50){
+			arm_pwm_stop();
+		}
+		if(HAL_GetTick()-stable_time>=200){
+			stable_time=HAL_GetTick();
+			arm_pwm_return();
+		}
     /* USER CODE BEGIN 3 */
+//		printf("test\\n\n");
+//		printf("test\\n\\r\n\r");
 
   }
 		

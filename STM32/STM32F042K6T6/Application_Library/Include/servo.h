@@ -42,6 +42,15 @@ typedef struct{
 	uint16_t last_time;
 }PwmTypeDef;
 
+typedef struct{
+	float destination;
+	float current;
+	float difference;
+	bool crescendo;
+	float interval_time;
+	uint16_t last_time;
+}PhysicalTypeDef;
+
 extern uint32_t last_time;
 extern uint32_t sub_last_time;
 extern bool rotate_dir;
@@ -51,12 +60,13 @@ extern uint8_t selected_servo_prev;
 ServoTypeDef servo_constructor(ServoTypeDef servo_struct);
 volatile uint32_t* timer_ch2ccr(TIM_HandleTypeDef* timer, uint32_t channel);
 void servos_init(ServoTypeDef servo[12]);
+void servos_pwm_init(void);
 uint16_t reverse_pwm(ServoTypeDef* servo, uint16_t pwm_value);
 float reverse_physical(ServoTypeDef* servo, float physical_value);
 void servo_pwm_set(ServoTypeDef* servo, uint16_t pwm_value);
 void servo_wild_set(ServoTypeDef* servo, uint16_t pwm_value);
 void servo_physical_set(ServoTypeDef* servo, float degree);
-float servo_get_degree(ServoTypeDef* servo);
+float servo_get_physical(ServoTypeDef* servo);
 void servo_pwm_stop(ServoTypeDef* servo);
 void all_pwm_stop(void);
 

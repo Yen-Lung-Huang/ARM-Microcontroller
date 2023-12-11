@@ -12,6 +12,24 @@ double max(double a, double b)
 	return ((a + b) + q) / 2;
 }
 
+/* Debug--------------------------------------------------------*/
+void print_binary(uint8_t byteData) {
+	int size = sizeof(byteData)* 8;
+	char bits[size + 1];
+	bits[0] = '\0'; //初始化為空字串
+	
+  for (int i = 0; i < size; i++) {
+    // 判斷 byteData 的第 i 位是 1 還是 0，並將其寫入到 bits 的(倒數)第 i 個元素
+    if (byteData & (1 << i)) {
+			strcat(bits, "1");
+    } else {
+			strcat(bits, "0");
+    }
+	}
+	printf("%s\n", bits); // 使用 printf 函數，並使用 %s 格式符來輸出 binary
+}
+
+
 /* Robot with JSON--------------------------------------------------------*/
 bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(JSON_STRING)
 {
@@ -42,22 +60,23 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 				
 				else if(!strcmp(token->string,"74HC595")){
             int size = cJSON_GetArraySize(token); //取得 array 的元素數量
-            char bits[size+1]; //宣告一個字元陣列來儲存 High 或 Low
-            bits[0] = '\0'; //初始化為空字串
-            
+					
+						uint8_t byteData = 0; //宣告一個 uint8_t 變數，並初始化為 0
+
             for(int i = 0; i < size; i++){ //迴圈遍歷 array 的每個元素
-                int value = cJSON_GetArrayItem(token, i)->valueint; //取得第 i 個元素的值
+							int value = cJSON_GetArrayItem(token, i)->valueint; //取得第 i 個元素的值
 							
-                //根據值是 1 或 0 來決定是 High 或 Low
-                if(value == 1){
-                    strcat(bits, "High ");
-                }else if(value == 0){
-                    strcat(bits, "Low ");
-                }
-								
+							//根據 value 的值，將 byteData 的第 i 位設為 1 或 0
+							if (value == 1) {
+								byteData |= (1 << i); //使用位元或運算符，將 byteData 的第 i 位設為 1
+							} else {
+								byteData &= ~(1 << i); //使用位元與運算符，將 byteData 的第 i 位設為 0
+							}
             }
-            printf("%s\r\n", bits); //輸出結果
-						HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // LED on for debug.
+						
+						HC595_SendByte(byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
+						print_binary(byteData); // Print for debug.
+
         }
 
         else if(!strcmp(token->string,"adc")){

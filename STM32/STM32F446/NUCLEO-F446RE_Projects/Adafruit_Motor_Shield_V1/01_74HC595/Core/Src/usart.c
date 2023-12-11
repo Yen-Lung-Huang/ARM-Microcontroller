@@ -166,7 +166,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 			__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
 			
 			/* Do some stuff */
-			printf("%s\r\n",MainBuf); // Print for debug.
+			// printf("%s\r\n",MainBuf); // Print for debug.
 			
 			json_action((char*)MainBuf, sizeof(char)*MainBuf_SIZE);
 		}

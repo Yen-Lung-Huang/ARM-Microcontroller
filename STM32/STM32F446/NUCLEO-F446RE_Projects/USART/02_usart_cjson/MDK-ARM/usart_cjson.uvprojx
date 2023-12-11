@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F446xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\..\..\..\..\Application_Library\Best_System_Robot\Include;..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -522,6 +522,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Application_Library/ThirdParty</GroupName>
+          <Files>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Application_Library\ThirdParty\cJSON\Source\cJSON.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application_Library/Best_System_Robot</GroupName>
+          <Files>
+            <File>
+              <FileName>core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\core.c</FilePath>
+            </File>
+            <File>
+              <FileName>move.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\move.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -540,5 +565,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>usart_cjson</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

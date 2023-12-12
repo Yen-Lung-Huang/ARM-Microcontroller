@@ -60,7 +60,6 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 				
 				else if(!strcmp(token->string,"74HC595")){
             int size = cJSON_GetArraySize(token); //取得 array 的元素數量
-					
 						uint8_t byteData = 0; //宣告一個 uint8_t 變數，並初始化為 0
 
             for(int i = 0; i < size; i++){ //迴圈遍歷 array 的每個元素

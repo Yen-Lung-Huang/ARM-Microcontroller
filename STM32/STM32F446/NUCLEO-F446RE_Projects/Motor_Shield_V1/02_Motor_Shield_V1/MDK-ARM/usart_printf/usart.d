@@ -36,4 +36,6 @@ usart_printf/usart.o: ..\Core\Src\usart.c ..\Core\Inc\usart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
-  ..\Core\Inc\gpio.h
+  ..\Core\Inc\gpio.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h

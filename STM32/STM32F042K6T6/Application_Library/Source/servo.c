@@ -30,9 +30,9 @@ void servos_init(ServoTypeDef servo[12])
 	servo[0 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true);		// 0 _Base
 	servo[1 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_4, .pwm_max=124, .offset=-2);																																		// 1 _Shoulder   _L
 	servo[2 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_1, .physical_min=-135, .physical_max=135, .offset=4, .latch=true);		// 2 _Elbow
-	servo[3 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_1, .offset=3, .reverse=true); 																																	// 3 _Wrist
-	servo[4 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_2, .pwm_min=54, .pwm_max=86); 																										// 4 _End-effecter
-	servo[5 ] = servo_init(.timer=&htim14, .channel=TIM_CHANNEL_1, .pwm_max=123, .offset=2, .reverse=true); 																				// 5 _Shoulder   _R
+	servo[3 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_1, .offset=3, .reverse=true); 																				// 3 _Wrist
+	servo[4 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_2, .pwm_min=54, .pwm_max=86); 																				// 4 _End-effecter
+	servo[5 ] = servo_init(.timer=&htim14, .channel=TIM_CHANNEL_1, .pwm_max=123, .offset=2, .reverse=true); 													// 5 _Shoulder   _R
 	servo[6 ] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_2, .offset=-21); 																											// 6 _Wheel_Front_L
 	servo[7 ] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_3, .offset=8, .reverse=true);																					// 7 _Wheel_Front_R
 	servo[8 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_3, .offset=3, .reverse=true);																					// 8 _Wheel_Rear _L

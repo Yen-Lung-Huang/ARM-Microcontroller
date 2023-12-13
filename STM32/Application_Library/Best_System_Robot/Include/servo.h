@@ -12,11 +12,12 @@ extern "C" {
 #include <stdbool.h>
 #include <math.h>
 #include "main.h"
-#include "tim.h"
 #include "core.h"
 
-#define servo_init(...) servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0, .physical_min=-90, .physical_max=90,\
-												.offset=0, .reverse=false, .complementary=false, .latch=false, .return_pwm=75, __VA_ARGS__});
+
+#define servo_init(...) servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
+																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+																	.reverse=false, .complementary=false, .latch=false, __VA_ARGS__});
 
 typedef struct{
 	TIM_HandleTypeDef* timer;
@@ -32,6 +33,7 @@ typedef struct{
 	bool latch;
 	uint16_t return_pwm;
 }ServoTypeDef;
+
 
 typedef struct{
 	uint16_t destination;
@@ -59,7 +61,7 @@ extern uint8_t selected_servo_prev;
 
 ServoTypeDef servo_constructor(ServoTypeDef servo_struct);
 volatile uint32_t* timer_ch2ccr(TIM_HandleTypeDef* timer, uint32_t channel);
-void servos_init(ServoTypeDef servo[12]);
+void servos_init(ServoTypeDef servo_test);
 void servos_pwm_init(void);
 uint16_t reverse_pwm(ServoTypeDef* servo, uint16_t pwm_value);
 float reverse_physical(ServoTypeDef* servo, float physical_value);

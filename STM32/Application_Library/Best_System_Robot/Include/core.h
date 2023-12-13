@@ -13,6 +13,7 @@ extern "C" {
 #include "usart.h"
 #include "cJSON.h"
 #include "74HC595.h"
+#include "servo.h"
 
 /* FUNCTION (Prototype) DEFINITIONS */
 float map(float x, float in_min, float in_max, float out_min, float out_max);

@@ -1,5 +1,5 @@
 #include "servo.h"
-extern ServoTypeDef servo[];
+//extern ServoTypeDef servo[];
 
 /* Servo Motors Configuration--------------------------------------------------------*/
 ServoTypeDef servo_constructor(ServoTypeDef servo_struct)
@@ -25,20 +25,10 @@ volatile uint32_t* timer_ch2ccr(TIM_HandleTypeDef* timer, uint32_t channel)
 	return &(timer->Instance->CCR1); // A random return value for default, not nesseary.
 }
 
-void servos_init(ServoTypeDef servo[12])
+void servos_init(ServoTypeDef servo_test)
 {
-	servo[0 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true);		// 0 _Base
-	servo[1 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_4, .pwm_max=124, .offset=-2);																																		// 1 _Shoulder   _L
-	servo[2 ] = servo_init(.timer=&htim2 , .channel=TIM_CHANNEL_1, .physical_min=-135, .physical_max=135, .offset=4, .latch=true);		// 2 _Elbow
-	servo[3 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_1, .offset=3, .reverse=true); 																																	// 3 _Wrist
-	servo[4 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_2, .pwm_min=54, .pwm_max=86); 																										// 4 _End-effecter
-	servo[5 ] = servo_init(.timer=&htim14, .channel=TIM_CHANNEL_1, .pwm_max=123, .offset=2, .reverse=true); 																				// 5 _Shoulder   _R
-	servo[6 ] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_2, .offset=-21); 																											// 6 _Wheel_Front_L
-	servo[7 ] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_3, .offset=8, .reverse=true);																					// 7 _Wheel_Front_R
-	servo[8 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_3, .offset=3, .reverse=true);																					// 8 _Wheel_Rear _L
-	servo[9 ] = servo_init(.timer=&htim3 , .channel=TIM_CHANNEL_4, .offset=-3); 																											// 9 _Wheel_Rear _R
-	servo[10] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_1, .physical_min=-1, .physical_max=1); 																// 10_Wheel_Speed_L
-	servo[11] = servo_init(.timer=&htim1 , .channel=TIM_CHANNEL_4, .physical_min=-1, .physical_max=1, .reverse=true); 								// 11_Wheel_Speed_R
+	//servo_test = servo_init(.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true);		// 0 _Base
+	
 	
 	//servos_pwm_init();
 	HAL_Delay(1200);
@@ -47,18 +37,18 @@ void servos_init(ServoTypeDef servo[12])
 
 void servos_pwm_init(void)
 {
-	servo_pwm_set (&servo[0 ],60);	// 0 _Base
-	servo_pwm_set (&servo[1 ],25);	// 1 _Shoulder   _L
-	servo_pwm_set (&servo[2 ],25);	// 2 _Elbow
-	servo_pwm_set (&servo[3 ],75);	// 3 _Wrist
-	servo_pwm_set (&servo[4 ],107);	// 4 _End-effecter
-	servo_pwm_stop(&servo[5 ]); 		// 5 _Shoulder   _R
-	servo_pwm_stop(&servo[6 ]); 		// 6 _Wheel_Front_L
-	servo_pwm_stop(&servo[7 ]); 		// 7 _Wheel_Front_R
-	servo_pwm_stop(&servo[8 ]); 		// 8 _Wheel_Rear _L
-	servo_pwm_stop(&servo[9 ]); 		// 9 _Wheel_Rear _R
-	servo_pwm_stop(&servo[10]); 		// 10_Wheel_Speed_L
-	servo_pwm_stop(&servo[11]); 		// 11_Wheel_Speed_R
+//	servo_pwm_set (&servo[0 ],60);	// 0 _Base
+//	servo_pwm_set (&servo[1 ],25);	// 1 _Shoulder   _L
+//	servo_pwm_set (&servo[2 ],25);	// 2 _Elbow
+//	servo_pwm_set (&servo[3 ],75);	// 3 _Wrist
+//	servo_pwm_set (&servo[4 ],107);	// 4 _End-effecter
+//	servo_pwm_stop(&servo[5 ]); 		// 5 _Shoulder   _R
+//	servo_pwm_stop(&servo[6 ]); 		// 6 _Wheel_Front_L
+//	servo_pwm_stop(&servo[7 ]); 		// 7 _Wheel_Front_R
+//	servo_pwm_stop(&servo[8 ]); 		// 8 _Wheel_Rear _L
+//	servo_pwm_stop(&servo[9 ]); 		// 9 _Wheel_Rear _R
+//	servo_pwm_stop(&servo[10]); 		// 10_Wheel_Speed_L
+//	servo_pwm_stop(&servo[11]); 		// 11_Wheel_Speed_R
 }
 
 /* Servo Motors Control--------------------------------------------------------*/
@@ -134,6 +124,6 @@ void servo_pwm_stop(ServoTypeDef* servo)
 void all_pwm_stop(void)
 {
 	for(int i=0; i<=11; i++){
-		servo_wild_set(&servo[i], 0);
+		//servo_wild_set(&servo[i], 0);
 	}
 }

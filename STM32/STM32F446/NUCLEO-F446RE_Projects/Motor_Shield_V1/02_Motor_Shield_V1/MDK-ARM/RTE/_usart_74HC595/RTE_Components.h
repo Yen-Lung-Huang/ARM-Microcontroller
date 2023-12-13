@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'usart_74HC595' 
+ * Project: 'motor_shield_v1' 
  * Target:  'usart_74HC595' 
  */
 

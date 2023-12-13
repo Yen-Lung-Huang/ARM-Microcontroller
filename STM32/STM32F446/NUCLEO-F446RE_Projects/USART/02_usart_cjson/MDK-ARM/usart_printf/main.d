@@ -34,4 +34,5 @@ usart_printf/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
   ..\Core\Inc\gpio.h

@@ -33,4 +33,6 @@ usart_printf/core.o: \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h
+  ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
+  ..\Core\Inc\gpio.h

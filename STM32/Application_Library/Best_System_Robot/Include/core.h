@@ -12,8 +12,9 @@ extern "C" {
 #include <string.h>
 #include "usart.h"
 #include "cJSON.h"
-#include "74HC595.h"
 #include "servo.h"
+#include "74HC595.h"
+#include "motor_shield_v1.h"
 
 /* FUNCTION (Prototype) DEFINITIONS */
 float map(float x, float in_min, float in_max, float out_min, float out_max);

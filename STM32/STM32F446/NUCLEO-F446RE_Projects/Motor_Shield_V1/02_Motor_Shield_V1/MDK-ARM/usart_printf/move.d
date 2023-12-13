@@ -37,7 +37,8 @@ usart_printf/move.o: \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
   ..\Core\Inc\gpio.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h

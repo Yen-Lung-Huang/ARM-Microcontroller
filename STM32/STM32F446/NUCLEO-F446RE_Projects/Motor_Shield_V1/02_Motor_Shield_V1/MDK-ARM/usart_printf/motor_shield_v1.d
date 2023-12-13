@@ -1,5 +1,12 @@
-usart_printf/usart.o: ..\Core\Src\usart.c ..\Core\Inc\usart.h \
-  ..\Core\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+usart_printf/motor_shield_v1.o: \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\main.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
@@ -29,14 +36,5 @@ usart_printf/usart.o: ..\Core\Src\usart.c ..\Core\Inc\usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\core.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
-  ..\Core\Inc\gpio.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h
+  ..\Core\Inc\gpio.h

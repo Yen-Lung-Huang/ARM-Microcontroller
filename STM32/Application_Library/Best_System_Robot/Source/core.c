@@ -1,16 +1,17 @@
 #include "core.h"
 
-/* Math--------------------------------------------------------*/
-float map(float x, float in_min, float in_max, float out_min, float out_max)
-{
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
 
-double max(double a, double b)
-{
-	double q = sqrt((a-b)*(a-b));
-	return ((a + b) + q) / 2;
-}
+/* Math--------------------------------------------------------*/
+//float map(float x, float in_min, float in_max, float out_min, float out_max)
+//{
+//  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+//}
+
+//double max(double a, double b)
+//{
+//	double q = sqrt((a-b)*(a-b));
+//	return ((a + b) + q) / 2;
+//}
 
 /* Debug--------------------------------------------------------*/
 void print_binary(uint8_t byteData) {
@@ -73,7 +74,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							}
             }
 						
-						HC595_SendByte(byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
+						//HC595_SendByte(&motor_shield_v1.hc595, byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
 						print_binary(byteData); // Print for debug.
 
         }

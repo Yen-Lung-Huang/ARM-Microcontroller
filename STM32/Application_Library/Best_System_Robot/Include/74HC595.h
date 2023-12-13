@@ -7,18 +7,20 @@ extern "C" {
 #endif
 
 /* Include */
-#include "main.h"
 #include "gpio.h"
 
-#define LATCH_Port		GPIOA
-#define LATCH_Pin			GPIO_PIN_6
-#define CLOCK_Port		GPIOB
-#define CLOCK_Pin			GPIO_PIN_5
-#define DATA_Port			GPIOA
-#define DATA_Pin			GPIO_PIN_9
+// Define a structure for 74HC595
+typedef struct {
+	GPIO_TypeDef *LATCH_Port; // Port for latch pin
+	uint16_t LATCH_Pin;       // Pin for latch
+	GPIO_TypeDef *CLOCK_Port; // Port for clock pin
+	uint16_t CLOCK_Pin;       // Pin for clock
+	GPIO_TypeDef *DATA_Port;  // Port for data pin
+	uint16_t DATA_Pin;        // Pin for data
+} HC595;
 
 /* FUNCTION (Prototype) DEFINITIONS */
-void HC595_SendByte(uint8_t byte);
+void HC595_SendByte(HC595 *hc595, uint8_t byte);
 
 
 #ifdef __cplusplus

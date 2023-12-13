@@ -12,7 +12,6 @@ extern "C" {
 #include <stdbool.h>
 #include <math.h>
 #include "main.h"
-#include "core.h"
 
 
 #define servo_init(...) servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
@@ -71,6 +70,9 @@ void servo_physical_set(ServoTypeDef* servo, float degree);
 float servo_get_physical(ServoTypeDef* servo);
 void servo_pwm_stop(ServoTypeDef* servo);
 void all_pwm_stop(void);
+
+
+
 
 #ifdef __cplusplus
 }

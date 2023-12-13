@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "servo.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -129,18 +129,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		
-//		for(int i=0;i<=180;i++){
-//			servo_physical_set(&servo_1,i);
-//			HAL_Delay(75);
-//		}
-//		for(int i=180-1;i>=0;i--){
-//			servo_physical_set(&servo_1,i);
-//			HAL_Delay(75);
-//		}
-//		
-//		servo_wild_set(&servo_2,1000);
-//		HAL_Delay(10000);
-//		servo_wild_set(&servo_2,0);
+
 		
   }
   /* USER CODE END 3 */

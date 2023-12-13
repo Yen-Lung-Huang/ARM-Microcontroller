@@ -29,6 +29,7 @@
 "usart_printf\move.o"
 "usart_printf\74hc595.o"
 "usart_printf\servo.o"
+"usart_printf\motor_shield_v1.o"
 --library_type=microlib --strict --scatter "usart_printf\motor_shield_v1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

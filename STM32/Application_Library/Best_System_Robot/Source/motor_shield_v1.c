@@ -9,24 +9,24 @@ Motor_Shield_V1 motor_shield_v1 = {
 	}
 };
 
-// Initialize the servos with servo_constructor function
+// Initialize the servos with pwm_constructor function
 void motor_shield_v1_pwm_init() {
-	motor_shield_v1.M1_PWM = servo_constructor((ServoTypeDef){.pwm_min=0, .pwm_max=999, .pwm_value=0,\
-																	.physical_min=0, .physical_max=999, .offset=0, .return_pwm=0,\
+	motor_shield_v1.M1_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim3, .channel=TIM_CHANNEL_2, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M2_PWM = servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
-																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+	motor_shield_v1.M2_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_2, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M3_PWM = servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
-																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+	motor_shield_v1.M3_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim3, .channel=TIM_CHANNEL_1, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M4_PWM = servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
-																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+	motor_shield_v1.M4_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_3, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.S1_PWM = servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
-																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+	motor_shield_v1.S1_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim4, .channel=TIM_CHANNEL_1, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.S2_PWM = servo_constructor((ServoTypeDef){.pwm_min=25, .pwm_max=125, .pwm_value=0,\
-																	.physical_min=-90, .physical_max=90, .offset=0, .return_pwm=75,\
+	motor_shield_v1.S2_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim8, .channel=TIM_CHANNEL_2, .pwm_min=0,\
+																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
 }

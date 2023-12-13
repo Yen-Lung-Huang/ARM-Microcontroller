@@ -9,17 +9,18 @@ extern "C" {
 /* Include */
 #include "servo.h"
 #include "74HC595.h"
+#include "tim.h"
 
 
 // Define a structure for Motor_Shield_V1
 typedef struct {
 	HC595 hc595;
-	ServoTypeDef M1_PWM;      // PWM signal for motor 1
-	ServoTypeDef M2_PWM;      // PWM signal for motor 2
-	ServoTypeDef M3_PWM;      // PWM signal for motor 3
-	ServoTypeDef M4_PWM;      // PWM signal for motor 4
-	ServoTypeDef S1_PWM;      // PWM signal for servo 1
-	ServoTypeDef S2_PWM;      // PWM signal for servo 2
+	PWM_TypeDef M1_PWM;      // PWM signal for motor 1
+	PWM_TypeDef M2_PWM;      // PWM signal for motor 2
+	PWM_TypeDef M3_PWM;      // PWM signal for motor 3
+	PWM_TypeDef M4_PWM;      // PWM signal for motor 4
+	PWM_TypeDef S1_PWM;      // PWM signal for servo 1
+	PWM_TypeDef S2_PWM;      // PWM signal for servo 2
 } Motor_Shield_V1;
 
 extern Motor_Shield_V1 motor_shield_v1;

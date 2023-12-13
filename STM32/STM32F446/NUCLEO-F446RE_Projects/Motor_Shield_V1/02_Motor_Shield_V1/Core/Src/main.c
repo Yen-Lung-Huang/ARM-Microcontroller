@@ -105,17 +105,19 @@ int main(void)
 //	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // start the S1_PWM
 //	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // start the S2_PWM
 	
-  //ServoTypeDef servo_test0 = {.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true};
-	//ServoTypeDef servo_test1 = servo_init(.timer=&htim4 , .channel=TIM_CHANNEL_1);
+  //PWM_TypeDef servo_test0 = {.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true};
+	//PWM_TypeDef servo_test1 = servo_init(.timer=&htim4 , .channel=TIM_CHANNEL_1);
 	
-	ServoTypeDef servo_1 = servo_constructor((ServoTypeDef){.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
-	ServoTypeDef servo_2 = servo_constructor((ServoTypeDef){.timer=&htim8 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
+	PWM_TypeDef servo_1 = pwm_constructor((PWM_TypeDef){.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
 	
-	//servo_physical_set(&servo_1,0);
-	//servo_physical_set(&servo_1,90);
-	servo_physical_set(&servo_1,180);
-	servo_wild_set(&servo_2,0);
-	HAL_Delay(10000);
+	
+	//pwm_physical_set(&servo_1,0);
+	//pwm_physical_set(&servo_1,90);
+	pwm_physical_set(&servo_1,180);
+		
+	PWM_TypeDef servo_2 = pwm_constructor((PWM_TypeDef){.timer=&htim8 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
+	//servo_pwm_set(&servo_2,0,false);
+	//HAL_Delay(10000);
 		
 	
 	/* USER CODE END 2 */
@@ -128,7 +130,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		
+//		for(int i=0;i<1000;i++){
+//			int get_pwm = pwm_set(&servo_1,i);
+//			printf("i= %3d, limit= %d\r\n",i,get_pwm);
+//			HAL_Delay(50);
+//		}
+//		for(int i=1000-1;i>=0;i--){
+//			int get_pwm = pwm_set(&servo_1,i);
+//			printf("i= %3d, limit= %d\r\n",i,get_pwm);
+//			HAL_Delay(50);
+//		}
 
 		
   }

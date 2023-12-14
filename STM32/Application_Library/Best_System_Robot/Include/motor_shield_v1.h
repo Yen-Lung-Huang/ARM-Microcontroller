@@ -11,7 +11,6 @@ extern "C" {
 #include "74HC595.h"
 #include "tim.h"
 
-
 // Define a structure for Motor_Shield_V1
 typedef struct {
 	HC595 hc595;
@@ -23,10 +22,12 @@ typedef struct {
 	PWM_TypeDef S2_PWM;      // PWM signal for servo 2
 } Motor_Shield_V1;
 
+// Declare the global objects with extern keyword
 extern Motor_Shield_V1 motor_shield_v1;
 
+
 /* FUNCTION (Prototype) DEFINITIONS */
-//e.g. void hello_world(void)...
+void motor_shield_v1_pwm_init(void);
 
 
 #ifdef __cplusplus

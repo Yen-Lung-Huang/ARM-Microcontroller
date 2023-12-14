@@ -1,5 +1,11 @@
 #include "core.h"
 
+/* Initial Configuration---------------------------------------*/
+//void core_config(void)
+//{
+//	Motor_Shield_V1 my_motor_shield = motor_shield_v1_init();
+//}
+
 
 /* Math--------------------------------------------------------*/
 //float map(float x, float in_min, float in_max, float out_min, float out_max)

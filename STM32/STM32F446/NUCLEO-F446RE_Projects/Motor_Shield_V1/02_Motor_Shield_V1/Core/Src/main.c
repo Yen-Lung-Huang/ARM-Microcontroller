@@ -107,15 +107,16 @@ int main(void)
 	
   //PWM_TypeDef servo_test0 = {.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true};
 	//PWM_TypeDef servo_test1 = servo_init(.timer=&htim4 , .channel=TIM_CHANNEL_1);
+
 	
-	PWM_TypeDef servo_1 = pwm_constructor((PWM_TypeDef){.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
+	//PWM_TypeDef servo_1 = pwm_constructor((PWM_TypeDef){.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
 	
 	
 	//pwm_physical_set(&servo_1,0);
 	//pwm_physical_set(&servo_1,90);
-	pwm_physical_set(&servo_1,180);
+	//pwm_physical_set(&servo_1,180);
 		
-	PWM_TypeDef servo_2 = pwm_constructor((PWM_TypeDef){.timer=&htim8 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
+	//PWM_TypeDef servo_2 = pwm_constructor((PWM_TypeDef){.timer=&htim8 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
 	//servo_pwm_set(&servo_2,0,false);
 	//HAL_Delay(10000);
 		
@@ -125,6 +126,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	printf("Test start\r\n"); // Print for debug.
+	//core_config();
   while (1)
   {
     /* USER CODE END WHILE */

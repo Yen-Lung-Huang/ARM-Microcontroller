@@ -10,7 +10,7 @@ Motor_Shield_V1 motor_shield_v1 = {
 };
 
 // Initialize the servos with pwm_constructor function
-void motor_shield_v1_pwm_init() {
+void motor_shield_v1_pwm_init(void) {
 	motor_shield_v1.M1_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim3, .channel=TIM_CHANNEL_2, .pwm_min=0,\
 																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});

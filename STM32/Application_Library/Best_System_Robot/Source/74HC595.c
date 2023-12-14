@@ -14,21 +14,15 @@
 // Send a byte to the 74HC595 structure
 void HC595_SendByte(HC595 *hc595, uint8_t byte)
 {
-	uint16_t clock_timeout = 10000;
-	uint16_t latch_timeout = 1000;
-	
+	HAL_GPIO_WritePin(hc595->LATCH_Port, hc595->LATCH_Pin, 0); 	 // Toggle latch
 	for (int8_t i = 7; i >= 0; --i) {
-		uint8_t bit = byte & (0x1 << i);             // Read bit
+		uint8_t bit = byte & (0x1 << i);             							 // Read bit
+		HAL_GPIO_WritePin(hc595->CLOCK_Port, hc595->CLOCK_Pin, 0); // Toggle clock
 		HAL_GPIO_WritePin(hc595->DATA_Port, hc595->DATA_Pin, bit); // Send bit
-		
-		// Toggle clock
-		HAL_GPIO_WritePin(hc595->CLOCK_Port, hc595->CLOCK_Pin, 1);
-		while(clock_timeout--);
-		HAL_GPIO_WritePin(hc595->CLOCK_Port, hc595->CLOCK_Pin, 0);
+		HAL_GPIO_WritePin(hc595->CLOCK_Port, hc595->CLOCK_Pin, 1); // Toggle clock
+		HAL_GPIO_WritePin(hc595->DATA_Port, hc595->DATA_Pin, bit); // Send bit(again for sure)
 	}
-
-	// Toggle latch
-	HAL_GPIO_WritePin(hc595->LATCH_Port, hc595->LATCH_Pin, 1);
-	while (latch_timeout--);
-	HAL_GPIO_WritePin(hc595->LATCH_Port, hc595->LATCH_Pin, 0);
+	HAL_GPIO_WritePin(hc595->LATCH_Port, hc595->LATCH_Pin, 1);   // Toggle latch
 }
+
+

@@ -96,7 +96,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	printf("hello world\n");
+	printf("Test start\r\n");
   while (1)
   {
     /* USER CODE END WHILE */

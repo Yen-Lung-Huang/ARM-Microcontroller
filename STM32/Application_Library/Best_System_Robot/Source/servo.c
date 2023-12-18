@@ -10,11 +10,16 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
 /* Servo Motors Configuration--------------------------------------------------------*/
 PWM_TypeDef pwm_constructor(PWM_TypeDef pwm_struct)
 {
+#if defined(__STM32L0xx_HAL_H)
+	HAL_TIM_PWM_Start(pwm_struct.timer,pwm_struct.channel);
+#elif defined(__STM32F4xx_HAL_H)
 	pwm_struct.complementary?
 	HAL_TIMEx_PWMN_Start(pwm_struct.timer,pwm_struct.channel):
 	HAL_TIM_PWM_Start(pwm_struct.timer,pwm_struct.channel);
+#endif
 	return pwm_struct;
 }
+
 
 volatile uint32_t* timer_ch2ccr(TIM_HandleTypeDef* timer, uint32_t channel)
 {

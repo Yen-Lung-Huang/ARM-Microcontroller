@@ -26,7 +26,6 @@
 "usart_printf\system_stm32f4xx.o"
 "usart_printf\cjson.o"
 "usart_printf\core.o"
-"usart_printf\move.o"
 "usart_printf\74hc595.o"
 "usart_printf\servo.o"
 "usart_printf\motor_shield_v1.o"

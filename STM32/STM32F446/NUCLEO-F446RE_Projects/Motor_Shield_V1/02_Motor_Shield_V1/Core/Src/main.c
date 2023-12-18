@@ -98,35 +98,18 @@ int main(void)
 	HAL_UARTEx_ReceiveToIdle_DMA(&huart2, RxBuf, RxBuf_SIZE);
 	__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
 	
-//	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); // start the M1_PWM
-//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2); // start the M2_PWM
-//	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // start the M3_PWM
-//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3); // start the M4_PWM
-//	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // start the S1_PWM
-//	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // start the S2_PWM
-	
-  //PWM_TypeDef servo_test0 = {.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=-90, .physical_max=180, .offset=-2, .latch=true};
-	//PWM_TypeDef servo_test1 = servo_init(.timer=&htim4 , .channel=TIM_CHANNEL_1);
 
-	
-	//PWM_TypeDef servo_1 = pwm_constructor((PWM_TypeDef){.timer=&htim4 , .channel=TIM_CHANNEL_1, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
-	
-	
-	//pwm_physical_set(&servo_1,0);
-	//pwm_physical_set(&servo_1,90);
-	//pwm_physical_set(&servo_1,180);
-		
-	//PWM_TypeDef servo_2 = pwm_constructor((PWM_TypeDef){.timer=&htim8 , .channel=TIM_CHANNEL_2, .pwm_min=26, .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0});
-	//servo_pwm_set(&servo_2,0,false);
-	//HAL_Delay(10000);
 		
 	
 	/* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	
 	printf("Test start\r\n"); // Print for debug.
-	//core_config();
+	core_config();
+	ms1_motor_control(&motor_shield_v1,M1,1,1000);
+	
   while (1)
   {
     /* USER CODE END WHILE */

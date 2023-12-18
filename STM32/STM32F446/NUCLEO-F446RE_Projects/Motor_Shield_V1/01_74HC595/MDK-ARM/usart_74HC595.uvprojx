@@ -540,11 +540,6 @@
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\core.c</FilePath>
             </File>
             <File>
-              <FileName>move.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\move.c</FilePath>
-            </File>
-            <File>
               <FileName>74HC595.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\74HC595.c</FilePath>

@@ -1,10 +1,10 @@
 #include "core.h"
 
 /* Initial Configuration---------------------------------------*/
-//void core_config(void)
-//{
-//	Motor_Shield_V1 my_motor_shield = motor_shield_v1_init();
-//}
+void core_config(void)
+{
+	ms1_pwm_init();
+}
 
 
 /* Math--------------------------------------------------------*/
@@ -22,18 +22,14 @@
 /* Debug--------------------------------------------------------*/
 void print_binary(uint8_t byteData) {
 	int size = sizeof(byteData)* 8;
-	char bits[size + 1];
-	bits[0] = '\0'; //初始化為空字串
+	uint8_t bits[size + 1];
 	
-  for (int i = 0; i < size; i++) {
-    // 判斷 byteData 的第 i 位是 1 還是 0，並將其寫入到 bits 的(倒數)第 i 個元素
-    if (byteData & (1 << i)) {
-			strcat(bits, "1");
-    } else {
-			strcat(bits, "0");
-    }
+  for (int i = size - 1; i >= 0; i--) {
+    // 判斷 byteData 的第 i 位是 1 還是 0，並將其寫入到 bits 的第 i 個元素
+    bits[i] = (byteData & (1 << i)) ? '1' : '0';
 	}
-	printf("%s\n", bits); // 使用 printf 函數，並使用 %s 格式符來輸出 binary
+	bits[size] = '\0'; //在最後一個元素加上結束符號
+	printf("%s\r\n", bits); // 使用 printf 函數，並使用 %s 格式符來輸出 binary
 }
 
 
@@ -47,43 +43,66 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
     }
 		
     for (cJSON *token = root->child;token != NULL;token = token->next){
-        if(!strcmp(token->string,"mode")){
-            if(cJSON_IsString(cJSON_GetObjectItem(root,"mode")) == false){
-                continue;
+        if(!strcmp(token->string,"motor")){ // Check if the key is "motor"
+            if(cJSON_IsObject(token)){ // Check if the value is an object
+                cJSON *motor = token; // Get the "Motor" object
+                cJSON *item = NULL; // Declare a pointer to store each item in the object
+                cJSON_ArrayForEach(item, motor) { // Loop through all the items in the object
+                    // Get the key and value of the current item
+                    char *key = item->string; // The key is the motor number, such as "M1"
+                    int value = item->valueint; // The value is the motor input, such as -100
+                    
+                    // Convert the key to an integer, using the enum type defined in ms1_motor_control
+									uint8_t dc_motor_number = 0;
+                    if (strcmp(key, "M1") == 0) {
+                        dc_motor_number = M1;
+                    } else if (strcmp(key, "M2") == 0) {
+                        dc_motor_number = M2;
+                    } else if (strcmp(key, "M3") == 0) {
+                        dc_motor_number = M3;
+                    } else if (strcmp(key, "M4") == 0) {
+                        dc_motor_number = M4;
+                    } else {
+                        printf("invalid motor number\r\n"); // Print for debug.
+                        return false; // Invalid motor number
+                    }
+										// Call the ms1_motor_control function with the motor number and input
+                    ms1_motor_control(&motor_shield_v1, dc_motor_number, value);
+										print_binary(motor_shield_v1.hc595.byte); // Print for debug_0.
+                }
+								} else {
+                printf("invalid motor value\r\n"); // Print for debug.
+                return false; // Invalid motor value
             }
-            if(!strcmp(token->valuestring,"nest")){
-								printf("A\r\n");
-                // printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
-            }
-            else if(!strcmp(token->valuestring,"grab")){
-								printf("B\r\n");
-								// printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
-            }
-            else if(!strcmp(token->valuestring,"collect")){
-								printf("C\r\n");
-                // printf("%s:%s\n",token->string,token->valuestring); // Print for debug.
-            }
-        }
+				}
 				
 				else if(!strcmp(token->string,"74HC595")){
-            int size = cJSON_GetArraySize(token); //取得 array 的元素數量
+					if (cJSON_IsString(token)) { //檢查 token 是否為字串型態
+              printf("74HC595= "); // Print for debug.
+              print_binary(motor_shield_v1.hc595.byte); // Print for debug.
+					}
+					else {
+						int size = cJSON_GetArraySize(token); //取得 array 的元素數量
 						uint8_t byteData = 0; //宣告一個 uint8_t 變數，並初始化為 0
-
-            for(int i = 0; i < size; i++){ //迴圈遍歷 array 的每個元素
+						
+						for(int i = 0; i < size; i++){ //迴圈遍歷 array 的每個元素
 							int value = cJSON_GetArrayItem(token, i)->valueint; //取得第 i 個元素的值
 							
 							//根據 value 的值，將 byteData 的第 i 位設為 1 或 0
 							if (value == 1) {
 								byteData |= (1 << i); //使用位元或運算符，將 byteData 的第 i 位設為 1
-							} else {
+							}
+							else {
 								byteData &= ~(1 << i); //使用位元與運算符，將 byteData 的第 i 位設為 0
 							}
-            }
-						
+						}
 						HC595_SendByte(&motor_shield_v1.hc595, byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
-						print_binary(byteData); // Print for debug.
-
+						printf("\r\n");
+						print_binary(byteData); // Print for debug_1.
+						print_binary(motor_shield_v1.hc595.byte); // Print for debug_2.
+					}
         }
+
 
         else if(!strcmp(token->string,"adc")){
             //printf("%f\r\n",read_adc()); // send adc value
@@ -93,5 +112,5 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 
     }
     cJSON_Delete(root);
-		return 1;
+		return true; // JSON action completed successfully
 }

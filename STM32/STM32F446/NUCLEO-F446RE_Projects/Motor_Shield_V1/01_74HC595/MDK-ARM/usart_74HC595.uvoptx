@@ -546,18 +546,6 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\Application_Library\Best_System_Robot\Source\move.c</PathWithFileName>
-      <FilenameWithoutPath>move.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>6</GroupNumber>
-      <FileNumber>28</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\..\..\Application_Library\Best_System_Robot\Source\74HC595.c</PathWithFileName>
       <FilenameWithoutPath>74HC595.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>

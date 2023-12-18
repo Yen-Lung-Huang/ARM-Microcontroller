@@ -24,7 +24,6 @@ double max(double a, double b);
 void print_binary(uint8_t byteData);
 bool json_action(char *JSON_STRING, uint16_t token_size);
 
-extern Motor_Shield_V1 my_motor_shield;
 
 #ifdef __cplusplus
 }

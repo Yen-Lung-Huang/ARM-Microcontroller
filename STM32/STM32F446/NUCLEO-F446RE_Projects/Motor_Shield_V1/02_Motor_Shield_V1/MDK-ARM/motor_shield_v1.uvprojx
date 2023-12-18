@@ -330,7 +330,7 @@
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
-            <v6LangP>3</v6LangP>
+            <v6LangP>5</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F446xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\..\..\..\..\Application_Library\Best_System_Robot\Include;../../../../../Application_Library/ThirdParty/cJSON/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\..\..\..\..\Application_Library\Best_System_Robot\Include;..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -596,11 +596,6 @@
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\core.c</FilePath>
             </File>
             <File>
-              <FileName>move.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\move.c</FilePath>
-            </File>
-            <File>
               <FileName>74HC595.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\74HC595.c</FilePath>
@@ -613,7 +608,7 @@
             <File>
               <FileName>motor_shield_v1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c</FilePath>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\DevBoard\NUCLEO-F446RE\motor_shield_v1.c</FilePath>
             </File>
           </Files>
         </Group>

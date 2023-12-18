@@ -7,6 +7,7 @@ extern "C" {
 #endif
 
 /* Include */
+#include <stdbool.h>
 #include "gpio.h"
 
 // Define a structure for 74HC595
@@ -17,10 +18,12 @@ typedef struct {
 	uint16_t CLOCK_Pin;       // Pin for clock
 	GPIO_TypeDef *DATA_Port;  // Port for data pin
 	uint16_t DATA_Pin;        // Pin for data
+	uint8_t byte;							// byte for storing the output bits
 } HC595;
 
 /* FUNCTION (Prototype) DEFINITIONS */
 void HC595_SendByte(HC595 *hc595, uint8_t byte);
+void HC595_SetBit(HC595 *hc595, uint8_t bit, bool value);
 
 
 #ifdef __cplusplus

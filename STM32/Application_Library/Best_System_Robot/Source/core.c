@@ -68,7 +68,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                     }
 										// Call the ms1_motor_control function with the motor number and input
                     ms1_motor_control(&motor_shield_v1, dc_motor_number, value);
-										print_binary(motor_shield_v1.hc595.byte); // Print for debug_0.
+										// print_binary(motor_shield_v1.hc595.byte); // Print for debug.
                 }
 								} else {
                 printf("invalid motor value\r\n"); // Print for debug.
@@ -78,8 +78,8 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 				
 				else if(!strcmp(token->string,"74HC595")){
 					if (cJSON_IsString(token)) { //檢查 token 是否為字串型態
-              printf("74HC595= "); // Print for debug.
-              print_binary(motor_shield_v1.hc595.byte); // Print for debug.
+						printf("74HC595(L->H): "); // Print for debug.
+						print_binary(motor_shield_v1.hc595.byte); // Print for debug.
 					}
 					else {
 						int size = cJSON_GetArraySize(token); //取得 array 的元素數量
@@ -97,9 +97,8 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							}
 						}
 						HC595_SendByte(&motor_shield_v1.hc595, byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
-						printf("\r\n");
-						print_binary(byteData); // Print for debug_1.
-						print_binary(motor_shield_v1.hc595.byte); // Print for debug_2.
+						//print_binary(byteData); // Print for debug.
+						//print_binary(motor_shield_v1.hc595.byte); // Print for debug.
 					}
         }
 

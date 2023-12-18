@@ -3,7 +3,7 @@
 <title>Static Call Graph - [usart_dma_printf\motor_shield_v1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image usart_dma_printf\motor_shield_v1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Dec 18 19:43:52 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Dec 18 22:24:44 2023
 <BR><P>
 <H3>Maximum Stack Usage =        520 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1023,7 +1023,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printfa.o(i.__0printf)
 </UL>
-<P><STRONG><a name="[6d]"></a>json_action</STRONG> (Thumb, 936 bytes, Stack size 40 bytes, core.o(.text.json_action))
+<P><STRONG><a name="[6d]"></a>json_action</STRONG> (Thumb, 508 bytes, Stack size 40 bytes, core.o(.text.json_action))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = json_action &rArr; cJSON_ParseWithLength &rArr; cJSON_ParseWithLengthOpts &rArr; parse_value &rArr;  parse_value (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1078,11 +1078,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_action
 </UL>
 
-<P><STRONG><a name="[9b]"></a>ms1_motor_control</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, motor_shield_v1.o(.text.ms1_motor_control))
+<P><STRONG><a name="[9b]"></a>ms1_motor_control</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, motor_shield_v1.o(.text.ms1_motor_control))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = ms1_motor_control &rArr; HC595_SetBit &rArr; HC595_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_set_func
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_set_func
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HC595_SetBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_action
@@ -1121,7 +1120,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_action
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ms1_motor_control
 </UL>
 
 <P><STRONG><a name="[c3]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)

@@ -77,7 +77,6 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, i
   
   // Set the PWM value
   pwm_set(pwm, abs(motor_input)); // Use the absolute value of motor_input
-	printf("input= %d, abs= %d\r\n",motor_input,abs(motor_input)); // Print for debug.
   
   // Set or clear the bits according to the sign of motor_input
   if (motor_input > 0) { // Clockwise

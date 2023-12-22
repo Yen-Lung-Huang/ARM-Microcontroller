@@ -25,12 +25,18 @@ typedef struct {
 // Declare the global objects with extern keyword
 extern Motor_Shield_V1 motor_shield_v1;
 
+
 // Define an enum type variable to store the motor names and values
 enum motor_shield_v1_motor {M1 = 1, M2, M3, M4};
 
+// Define an enum type variable to store the servo names and values
+// enum motor_shield_v1_servo {S1, S2};
+
+
 /* FUNCTION (Prototype) DEFINITIONS */
 void ms1_pwm_init(void);
-void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, int16_t motor_input);
+void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input);
+void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode);
 
 #ifdef __cplusplus
 }

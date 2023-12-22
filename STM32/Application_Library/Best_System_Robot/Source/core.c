@@ -3,6 +3,7 @@
 /* Initial Configuration---------------------------------------*/
 void core_config(void)
 {
+	servos_init();
 	ms1_pwm_init();
 }
 
@@ -39,42 +40,103 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
     cJSON *root = cJSON_ParseWithLength(JSON_STRING, token_size);
     if(root == NULL){
         printf("invalid JSON\r\n"); // Print for debug.
+				cJSON_Delete(root); // Free the root pointer
         return false;
     }
 		
     for (cJSON *token = root->child;token != NULL;token = token->next){
         if(!strcmp(token->string,"motor")){ // Check if the key is "motor"
             if(cJSON_IsObject(token)){ // Check if the value is an object
-                cJSON *motor = token; // Get the "Motor" object
-                cJSON *item = NULL; // Declare a pointer to store each item in the object
-                cJSON_ArrayForEach(item, motor) { // Loop through all the items in the object
-                    // Get the key and value of the current item
-                    char *key = item->string; // The key is the motor number, such as "M1"
-                    int value = item->valueint; // The value is the motor input, such as -100
-                    
-                    // Convert the key to an integer, using the enum type defined in ms1_motor_control
-									uint8_t dc_motor_number = 0;
-                    if (strcmp(key, "M1") == 0) {
-                        dc_motor_number = M1;
-                    } else if (strcmp(key, "M2") == 0) {
-                        dc_motor_number = M2;
-                    } else if (strcmp(key, "M3") == 0) {
-                        dc_motor_number = M3;
-                    } else if (strcmp(key, "M4") == 0) {
-                        dc_motor_number = M4;
-                    } else {
-                        printf("invalid motor number\r\n"); // Print for debug.
-                        return false; // Invalid motor number
-                    }
-										// Call the ms1_motor_control function with the motor number and input
-                    ms1_motor_control(&motor_shield_v1, dc_motor_number, value);
-										// print_binary(motor_shield_v1.hc595.byte); // Print for debug.
-                }
-								} else {
-                printf("invalid motor value\r\n"); // Print for debug.
-                return false; // Invalid motor value
+							cJSON *motor = token; // Get the "Motor" object
+							cJSON *item = NULL; // Declare a pointer to store each item in the object
+							cJSON_ArrayForEach(item, motor) { // Loop through all the items in the object
+							// Get the key and value of the current item
+							char *key = item->string; // The key is the motor number, such as "M1"
+							float value = item->valuedouble; // The value is the motor input
+							//int value = item->valueint; // The value is the motor input, such as -100
+							
+							// Convert the key to an integer, using the enum type defined in ms1_motor_control
+							uint8_t dc_motor_number = 0;
+							if (strcmp(key, "M1") == 0) {
+									dc_motor_number = M1;
+							} else if (strcmp(key, "M2") == 0) {
+									dc_motor_number = M2;
+							} else if (strcmp(key, "M3") == 0) {
+									dc_motor_number = M3;
+							} else if (strcmp(key, "M4") == 0) {
+									dc_motor_number = M4;
+							} else {
+									printf("invalid motor number\r\n"); // Print for debug.
+									return false; // Invalid motor number
+							}
+							// Call the ms1_motor_control function with the motor number and input
+							ms1_motor_control(&motor_shield_v1, dc_motor_number, value);
+							// print_binary(motor_shield_v1.hc595.byte); // Print for debug.
+							}
+						}
+						else {
+							printf("invalid motor value\r\n"); // Print for debug.
+							return false; // Invalid motor value
             }
 				}
+				
+				if(!strcmp(token->string,"servo")){ // Check if the key is "servo"
+						if(cJSON_IsObject(token)){ // Check if the value is an object
+								cJSON *servo_obj = token; // Get the "Servo" object
+								cJSON *item = NULL; // Declare a pointer to store each item in the object
+								cJSON_ArrayForEach(item, servo_obj) { // Loop through all the items in the object
+										// Get the key and value of the current item
+										char *key = item->string; // The key is the servo number, such as "S1"
+										float value = 0; // Declare a variable to store the servo input
+										
+										// Convert the key to an integer, using the enum type defined in ms1_servo_control
+										uint8_t servo_number = 0; // Declare and initialize servo_number at the beginning of the loop
+										if (strcmp(key, "S1") == 0) {
+												servo_number = S1;
+										} else if (strcmp(key, "S2") == 0) {
+												servo_number = S2;
+										} else if (strcmp(key, "S3") == 0) {
+												servo_number = S3;
+										} else {
+												printf("invalid servo number\r\n"); // Print for debug.
+												return false; // Invalid servo number
+										}
+										
+										// Check if the value is a number or a string
+										if (cJSON_IsNumber(item)) { // If the value is a number
+												value = item->valuedouble; // The value is the pwm value
+												// Use servo_control function with PWM mode and limit, and pass the PWM_TypeDef pointer
+												servo_control(&servo[servo_number], value, PWM, true); 
+										} else if (cJSON_IsString(item)) { // If the value is a string
+												char *str = item->valuestring; // The value is the angle string, such as "90 deg" or "stop"
+												// Check if the value is "stop"
+												if (strcmp(str, "stop") == 0) { // If the value is "stop"
+														// Call the pwm_stop function with the PWM_TypeDef pointer
+														pwm_stop(&servo[servo_number]);
+														continue; // Skip the rest of the loop
+												}
+												// Parse the string to get the angle value
+												char *endptr; // Declare a pointer to store the end of the parsed string
+												value = strtof(str, &endptr); // Convert the string to a float
+												if (endptr == str) { // If no conversion was performed
+													printf("invalid servo value\r\n"); // Print for debug.
+													continue; // Skip the rest of the loop
+												}
+												// No need to check if the string has a "deg" suffix
+												// Use servo_control function with ANGLE mode and limit, and pass the PWM_TypeDef pointer
+												servo_control(&servo[servo_number], value, ANGLE, true); 
+										} else { // If the value is neither a number nor a string
+												printf("invalid servo value\r\n"); // Print for debug.
+												continue; // Skip the rest of the loop
+										}
+								}
+						}
+						else {
+							printf("invalid servo value\r\n"); // Print for debug.
+							continue; // Skip the rest of the loop
+						}
+				}
+
 				
 				else if(!strcmp(token->string,"74HC595")){
 					if (cJSON_IsString(token)) { //檢查 token 是否為字串型態

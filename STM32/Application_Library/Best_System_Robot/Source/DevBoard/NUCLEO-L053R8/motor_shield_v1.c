@@ -28,18 +28,14 @@ void ms1_pwm_init(void) { // The timers are for NUCLEO-L053R8.
 	
 	// Since NUCLEO-L053R8 has insufficient PWM output on the servo pwm pin of motor shield v1, \
 																	the timers and channels for servo pwm need to be self-defined.
-	motor_shield_v1.S1_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_1, .pwm_min=26,\
-																	.pwm_max=123, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.S2_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=26,\
-																	.pwm_max=123, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
+	motor_shield_v1.S1_PWM = servo[S1];
+	motor_shield_v1.S2_PWM = servo[S2];
 }
 
 /* Motor_Shield_V1 Control--------------------------------------------------------*/
 
 // Define a function to control the motor direction and speed with one input
-void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, int16_t motor_input) {
+void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input) {
   // Check the validity of the arguments
   if (motor_shield == NULL) return; // Invalid pointer
   
@@ -75,8 +71,13 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, i
       return; // Return from the function
   }
   
+	float abs_motor_input = motor_input < 0 ? -motor_input : motor_input;
+	if(abs_motor_input != 0 && abs_motor_input <= 1){
+		abs_motor_input = map(abs_motor_input,0,1,pwm->pwm_min,pwm->pwm_max);
+	}
   // Set the PWM value
-  pwm_set(pwm, abs(motor_input)); // Use the absolute value of motor_input
+  pwm_set(pwm, (int)abs_motor_input, true); // Use the absolute value of 
+	// printf("pwm_input= %d\r\n",(int)abs_motor_input); // Print for debug.
   
   // Set or clear the bits according to the sign of motor_input
   if (motor_input > 0) { // Clockwise
@@ -88,6 +89,37 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, i
   } else { // Stop
     HC595_SetBit(&(motor_shield->hc595), out1, 0); // Clear the lower bit to 0
     HC595_SetBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
+  }
+}
+
+// Define a function to control the servo angle with one input
+void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode) { // Add a mode parameter
+  // Check the validity of the arguments
+  if (motor_shield == NULL) return; // Invalid pointer
+  
+  // Select the corresponding PWM structure
+  PWM_TypeDef *pwm = NULL;
+  
+  switch (servo_number) { // Use a switch statement to assign different values
+    case S1: // If servo_number is S1
+      pwm = &(motor_shield->S1_PWM); // Select the S1_PWM structure
+      break; // Break the switch statement
+    case S2: // If servo_number is S2
+      pwm = &(motor_shield->S2_PWM); // Select the S2_PWM structure
+      break; // Break the switch statement
+    default: // If servo_number is not valid
+      return; // Return from the function
+  }
+  
+  // Check the mode parameter
+  if (mode == PWM) { // If the mode is PWM
+    // Set the PWM value
+    pwm_set(pwm, (int)servo_input, true); // Use the pwm_set function
+  } else if (mode == ANGLE) { // If the mode is ANGLE
+    // Set the PWM value according to the servo angle
+    pwm_physical_set(pwm, servo_input, true); // Use the pwm_physical_set function
+  } else { // If the mode is not valid
+    return; // Return from the function
   }
 }
 

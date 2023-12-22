@@ -19,7 +19,7 @@ extern "C" {
 
 /* FUNCTION (Prototype) DEFINITIONS */
 void core_config(void);
-float map(float x, float in_min, float in_max, float out_min, float out_max);
+// float map(float x, float in_min, float in_max, float out_min, float out_max);
 double max(double a, double b);
 void print_binary(uint8_t byteData);
 bool json_action(char *JSON_STRING, uint16_t token_size);

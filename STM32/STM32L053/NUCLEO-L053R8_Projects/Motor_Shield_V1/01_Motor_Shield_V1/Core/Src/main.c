@@ -92,6 +92,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   MX_TIM22_Init();
+  MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
 	HAL_UARTEx_ReceiveToIdle_DMA(&huart2, RxBuf, RxBuf_SIZE);
 	__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
@@ -106,6 +107,13 @@ int main(void)
 	ms1_motor_control(&motor_shield_v1,M2,0);
 	ms1_motor_control(&motor_shield_v1,M3,0);
 	ms1_motor_control(&motor_shield_v1,M4,0);
+	
+	printf("[Test servo]\r\n"); // Print for debug.
+	// htim21.Instance->CCR1 = 0;
+	
+	//pwm_set(&servo[S1], 100, true);
+	//pwm_set(&servo[S1], 100, false);
+
 	
   while (1)
   {

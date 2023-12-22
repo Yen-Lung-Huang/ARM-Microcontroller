@@ -28,7 +28,7 @@ void HC595_SendByte(HC595 *hc595, uint8_t byte)
 
 
 // Define a function to set a specific bit of the output byte
-void HC595_SetBit(HC595 *hc595, uint8_t bit, bool value)
+void HC595_SendBit(HC595 *hc595, uint8_t bit, bool value)
 {
   // Check the validity of the arguments
   if (hc595 == NULL) return; // Invalid pointer

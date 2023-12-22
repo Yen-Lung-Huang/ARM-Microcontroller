@@ -23,7 +23,7 @@ typedef struct {
 
 /* FUNCTION (Prototype) DEFINITIONS */
 void HC595_SendByte(HC595 *hc595, uint8_t byte);
-void HC595_SetBit(HC595 *hc595, uint8_t bit, bool value);
+void HC595_SendBit(HC595 *hc595, uint8_t bit, bool value);
 
 
 #ifdef __cplusplus

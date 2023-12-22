@@ -19,10 +19,10 @@ void ms1_pwm_init(void) { // The timers are for NUCLEO-L053R8.
 	motor_shield_v1.M2_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_2, .pwm_min=0,\
 																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M3_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_1, .pwm_min=0,\
+	motor_shield_v1.M3_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_3, .pwm_min=0,\
 																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M4_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_3, .pwm_min=0,\
+	motor_shield_v1.M4_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_1, .pwm_min=0,\
 																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
 																	.reverse=false, .complementary=false, .latch=false});
 	
@@ -41,6 +41,7 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
   
 	// Define an enum type variable to store the bit names and values
 	enum motor_shield_v1_74hc595 {M4_A = 0, M2_A, M1_A, M1_B, M2_B, M3_A, M4_B, M3_B};
+	// enum motor_shield_v1_74hc595 {M3_A = 0, M2_A, M1_A, M1_B, M2_B, M4_A, M3_B, M4_B};
 	
   // Select the corresponding PWM structure and the index of the bits to be set or cleared
   PWM_TypeDef *pwm = NULL;
@@ -81,14 +82,14 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
   
   // Set or clear the bits according to the sign of motor_input
   if (motor_input > 0) { // Clockwise
-    HC595_SetBit(&(motor_shield->hc595), out1, 1); // Set the lower bit to 1
-    HC595_SetBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
+    HC595_SendBit(&(motor_shield->hc595), out1, 1); // Set the lower bit to 1
+    HC595_SendBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
   } else if (motor_input < 0) { // Counterclockwise
-    HC595_SetBit(&(motor_shield->hc595), out1, 0); // Clear the lower bit to 0
-    HC595_SetBit(&(motor_shield->hc595), out2, 1); // Set the higher bit to 1
+    HC595_SendBit(&(motor_shield->hc595), out1, 0); // Clear the lower bit to 0
+    HC595_SendBit(&(motor_shield->hc595), out2, 1); // Set the higher bit to 1
   } else { // Stop
-    HC595_SetBit(&(motor_shield->hc595), out1, 0); // Clear the lower bit to 0
-    HC595_SetBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
+    HC595_SendBit(&(motor_shield->hc595), out1, 0); // Clear the lower bit to 0
+    HC595_SendBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
   }
 }
 

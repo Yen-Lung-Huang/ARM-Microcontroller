@@ -109,12 +109,8 @@ int main(void)
 	ms1_motor_control(&motor_shield_v1,M4,0);
 	
 	printf("[Test servo]\r\n"); // Print for debug.
-	// htim21.Instance->CCR1 = 0;
-	
-	//pwm_set(&servo[S1], 100, true);
-	//pwm_set(&servo[S1], 100, false);
 
-	
+
   while (1)
   {
     /* USER CODE END WHILE */

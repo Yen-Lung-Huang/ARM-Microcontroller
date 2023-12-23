@@ -73,7 +73,6 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
   
 	// Define an enum type variable to store the bit names and values
 	enum motor_shield_v1_74hc595 {M4_A = 0, M2_A, M1_A, M1_B, M2_B, M3_A, M4_B, M3_B};
-	// enum motor_shield_v1_74hc595 {M3_A = 0, M2_A, M1_A, M1_B, M2_B, M4_A, M3_B, M4_B};
 	
   // Declare a pointer variable to store the current motor structure
   DC_Motor_TypeDef *motor = NULL;
@@ -170,5 +169,4 @@ void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, floa
     return; // Return from the function
   }
 }
-
 

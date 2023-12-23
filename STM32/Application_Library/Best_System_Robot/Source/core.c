@@ -4,21 +4,22 @@
 void core_config(void)
 {
 	servos_init();
-	ms1_pwm_init();
+	ms1_init(false);
 }
 
-
+#if !defined(SERVO_H)
 /* Math--------------------------------------------------------*/
-//float map(float x, float in_min, float in_max, float out_min, float out_max)
-//{
-//  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-//}
+float map(float x, float in_min, float in_max, float out_min, float out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
-//double max(double a, double b)
-//{
-//	double q = sqrt((a-b)*(a-b));
-//	return ((a + b) + q) / 2;
-//}
+double max(double a, double b)
+{
+	double q = sqrt((a-b)*(a-b));
+	return ((a + b) + q) / 2;
+}
+#endif
 
 /* Debug--------------------------------------------------------*/
 void print_binary(uint8_t byteData) {

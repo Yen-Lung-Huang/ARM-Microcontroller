@@ -1,35 +1,67 @@
 #include "motor_shield_v1.h"
 
+#define DC_MOTOR_MIN 0
+#define DC_MOTOR_MAX 999
+
 /* Motor_Shield_V1 Configuration--------------------------------------------------------*/
 
 // Declare a Motor_Shield_V1 structure with the defined ports and pins
-Motor_Shield_V1 motor_shield_v1 = {
-	.hc595 = { // Assign the values of HC595 structure
-		.LATCH_Port = GPIOA, .LATCH_Pin = GPIO_PIN_6,
-		.CLOCK_Port = GPIOB, .CLOCK_Pin = GPIO_PIN_5,
-		.DATA_Port  = GPIOA, .DATA_Pin  = GPIO_PIN_9
-	}
-};
+Motor_Shield_V1 motor_shield_v1;
 
-// Initialize the servos with pwm_constructor function
-void ms1_pwm_init(void) { // The timers are for NUCLEO-L053R8.
-	motor_shield_v1.M1_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_2, .pwm_min=0,\
-																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M2_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_2, .pwm_min=0,\
-																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M3_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2, .channel=TIM_CHANNEL_3, .pwm_min=0,\
-																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
-	motor_shield_v1.M4_PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_1, .pwm_min=0,\
-																	.pwm_max=999, .physical_min=0, .physical_max=999, .offset=0,.pwm_value=0,\
-																	.reverse=false, .complementary=false, .latch=false});
+// Initialize Motor Shield V1
+void ms1_init(bool enable_pwm)
+{
+	gpio_pin_set(&motor_shield_v1.hc595.LATCH, GPIOA, GPIO_PIN_6);
+	gpio_pin_set(&motor_shield_v1.hc595.CLOCK, GPIOB, GPIO_PIN_5);
+	gpio_pin_set(&motor_shield_v1.hc595.DATA,  GPIOA, GPIO_PIN_9);
 	
+	if(enable_pwm){
+		ms1_pwm_init();
+	}
+	else{
+		ms1_gpio_init();
+	}
+		
 	// Since NUCLEO-L053R8 has insufficient PWM output on the servo pwm pin of motor shield v1, \
 																	the timers and channels for servo pwm need to be self-defined.
 	motor_shield_v1.S1_PWM = servo[S1];
 	motor_shield_v1.S2_PWM = servo[S2];
+}
+
+// Initialize the servos with pwm_constructor function
+void ms1_pwm_init(void)
+{ // The timers are for NUCLEO-L053R8.
+	motor_shield_v1.M1.EN.PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_2, .pwm_min=DC_MOTOR_MIN,\
+																	.pwm_max=DC_MOTOR_MAX, .physical_min=DC_MOTOR_MIN, .physical_max=DC_MOTOR_MAX, .offset=0,.pwm_value=0,\
+																	.reverse=false, .complementary=false, .latch=false});
+	motor_shield_v1.M2.EN.PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2 , .channel=TIM_CHANNEL_2, .pwm_min=DC_MOTOR_MIN,\
+																	.pwm_max=DC_MOTOR_MAX, .physical_min=DC_MOTOR_MIN, .physical_max=DC_MOTOR_MAX, .offset=0,.pwm_value=0,\
+																	.reverse=false, .complementary=false, .latch=false});
+	motor_shield_v1.M3.EN.PWM = pwm_constructor((PWM_TypeDef){.timer=&htim2 , .channel=TIM_CHANNEL_3, .pwm_min=DC_MOTOR_MIN,\
+																	.pwm_max=DC_MOTOR_MAX, .physical_min=DC_MOTOR_MIN, .physical_max=DC_MOTOR_MAX, .offset=0,.pwm_value=0,\
+																	.reverse=false, .complementary=false, .latch=false});
+	motor_shield_v1.M4.EN.PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_1, .pwm_min=DC_MOTOR_MIN,\
+																	.pwm_max=DC_MOTOR_MAX, .physical_min=DC_MOTOR_MIN, .physical_max=DC_MOTOR_MAX, .offset=0,.pwm_value=0,\
+																	.reverse=false, .complementary=false, .latch=false});
+	
+	motor_shield_v1.M1.EN.enable_pwm = true;
+	motor_shield_v1.M2.EN.enable_pwm = true;
+	motor_shield_v1.M3.EN.enable_pwm = true;
+	motor_shield_v1.M4.EN.enable_pwm = true;
+}
+
+// Initialize the GPIOs for DC motors
+void ms1_gpio_init(void)
+{ // The timers are for NUCLEO-L053R8.
+	gpio_pin_set(&motor_shield_v1.M1.EN.GPIO, GPIOA, GPIO_PIN_7 );
+	gpio_pin_set(&motor_shield_v1.M2.EN.GPIO, GPIOB, GPIO_PIN_3 );
+	gpio_pin_set(&motor_shield_v1.M3.EN.GPIO, GPIOB, GPIO_PIN_10);
+	gpio_pin_set(&motor_shield_v1.M4.EN.GPIO, GPIOB, GPIO_PIN_4 );
+	
+	motor_shield_v1.M1.EN.enable_pwm = false;
+	motor_shield_v1.M2.EN.enable_pwm = false;
+	motor_shield_v1.M3.EN.enable_pwm = false;
+	motor_shield_v1.M4.EN.enable_pwm = false;
 }
 
 /* Motor_Shield_V1 Control--------------------------------------------------------*/
@@ -43,28 +75,35 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
 	enum motor_shield_v1_74hc595 {M4_A = 0, M2_A, M1_A, M1_B, M2_B, M3_A, M4_B, M3_B};
 	// enum motor_shield_v1_74hc595 {M3_A = 0, M2_A, M1_A, M1_B, M2_B, M4_A, M3_B, M4_B};
 	
-  // Select the corresponding PWM structure and the index of the bits to be set or cleared
-  PWM_TypeDef *pwm = NULL;
-  uint8_t out1, out2; // Declare the variables
+  // Declare a pointer variable to store the current motor structure
+  DC_Motor_TypeDef *motor = NULL;
+  // Declare a boolean variable to store the current mode
+  bool pwm_mode = false;
+  // Declare two variables to store the index of the bits to be set or cleared
+  uint8_t out1, out2;
 	
   switch (dc_motor_number) { // Use a switch statement to assign different values
     case M1: // If dc_motor_number is M1
-      pwm = &(motor_shield->M1_PWM); // Select the M1_PWM structure
+      motor = &(motor_shield->M1); // Select the M1 motor structure
+      pwm_mode = motor->EN.enable_pwm; // Select the M1 mode
       out1 = M1_A; // The lower bit of the pair
       out2 = M1_B; // The higher bit of the pair
       break; // Break the switch statement
     case M2: // If dc_motor_number is M2
-      pwm = &(motor_shield->M2_PWM); // Select the M2_PWM structure
+      motor = &(motor_shield->M2); // Select the M2 motor structure
+      pwm_mode = motor->EN.enable_pwm; // Select the M2 mode
       out1 = M2_A; // The lower bit of the pair
       out2 = M2_B; // The higher bit of the pair
       break; // Break the switch statement
     case M3: // If dc_motor_number is M3
-      pwm = &(motor_shield->M3_PWM); // Select the M3_PWM structure
+      motor = &(motor_shield->M3); // Select the M3 motor structure
+      pwm_mode = motor->EN.enable_pwm; // Select the M3 mode
       out1 = M3_A; // The lower bit of the pair
       out2 = M3_B; // The higher bit of the pair
       break; // Break the switch statement
     case M4: // If dc_motor_number is M4
-      pwm = &(motor_shield->M4_PWM); // Select the M4_PWM structure
+      motor = &(motor_shield->M4); // Select the M4 motor structure
+      pwm_mode = motor->EN.enable_pwm; // Select the M4 mode
       out1 = M4_A; // The lower bit of the pair
       out2 = M4_B; // The higher bit of the pair
       break; // Break the switch statement
@@ -74,11 +113,18 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
   
 	float abs_motor_input = motor_input < 0 ? -motor_input : motor_input;
 	if(abs_motor_input != 0 && abs_motor_input <= 1){
-		abs_motor_input = map(abs_motor_input,0,1,pwm->pwm_min,pwm->pwm_max);
+		if (pwm_mode) { // If PWM mode is enabled
+			abs_motor_input = map(abs_motor_input,0,1,motor->EN.PWM.pwm_min,motor->EN.PWM.pwm_max); // Map the input to PWM range
+		} else { // If GPIO mode is enabled
+			abs_motor_input = map(abs_motor_input,0,1,0,1); // Map the input to 0 or 1
+		}
 	}
-  // Set the PWM value
-  pwm_set(pwm, (int)abs_motor_input, true); // Use the absolute value of 
-	// printf("pwm_input= %d\r\n",(int)abs_motor_input); // Print for debug.
+  // Set the PWM value or GPIO state
+  if (pwm_mode) { // If PWM mode is enabled
+  	pwm_set(&(motor->EN.PWM), (int)abs_motor_input, true); // Use the absolute value of the input
+  } else { // If GPIO mode is enabled
+  	HAL_GPIO_WritePin(motor->EN.GPIO.Port, motor->EN.GPIO.Pin, (int)abs_motor_input); // Use the absolute value of the input
+  }
   
   // Set or clear the bits according to the sign of motor_input
   if (motor_input > 0) { // Clockwise
@@ -92,6 +138,7 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
     HC595_SendBit(&(motor_shield->hc595), out2, 0); // Clear the higher bit to 0
   }
 }
+
 
 // Define a function to control the servo angle with one input
 void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode) { // Add a mode parameter

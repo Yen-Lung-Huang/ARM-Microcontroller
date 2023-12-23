@@ -88,7 +88,7 @@ void pwm_set(PWM_TypeDef* servo, uint16_t pwm_value, bool limit) // 使用固定
 	
 	// 設定 PWM 輸出
 	*(timer_ch2ccr(servo->timer,servo->channel)) = pwm_value;
-	printf("limit= %d, pwm_value= %d\r\n",limit,pwm_value); // Print for debug.
+	// printf("limit= %d, pwm_value= %d\r\n",limit,pwm_value); // Print for debug.
 
 	// 如果 latch 為 true，控制繼電器開關
 	if(servo->latch == true){

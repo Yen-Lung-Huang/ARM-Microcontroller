@@ -9,17 +9,17 @@
 Motor_Shield_V1 motor_shield_v1;
 
 // Initialize Motor Shield V1
-void ms1_init(bool enable_pwm)
+void ms_v1_init(bool enable_pwm)
 {
 	gpio_pin_set(&motor_shield_v1.hc595.LATCH, GPIOA, GPIO_PIN_6);
 	gpio_pin_set(&motor_shield_v1.hc595.CLOCK, GPIOB, GPIO_PIN_5);
 	gpio_pin_set(&motor_shield_v1.hc595.DATA,  GPIOA, GPIO_PIN_9);
 	
 	if(enable_pwm){
-		ms1_pwm_init();
+		ms_v1_pwm_init();
 	}
 	else{
-		ms1_gpio_init();
+		ms_v1_gpio_init();
 	}
 		
 	// Since NUCLEO-L053R8 has insufficient PWM output on the servo pwm pin of motor shield v1, \
@@ -29,7 +29,7 @@ void ms1_init(bool enable_pwm)
 }
 
 // Initialize the servos with pwm_constructor function
-void ms1_pwm_init(void)
+void ms_v1_pwm_init(void)
 { // The timers are for NUCLEO-L053R8.
 	motor_shield_v1.M1.EN.PWM = pwm_constructor((PWM_TypeDef){.timer=&htim22, .channel=TIM_CHANNEL_2, .pwm_min=DC_MOTOR_MIN,\
 																	.pwm_max=DC_MOTOR_MAX, .physical_min=DC_MOTOR_MIN, .physical_max=DC_MOTOR_MAX, .offset=0,.pwm_value=0,\
@@ -51,7 +51,7 @@ void ms1_pwm_init(void)
 }
 
 // Initialize the GPIOs for DC motors
-void ms1_gpio_init(void)
+void ms_v1_gpio_init(void)
 { // The timers are for NUCLEO-L053R8.
 	gpio_pin_set(&motor_shield_v1.M1.EN.GPIO, GPIOA, GPIO_PIN_7 );
 	gpio_pin_set(&motor_shield_v1.M2.EN.GPIO, GPIOB, GPIO_PIN_3 );
@@ -67,7 +67,7 @@ void ms1_gpio_init(void)
 /* Motor_Shield_V1 Control--------------------------------------------------------*/
 
 // Define a function to control the motor direction and speed with one input
-void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input) {
+void ms_v1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input) {
   // Check the validity of the arguments
   if (motor_shield == NULL) return; // Invalid pointer
   
@@ -140,7 +140,7 @@ void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, f
 
 
 // Define a function to control the servo angle with one input
-void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode) { // Add a mode parameter
+void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode) { // Add a mode parameter
   // Check the validity of the arguments
   if (motor_shield == NULL) return; // Invalid pointer
   

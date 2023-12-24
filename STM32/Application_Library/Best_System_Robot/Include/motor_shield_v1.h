@@ -54,11 +54,11 @@ enum motor_shield_v1_motor {M1 = 1, M2, M3, M4};
 
 
 /* FUNCTION (Prototype) DEFINITIONS */
-void ms1_init(bool enable_pwm);
-void ms1_pwm_init(void);
-void ms1_gpio_init(void);
-void ms1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input);
-void ms1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode);
+void ms_v1_init(bool enable_pwm);
+void ms_v1_pwm_init(void);
+void ms_v1_gpio_init(void);
+void ms_v1_motor_control(Motor_Shield_V1 *motor_shield, uint8_t dc_motor_number, float motor_input);
+void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode);
 
 #ifdef __cplusplus
 }

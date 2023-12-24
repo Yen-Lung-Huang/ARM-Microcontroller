@@ -4,7 +4,7 @@
 void core_config(void)
 {
 	servos_init();
-	ms1_init(false);
+	ms_v1_init(false);
 }
 
 #if !defined(SERVO_H)
@@ -56,7 +56,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							float value = item->valuedouble; // The value is the motor input
 							//int value = item->valueint; // The value is the motor input, such as -100
 							
-							// Convert the key to an integer, using the enum type defined in ms1_motor_control
+							// Convert the key to an integer, using the enum type defined in ms_v1_motor_control
 							uint8_t dc_motor_number = 0;
 							if (strcmp(key, "M1") == 0) {
 									dc_motor_number = M1;
@@ -70,8 +70,8 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 									printf("invalid motor number\r\n"); // Print for debug.
 									return false; // Invalid motor number
 							}
-							// Call the ms1_motor_control function with the motor number and input
-							ms1_motor_control(&motor_shield_v1, dc_motor_number, value);
+							// Call the ms_v1_motor_control function with the motor number and input
+							ms_v1_motor_control(&motor_shield_v1, dc_motor_number, value);
 							// print_binary(motor_shield_v1.hc595.byte); // Print for debug.
 							}
 						}
@@ -90,7 +90,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 										char *key = item->string; // The key is the servo number, such as "S1"
 										float value = 0; // Declare a variable to store the servo input
 										
-										// Convert the key to an integer, using the enum type defined in ms1_servo_control
+										// Convert the key to an integer, using the enum type defined in ms_v1_servo_control
 										uint8_t servo_number = 0; // Declare and initialize servo_number at the beginning of the loop
 										if (strcmp(key, "S1") == 0) {
 												servo_number = S1;

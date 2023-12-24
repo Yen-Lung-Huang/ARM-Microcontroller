@@ -103,10 +103,10 @@ int main(void)
 	
 	printf("Test start\r\n"); // Print for debug.
 	core_config();
-	ms1_motor_control(&motor_shield_v1,M1,0);
-	ms1_motor_control(&motor_shield_v1,M2,0);
-	ms1_motor_control(&motor_shield_v1,M3,0);
-	ms1_motor_control(&motor_shield_v1,M4,0);
+	ms_v1_motor_control(&motor_shield_v1,M1,0);
+	ms_v1_motor_control(&motor_shield_v1,M2,0);
+	ms_v1_motor_control(&motor_shield_v1,M3,0);
+	ms_v1_motor_control(&motor_shield_v1,M4,0);
 	
 	printf("[Test servo]\r\n"); // Print for debug.
 
@@ -116,18 +116,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//		for(int i=0; i<=999; i++){
-//			ms1_motor_control(&motor_shield_v1,M1,i);
-//			HAL_Delay(1);
-//		}
-//		for(int i=999-1; i>=-999; i--){
-//			ms1_motor_control(&motor_shield_v1,M1,i);
-//			HAL_Delay(1);
-//		}
-//		for(int i=-999+1; i<0; i++){
-//			ms1_motor_control(&motor_shield_v1,M1,i);
-//			HAL_Delay(1);
-//		}
+
   }
   /* USER CODE END 3 */
 }

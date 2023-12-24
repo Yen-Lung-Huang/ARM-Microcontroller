@@ -29,7 +29,7 @@ Section Cross References
     main.o(.text.main) refers to stm32l0xx_hal_uart_ex.o(.text.HAL_UARTEx_ReceiveToIdle_DMA) for HAL_UARTEx_ReceiveToIdle_DMA
     main.o(.text.main) refers to puts.o(i.puts) for puts
     main.o(.text.main) refers to core.o(.text.core_config) for core_config
-    main.o(.text.main) refers to motor_shield_v1.o(.text.ms1_motor_control) for ms1_motor_control
+    main.o(.text.main) refers to motor_shield_v1.o(.text.ms_v1_motor_control) for ms_v1_motor_control
     main.o(.text.main) refers to usart.o(.bss.huart2) for huart2
     main.o(.text.main) refers to usart.o(.bss.RxBuf) for RxBuf
     main.o(.text.main) refers to usart.o(.bss.hdma_usart2_rx) for hdma_usart2_rx
@@ -1490,7 +1490,7 @@ Section Cross References
     cjson.o(.rodata.str1.1) refers (Special) to scanf_fp.o(.text) for _scanf_real
     cjson.o(.bss..L_MergedGlobals) refers (Special) to scanf_fp.o(.text) for _scanf_real
     core.o(.text.core_config) refers to servo.o(.text.servos_init) for servos_init
-    core.o(.text.core_config) refers to motor_shield_v1.o(.text.ms1_init) for ms1_init
+    core.o(.text.core_config) refers to motor_shield_v1.o(.text.ms_v1_init) for ms_v1_init
     core.o(.ARM.exidx.text.core_config) refers to core.o(.text.core_config) for [Anonymous Symbol]
     core.o(.text.print_binary) refers to printfa.o(i.__0printf) for __2printf
     core.o(.text.print_binary) refers to core.o(.rodata.str1.1) for [Anonymous Symbol]
@@ -1505,7 +1505,7 @@ Section Cross References
     core.o(.text.json_action) refers to servo.o(.text.map) for map
     core.o(.text.json_action) refers to ffixi.o(.text) for __aeabi_f2iz
     core.o(.text.json_action) refers to cjson.o(.text.cJSON_IsObject) for cJSON_IsObject
-    core.o(.text.json_action) refers to motor_shield_v1.o(.text.ms1_motor_control) for ms1_motor_control
+    core.o(.text.json_action) refers to motor_shield_v1.o(.text.ms_v1_motor_control) for ms_v1_motor_control
     core.o(.text.json_action) refers to d2f.o(.text) for __aeabi_d2f
     core.o(.text.json_action) refers to cjson.o(.text.cJSON_IsNumber) for cJSON_IsNumber
     core.o(.text.json_action) refers to servo.o(.text.servo_control) for servo_control
@@ -1564,35 +1564,35 @@ Section Cross References
     servo.o(.text.get_pwm_physical) refers to fmul.o(.text) for __aeabi_fmul
     servo.o(.text.get_pwm_physical) refers to fdiv.o(.text) for __aeabi_fdiv
     servo.o(.ARM.exidx.text.get_pwm_physical) refers to servo.o(.text.get_pwm_physical) for [Anonymous Symbol]
-    motor_shield_v1.o(.text.ms1_init) refers to 74hc595.o(.text.gpio_pin_set) for gpio_pin_set
-    motor_shield_v1.o(.text.ms1_init) refers to servo.o(.text.pwm_constructor) for pwm_constructor
-    motor_shield_v1.o(.text.ms1_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
-    motor_shield_v1.o(.text.ms1_init) refers to tim.o(.bss.htim22) for htim22
-    motor_shield_v1.o(.text.ms1_init) refers to tim.o(.bss.htim2) for htim2
-    motor_shield_v1.o(.text.ms1_init) refers to servo.o(.bss.servo) for servo
-    motor_shield_v1.o(.ARM.exidx.text.ms1_init) refers to motor_shield_v1.o(.text.ms1_init) for [Anonymous Symbol]
-    motor_shield_v1.o(.text.ms1_pwm_init) refers to servo.o(.text.pwm_constructor) for pwm_constructor
-    motor_shield_v1.o(.text.ms1_pwm_init) refers to tim.o(.bss.htim22) for htim22
-    motor_shield_v1.o(.text.ms1_pwm_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
-    motor_shield_v1.o(.text.ms1_pwm_init) refers to tim.o(.bss.htim2) for htim2
-    motor_shield_v1.o(.ARM.exidx.text.ms1_pwm_init) refers to motor_shield_v1.o(.text.ms1_pwm_init) for [Anonymous Symbol]
-    motor_shield_v1.o(.text.ms1_gpio_init) refers to 74hc595.o(.text.gpio_pin_set) for gpio_pin_set
-    motor_shield_v1.o(.text.ms1_gpio_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
-    motor_shield_v1.o(.ARM.exidx.text.ms1_gpio_init) refers to motor_shield_v1.o(.text.ms1_gpio_init) for [Anonymous Symbol]
-    motor_shield_v1.o(.text.ms1_motor_control) refers to fcmpeq.o(.text) for __aeabi_fcmpeq
-    motor_shield_v1.o(.text.ms1_motor_control) refers to fcmpgt.o(.text) for __aeabi_fcmpgt
-    motor_shield_v1.o(.text.ms1_motor_control) refers to ffltui.o(.text) for __aeabi_ui2f
-    motor_shield_v1.o(.text.ms1_motor_control) refers to servo.o(.text.map) for map
-    motor_shield_v1.o(.text.ms1_motor_control) refers to ffixi.o(.text) for __aeabi_f2iz
-    motor_shield_v1.o(.text.ms1_motor_control) refers to servo.o(.text.pwm_set) for pwm_set
-    motor_shield_v1.o(.text.ms1_motor_control) refers to stm32l0xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
-    motor_shield_v1.o(.text.ms1_motor_control) refers to 74hc595.o(.text.HC595_SendBit) for HC595_SendBit
-    motor_shield_v1.o(.text.ms1_motor_control) refers to fcmplt.o(.text) for __aeabi_fcmplt
-    motor_shield_v1.o(.ARM.exidx.text.ms1_motor_control) refers to motor_shield_v1.o(.text.ms1_motor_control) for [Anonymous Symbol]
-    motor_shield_v1.o(.text.ms1_servo_control) refers to ffixi.o(.text) for __aeabi_f2iz
-    motor_shield_v1.o(.text.ms1_servo_control) refers to servo.o(.text.pwm_set) for pwm_set
-    motor_shield_v1.o(.text.ms1_servo_control) refers to servo.o(.text.pwm_physical_set) for pwm_physical_set
-    motor_shield_v1.o(.ARM.exidx.text.ms1_servo_control) refers to motor_shield_v1.o(.text.ms1_servo_control) for [Anonymous Symbol]
+    motor_shield_v1.o(.text.ms_v1_init) refers to 74hc595.o(.text.gpio_pin_set) for gpio_pin_set
+    motor_shield_v1.o(.text.ms_v1_init) refers to servo.o(.text.pwm_constructor) for pwm_constructor
+    motor_shield_v1.o(.text.ms_v1_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
+    motor_shield_v1.o(.text.ms_v1_init) refers to tim.o(.bss.htim22) for htim22
+    motor_shield_v1.o(.text.ms_v1_init) refers to tim.o(.bss.htim2) for htim2
+    motor_shield_v1.o(.text.ms_v1_init) refers to servo.o(.bss.servo) for servo
+    motor_shield_v1.o(.ARM.exidx.text.ms_v1_init) refers to motor_shield_v1.o(.text.ms_v1_init) for [Anonymous Symbol]
+    motor_shield_v1.o(.text.ms_v1_pwm_init) refers to servo.o(.text.pwm_constructor) for pwm_constructor
+    motor_shield_v1.o(.text.ms_v1_pwm_init) refers to tim.o(.bss.htim22) for htim22
+    motor_shield_v1.o(.text.ms_v1_pwm_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
+    motor_shield_v1.o(.text.ms_v1_pwm_init) refers to tim.o(.bss.htim2) for htim2
+    motor_shield_v1.o(.ARM.exidx.text.ms_v1_pwm_init) refers to motor_shield_v1.o(.text.ms_v1_pwm_init) for [Anonymous Symbol]
+    motor_shield_v1.o(.text.ms_v1_gpio_init) refers to 74hc595.o(.text.gpio_pin_set) for gpio_pin_set
+    motor_shield_v1.o(.text.ms_v1_gpio_init) refers to motor_shield_v1.o(.bss.motor_shield_v1) for motor_shield_v1
+    motor_shield_v1.o(.ARM.exidx.text.ms_v1_gpio_init) refers to motor_shield_v1.o(.text.ms_v1_gpio_init) for [Anonymous Symbol]
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to fcmpeq.o(.text) for __aeabi_fcmpeq
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to fcmpgt.o(.text) for __aeabi_fcmpgt
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to ffltui.o(.text) for __aeabi_ui2f
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to servo.o(.text.map) for map
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to ffixi.o(.text) for __aeabi_f2iz
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to servo.o(.text.pwm_set) for pwm_set
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to stm32l0xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to 74hc595.o(.text.HC595_SendBit) for HC595_SendBit
+    motor_shield_v1.o(.text.ms_v1_motor_control) refers to fcmplt.o(.text) for __aeabi_fcmplt
+    motor_shield_v1.o(.ARM.exidx.text.ms_v1_motor_control) refers to motor_shield_v1.o(.text.ms_v1_motor_control) for [Anonymous Symbol]
+    motor_shield_v1.o(.text.ms_v1_servo_control) refers to ffixi.o(.text) for __aeabi_f2iz
+    motor_shield_v1.o(.text.ms_v1_servo_control) refers to servo.o(.text.pwm_set) for pwm_set
+    motor_shield_v1.o(.text.ms_v1_servo_control) refers to servo.o(.text.pwm_physical_set) for pwm_physical_set
+    motor_shield_v1.o(.ARM.exidx.text.ms_v1_servo_control) refers to motor_shield_v1.o(.text.ms_v1_servo_control) for [Anonymous Symbol]
     strtod.o(i.__softfp_strtod) refers (Special) to iusefp.o(.text) for __I$use$fp
     strtod.o(i.__softfp_strtod) refers to strtod.o(.text) for __strtod_int
     strtod.o(i.strtod) refers (Special) to iusefp.o(.text) for __I$use$fp
@@ -3025,14 +3025,14 @@ Removing Unused input sections from the image.
     Removing servo.o(.text.get_pwm_physical), (104 bytes).
     Removing servo.o(.ARM.exidx.text.get_pwm_physical), (8 bytes).
     Removing motor_shield_v1.o(.text), (0 bytes).
-    Removing motor_shield_v1.o(.ARM.exidx.text.ms1_init), (8 bytes).
-    Removing motor_shield_v1.o(.text.ms1_pwm_init), (196 bytes).
-    Removing motor_shield_v1.o(.ARM.exidx.text.ms1_pwm_init), (8 bytes).
-    Removing motor_shield_v1.o(.text.ms1_gpio_init), (88 bytes).
-    Removing motor_shield_v1.o(.ARM.exidx.text.ms1_gpio_init), (8 bytes).
-    Removing motor_shield_v1.o(.ARM.exidx.text.ms1_motor_control), (8 bytes).
-    Removing motor_shield_v1.o(.text.ms1_servo_control), (66 bytes).
-    Removing motor_shield_v1.o(.ARM.exidx.text.ms1_servo_control), (8 bytes).
+    Removing motor_shield_v1.o(.ARM.exidx.text.ms_v1_init), (8 bytes).
+    Removing motor_shield_v1.o(.text.ms_v1_pwm_init), (196 bytes).
+    Removing motor_shield_v1.o(.ARM.exidx.text.ms_v1_pwm_init), (8 bytes).
+    Removing motor_shield_v1.o(.text.ms_v1_gpio_init), (88 bytes).
+    Removing motor_shield_v1.o(.ARM.exidx.text.ms_v1_gpio_init), (8 bytes).
+    Removing motor_shield_v1.o(.ARM.exidx.text.ms_v1_motor_control), (8 bytes).
+    Removing motor_shield_v1.o(.text.ms_v1_servo_control), (66 bytes).
+    Removing motor_shield_v1.o(.ARM.exidx.text.ms_v1_servo_control), (8 bytes).
     Removing dcmpgt.o(.text), (44 bytes).
     Removing dcmpeq.o(.text), (46 bytes).
     Removing dflti.o(.text), (40 bytes).
@@ -3422,15 +3422,15 @@ Image Symbol Table
     __arm_cp.0_3                             0x08004130   Number         4  main.o(.text.main)
     __arm_cp.0_5                             0x08004140   Number         4  main.o(.text.main)
     [Anonymous Symbol]                       0x08004154   Section        0  servo.o(.text.map)
-    [Anonymous Symbol]                       0x08004190   Section        0  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_0                             0x080042c8   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_1                             0x080042cc   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_2                             0x080042d0   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_3                             0x080042d4   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_4                             0x080042d8   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_5                             0x080042dc   Number         4  motor_shield_v1.o(.text.ms1_init)
-    __arm_cp.0_6                             0x080042e0   Number         4  motor_shield_v1.o(.text.ms1_init)
-    [Anonymous Symbol]                       0x080042e4   Section        0  motor_shield_v1.o(.text.ms1_motor_control)
+    [Anonymous Symbol]                       0x08004190   Section        0  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_0                             0x080042c8   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_1                             0x080042cc   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_2                             0x080042d0   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_3                             0x080042d4   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_4                             0x080042d8   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_5                             0x080042dc   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    __arm_cp.0_6                             0x080042e0   Number         4  motor_shield_v1.o(.text.ms_v1_init)
+    [Anonymous Symbol]                       0x080042e4   Section        0  motor_shield_v1.o(.text.ms_v1_motor_control)
     parse_hex4                               0x08004407   Thumb Code   192  cjson.o(.text.parse_hex4)
     [Anonymous Symbol]                       0x08004406   Section        0  cjson.o(.text.parse_hex4)
     parse_string                             0x080044c9   Thumb Code   888  cjson.o(.text.parse_string)
@@ -3728,8 +3728,8 @@ Image Symbol Table
     json_action                              0x08003c65   Thumb Code   756  core.o(.text.json_action)
     main                                     0x08004021   Thumb Code   260  main.o(.text.main)
     map                                      0x08004155   Thumb Code    60  servo.o(.text.map)
-    ms1_init                                 0x08004191   Thumb Code   312  motor_shield_v1.o(.text.ms1_init)
-    ms1_motor_control                        0x080042e5   Thumb Code   290  motor_shield_v1.o(.text.ms1_motor_control)
+    ms_v1_init                               0x08004191   Thumb Code   312  motor_shield_v1.o(.text.ms_v1_init)
+    ms_v1_motor_control                      0x080042e5   Thumb Code   290  motor_shield_v1.o(.text.ms_v1_motor_control)
     pwm_constructor                          0x08004bc5   Thumb Code    42  servo.o(.text.pwm_constructor)
     pwm_physical_set                         0x08004bf1   Thumb Code   282  servo.o(.text.pwm_physical_set)
     pwm_set                                  0x08004d0d   Thumb Code   112  servo.o(.text.pwm_set)
@@ -3936,8 +3936,8 @@ Memory Map of the image
     0x08003c64   0x08003c64   0x000003bc   Code   RO         1326    .text.json_action   core.o
     0x08004020   0x08004020   0x00000134   Code   RO           11    .text.main          main.o
     0x08004154   0x08004154   0x0000003c   Code   RO         1351    .text.map           servo.o
-    0x08004190   0x08004190   0x00000154   Code   RO         1386    .text.ms1_init      motor_shield_v1.o
-    0x080042e4   0x080042e4   0x00000122   Code   RO         1392    .text.ms1_motor_control  motor_shield_v1.o
+    0x08004190   0x08004190   0x00000154   Code   RO         1386    .text.ms_v1_init    motor_shield_v1.o
+    0x080042e4   0x080042e4   0x00000122   Code   RO         1392    .text.ms_v1_motor_control  motor_shield_v1.o
     0x08004406   0x08004406   0x000000c0   Code   RO         1304    .text.parse_hex4    cjson.o
     0x080044c6   0x080044c6   0x00000002   PAD
     0x080044c8   0x080044c8   0x00000384   Code   RO         1302    .text.parse_string  cjson.o
@@ -4023,7 +4023,7 @@ Image component sizes
         48          4          0          0          0       1834   dma.o
        180         12          0          0          0       1927   gpio.o
        316         48          0          0          0       3761   main.o
-       630         32          0          0        308       7454   motor_shield_v1.o
+       630         32          0          0        308       7464   motor_shield_v1.o
        818         32          0          0         84      10788   servo.o
         28          8        192          0       2560        672   startup_stm32l053xx.o
        136         16          0          8          4       6750   stm32l0xx_hal.o
@@ -4043,7 +4043,7 @@ Image component sizes
        360         48          0          0        720       6674   usart.o
 
     ----------------------------------------------------------------------
-     16164        986        318         24       3884     279526   Object Totals
+     16164        986        318         24       3884     279536   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         22          0          3          0          8          0   (incl. Padding)
 
@@ -4131,8 +4131,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     22766       1220        382         36       3884     281190   Grand Totals
-     22766       1220        382         36       3884     281190   ELF Image Totals
+     22766       1220        382         36       3884     281200   Grand Totals
+     22766       1220        382         36       3884     281200   ELF Image Totals
      22766       1220        382         36          0          0   ROM Totals
 
 ==============================================================================

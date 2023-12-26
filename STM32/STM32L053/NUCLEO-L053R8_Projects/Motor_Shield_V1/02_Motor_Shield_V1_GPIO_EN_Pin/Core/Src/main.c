@@ -103,10 +103,10 @@ int main(void)
 	
 	printf("Test start\r\n"); // Print for debug.
 	core_config();
-	ms_v1_motor_control(&motor_shield_v1,M1,0);
-	ms_v1_motor_control(&motor_shield_v1,M2,0);
-	ms_v1_motor_control(&motor_shield_v1,M3,0);
-	ms_v1_motor_control(&motor_shield_v1,M4,0);
+//	ms_motor_control(&motor_shield_v1,MS_V1,M1,0);
+//	ms_motor_control(&motor_shield_v1,MS_V1,M2,0);
+//	ms_motor_control(&motor_shield_v1,MS_V1,M3,0);
+//	ms_motor_control(&motor_shield_v1,MS_V1,M4,0);
 	
 	printf("[Test servo]\r\n"); // Print for debug.
 

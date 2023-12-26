@@ -4,7 +4,8 @@
 void core_config(void)
 {
 	servos_init();
-	ms_v1_init(false);
+	ms_init(MS_V1, false);
+	ms_init(MS_L29XX, true);
 }
 
 #if !defined(SERVO_H)
@@ -52,26 +53,33 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							cJSON *item = NULL; // Declare a pointer to store each item in the object
 							cJSON_ArrayForEach(item, motor) { // Loop through all the items in the object
 							// Get the key and value of the current item
-							char *key = item->string; // The key is the motor number, such as "M1"
+							char *key = item->string; // The key is the motor number, such as "M1" or "W1"
 							float value = item->valuedouble; // The value is the motor input
 							//int value = item->valueint; // The value is the motor input, such as -100
 							
 							// Convert the key to an integer, using the enum type defined in ms_v1_motor_control
 							uint8_t dc_motor_number = 0;
-							if (strcmp(key, "M1") == 0) {
+							if (strcmp(key, "M1") == 0 || strcmp(key, "W1") == 0) {
 									dc_motor_number = M1;
-							} else if (strcmp(key, "M2") == 0) {
+							} else if (strcmp(key, "M2") == 0 || strcmp(key, "W2") == 0) {
 									dc_motor_number = M2;
-							} else if (strcmp(key, "M3") == 0) {
+							} else if (strcmp(key, "M3") == 0 || strcmp(key, "W3") == 0) {
 									dc_motor_number = M3;
-							} else if (strcmp(key, "M4") == 0) {
+							} else if (strcmp(key, "M4") == 0 || strcmp(key, "W4") == 0) {
 									dc_motor_number = M4;
 							} else {
 									printf("invalid motor number\r\n"); // Print for debug.
 									return false; // Invalid motor number
 							}
-							// Call the ms_v1_motor_control function with the motor number and input
-							ms_v1_motor_control(&motor_shield_v1, dc_motor_number, value);
+							// Call the ms_motor_control function with the motor shield type, the motor number and input
+							if (key[0] == 'M') { // If the key starts with 'M', use MS_V1 type
+								ms_motor_control(&motor_shield_v1, MS_V1, dc_motor_number, value);
+							} else if (key[0] == 'W') { // If the key starts with 'W', use MS_L29XX type
+								ms_motor_control(&motor_shield_l29xx, MS_L29XX, dc_motor_number, value);
+							} else {
+								printf("invalid motor shield type\r\n"); // Print for debug.
+								return false; // Invalid motor shield type
+							}
 							// print_binary(motor_shield_v1.hc595.byte); // Print for debug.
 							}
 						}
@@ -80,6 +88,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
 							return false; // Invalid motor value
             }
 				}
+
 				
 				if(!strcmp(token->string,"servo")){ // Check if the key is "servo"
 						if(cJSON_IsObject(token)){ // Check if the value is an object

@@ -1,5 +1,5 @@
 usart_dma_printf/motor_shield_v1.o: \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Source\DevBoard\NUCLEO-L053R8\motor_shield_v1.c \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \

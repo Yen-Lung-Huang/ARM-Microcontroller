@@ -25,15 +25,6 @@ void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
     motor_shield_v1.S1_PWM = servo[S1];
     motor_shield_v1.S2_PWM = servo[S2];
   } else if (type == MS_L29XX){
-//		gpio_pin_set(&motor_shield_l29xx.M1.IN1, GPIOC, GPIO_PIN_4 ); // M1_IN1: PC4
-//		gpio_pin_set(&motor_shield_l29xx.M1.IN2, GPIOB, GPIO_PIN_15); // M1_IN2: PB15
-//		gpio_pin_set(&motor_shield_l29xx.M2.IN1, GPIOB, GPIO_PIN_1 ); // M2_IN1: PB1
-//		gpio_pin_set(&motor_shield_l29xx.M2.IN2, GPIOB, GPIO_PIN_2 ); // M2_IN2: PB2
-//		gpio_pin_set(&motor_shield_l29xx.M3.IN1, GPIOB, GPIO_PIN_12); // M3_IN1: PB12
-//		gpio_pin_set(&motor_shield_l29xx.M3.IN2, GPIOA, GPIO_PIN_11); // M4_IN2: PA11
-//		gpio_pin_set(&motor_shield_l29xx.M4.IN1, GPIOA, GPIO_PIN_12); // M4_IN1: PA12
-//		gpio_pin_set(&motor_shield_l29xx.M4.IN2, GPIOC, GPIO_PIN_5 ); // M4_IN2: PC5
-		
 		gpio_pin_set(&motor_shield_l29xx.M1.IN1, GPIOB, GPIO_PIN_1 ); // M1_IN1: PB1
 		gpio_pin_set(&motor_shield_l29xx.M1.IN2, GPIOB, GPIO_PIN_2 ); // M1_IN2: PB2
 		gpio_pin_set(&motor_shield_l29xx.M2.IN1, GPIOC, GPIO_PIN_4 ); // M2_IN1: PC4
@@ -42,7 +33,6 @@ void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
 		gpio_pin_set(&motor_shield_l29xx.M3.IN2, GPIOC, GPIO_PIN_5 ); // M3_IN2: PC5
 		gpio_pin_set(&motor_shield_l29xx.M4.IN1, GPIOB, GPIO_PIN_12); // M4_IN1: PB12
 		gpio_pin_set(&motor_shield_l29xx.M4.IN2, GPIOA, GPIO_PIN_11); // M4_IN2: PA11
-		
 	}
   
   if (enable_pwm) { // If using PWM mode

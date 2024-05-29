@@ -618,7 +618,7 @@
             <File>
               <FileName>motor_shield_v1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\DevBoard\NUCLEO-L053R8\motor_shield_v1.c</FilePath>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c</FilePath>
             </File>
             <File>
               <FileName>sensor.c</FileName>

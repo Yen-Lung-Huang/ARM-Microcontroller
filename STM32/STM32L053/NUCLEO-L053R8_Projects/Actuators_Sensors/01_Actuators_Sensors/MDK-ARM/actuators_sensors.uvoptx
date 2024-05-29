@@ -626,7 +626,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\Application_Library\Best_System_Robot\Source\DevBoard\NUCLEO-L053R8\motor_shield_v1.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c</PathWithFileName>
       <FilenameWithoutPath>motor_shield_v1.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

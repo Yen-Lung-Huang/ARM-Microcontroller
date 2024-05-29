@@ -21,9 +21,10 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-int fputc(int ch, FILE *f){  // already include stdio.h in .h, ""for printf function"" 
-	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);  
-	return ch;
+int fputc(int ch, FILE *f)   // already include stdio.h in .h, ""for printf function""
+{
+    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+    return ch;
 }
 
 uint8_t RxBuf[RxBuf_SIZE]; 			// DMA receive buffer.
@@ -145,30 +146,29 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-PUTCHAR_PROTOTYPE
-{
-  /* Place your implementation of fputc here */
-  /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
-  HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
-  return ch;
+PUTCHAR_PROTOTYPE {
+    /* Place your implementation of fputc here */
+    /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
+    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+    return ch;
 }
 
 /* When USART RX receive data.*/
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) 
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-		if(huart->Instance == USART2){
-			uint16_t rx_buf_len = strlen((const char*)RxBuf);
-			memset(MainBuf, '\0', MainBuf_SIZE);
-			memcpy ((uint8_t *)MainBuf, (uint8_t *)RxBuf, rx_buf_len);  // copy data in that remaining space
-			memset(RxBuf, '\0', rx_buf_len);
-			
-			/* start the DMA again */
-			HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *) RxBuf, RxBuf_SIZE);
-			__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
-			
-			/* Do some stuff */
-			// printf("%s\r\n",MainBuf); // Print for debug.
-			json_action((char*)MainBuf, sizeof(char)*MainBuf_SIZE);
-		}
+    if(huart->Instance == USART2) {
+        uint16_t rx_buf_len = strlen((const char*)RxBuf);
+        memset(MainBuf, '\0', MainBuf_SIZE);
+        memcpy ((uint8_t *)MainBuf, (uint8_t *)RxBuf, rx_buf_len);  // copy data in that remaining space
+        memset(RxBuf, '\0', rx_buf_len);
+
+        /* start the DMA again */
+        HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *) RxBuf, RxBuf_SIZE);
+        __HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
+
+        /* Do some stuff */
+        // printf("%s\r\n",MainBuf); // Print for debug.
+        json_action((char*)MainBuf, sizeof(char)*MainBuf_SIZE);
+    }
 }
 /* USER CODE END 1 */

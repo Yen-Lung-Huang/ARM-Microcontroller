@@ -15,10 +15,12 @@ extern "C" {
 #include "servo.h"
 #include "74HC595.h"
 #include "motor_shield_v1.h"
+#include "sensor.h"
 
 
 /* FUNCTION (Prototype) DEFINITIONS */
-void core_config(void);
+void core_init(void);
+void core_loop(void);
 // float map(float x, float in_min, float in_max, float out_min, float out_max);
 double max(double a, double b);
 void print_binary(uint8_t byteData);

@@ -630,6 +630,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\HC-SR04.c</FilePath>
             </File>
+            <File>
+              <FileName>robotic_arm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\robotic_arm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

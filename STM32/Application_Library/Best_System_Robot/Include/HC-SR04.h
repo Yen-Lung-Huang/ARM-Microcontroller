@@ -27,7 +27,7 @@ typedef struct {
 
 
 // Declare the global objects with extern keyword
-extern HC_SR04_TypeDef hc_sr04[3];
+extern HC_SR04_TypeDef hc_sr04[];
 
 /* FUNCTION (Prototype) DEFINITIONS */
 void delay_us(uint16_t us);

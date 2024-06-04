@@ -33,6 +33,7 @@
 "usart_dma_printf\motor_shield_v1.o"
 "usart_dma_printf\sensor.o"
 "usart_dma_printf\hc-sr04.o"
+"usart_dma_printf\robotic_arm.o"
 --library_type=microlib --strict --scatter "usart_dma_printf\actuators_sensors.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

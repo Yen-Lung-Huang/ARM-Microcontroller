@@ -4,12 +4,12 @@
 
 // 定義按鈕陣列
 Button_TypeDef button[NUM_BUTTONS] = {
-    {GPIOC, GPIO_PIN_0, true, false, 0, Button1_Pressed},   // SW_Middle_Up,      上拉觸發
-    {GPIOC, GPIO_PIN_1, true, false, 0, Button2_Pressed},   // SW_Middle_Down,    上拉觸發
-    {GPIOC, GPIO_PIN_2, true, false, 0, Button3_Pressed},   // SW_Left,           上拉觸發
-    {GPIOC, GPIO_PIN_3, true, false, 0, Button4_Pressed},   // SW_Right,          上拉觸發
-    {GPIOA, GPIO_PIN_15, true, false, 0, Button5_Pressed},  // SW_Revolver_Left,  上拉觸發
-    {GPIOB, GPIO_PIN_7, true, false, 0, Button6_Pressed},   // SW_Revolver_Right, 上拉觸發
+    {GPIOC, GPIO_PIN_0 , true , false, 0, Button1_Pressed}, // SW_Middle_Up,      上拉觸發
+    {GPIOC, GPIO_PIN_1 , true , false, 0, Button2_Pressed}, // SW_Middle_Down,    上拉觸發
+    {GPIOC, GPIO_PIN_2 , true , false, 0, Button3_Pressed}, // SW_Left,           上拉觸發
+    {GPIOC, GPIO_PIN_3 , true , false, 0, Button4_Pressed}, // SW_Right,          上拉觸發
+    {GPIOA, GPIO_PIN_15, true , false, 0, Button5_Pressed}, // SW_Revolver_Left,  上拉觸發
+    {GPIOB, GPIO_PIN_7 , true , false, 0, Button6_Pressed}, // SW_Revolver_Right, 上拉觸發
     {GPIOC, GPIO_PIN_13, false, false, 0, Button7_Pressed}  // SW_Middle_Bracket, 下拉觸發
 };
 
@@ -63,13 +63,11 @@ void Button2_Pressed(void) // SW_Middle_Down
 
 void Button3_Pressed(void) // SW_Left
 {
-    ms_motor_control(&motor_shield_v1, MS_V1, M2, 0);
     ms_motor_control(&motor_shield_v1, MS_V1, M3, 0);
 }
 
 void Button4_Pressed(void) // SW_Right
 {
-    ms_motor_control(&motor_shield_v1, MS_V1, M2, 0);
     ms_motor_control(&motor_shield_v1, MS_V1, M4, 0);
 }
 

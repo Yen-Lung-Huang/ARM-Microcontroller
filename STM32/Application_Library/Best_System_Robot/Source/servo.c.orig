@@ -26,19 +26,19 @@ PWM_TypeDef servo[3];
 void servos_init(void)
 {
     servo[S1] = pwm_constructor((PWM_TypeDef) {
-        .timer=&htim21, .channel=TIM_CHANNEL_1, .pwm_min=26,\
+                                 .timer=&htim21, .channel=TIM_CHANNEL_1, .pwm_min=26,\
                                  .pwm_max=123, .physical_min=-90, .physical_max=90, .offset=0,.pwm_value=0,\
-                                          .reverse=false, .complementary=false, .latch=false
+                                 .reverse=false, .complementary=false, .latch=false
     });
     servo[S2] = pwm_constructor((PWM_TypeDef) {
-        .timer=&htim21, .channel=TIM_CHANNEL_2, .pwm_min=32,\
+                                 .timer=&htim21, .channel=TIM_CHANNEL_2, .pwm_min=32,\
                                  .pwm_max=117, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
-                                          .reverse=true, .complementary=false, .latch=false
+                                 .reverse=true, .complementary=false, .latch=false
     });
     servo[S3] = pwm_constructor((PWM_TypeDef) {
-        .timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=26,\
-                                .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
-                                         .reverse=true, .complementary=false, .latch=false
+                                .timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=30,\
+                                .pwm_max=115, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
+                                .reverse=true, .complementary=false, .latch=false
     });
 }
 

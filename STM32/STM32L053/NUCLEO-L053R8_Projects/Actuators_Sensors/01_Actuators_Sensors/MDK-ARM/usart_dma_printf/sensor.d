@@ -47,4 +47,5 @@ usart_dma_printf/sensor.o: \
   ..\Core\Inc\usart.h C:\Keil_v5\ARM\ARMCLANG\include\string.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\core.h \
   C:\Keil_v5\ARM\ARMCLANG\include\math.h \
-  ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h
+  ..\..\..\..\..\Application_Library\ThirdParty\cJSON\Include\cJSON.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\robotic_arm.h

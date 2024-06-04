@@ -47,4 +47,5 @@ usart_dma_printf/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\gpio.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\sensor.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\HC-SR04.h
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\HC-SR04.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\robotic_arm.h

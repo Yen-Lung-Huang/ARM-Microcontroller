@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "sensor.h"
+#include "robotic_arm.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,7 +106,9 @@ int main(void)
 
     printf("Test start\r\n"); // Print for debug.
     core_init();
-    HAL_TIM_Base_Start(&htim6);
+    HAL_TIM_Base_Start(&htim6); // for HC-SR04
+    
+
 
     while (1) {
     /* USER CODE END WHILE */
@@ -113,6 +116,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
         
         core_loop();
+        
+//        printf("%d\n", Button_IsPressed(&button[B1]));
 
     }
   /* USER CODE END 3 */

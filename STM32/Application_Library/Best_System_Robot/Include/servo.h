@@ -56,8 +56,8 @@ void servo_control(PWM_TypeDef *servo, float servo_input, bool mode, bool limit)
 void pwm_stop(PWM_TypeDef* servo);
 void all_pwm_stop(void);
 
-float get_pwm_physical(PWM_TypeDef* servo);
-uint16_t get_limit_pwm(PWM_TypeDef* servo);
+float pwm_get_physical(PWM_TypeDef* servo);
+uint16_t pwm_get_limit(PWM_TypeDef* servo);
 
 
 #ifdef __cplusplus

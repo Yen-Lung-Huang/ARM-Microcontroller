@@ -13,7 +13,6 @@ void core_loop(void)
 {
     for(int i = 0; i < NUM_BUTTONS; Button_CheckState(&button[i++]));
     for(int i = 0; i < 3; HC_SR04_GetDistance(&hc_sr04[i++]));
-    //UpdateRoboticArmState();
 }
 
 #if !defined(SERVO_H)
@@ -89,7 +88,6 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                         printf("invalid motor shield type\r\n"); // Print for debug.
                         return false; // Invalid motor shield type
                     }
-                    CheckButtonsAndStopMotors();
                     // print_binary(motor_shield_v1.hc595.byte); // Print for debug.
                 }
             } else {
@@ -205,16 +203,16 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 }
             }
         }
-
+        
         else if(!strcmp(token->string,"defect_result")) {
             if (cJSON_IsBool(token)) {
-                defect_result = cJSON_IsTrue(token);
-                defect_result_received = true;
-            } else {
-                printf("defect_result is not a boolean\n");
-            }
+                shuttlecock_defect_result = cJSON_IsTrue(???);
+        defect_result_received = true;
+            }else {
+        printf("defect_result is not a boolean\n");
+    }
         }
-
+        
 
 
 

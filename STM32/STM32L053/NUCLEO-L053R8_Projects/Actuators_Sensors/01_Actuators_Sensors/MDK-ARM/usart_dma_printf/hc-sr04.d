@@ -48,4 +48,5 @@ usart_dma_printf/hc-sr04.o: \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
   ..\Core\Inc\gpio.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h \
-  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\sensor.h
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\sensor.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\robotic_arm.h

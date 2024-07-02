@@ -54,9 +54,9 @@ void UpdateRoboticArmState(void)
     switch (roboticArmState) {
     case STATE_INIT:
         // 初始化機械手臂到起始位置
-        servo_control(&servo[S1], 0, ANGLE, true);
+        servo_control(&servo[S1], -3, ANGLE, true);
         servo_control(&servo[S2], 0, ANGLE, true);
-        servo_control(&servo[S3], 80, ANGLE, true); // 打開夾子
+        servo_control(&servo[S3], 40, ANGLE, true); // 打開夾子
         if (Button_IsPressed(&button[B2])) {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1
             roboticArmState = STATE_MOVE_TO_GRAB;
@@ -118,6 +118,7 @@ void UpdateRoboticArmState(void)
     case STATE_PLACE_SHUTTLECOCK:
         // 檢查是否已經觸碰到B1或B2限位開關，如果是，則不啟動M1馬達
         if (!Button_IsPressed(&button[B1])) {
+            servo_control(&servo[S2], 90, ANGLE, true); // 設置 S2 到 90 度
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 1000); // 正轉動 M1
         } else if (Button_IsPressed(&button[B1])) {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1 馬達
@@ -139,7 +140,7 @@ void UpdateRoboticArmState(void)
     case STATE_KEEP_PLACEMENT:
         if (IsDelayExpired(&nonBlockingDelay)) {
             if (defect_result && Button_IsPressed(&button[B4])) { // 如果是好羽毛球且B4被按下
-                servo_control(&servo[S1], -65, ANGLE, true); // S1往左擺動
+                servo_control(&servo[S1], -85, ANGLE, true); // S1往左擺動
                 // 啟動新的延遲以確保S1擺動完成
                 StartDelay(&nonBlockingDelay, 1000);
                 roboticArmState = STATE_FINISH_PLACEMENT;
@@ -155,17 +156,21 @@ void UpdateRoboticArmState(void)
 
     case STATE_FINISH_PLACEMENT:
         if (IsDelayExpired(&nonBlockingDelay)) {
-            servo_control(&servo[S3], 80, ANGLE, true); // 鬆開夾子
+            servo_control(&servo[S3], 10, ANGLE, true); // 鬆開夾子
             StartDelay(&nonBlockingDelay, 1000);
             roboticArmState = STATE_SORT_SHUTTLECOCK;
         }
         break;
 
-        case STATE_SORT_SHUTTLECOCK:
-            if (IsDelayExpired(&nonBlockingDelay)) {
-        servo_control(&servo[S1], 0, ANGLE, true); // S1回到起始位置
-                }
-        
+    case STATE_SORT_SHUTTLECOCK:
+        if (IsDelayExpired(&nonBlockingDelay)) {
+            servo_control(&servo[S1], -3, ANGLE, true); // S1回到起始位置
+            servo_control(&servo[S2], 0, ANGLE, true); // S2回到起始位置
+            servo_control(&servo[S3], 40, ANGLE, true); // 打開夾子
+            StartDelay(&nonBlockingDelay, 1000);
+            roboticArmState = STATE_IDLE;
+        }
+
         /*
             if ((defect_result && Button_IsPressed(&button[B4])) || (!defect_result && Button_IsPressed(&button[B3]))) {
                 if (CheckBucketFull(defect_result ? LEFT : RIGHT)) {
@@ -180,7 +185,17 @@ void UpdateRoboticArmState(void)
                 }
             }
                 */
-            break;
+        break;
+        
+    case STATE_IDLE:
+        if (IsDelayExpired(&nonBlockingDelay)) {
+            all_pwm_stop();
+            ms_motor_control(&motor_shield_v1, MS_V1, M1, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M2, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M3, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M4, 0);
+        }
+        break;
 
     default:
         break;

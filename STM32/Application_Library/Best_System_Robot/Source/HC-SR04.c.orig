@@ -8,12 +8,19 @@ HC_SR04_TypeDef hc_sr04[3] = {
 };
 
 
+// Microsecond delay function
+void delay_us(uint16_t us)
+{
+    __HAL_TIM_SET_COUNTER(&htim6, 0);
+    while (__HAL_TIM_GET_COUNTER(&htim6) < us);
+}
+
 
 // 發送 Trig 信號並回傳距離
 float HC_SR04_GetDistance(HC_SR04_TypeDef* sensor)
 {
     uint32_t startTick = HAL_GetTick();
-
+    
     // 送出 Trig 信號
     HAL_GPIO_WritePin(sensor->trig_port, sensor->trig_pin, GPIO_PIN_SET);
     delay_us(10);

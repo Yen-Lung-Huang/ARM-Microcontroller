@@ -117,10 +117,10 @@ void Error_Handler(void);
 #define M3_ENC6_GPIO_Port GPIOC
 #define M2_EN_Pin GPIO_PIN_7
 #define M2_EN_GPIO_Port GPIOC
-#define M1_Encoder_B_Pin GPIO_PIN_8
-#define M1_Encoder_B_GPIO_Port GPIOC
-#define M1_Encoder_A_Pin GPIO_PIN_9
+#define M1_Encoder_A_Pin GPIO_PIN_8
 #define M1_Encoder_A_GPIO_Port GPIOC
+#define M1_Encoder_B_Pin GPIO_PIN_9
+#define M1_Encoder_B_GPIO_Port GPIOC
 #define DIR_EN_Pin GPIO_PIN_8
 #define DIR_EN_GPIO_Port GPIOA
 #define DIR_SER_Pin GPIO_PIN_9

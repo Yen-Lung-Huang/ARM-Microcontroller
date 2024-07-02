@@ -7,9 +7,8 @@ extern "C" {
 #endif
 
 /* Include */
-#include <stdbool.h>
 #include "main.h"
-#include "tim.h"
+#include "timing_delays.h"
 #include "usart.h"
 
 // Define the HC-SR04 structure
@@ -30,7 +29,6 @@ typedef struct {
 extern HC_SR04_TypeDef hc_sr04[];
 
 /* FUNCTION (Prototype) DEFINITIONS */
-void delay_us(uint16_t us);
 float HC_SR04_GetDistance(HC_SR04_TypeDef* sensor);
 void HC_SR04_HandleInterrupt(uint16_t GPIO_Pin, HC_SR04_TypeDef* sensors, int num_sensors);
 

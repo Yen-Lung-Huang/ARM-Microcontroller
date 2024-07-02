@@ -1,20 +1,6 @@
 #include "robotic_arm.h"
 
-/* Non-blocking wait function---------------------------------------*/
-
-NonBlockingDelay_TypeDef nonBlockingDelay;
-
-void StartDelay(NonBlockingDelay_TypeDef* delay, uint32_t duration)
-{
-    delay->start_time = HAL_GetTick();
-    delay->delay = duration;
-}
-
-bool IsDelayExpired(NonBlockingDelay_TypeDef* delay)
-{
-    return (HAL_GetTick() - delay->start_time) >= delay->delay;
-}
-
+NonBlockingDelay_TypeDef myDelay;
 
 /* Sensor & Actuators Function---------------------------------------*/
 
@@ -53,10 +39,11 @@ void UpdateRoboticArmState(void)
 {
     switch (roboticArmState) {
     case STATE_INIT:
+        myDelay = CreateNonBlockingDelay();
         // 初始化機械手臂到起始位置
-        servo_control(&servo[S1], 0, ANGLE, true);
+        servo_control(&servo[S1], -3, ANGLE, true);
         servo_control(&servo[S2], 0, ANGLE, true);
-        servo_control(&servo[S3], 80, ANGLE, true); // 打開夾子
+        servo_control(&servo[S3], 40, ANGLE, true); // 打開夾子
         if (Button_IsPressed(&button[B2])) {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1
             roboticArmState = STATE_MOVE_TO_GRAB;
@@ -68,7 +55,7 @@ void UpdateRoboticArmState(void)
     case STATE_MOVE_TO_GRAB:
         if (Button_IsPressed(&button[B1])) {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1
-            StartDelay(&nonBlockingDelay, 200); // 等待0.2秒
+            myDelay.Start(&myDelay, 200); // 等待0.2秒
             roboticArmState = STATE_GRAB_SHUTTLECOCK;
         } else {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 1000);
@@ -76,15 +63,15 @@ void UpdateRoboticArmState(void)
         break;
 
     case STATE_GRAB_SHUTTLECOCK:
-        if (IsDelayExpired(&nonBlockingDelay)) {
+        if (myDelay.IsExpired(&myDelay)) {
             servo_control(&servo[S3], 0, ANGLE, true); // 合上夾子
-            StartDelay(&nonBlockingDelay, 100); // 等待0.1秒
+            myDelay.Start(&myDelay, 100);  // 等待0.1秒
             roboticArmState = STATE_MOVE_TO_SCAN;
         }
         break;
 
     case STATE_MOVE_TO_SCAN:
-        if (IsDelayExpired(&nonBlockingDelay)) {
+        if (myDelay.IsExpired(&myDelay)) {
             //pwm_stop(&servo[S3]);
             if (Button_IsPressed(&button[B2])) {
                 ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1
@@ -97,12 +84,12 @@ void UpdateRoboticArmState(void)
 
     case STATE_POSITION_FOR_SCANNING:
         servo_control(&servo[S2], 20, ANGLE, true); // 設置 S2 到掃描角度
-        StartDelay(&nonBlockingDelay, 100); // 等待0.1秒
+        myDelay.Start(&myDelay, 100); // 等待0.1秒
         roboticArmState = STATE_REQUEST_FOR_SCANNING;
         break;
 
     case STATE_REQUEST_FOR_SCANNING:
-        if (IsDelayExpired(&nonBlockingDelay)) {
+        if (myDelay.IsExpired(&myDelay)) {
             defect_result_received = false;
             printf("{\"request\":\"scan_defect\"}"); // Send scan request
             roboticArmState = STATE_WAIT_FOR_DEFECT_RESULT;
@@ -118,11 +105,12 @@ void UpdateRoboticArmState(void)
     case STATE_PLACE_SHUTTLECOCK:
         // 檢查是否已經觸碰到B1或B2限位開關，如果是，則不啟動M1馬達
         if (!Button_IsPressed(&button[B1])) {
+            servo_control(&servo[S2], 90, ANGLE, true); // 設置 S2 到 90 度
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 1000); // 正轉動 M1
         } else if (Button_IsPressed(&button[B1])) {
             ms_motor_control(&motor_shield_v1, MS_V1, M1, 0); // 停止 M1 馬達
             servo_control(&servo[S2], 180, ANGLE, true); // 設置 S2 到 180 度
-            StartDelay(&nonBlockingDelay, 1000); // 等待1秒
+            myDelay.Start(&myDelay, 1000); // 等待1秒
         }
 
         // 根據 defect_result 設置 M2 的初始轉動
@@ -137,16 +125,16 @@ void UpdateRoboticArmState(void)
         break;
 
     case STATE_KEEP_PLACEMENT:
-        if (IsDelayExpired(&nonBlockingDelay)) {
+        if (myDelay.IsExpired(&myDelay)) {
             if (defect_result && Button_IsPressed(&button[B4])) { // 如果是好羽毛球且B4被按下
-                servo_control(&servo[S1], -65, ANGLE, true); // S1往左擺動
+                servo_control(&servo[S1], -85, ANGLE, true); // S1往左擺動
                 // 啟動新的延遲以確保S1擺動完成
-                StartDelay(&nonBlockingDelay, 1000);
+                myDelay.Start(&myDelay, 1000);
                 roboticArmState = STATE_FINISH_PLACEMENT;
             } else if (!defect_result && Button_IsPressed(&button[B3])) { // 如果是壞羽毛球且B3被按下
                 servo_control(&servo[S1], 65, ANGLE, true); // S1往右擺動
                 // 啟動新的延遲以確保S1擺動完成
-                StartDelay(&nonBlockingDelay, 1000);
+                myDelay.Start(&myDelay, 1000);
                 roboticArmState = STATE_FINISH_PLACEMENT;
             }
         }
@@ -154,16 +142,20 @@ void UpdateRoboticArmState(void)
 
 
     case STATE_FINISH_PLACEMENT:
-        if (IsDelayExpired(&nonBlockingDelay)) {
-            servo_control(&servo[S3], 80, ANGLE, true); // 鬆開夾子
-            StartDelay(&nonBlockingDelay, 1000);
+        if (myDelay.IsExpired(&myDelay)) {
+            servo_control(&servo[S3], 10, ANGLE, true); // 鬆開夾子
+            myDelay.Start(&myDelay, 1000);
             roboticArmState = STATE_SORT_SHUTTLECOCK;
         }
         break;
 
     case STATE_SORT_SHUTTLECOCK:
-        if (IsDelayExpired(&nonBlockingDelay)) {
-            servo_control(&servo[S1], 0, ANGLE, true); // S1回到起始位置
+        if (myDelay.IsExpired(&myDelay)) {
+            servo_control(&servo[S1], -3, ANGLE, true); // S1回到起始位置
+            servo_control(&servo[S2], 0, ANGLE, true); // S2回到起始位置
+            servo_control(&servo[S3], 40, ANGLE, true); // 打開夾子
+            myDelay.Start(&myDelay, 1000);
+            roboticArmState = STATE_IDLE;
         }
 
         /*
@@ -180,6 +172,17 @@ void UpdateRoboticArmState(void)
                 }
             }
                 */
+        break;
+
+    case STATE_IDLE:
+        if (myDelay.IsExpired(&myDelay)) {
+            all_pwm_stop();
+            ms_motor_control(&motor_shield_v1, MS_V1, M1, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M2, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M3, 0);
+            ms_motor_control(&motor_shield_v1, MS_V1, M4, 0);
+        }
+        
         break;
 
     default:

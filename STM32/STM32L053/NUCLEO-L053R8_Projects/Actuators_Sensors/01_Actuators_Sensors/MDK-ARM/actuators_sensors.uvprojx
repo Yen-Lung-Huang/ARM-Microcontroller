@@ -635,6 +635,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\robotic_arm.c</FilePath>
             </File>
+            <File>
+              <FileName>timing_delays.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Application_Library\Best_System_Robot\Source\timing_delays.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

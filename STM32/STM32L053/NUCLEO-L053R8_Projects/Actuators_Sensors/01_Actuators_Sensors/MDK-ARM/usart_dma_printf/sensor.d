@@ -44,6 +44,7 @@ usart_dma_printf/sensor.o: \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
   ..\Core\Inc\gpio.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\HC-SR04.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\timing_delays.h \
   ..\Core\Inc\usart.h C:\Keil_v5\ARM\ARMCLANG\include\string.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\core.h \
   C:\Keil_v5\ARM\ARMCLANG\include\math.h \

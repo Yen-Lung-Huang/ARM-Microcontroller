@@ -12,17 +12,16 @@ extern "C" {
 #include "HC-SR04.h"
 
 #define NUM_BUTTONS 7
-#define DEBOUNCE_DELAY 50 // Debounce delay time 50ms
-
 
 // Define the button structure
 typedef struct {
     GPIO_TypeDef* port;
     uint16_t pin;
-    bool is_pull_up; // 表示按鈕是上拉或下拉觸發
+    bool is_pull_up; // Indicates whether the button is triggered by pull-up or pull-down
     bool debounce_flag;
     uint32_t last_debounce_time;
-    void (*callback)(void); // 按鈕按下時的回調函數
+    uint32_t debounce_delay; // Debounce delay time for each button
+    void (*callback)(void); // Callback function when the button is pressed
 } Button_TypeDef;
 
 // Define an enum type variable to store the robot arm servos names and values

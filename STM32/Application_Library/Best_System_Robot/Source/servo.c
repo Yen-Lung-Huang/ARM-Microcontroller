@@ -31,15 +31,24 @@ void servos_init(void)
                                           .reverse=false, .complementary=false, .latch=false
     });
     servo[S2] = pwm_constructor((PWM_TypeDef) {
-        .timer=&htim21, .channel=TIM_CHANNEL_2, .pwm_min=32,\
-                                 .pwm_max=117, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
+        .timer=&htim21, .channel=TIM_CHANNEL_2, .pwm_min=26,\
+                                 .pwm_max=115, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
                                           .reverse=true, .complementary=false, .latch=false
     });
+
     servo[S3] = pwm_constructor((PWM_TypeDef) {
-        .timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=26,\
-                                .pwm_max=123, .physical_min=0, .physical_max=180, .offset=0,.pwm_value=0,\
+        .timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=118-(40*(118-25)/180),\
+                                .pwm_max=118, .physical_min=0, .physical_max=40, .offset=0,.pwm_value=0,\
                                          .reverse=true, .complementary=false, .latch=false
     });
+
+    /*
+    servo[S3] = pwm_constructor((PWM_TypeDef) { // MKS HBL575: pwm= 29~122, angle= 120°
+        .timer=&htim2, .channel=TIM_CHANNEL_4, .pwm_min=29,\
+                                .pwm_max=122-(60*(122-29)/120), .physical_min=0, .physical_max=60, .offset=0,.pwm_value=0,\
+                                         .reverse=false, .complementary=false, .latch=false
+    });
+    */
 }
 
 
@@ -76,31 +85,25 @@ float reverse_physical(PWM_TypeDef* servo, float physical_value)
 // 定義一個宏，表示 PWM 的最小占空比
 #define PWM_DUTY_CYCLE_MIN 20
 
-void pwm_set(PWM_TypeDef* servo, uint16_t pwm_value, bool limit) // 使用固定的兩個參數來定義函數
+void pwm_set(PWM_TypeDef* servo, uint16_t pwm_value, bool limit) // Set PWM value and limit if required
 {
-    // 儲存不受限制的 PWM 值
+    // Save the unrestricted PWM value
     servo->pwm_value = pwm_value;
 
-    // 判斷 limit 是否為 true
-    if(limit == true) { // 如果 limit 為 true，執行以下代碼
-        // 取得實際的 PWM 值
+    // Apply limits if needed
+    if (limit) {
         pwm_value = pwm_get_limit(servo);
-
-        // 限制 pwm_value 最小值為 PWM_DUTY_CYCLE_MIN
-        if(pwm_value < PWM_DUTY_CYCLE_MIN) {
-            pwm_value = PWM_DUTY_CYCLE_MIN;
-        }
     }
 
-    // 設定 PWM 輸出
-    *(timer_ch2ccr(servo->timer,servo->channel)) = pwm_value;
-    // printf("limit= %d, pwm_value= %d\r\n",limit,pwm_value); // Print for debug.
+    // Set PWM output
+    *(timer_ch2ccr(servo->timer, servo->channel)) = pwm_value;
 
-    // 如果 latch 為 true，控制繼電器開關
-    if(servo->latch == true) {
-        //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); // for Relay
+    // Control relay if latch is true
+    if (servo->latch) {
+        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); // for Relay
     }
 }
+
 
 
 // Define a function to set the PWM value according to the physical angle and the limit with fixed arguments
@@ -111,9 +114,13 @@ void pwm_physical_set(PWM_TypeDef *servo, float physical_value, bool limit)
         return;    // Invalid pointer
     }
 
-    // Check the limit parameter
+    // Apply reverse logic if necessary
+    if (limit && servo->reverse) {
+        physical_value = reverse_physical(servo, physical_value);
+    }
+
+    // Apply limits to the physical value
     if (limit) {
-        // Limit the physical value to the physical range
         if (physical_value < servo->physical_min) {
             physical_value = servo->physical_min;
         }
@@ -124,15 +131,10 @@ void pwm_physical_set(PWM_TypeDef *servo, float physical_value, bool limit)
 
     // Calculate the PWM value for the physical value
     uint16_t pwm_value = map(physical_value, servo->physical_min, servo->physical_max, servo->pwm_min, servo->pwm_max);
+
+    // Set the PWM value
     pwm_set(servo, pwm_value, limit);
-
-    // Check if the servo is latched and the PWM value is zero
-    if (servo->latch && servo->pwm_value == 0) {
-        // Reset the GPIO pin for the relay
-        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET); // for Relay
-    }
 }
-
 
 // Define a function to control the servo angle with fixed arguments
 void servo_control(PWM_TypeDef *servo, float servo_input, bool mode, bool limit)
@@ -160,8 +162,8 @@ void pwm_stop(PWM_TypeDef* servo)
 
 void all_pwm_stop(void)
 {
-    for(int i=0; i<=11; i++) {
-        //servo_pwm_set(&servo[i], 0, false);
+    for(int i=S1; i<=S3; i++) {
+        pwm_stop(&servo[i]);
     }
 }
 
@@ -174,22 +176,22 @@ float pwm_get_physical(PWM_TypeDef* servo)
 }
 
 
-// 這個函數接收一個 servo 物件的指標，並回傳它的實際使用的 PWM 占空比
 uint16_t pwm_get_limit(PWM_TypeDef* servo)
 {
-    uint16_t limit_pwm = servo->pwm_value; // 先將 pwm_value 複製給 limit_pwm
-    if (servo->reverse == true) { // 如果 reverse 為 true，則進行反轉的運算
-        limit_pwm = reverse_pwm(servo,limit_pwm);
-    }
-    if (servo->offset != 0) { // 如果 offset 不為零，則加上 offset
+    uint16_t limit_pwm = servo->pwm_value;
+
+    // Apply offset if necessary
+    if (servo->offset != 0) {
         limit_pwm = limit_pwm + servo->offset;
     }
-    if(limit_pwm < servo->pwm_min) { // 如果 limit_pwm 小於 pwm_min，則設為 pwm_min
+    // Enforce PWM limits
+    if(limit_pwm < servo->pwm_min) {
         limit_pwm = servo->pwm_min;
     }
-    if(limit_pwm > servo->pwm_max) { // 如果 limit_pwm 大於 pwm_max，則設為 pwm_max
+    if(limit_pwm > servo->pwm_max) {
         limit_pwm = servo->pwm_max;
     }
-    return limit_pwm; // 回傳 limit_pwm
+    return limit_pwm; // Return limited PWM value
 }
+
 

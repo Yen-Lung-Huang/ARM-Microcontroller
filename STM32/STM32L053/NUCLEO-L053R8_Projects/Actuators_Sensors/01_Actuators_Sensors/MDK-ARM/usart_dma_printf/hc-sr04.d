@@ -1,8 +1,7 @@
 usart_dma_printf/hc-sr04.o: \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Source\HC-SR04.c \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\HC-SR04.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal.h \
   ..\Core\Inc\stm32l0xx_hal_conf.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_rcc.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_def.h \
@@ -36,8 +35,9 @@ usart_dma_printf/hc-sr04.o: \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_tim_ex.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart_ex.h \
-  ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\timing_delays.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\usart.h C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\include\string.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\core.h \
   C:\Keil_v5\ARM\ARMCLANG\include\math.h \

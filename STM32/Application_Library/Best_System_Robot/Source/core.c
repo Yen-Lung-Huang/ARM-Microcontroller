@@ -89,7 +89,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                         printf("invalid motor shield type\r\n"); // Print for debug.
                         return false; // Invalid motor shield type
                     }
-                    CheckButtonsAndStopMotors();
+                    // CheckButtonsAndStopMotors();
                     // print_binary(motor_shield_v1.hc595.byte); // Print for debug.
                 }
             } else {
@@ -212,6 +212,19 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                 defect_result_received = true;
             } else {
                 printf("defect_result is not a boolean\n");
+            }
+        }
+
+
+        else if(!strcmp(token->string,"relay")) {
+            if (cJSON_IsBool(token)) {
+                if(cJSON_IsTrue(token)) {
+                    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+                } else {
+                    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+                }
+            } else {
+                printf("value is not a boolean\n");
             }
         }
 

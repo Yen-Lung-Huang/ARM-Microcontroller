@@ -55,7 +55,10 @@ volatile uint32_t uSec = 0;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim6;
+extern TIM_HandleTypeDef htim21;
+extern TIM_HandleTypeDef htim22;
 extern DMA_HandleTypeDef hdma_usart2_rx;
 extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
@@ -73,7 +76,6 @@ void NMI_Handler(void)
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
-  HAL_RCC_NMI_IRQHandler();
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
     while (1) {
     }
@@ -206,6 +208,20 @@ void DMA1_Channel4_5_6_7_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM6 global interrupt and DAC1/DAC2 underrun error interrupts.
   */
 void TIM6_DAC_IRQHandler(void)
@@ -217,6 +233,34 @@ void TIM6_DAC_IRQHandler(void)
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
 
   /* USER CODE END TIM6_DAC_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM21 global interrupt.
+  */
+void TIM21_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM21_IRQn 0 */
+
+  /* USER CODE END TIM21_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim21);
+  /* USER CODE BEGIN TIM21_IRQn 1 */
+
+  /* USER CODE END TIM21_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM22 global interrupt.
+  */
+void TIM22_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM22_IRQn 0 */
+
+  /* USER CODE END TIM22_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim22);
+  /* USER CODE BEGIN TIM22_IRQn 1 */
+
+  /* USER CODE END TIM22_IRQn 1 */
 }
 
 /**

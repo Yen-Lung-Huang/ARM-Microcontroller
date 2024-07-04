@@ -11,9 +11,13 @@ void core_init(void)
 /* Loop Configuration---------------------------------------*/
 void core_loop(void)
 {
-    for(int i = 0; i < NUM_BUTTONS; Button_CheckState(&button[i++]));
-    for(int i = 0; i < 3; HC_SR04_GetDistance(&hc_sr04[i++]));
-    //UpdateRoboticArmState();
+    for (int i = 0; i < NUM_BUTTONS; Button_CheckState(&button[i++]));
+    for (int i = 0; i < 3; HC_SR04_GetDistance(&hc_sr04[i++]));
+    // UpdateRoboticArmState();
+
+    for (uint8_t i = M1; i <= M4; i++) {
+        soft_motor_control(&motor_shield_l29xx, MS_L29XX, i, get_dc_motor(&motor_shield_l29xx, MS_L29XX, i)->target_speed);
+    }
 }
 
 #if !defined(SERVO_H)
@@ -25,7 +29,7 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
 
 double max(double a, double b)
 {
-    double q = sqrt((a-b)*(a-b));
+    double q = sqrt((a - b) * (a - b));
     return ((a + b) + q) / 2;
 }
 #endif
@@ -33,38 +37,40 @@ double max(double a, double b)
 /* Debug--------------------------------------------------------*/
 void print_binary(uint8_t byteData)
 {
-    int size = sizeof(byteData)* 8;
+    int size = sizeof(byteData) * 8;
     uint8_t bits[size + 1];
 
     for (int i = size - 1; i >= 0; i--) {
-        // 判斷 byteData 的第 i 位是 1 還是 0，並將其寫入到 bits 的第 i 個元素
+        // Check the bit is 1 or 0 and write it into bits
         bits[i] = (byteData & (1 << i)) ? '1' : '0';
     }
-    bits[size] = '\0'; //在最後一個元素加上結束符號
-    printf("%s\r\n", bits); // 使用 printf 函數，並使用 %s 格式符來輸出 binary
+    bits[size] = '\0';      // Add the end symbol
+    printf("%s\r\n", bits); // Use printf function, and use %s format symbol to output binary
 }
 
-
 /* Robot with JSON--------------------------------------------------------*/
-bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(JSON_STRING)
+bool json_action(char *JSON_STRING, uint16_t token_size) // sizeof(char)*strlen(JSON_STRING)
 {
     cJSON *root = cJSON_ParseWithLength(JSON_STRING, token_size);
-    if(root == NULL) {
+    if (root == NULL) {
         printf("invalid JSON\r\n"); // Print for debug.
-        cJSON_Delete(root); // Free the root pointer
+        cJSON_Delete(root);         // Free the root pointer
         return false;
     }
 
     for (cJSON *token = root->child; token != NULL; token = token->next) {
-        if(!strcmp(token->string,"motor")) { // Check if the key is "motor"
-            if(cJSON_IsObject(token)) { // Check if the value is an object
+        if (!strcmp(token->string, "motor")) {
+            // Check if the key is "motor"
+            if (cJSON_IsObject(token)) {
+                // Check if the value is an object
                 cJSON *motor = token; // Get the "Motor" object
-                cJSON *item = NULL; // Declare a pointer to store each item in the object
-                cJSON_ArrayForEach(item, motor) { // Loop through all the items in the object
+                cJSON *item = NULL;   // Declare a pointer to store each item in the object
+                cJSON_ArrayForEach(item, motor) {
+                    // Loop through all the items in the object
                     // Get the key and value of the current item
-                    char *key = item->string; // The key is the motor number, such as "M1" or "W1"
+                    char *key = item->string;        // The key is the motor number, such as "M1" or "W1"
                     float value = item->valuedouble; // The value is the motor input
-                    //int value = item->valueint; // The value is the motor input, such as -100
+                    // int value = item->valueint; // The value is the motor input, such as -100
 
                     // Convert the key to an integer, using the enum type defined in ms_v1_motor_control
                     uint8_t dc_motor_number = 0;
@@ -78,35 +84,43 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                         dc_motor_number = M4;
                     } else {
                         printf("invalid motor number\r\n"); // Print for debug.
-                        return false; // Invalid motor number
+                        return false;                       // Invalid motor number
                     }
                     // Call the ms_motor_control function with the motor shield type, the motor number and input
-                    if (key[0] == 'M') { // If the key starts with 'M', use MS_V1 type
+                    if (key[0] == 'M') {
+                        // If the key starts with 'M', use MS_V1 type
+                        // get_dc_motor(&motor_shield_v1, MS_V1, dc_motor_number)->target_speed = value;
+                        // soft_motor_control(&motor_shield_v1, MS_V1, dc_motor_number, value);
                         ms_motor_control(&motor_shield_v1, MS_V1, dc_motor_number, value);
-                    } else if (key[0] == 'W') { // If the key starts with 'W', use MS_L29XX type
-                        ms_motor_control(&motor_shield_l29xx, MS_L29XX, dc_motor_number, value);
+                    } else if (key[0] == 'W') {
+                        // If the key starts with 'W', use MS_L29XX type
+                        get_dc_motor(&motor_shield_l29xx, MS_L29XX, dc_motor_number)->target_speed = value;
+                        // soft_motor_control(&motor_shield_l29xx, MS_L29XX, dc_motor_number, value);
+                        // ms_motor_control(&motor_shield_l29xx, MS_L29XX, dc_motor_number, value);
                     } else {
                         printf("invalid motor shield type\r\n"); // Print for debug.
-                        return false; // Invalid motor shield type
+                        return false;                            // Invalid motor shield type
                     }
                     // CheckButtonsAndStopMotors();
                     // print_binary(motor_shield_v1.hc595.byte); // Print for debug.
                 }
             } else {
                 printf("invalid motor value\r\n"); // Print for debug.
-                return false; // Invalid motor value
+                return false;                      // Invalid motor value
             }
         }
 
-
-        if(!strcmp(token->string,"servo")) { // Check if the key is "servo"
-            if(cJSON_IsObject(token)) { // Check if the value is an object
+        if (!strcmp(token->string, "servo")) {
+            // Check if the key is "servo"
+            if (cJSON_IsObject(token)) {
+                // Check if the value is an object
                 cJSON *servo_obj = token; // Get the "Servo" object
-                cJSON *item = NULL; // Declare a pointer to store each item in the object
-                cJSON_ArrayForEach(item, servo_obj) { // Loop through all the items in the object
+                cJSON *item = NULL;       // Declare a pointer to store each item in the object
+                cJSON_ArrayForEach(item, servo_obj) {
+                    // Loop through all the items in the object
                     // Get the key and value of the current item
                     char *key = item->string; // The key is the servo number, such as "S1"
-                    float value = 0; // Declare a variable to store the servo input
+                    float value = 0;          // Declare a variable to store the servo input
 
                     // Convert the key to an integer, using the enum type defined in ms_v1_servo_control
                     uint8_t servo_number = 0; // Declare and initialize servo_number at the beginning of the loop
@@ -118,87 +132,92 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
                         servo_number = S3;
                     } else {
                         printf("invalid servo number\r\n"); // Print for debug.
-                        return false; // Invalid servo number
+                        return false;                       // Invalid servo number
                     }
 
                     // Check if the value is a number or a string
-                    if (cJSON_IsNumber(item)) { // If the value is a number
+                    if (cJSON_IsNumber(item)) {
+                        // If the value is a number
                         value = item->valuedouble; // The value is the pwm value
                         // Use servo_control function with PWM mode and limit, and pass the PWM_TypeDef pointer
                         servo_control(&servo[servo_number], value, PWM, true);
-                    } else if (cJSON_IsString(item)) { // If the value is a string
+                    } else if (cJSON_IsString(item)) {
+                        // If the value is a string
                         char *str = item->valuestring; // The value is the angle string, such as "90 deg" or "stop"
                         // Check if the value is "stop"
-                        if (strcmp(str, "stop") == 0) { // If the value is "stop"
+                        if (strcmp(str, "stop") == 0) {
+                            // If the value is "stop"
                             // Call the pwm_stop function with the PWM_TypeDef pointer
                             pwm_stop(&servo[servo_number]);
                             continue; // Skip the rest of the loop
                         }
                         // Parse the string to get the angle value
-                        char *endptr; // Declare a pointer to store the end of the parsed string
+                        char *endptr;                 // Declare a pointer to store the end of the parsed string
                         value = strtof(str, &endptr); // Convert the string to a float
-                        if (endptr == str) { // If no conversion was performed
+                        if (endptr == str) {
+                            // If no conversion was performed
                             printf("invalid servo value\r\n"); // Print for debug.
-                            continue; // Skip the rest of the loop
+                            continue;                          // Skip the rest of the loop
                         }
                         // No need to check if the string has a "deg" suffix
                         // Use servo_control function with ANGLE mode and limit, and pass the PWM_TypeDef pointer
                         servo_control(&servo[servo_number], value, ANGLE, true);
-                    } else { // If the value is neither a number nor a string
+                    } else {
+                        // If the value is neither a number nor a string
                         printf("invalid servo value\r\n"); // Print for debug.
-                        continue; // Skip the rest of the loop
+                        continue;                          // Skip the rest of the loop
                     }
                 }
             } else {
                 printf("invalid servo value\r\n"); // Print for debug.
-                continue; // Skip the rest of the loop
+                continue;                          // Skip the rest of the loop
             }
         }
 
+        else if (!strcmp(token->string, "74HC595")) {
+            int size = cJSON_GetArraySize(token); // Get the number of elements in the array
+            uint8_t byteData = 0;                 // Initialize byteData to 0
 
-        else if(!strcmp(token->string,"74HC595")) {
-            int size = cJSON_GetArraySize(token); //取得 array 的元素數量
-            uint8_t byteData = 0; //宣告一個 uint8_t 變數，並初始化為 0
+            if (size == 8) {
+                // Check if the array is 8 elements long
+                for (int i = 0; i < size; i++) {
+                    // Loop through each element in the array
+                    int value = cJSON_GetArrayItem(token, i)->valueint; // Get the value of the current element
 
-            if (size == 8) { //檢查 array 是否為 8 個元素
-                for(int i = 0; i < size; i++) { //迴圈遍歷 array 的每個元素
-                    int value = cJSON_GetArrayItem(token, i)->valueint; //取得第 i 個元素的值
-
-                    //根據 value 的值，將 byteData 的第 i 位設為 1 或 0
+                    // Set the corresponding bit of byteData to 1 or 0 by using the value
                     if (value == 1) {
-                        byteData |= (1 << i); //使用位元或運算符，將 byteData 的第 i 位設為 1
+                        byteData |= (1 << i); // Use bit-wise or operator to set the corresponding bit to 1
                     } else {
-                        byteData &= ~(1 << i); //使用位元與運算符，將 byteData 的第 i 位設為 0
+                        byteData &= ~(1 << i); // Use bit-wise and operator to set the corresponding bit to 0
                     }
                 }
-                HC595_SendByte(&motor_shield_v1.hc595, byteData); //調用 HC595_SendByte 函數，將 byteData 作為參數傳遞
+                HC595_SendByte(&motor_shield_v1.hc595, byteData); // Call HC595_SendByte function to pass byteData as a parameter
                 printf("(state changed) ");
             }
-            //不管 array 的元素數量為何，都印出 74HC595 的狀態
+            // Print the state of 74HC595 regardless of the number of elements in the array
             printf("74HC595(L->H): ");
             print_binary(motor_shield_v1.hc595.byte); // Print for debug.
         }
 
-
-        else if(!strcmp(token->string,"HC-SR04")) {
+        else if (!strcmp(token->string, "HC-SR04")) {
             if (cJSON_IsNumber(token)) {
                 int sensor_number = token->valueint;
 
-                // 根據 sensor_number 呼叫 hc_sr04_trig 函數
+                // Call hc_sr04_trig function
                 switch (sensor_number) {
                 case 0:
-                    //printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[0]));
+                    // printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[0]));
                     printf("Distance: %6.2f cm\n", hc_sr04[0].distance);
                     break;
                 case 1:
-                    //printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[1]));
+                    // printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[1]));
                     printf("Distance: %6.2f cm\n", hc_sr04[1].distance);
                     break;
                 case 2:
-                    //printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[2]));
+                    // printf("Distance: %6.2f cm\n", HC_SR04_GetDistance(&hc_sr04[2]));
                     printf("Distance: %6.2f cm\n", hc_sr04[2].distance);
                     break;
-                // 可以根據需要添加更多的案例
+                
                 default:
                     printf("Invalid sensor number\n");
                     break;
@@ -206,7 +225,7 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
             }
         }
 
-        else if(!strcmp(token->string,"defect_result")) {
+        else if (!strcmp(token->string, "defect_result")) {
             if (cJSON_IsBool(token)) {
                 defect_result = cJSON_IsTrue(token);
                 defect_result_received = true;
@@ -215,32 +234,24 @@ bool json_action(char *JSON_STRING, uint16_t token_size) //sizeof(char)*strlen(J
             }
         }
 
-
-        else if(!strcmp(token->string,"relay")) {
+        else if (!strcmp(token->string, "relay")) {
             if (cJSON_IsBool(token)) {
-                if(cJSON_IsTrue(token)) {
-                    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+                if (cJSON_IsTrue(token)) {
+                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
                 } else {
-                    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
                 }
             } else {
                 printf("value is not a boolean\n");
             }
         }
 
-
-
-
-        else if(!strcmp(token->string,"adc")) {
-            //printf("%f\r\n",read_adc()); // send adc value
-            //printf("%d\n",(int)map(read_adc(),0,3.26,0,100)); // send adc value by %
-            printf("%d\r\n",(int)map((10800000-(float)HAL_GetTick())/10800000,0,1,0,82.5));
+        else if (!strcmp(token->string, "adc")) {
+            // printf("%f\r\n",read_adc()); // send adc value
+            // printf("%d\n",(int)map(read_adc(),0,3.26,0,100)); // send adc value by %
+            printf("%d\r\n", (int)map((10800000 - (float)HAL_GetTick()) / 10800000, 0, 1, 0, 82.5));
         }
-
     }
     cJSON_Delete(root);
     return true; // JSON action completed successfully
 }
-
-
-

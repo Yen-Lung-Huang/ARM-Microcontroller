@@ -1,6 +1,7 @@
 usart_dma_printf/motor_shield_v1.o: \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Source\motor_shield_v1.c \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\motor_shield_v1.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\math.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\servo.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h \
@@ -14,12 +15,12 @@ usart_dma_printf/motor_shield_v1.o: \
   ..\Drivers\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h \
   ..\Drivers\CMSIS\Include\core_cm0plus.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  D:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_version.h \
-  D:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_compiler.h \
-  D:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_armclang.h \
+  d:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_version.h \
+  d:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_compiler.h \
+  d:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\cmsis_armclang.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h \
-  D:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\mpu_armv7.h \
+  d:\Code\ARM-Microcontroller\STM32\STM32L053\NUCLEO-L053R8_Projects\Actuators_Sensors\01_Actuators_Sensors\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stddef.h \
@@ -41,4 +42,5 @@ usart_dma_printf/motor_shield_v1.o: \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart_ex.h \
   ..\..\..\..\..\Application_Library\Best_System_Robot\Include\74HC595.h \
-  ..\Core\Inc\gpio.h
+  ..\Core\Inc\gpio.h \
+  ..\..\..\..\..\Application_Library\Best_System_Robot\Include\timing_delays.h

@@ -2,7 +2,9 @@
 
 #define DC_MOTOR_MIN 0
 #define DC_MOTOR_MAX 999
-#define MIN_START_POWER 0.5f  // Minimum power to overcome static friction
+// #define MAX_FACTOR 1.0f
+// #define MIN_FACTOR 0.05f
+#define MIN_START_POWER 0.1f  // Minimum power to overcome static friction
 
 /* Motor_Shield_V1 Configuration--------------------------------------------------------*/
 
@@ -11,7 +13,6 @@ Motor_Shield_V1 motor_shield_v1;
 Motor_Shield_L29XX motor_shield_l29xx;
 
 // Initialize the motor shield
-
 void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
 {
     if (type == MS_V1) {
@@ -245,10 +246,100 @@ void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, fl
     }
 }
 
+
+/* PID Motor Control ---------------------------------------------------------------*/
+
+// // Step 1: Improve the dynamic factor calculation
+// float calculate_dynamic_factor(int current_speed, int target_speed)
+// {
+//     float base_factor;
+//     int speed_diff = abs(target_speed - current_speed);
+//     int current_magnitude = abs(current_speed);
+
+//     if (target_speed == DC_MOTOR_MIN) {
+//         // Faster stopping for higher speeds
+//         base_factor = 0.3f + (0.7f * current_magnitude / DC_MOTOR_MAX);
+//     } else {
+//         // Smoother control for larger speed differences
+//         base_factor = 1.0f - (0.8f * speed_diff / DC_MOTOR_MAX);
+//     }
+
+//     // Smoother direction changes
+//     if ((current_speed > 0 && target_speed < 0) || (current_speed < 0 && target_speed > 0)) {
+//         base_factor *= 0.5f;
+//     }
+
+//     return fmaxf(MIN_FACTOR, fminf(base_factor, MAX_FACTOR));
+// }
+
+// // Step 2: Add a simple PID controller
+// PIDController pid;
+
+// void init_pid_controller(PIDController* pid, float Kp, float Ki, float Kd)
+// {
+//     pid->Kp = Kp;
+//     pid->Ki = Ki;
+//     pid->Kd = Kd;
+//     pid->integral = 0.0f;
+//     pid->prev_error = 0.0f;
+// }
+
+// float pid_compute(PIDController* pid, float error, float dt)
+// {
+//     pid->integral += error * dt;
+//     float derivative = (error - pid->prev_error) / dt;
+//     float output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
+//     pid->prev_error = error;
+//     return output;
+// }
+
+
+// void pid_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed, PIDController* pid)
+// {
+//     DC_Motor_TypeDef *motor = get_dc_motor(motor_shield, type, dc_motor_number);
+//     if (motor == NULL) {
+//         printf("Error: Motor not found\n");
+//         return;
+//     }
+
+//     // Limit the target speed
+//     target_speed = (target_speed > DC_MOTOR_MAX) ? DC_MOTOR_MAX :
+//                    (target_speed < -DC_MOTOR_MAX ? -DC_MOTOR_MAX : target_speed);
+
+//     if (motor->EN.soft_control_delay.IsExpired(&motor->EN.soft_control_delay)) {
+//         // Calculate dynamic factor
+//         float factor = calculate_dynamic_factor(motor->current_speed, target_speed);
+
+//         // Calculate error
+//         float error = target_speed - motor->current_speed;
+
+//         // Compute PID output
+//         float pid_output = pid_compute(pid, error, 0.02f);  // Assuming 20ms update interval
+
+//         // Combine dynamic factor and PID
+//         int speed_change = (int)((error * factor) + pid_output);
+
+//         // Update current speed
+//         motor->current_speed += speed_change;
+
+//         // Ensure speed is within limits
+//         motor->current_speed = fmaxf(-DC_MOTOR_MAX, fminf(motor->current_speed, DC_MOTOR_MAX));
+
+//         // Convert to motor input (-1 to 1 float) and control
+//         float motor_input = (float)motor->current_speed / (float)DC_MOTOR_MAX;
+//         ms_motor_control(motor_shield, type, dc_motor_number, motor_input);
+
+//         // Set next update delay
+//         motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 20);
+//     }
+// }
+
+
+
+
 /* Soft Motor Control ---------------------------------------------------------------*/
 
-float apply_deadband_compensation(float input)
-{
+float apply_deadband_compensation(float input) {
     float deadband = 0.05f;  // Adjust based on your motor's characteristics
     if (fabsf(input) < deadband) {
         return 0.0f;
@@ -256,8 +347,7 @@ float apply_deadband_compensation(float input)
     return input > 0 ? input - deadband : input + deadband;
 }
 
-float apply_non_linear_control(float input)
-{
+float apply_non_linear_control(float input) {
     // Apply more aggressive control at low speeds
     return powf(fabsf(input), 0.8f) * (input >= 0 ? 1 : -1);
 }
@@ -286,14 +376,14 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
         if (fabsf(speed_diff) > 1.0f) {
             float change_factor;
             if ((motor->current_speed >= 0 && target_speed > motor->current_speed) ||
-                    (motor->current_speed <= 0 && target_speed < motor->current_speed)) {
+                (motor->current_speed <= 0 && target_speed < motor->current_speed)) {
                 // Accelerating
                 change_factor = acceleration_factor;
             } else {
                 // Decelerating
                 change_factor = deceleration_factor;
             }
-
+            
             // Apply non-linear control for low speeds
             float adjusted_diff = apply_non_linear_control(speed_diff / DC_MOTOR_MAX) * DC_MOTOR_MAX;
             motor->current_speed += (int)(adjusted_diff * change_factor);

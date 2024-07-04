@@ -7,22 +7,38 @@ extern "C" {
 #endif
 
 /* Include */
+#include <math.h>
 #include "servo.h"
 #include "74HC595.h"
-#include "tim.h"
+#include "timing_delays.h"
+
+/* MACRO DEFINITIONS */
+
 
 // Define a structure for EN pin
 typedef struct {
 	My_GPIO_TypeDef GPIO; // GPIO for EN pin
 	PWM_TypeDef PWM;      // PWM for EN pin
 	bool enable_pwm;      // Enable PWM mode or not
+    NonBlockingDelay_TypeDef soft_control_delay; // Non-blocking delay for soft control
 } DC_Motor_EN_TypeDef;
 
-// Define a structure for DC motor
+// Define a structure for Encoder
 typedef struct {
-	My_GPIO_TypeDef IN1;    // GPIO for IN1 pin
-	My_GPIO_TypeDef IN2;    // GPIO for IN2 pin
-	DC_Motor_EN_TypeDef EN; // Enable signal for DC motor
+    My_GPIO_TypeDef A;  // GPIO for Encoder A pin
+    My_GPIO_TypeDef B;  // GPIO for Encoder B pin
+    int32_t count;      // Encoder count
+} Encoder_TypeDef;
+
+typedef struct {
+    My_GPIO_TypeDef IN1;    // GPIO for IN1 pin
+    My_GPIO_TypeDef IN2;    // GPIO for IN2 pin
+    DC_Motor_EN_TypeDef EN; // Enable signal for DC motor
+    int target_speed;       // Range -999 to 999, negative value means reverse
+    int current_speed;      // Current speed of the motor
+    bool reverse;           // Reverse the motor direction
+    Encoder_TypeDef encoder; // Encoder structure
+    bool has_encoder;       // Flag indicating if encoder exists
 } DC_Motor_TypeDef;
 
 // Define a structure for Motor_Shield_V1
@@ -51,15 +67,18 @@ typedef struct {
 } L29XX;
 
 
+
+
 // Declare the global objects with extern keyword
 extern Motor_Shield_V1 motor_shield_v1;
 extern Motor_Shield_L29XX motor_shield_l29xx;
+// extern PIDController pid;
 
 // Define an enum type to indicate the type of motor shield
 enum Motor_Shield_Type {MS_V1, MS_L29XX};
 
 // Define an enum type variable to store the motor names and values
-enum motor_shield_v1_motor {M1 = 1, M2, M3, M4};
+enum motor_shield_v1_motor {M1, M2, M3, M4};
 
 // Define an enum type variable to store the servo names and values
 // enum motor_shield_v1_servo {S1, S2};
@@ -70,8 +89,15 @@ void ms_init(enum Motor_Shield_Type type, bool enable_pwm);
 void ms_pwm_init(enum Motor_Shield_Type type);
 void ms_gpio_init(enum Motor_Shield_Type type);
 
+DC_Motor_TypeDef* get_dc_motor(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number);
+uint8_t get_motor_bit(uint8_t dc_motor_number, uint8_t bit_index);
+
 void ms_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, float motor_input);
 void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode);
+
+float apply_deadband_compensation(float input);
+float apply_non_linear_control(float input);
+void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed);
 
 #ifdef __cplusplus
 }

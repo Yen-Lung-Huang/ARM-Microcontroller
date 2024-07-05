@@ -2,7 +2,7 @@
  * 74HC595.c
  *
  *  Created on: 2023/12/11
- *      Author: Yan Lung Huang
+ *      Author: Yen Lung Huang
  *
  *	LATCH    - PA6 (General output PP)
  *  CLOCK    - PB5 (General output PP)

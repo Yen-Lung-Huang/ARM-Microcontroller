@@ -2,9 +2,15 @@
 
 #define DC_MOTOR_MIN 0
 #define DC_MOTOR_MAX 999
-// #define MAX_FACTOR 1.0f
-// #define MIN_FACTOR 0.05f
-#define MIN_START_POWER 0.1f  // Minimum power to overcome static friction
+#define STATIC_FRICTION_THRESHOLD 200
+#define LOW_SPEED_THRESHOLD 75
+#define MAX_ACCELERATION 1000
+#define MAX_ADJUSTMENT_FACTOR 0.8f
+#define MIN_ADJUSTMENT_FACTOR 0.3f
+#define KP 1.0f
+#define KI 0.1f
+#define KD 0.01f
+#define K_BACK_EMF 0.01f
 
 /* Motor_Shield_V1 Configuration--------------------------------------------------------*/
 
@@ -13,57 +19,57 @@ Motor_Shield_V1 motor_shield_v1;
 Motor_Shield_L29XX motor_shield_l29xx;
 
 // Initialize the motor shield
+
 void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
 {
-    if (type == MS_V1) {
-        // If using Motor Shield V1
-        // Initialize the HC595 pins
-        gpio_pin_set(&motor_shield_v1.hc595.LATCH, GPIOA, GPIO_PIN_6);
-        gpio_pin_set(&motor_shield_v1.hc595.CLOCK, GPIOB, GPIO_PIN_5);
-        gpio_pin_set(&motor_shield_v1.hc595.DATA, GPIOA, GPIO_PIN_9);
-
-        // Set the forward and reverse of each motor
-        // motor_shield_v1.M1.reverse = false;
-        // motor_shield_v1.M2.reverse = false;
-        // motor_shield_v1.M3.reverse = false;
-        // motor_shield_v1.M4.reverse = false;
-
-        for (uint8_t i = M1; i <= M4; i++) {
-            get_dc_motor(&motor_shield_v1, MS_V1, i)->EN.soft_control_delay = CreateNonBlockingDelay();
-        }
-
-        // Initialize the servos with pwm_constructor function
-        // Since NUCLEO-L053R8 has insufficient PWM output on the servo pwm pin of motor shield v1, \
-        the timers and channels for servo pwm need to be self-defined.
-        motor_shield_v1.S1_PWM = servo[S1];
-        motor_shield_v1.S2_PWM = servo[S2];
-    } else if (type == MS_L29XX) {
-        gpio_pin_set(&motor_shield_l29xx.M1.IN1, GPIOB, GPIO_PIN_1);  // M1_IN1: PB1
-        gpio_pin_set(&motor_shield_l29xx.M1.IN2, GPIOB, GPIO_PIN_2);  // M1_IN2: PB2
-        gpio_pin_set(&motor_shield_l29xx.M2.IN1, GPIOC, GPIO_PIN_4);  // M2_IN1: PC4
-        gpio_pin_set(&motor_shield_l29xx.M2.IN2, GPIOB, GPIO_PIN_15); // M2_IN2: PB15
-        gpio_pin_set(&motor_shield_l29xx.M3.IN1, GPIOA, GPIO_PIN_12); // M3_IN1: PA12
-        gpio_pin_set(&motor_shield_l29xx.M3.IN2, GPIOC, GPIO_PIN_5);  // M3_IN2: PC5
-        gpio_pin_set(&motor_shield_l29xx.M4.IN1, GPIOB, GPIO_PIN_12); // M4_IN1: PB12
-        gpio_pin_set(&motor_shield_l29xx.M4.IN2, GPIOA, GPIO_PIN_11); // M4_IN2: PA11
-
-        // Set the forward and reverse of each motor
-        motor_shield_l29xx.M1.reverse = false;
-        motor_shield_l29xx.M2.reverse = true;
-        motor_shield_l29xx.M3.reverse = false;
-        motor_shield_l29xx.M4.reverse = false;
-
-        for (uint8_t i = M1; i <= M4; i++) {
-            get_dc_motor(&motor_shield_l29xx, MS_L29XX, i)->EN.soft_control_delay = CreateNonBlockingDelay();
-        }
-    }
+    ms_gpio_init(type);
 
     if (enable_pwm) {
-        // If using PWM mode
-        ms_pwm_init(type); // Call the ms_pwm_init function with the type parameter
-    } else {
-        // If using GPIO mode
-        ms_gpio_init(type); // Call the ms_gpio_init function with the type parameter
+        ms_pwm_init(type);
+    }
+
+    ms_encoder_init(type);
+
+    if (type == MS_V1) {
+        init_motor_shield_v1();
+    } else if (type == MS_L29XX) {
+        init_motor_shield_l29xx();
+    }
+}
+
+void init_motor_shield_v1()
+{
+    // Initialize the HC595 pins
+    gpio_pin_set(&motor_shield_v1.hc595.LATCH, GPIOA, GPIO_PIN_6);
+    gpio_pin_set(&motor_shield_v1.hc595.CLOCK, GPIOB, GPIO_PIN_5);
+    gpio_pin_set(&motor_shield_v1.hc595.DATA, GPIOA, GPIO_PIN_9);
+
+    for (uint8_t i = M1; i <= M4; i++) {
+        get_dc_motor(&motor_shield_v1, MS_V1, i)->EN.soft_control_delay = CreateNonBlockingDelay();
+    }
+
+    motor_shield_v1.S1_PWM = servo[S1];
+    motor_shield_v1.S2_PWM = servo[S2];
+}
+
+void init_motor_shield_l29xx()
+{
+    gpio_pin_set(&motor_shield_l29xx.M1.IN1, GPIOB, GPIO_PIN_1);
+    gpio_pin_set(&motor_shield_l29xx.M1.IN2, GPIOB, GPIO_PIN_2);
+    gpio_pin_set(&motor_shield_l29xx.M2.IN1, GPIOC, GPIO_PIN_4);
+    gpio_pin_set(&motor_shield_l29xx.M2.IN2, GPIOB, GPIO_PIN_15);
+    gpio_pin_set(&motor_shield_l29xx.M3.IN1, GPIOA, GPIO_PIN_12);
+    gpio_pin_set(&motor_shield_l29xx.M3.IN2, GPIOC, GPIO_PIN_5);
+    gpio_pin_set(&motor_shield_l29xx.M4.IN1, GPIOB, GPIO_PIN_12);
+    gpio_pin_set(&motor_shield_l29xx.M4.IN2, GPIOA, GPIO_PIN_11);
+
+    motor_shield_l29xx.M1.reverse = false;
+    motor_shield_l29xx.M2.reverse = true;
+    motor_shield_l29xx.M3.reverse = false;
+    motor_shield_l29xx.M4.reverse = false;
+
+    for (uint8_t i = M1; i <= M4; i++) {
+        get_dc_motor(&motor_shield_l29xx, MS_L29XX, i)->EN.soft_control_delay = CreateNonBlockingDelay();
     }
 }
 
@@ -141,6 +147,32 @@ void ms_gpio_init(enum Motor_Shield_Type type)
         motor_shield_l29xx.M3.EN.enable_pwm = false;
         motor_shield_l29xx.M4.EN.enable_pwm = false;
     }
+}
+
+void ms_encoder_init(enum Motor_Shield_Type type)
+{
+    if (type == MS_L29XX) {
+        // M1 Encoder
+        gpio_pin_set(&motor_shield_l29xx.M1.encoder.A, GPIOC, GPIO_PIN_8);
+        gpio_pin_set(&motor_shield_l29xx.M1.encoder.B, GPIOC, GPIO_PIN_9);
+        motor_shield_l29xx.M1.has_encoder = true;
+
+        // M2 Encoder
+        gpio_pin_set(&motor_shield_l29xx.M2.encoder.A, GPIOB, GPIO_PIN_8);
+        gpio_pin_set(&motor_shield_l29xx.M2.encoder.B, GPIOB, GPIO_PIN_9);
+        motor_shield_l29xx.M2.has_encoder = true;
+
+        // M3 Encoder
+        gpio_pin_set(&motor_shield_l29xx.M3.encoder.A, GPIOB, GPIO_PIN_6);
+        gpio_pin_set(&motor_shield_l29xx.M3.encoder.B, GPIOA, GPIO_PIN_10);
+        motor_shield_l29xx.M3.has_encoder = true;
+
+        // M4 Encoder
+        gpio_pin_set(&motor_shield_l29xx.M4.encoder.A, GPIOA, GPIO_PIN_4);
+        gpio_pin_set(&motor_shield_l29xx.M4.encoder.B, GPIOB, GPIO_PIN_0);
+        motor_shield_l29xx.M4.has_encoder = true;
+    }
+    // If needed, Add encoder initialization for MS_V1
 }
 
 /* Motor_Shield_V1 Control--------------------------------------------------------------*/
@@ -246,166 +278,85 @@ void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, fl
     }
 }
 
-
-/* PID Motor Control ---------------------------------------------------------------*/
-
-// // Step 1: Improve the dynamic factor calculation
-// float calculate_dynamic_factor(int current_speed, int target_speed)
-// {
-//     float base_factor;
-//     int speed_diff = abs(target_speed - current_speed);
-//     int current_magnitude = abs(current_speed);
-
-//     if (target_speed == DC_MOTOR_MIN) {
-//         // Faster stopping for higher speeds
-//         base_factor = 0.3f + (0.7f * current_magnitude / DC_MOTOR_MAX);
-//     } else {
-//         // Smoother control for larger speed differences
-//         base_factor = 1.0f - (0.8f * speed_diff / DC_MOTOR_MAX);
-//     }
-
-//     // Smoother direction changes
-//     if ((current_speed > 0 && target_speed < 0) || (current_speed < 0 && target_speed > 0)) {
-//         base_factor *= 0.5f;
-//     }
-
-//     return fmaxf(MIN_FACTOR, fminf(base_factor, MAX_FACTOR));
-// }
-
-// // Step 2: Add a simple PID controller
-// PIDController pid;
-
-// void init_pid_controller(PIDController* pid, float Kp, float Ki, float Kd)
-// {
-//     pid->Kp = Kp;
-//     pid->Ki = Ki;
-//     pid->Kd = Kd;
-//     pid->integral = 0.0f;
-//     pid->prev_error = 0.0f;
-// }
-
-// float pid_compute(PIDController* pid, float error, float dt)
-// {
-//     pid->integral += error * dt;
-//     float derivative = (error - pid->prev_error) / dt;
-//     float output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
-//     pid->prev_error = error;
-//     return output;
-// }
-
-
-// void pid_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed, PIDController* pid)
-// {
-//     DC_Motor_TypeDef *motor = get_dc_motor(motor_shield, type, dc_motor_number);
-//     if (motor == NULL) {
-//         printf("Error: Motor not found\n");
-//         return;
-//     }
-
-//     // Limit the target speed
-//     target_speed = (target_speed > DC_MOTOR_MAX) ? DC_MOTOR_MAX :
-//                    (target_speed < -DC_MOTOR_MAX ? -DC_MOTOR_MAX : target_speed);
-
-//     if (motor->EN.soft_control_delay.IsExpired(&motor->EN.soft_control_delay)) {
-//         // Calculate dynamic factor
-//         float factor = calculate_dynamic_factor(motor->current_speed, target_speed);
-
-//         // Calculate error
-//         float error = target_speed - motor->current_speed;
-
-//         // Compute PID output
-//         float pid_output = pid_compute(pid, error, 0.02f);  // Assuming 20ms update interval
-
-//         // Combine dynamic factor and PID
-//         int speed_change = (int)((error * factor) + pid_output);
-
-//         // Update current speed
-//         motor->current_speed += speed_change;
-
-//         // Ensure speed is within limits
-//         motor->current_speed = fmaxf(-DC_MOTOR_MAX, fminf(motor->current_speed, DC_MOTOR_MAX));
-
-//         // Convert to motor input (-1 to 1 float) and control
-//         float motor_input = (float)motor->current_speed / (float)DC_MOTOR_MAX;
-//         ms_motor_control(motor_shield, type, dc_motor_number, motor_input);
-
-//         // Set next update delay
-//         motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 20);
-//     }
-// }
-
-
-
-
 /* Soft Motor Control ---------------------------------------------------------------*/
 
-float apply_deadband_compensation(float input) {
-    float deadband = 0.05f;  // Adjust based on your motor's characteristics
-    if (fabsf(input) < deadband) {
-        return 0.0f;
-    }
-    return input > 0 ? input - deadband : input + deadband;
-}
-
-float apply_non_linear_control(float input) {
-    // Apply more aggressive control at low speeds
-    return powf(fabsf(input), 0.8f) * (input >= 0 ? 1 : -1);
-}
-
-
-void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed)
-{
+// Define a function to control the motor with one input
+void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed) {
     DC_Motor_TypeDef *motor = get_dc_motor(motor_shield, type, dc_motor_number);
     if (motor == NULL) {
         printf("Error: Motor not found\n");
         return;
     }
 
-    // Limit the target speed to between -DC_MOTOR_MAX and DC_MOTOR_MAX
     target_speed = (target_speed > DC_MOTOR_MAX) ? DC_MOTOR_MAX : (target_speed < -DC_MOTOR_MAX ? -DC_MOTOR_MAX : target_speed);
-
-    // Update the target speed
     motor->target_speed = target_speed;
+    printf("Current Speed: %d, Target Speed: %d, Static Friction Overcome: %d\n", motor->current_speed, motor->target_speed, motor->static_friction_overcome);
+
+    uint32_t current_time = HAL_GetTick();
 
     if (motor->EN.soft_control_delay.IsExpired(&motor->EN.soft_control_delay)) {
-        float speed_diff = motor->target_speed - motor->current_speed;
-        float acceleration_factor = 0.1f; // Slower acceleration
-        float deceleration_factor = 0.5f; // Faster deceleration
+        float dt = (current_time - motor->last_update_time) / 1000.0f;
+        int speed_diff = motor->target_speed - motor->current_speed;
 
-        // Calculate the new current speed
-        if (fabsf(speed_diff) > 1.0f) {
-            float change_factor;
-            if ((motor->current_speed >= 0 && target_speed > motor->current_speed) ||
-                (motor->current_speed <= 0 && target_speed < motor->current_speed)) {
-                // Accelerating
-                change_factor = acceleration_factor;
+        if (target_speed == 0) {
+            // Logic for stopping when target speed is 0
+            if (abs(motor->current_speed) > LOW_SPEED_THRESHOLD) {
+                motor->current_speed -= (motor->current_speed > 0) ? MAX_ACCELERATION * dt : -MAX_ACCELERATION * dt;
+                if (abs(motor->current_speed) < LOW_SPEED_THRESHOLD) {
+                    motor->current_speed = 0;
+                }
             } else {
-                // Decelerating
-                change_factor = deceleration_factor;
+                motor->current_speed = 0;
             }
-            
-            // Apply non-linear control for low speeds
-            float adjusted_diff = apply_non_linear_control(speed_diff / DC_MOTOR_MAX) * DC_MOTOR_MAX;
-            motor->current_speed += (int)(adjusted_diff * change_factor);
+            motor->static_friction_overcome = false;
         } else {
-            motor->current_speed = motor->target_speed;
+            // Logic for non-zero target speeds
+            int effective_target_speed = (abs(target_speed) < LOW_SPEED_THRESHOLD) ? 
+                (target_speed > 0 ? LOW_SPEED_THRESHOLD : -LOW_SPEED_THRESHOLD) : target_speed;
+
+            // Check if direction has changed
+            if (motor->current_speed * effective_target_speed < 0) {
+                // Handle direction change
+                motor->current_speed -= (motor->current_speed > 0) ? MAX_ACCELERATION * dt : -MAX_ACCELERATION * dt;
+                if (abs(motor->current_speed) < LOW_SPEED_THRESHOLD) {
+                    motor->current_speed = 0;
+                    motor->static_friction_overcome = false;  // Reset static friction flag
+                }
+            } else {
+                if (!motor->static_friction_overcome || abs(motor->current_speed) < LOW_SPEED_THRESHOLD) {
+                    motor->current_speed = (effective_target_speed > 0) ? STATIC_FRICTION_THRESHOLD : -STATIC_FRICTION_THRESHOLD;
+                    motor->static_friction_overcome = true;
+                } else {
+                    float speed_ratio = (float)abs(motor->current_speed) / DC_MOTOR_MAX;
+                    float adjustment_factor = MAX_ADJUSTMENT_FACTOR - speed_ratio * (MAX_ADJUSTMENT_FACTOR - MIN_ADJUSTMENT_FACTOR);
+
+                    adjustment_factor *= (abs(effective_target_speed) > abs(motor->current_speed)) ? 1.2f : 0.8f;
+
+                    int speed_change = (int)((effective_target_speed - motor->current_speed) * adjustment_factor);
+                    int max_speed_change = MAX_ACCELERATION * dt;
+
+                    speed_change = (abs(speed_change) > max_speed_change) ? 
+                        ((speed_change > 0) ? max_speed_change : -max_speed_change) : speed_change;
+
+                    motor->current_speed += speed_change;
+
+                    if ((speed_diff > 0 && motor->current_speed > effective_target_speed) ||
+                        (speed_diff < 0 && motor->current_speed < effective_target_speed)) {
+                        motor->current_speed = effective_target_speed;
+                    }
+                }
+            }
         }
 
-        // Convert the current speed to motor input (-1 to 1 float)
-        float motor_input = (float)motor->current_speed / (float)DC_MOTOR_MAX;
+        float back_emf = K_BACK_EMF * motor->current_speed;
+        float compensated_speed = motor->current_speed + back_emf;
+        float motor_input = compensated_speed / DC_MOTOR_MAX;
+        motor_input = (motor_input > 1.0f) ? 1.0f : (motor_input < -1.0f ? -1.0f : motor_input);
 
-        // Apply deadband compensation
-        motor_input = apply_deadband_compensation(motor_input);
-
-        // Ensure minimum start power
-        if (motor_input != 0 && fabsf(motor_input) < MIN_START_POWER) {
-            motor_input = (motor_input > 0) ? MIN_START_POWER : -MIN_START_POWER;
-        }
-
-        // Call ms_motor_control to actually control the motor
         ms_motor_control(motor_shield, type, dc_motor_number, motor_input);
 
-        // Set the delay for the next update (e.g. 20ms for faster updates)
-        motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 20);
+        motor->previous_error = speed_diff;
+        motor->last_update_time = current_time;
+        motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 1);
     }
 }

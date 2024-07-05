@@ -3,7 +3,7 @@
 #define DC_MOTOR_MIN 0
 #define DC_MOTOR_MAX 999
 #define STATIC_FRICTION_THRESHOLD 200
-#define LOW_SPEED_THRESHOLD 75
+#define LOW_SPEED_THRESHOLD 100
 #define MAX_ACCELERATION 1000
 #define MAX_ADJUSTMENT_FACTOR 0.8f
 #define MIN_ADJUSTMENT_FACTOR 0.3f
@@ -12,14 +12,18 @@
 #define KD 0.01f
 #define K_BACK_EMF 0.01f
 
-/* Motor_Shield_V1 Configuration--------------------------------------------------------*/
+#define PWM_PERIOD 100  // Define the PWM period as 100ms
 
-// Declare a Motor_Shield_V1 structure with the defined ports and pins
+/* Motor Configuration--------------------------------------------------------*/
+
+// Declare the motor shield variables for V1 and L29XX & relay motor
 Motor_Shield_V1 motor_shield_v1;
 Motor_Shield_L29XX motor_shield_l29xx;
+RelayMotor_TypeDef relay_motor;
+
+/* Initialization --------------------------------------------------------*/
 
 // Initialize the motor shield
-
 void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
 {
     ms_gpio_init(type);
@@ -175,6 +179,17 @@ void ms_encoder_init(enum Motor_Shield_Type type)
     // If needed, Add encoder initialization for MS_V1
 }
 
+
+// Initialize the relay motor
+void relay_motor_init(RelayMotor_TypeDef* motor) {
+    motor->current_speed = 0;
+    motor->target_speed = 0;
+    motor->pwm_delay = CreateNonBlockingDelay();
+    motor->relay_state = false;
+}
+
+
+
 /* Motor_Shield_V1 Control--------------------------------------------------------------*/
 
 // Helper function to get the DC motor object based on the motor shield type and motor number
@@ -278,10 +293,12 @@ void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, fl
     }
 }
 
+
 /* Soft Motor Control ---------------------------------------------------------------*/
 
 // Define a function to control the motor with one input
-void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed) {
+void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed)
+{
     DC_Motor_TypeDef *motor = get_dc_motor(motor_shield, type, dc_motor_number);
     if (motor == NULL) {
         printf("Error: Motor not found\n");
@@ -290,7 +307,7 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
 
     target_speed = (target_speed > DC_MOTOR_MAX) ? DC_MOTOR_MAX : (target_speed < -DC_MOTOR_MAX ? -DC_MOTOR_MAX : target_speed);
     motor->target_speed = target_speed;
-    printf("Current Speed: %d, Target Speed: %d, Static Friction Overcome: %d\n", motor->current_speed, motor->target_speed, motor->static_friction_overcome);
+    // printf("Current Speed: %d, Target Speed: %d, Static Friction Overcome: %d\n", motor->current_speed, motor->target_speed, motor->static_friction_overcome);
 
     uint32_t current_time = HAL_GetTick();
 
@@ -311,8 +328,8 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
             motor->static_friction_overcome = false;
         } else {
             // Logic for non-zero target speeds
-            int effective_target_speed = (abs(target_speed) < LOW_SPEED_THRESHOLD) ? 
-                (target_speed > 0 ? LOW_SPEED_THRESHOLD : -LOW_SPEED_THRESHOLD) : target_speed;
+            int effective_target_speed = (abs(target_speed) < LOW_SPEED_THRESHOLD) ?
+                                         (target_speed > 0 ? LOW_SPEED_THRESHOLD : -LOW_SPEED_THRESHOLD) : target_speed;
 
             // Check if direction has changed
             if (motor->current_speed * effective_target_speed < 0) {
@@ -335,13 +352,13 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
                     int speed_change = (int)((effective_target_speed - motor->current_speed) * adjustment_factor);
                     int max_speed_change = MAX_ACCELERATION * dt;
 
-                    speed_change = (abs(speed_change) > max_speed_change) ? 
-                        ((speed_change > 0) ? max_speed_change : -max_speed_change) : speed_change;
+                    speed_change = (abs(speed_change) > max_speed_change) ?
+                                   ((speed_change > 0) ? max_speed_change : -max_speed_change) : speed_change;
 
                     motor->current_speed += speed_change;
 
                     if ((speed_diff > 0 && motor->current_speed > effective_target_speed) ||
-                        (speed_diff < 0 && motor->current_speed < effective_target_speed)) {
+                            (speed_diff < 0 && motor->current_speed < effective_target_speed)) {
                         motor->current_speed = effective_target_speed;
                     }
                 }
@@ -358,5 +375,34 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
         motor->previous_error = speed_diff;
         motor->last_update_time = current_time;
         motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 1);
+    }
+}
+
+
+
+/* Relay Motor Control ---------------------------------------------------------------*/
+
+void relay_motor_set_speed(RelayMotor_TypeDef* motor, int speed) {
+    motor->target_speed = (speed < 0) ? 0 : (speed > 100) ? 100 : speed;
+}
+
+void relay_motor_update(RelayMotor_TypeDef* motor) {
+    if (motor->pwm_delay.IsExpired(&motor->pwm_delay)) {
+        uint32_t on_time = (motor->target_speed * PWM_PERIOD) / 100;
+        uint32_t off_time = PWM_PERIOD - on_time;
+
+        if (motor->relay_state) {
+            // 關閉繼電器
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+            motor->relay_state = false;
+            motor->pwm_delay.Start(&motor->pwm_delay, off_time);
+        } else {
+            // 開啟繼電器
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+            motor->relay_state = true;
+            motor->pwm_delay.Start(&motor->pwm_delay, on_time);
+        }
+
+        motor->current_speed = motor->target_speed;
     }
 }

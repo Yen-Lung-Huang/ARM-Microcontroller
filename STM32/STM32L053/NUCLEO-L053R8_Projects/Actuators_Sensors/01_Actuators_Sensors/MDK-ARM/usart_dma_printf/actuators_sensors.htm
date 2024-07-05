@@ -3,7 +3,7 @@
 <title>Static Call Graph - [usart_dma_printf\actuators_sensors.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image usart_dma_printf\actuators_sensors.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Fri Jul  5 15:00:26 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Fri Jul  5 17:10:52 2024
 <BR><P>
 <H3>Maximum Stack Usage =        544 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1583,7 +1583,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_init
 </UL>
 
-<P><STRONG><a name="[b6]"></a>soft_motor_control</STRONG> (Thumb, 612 bytes, Stack size 56 bytes, motor_shield_v1.o(.text.soft_motor_control))
+<P><STRONG><a name="[b6]"></a>soft_motor_control</STRONG> (Thumb, 576 bytes, Stack size 56 bytes, motor_shield_v1.o(.text.soft_motor_control))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = soft_motor_control &rArr; puts &rArr; fputc &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1597,7 +1597,6 @@ Global Symbols
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_loop
 </UL>
@@ -1612,7 +1611,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_action
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_motor_control
 </UL>
 
 <P><STRONG><a name="[f5]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)

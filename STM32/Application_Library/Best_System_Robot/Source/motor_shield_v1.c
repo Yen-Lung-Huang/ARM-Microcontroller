@@ -12,14 +12,17 @@
 #define KD 0.01f
 #define K_BACK_EMF 0.01f
 
-/* Motor_Shield_V1 Configuration--------------------------------------------------------*/
+#define PWM_PERIOD 1000  // Define the PWM period as 1000ms
 
-// Declare a Motor_Shield_V1 structure with the defined ports and pins
+/* Motor Configuration--------------------------------------------------------*/
+
+// Declare the motor shield variables for V1 and L29XX
 Motor_Shield_V1 motor_shield_v1;
 Motor_Shield_L29XX motor_shield_l29xx;
 
-// Initialize the motor shield
+/* Initialization --------------------------------------------------------*/
 
+// Initialize the motor shield
 void ms_init(enum Motor_Shield_Type type, bool enable_pwm)
 {
     ms_gpio_init(type);
@@ -175,6 +178,10 @@ void ms_encoder_init(enum Motor_Shield_Type type)
     // If needed, Add encoder initialization for MS_V1
 }
 
+
+
+
+
 /* Motor_Shield_V1 Control--------------------------------------------------------------*/
 
 // Helper function to get the DC motor object based on the motor shield type and motor number
@@ -278,6 +285,7 @@ void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, fl
     }
 }
 
+
 /* Soft Motor Control ---------------------------------------------------------------*/
 
 // Define a function to control the motor with one input
@@ -291,7 +299,7 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
 
     target_speed = (target_speed > DC_MOTOR_MAX) ? DC_MOTOR_MAX : (target_speed < -DC_MOTOR_MAX ? -DC_MOTOR_MAX : target_speed);
     motor->target_speed = target_speed;
-    printf("Current Speed: %d, Target Speed: %d, Static Friction Overcome: %d\n", motor->current_speed, motor->target_speed, motor->static_friction_overcome);
+    // printf("Current Speed: %d, Target Speed: %d, Static Friction Overcome: %d\n", motor->current_speed, motor->target_speed, motor->static_friction_overcome);
 
     uint32_t current_time = HAL_GetTick();
 
@@ -361,3 +369,4 @@ void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t
         motor->EN.soft_control_delay.Start(&motor->EN.soft_control_delay, 1);
     }
 }
+

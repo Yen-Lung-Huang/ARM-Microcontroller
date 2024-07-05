@@ -74,7 +74,6 @@ typedef struct {
 // Declare the global objects with extern keyword
 extern Motor_Shield_V1 motor_shield_v1;
 extern Motor_Shield_L29XX motor_shield_l29xx;
-// extern PIDController pid;
 
 // Define an enum type to indicate the type of motor shield
 enum Motor_Shield_Type {MS_V1, MS_L29XX};
@@ -100,9 +99,8 @@ uint8_t get_motor_bit(uint8_t dc_motor_number, uint8_t bit_index);
 
 void ms_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, float motor_input);
 void ms_v1_servo_control(Motor_Shield_V1 *motor_shield, uint8_t servo_number, float servo_input, bool mode);
-
-float calculate_control_interval(int speed_diff);
 void soft_motor_control(void *motor_shield, enum Motor_Shield_Type type, uint8_t dc_motor_number, int target_speed);
+
 
 #ifdef __cplusplus
 }

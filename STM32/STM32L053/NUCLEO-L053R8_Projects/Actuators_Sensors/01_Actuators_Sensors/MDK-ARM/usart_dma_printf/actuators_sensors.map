@@ -1526,6 +1526,8 @@ Section Cross References
     cjson.o(.bss..L_MergedGlobals) refers (Special) to scanf_fp.o(.text) for _scanf_real
     core.o(.text.core_init) refers to servo.o(.text.servos_init) for servos_init
     core.o(.text.core_init) refers to motor_shield_v1.o(.text.ms_init) for ms_init
+    core.o(.text.core_init) refers to timing_delays.o(.text.getCurrentMicros) for getCurrentMicros
+    core.o(.text.core_init) refers to printfa.o(i.__0printf) for __2printf
     core.o(.ARM.exidx.text.core_init) refers to core.o(.text.core_init) for [Anonymous Symbol]
     core.o(.text.core_loop) refers to sensor.o(.text.Button_CheckState) for Button_CheckState
     core.o(.text.core_loop) refers to hc-sr04.o(.text.HC_SR04_GetDistance) for HC_SR04_GetDistance
@@ -1757,6 +1759,9 @@ Section Cross References
     timing_delays.o(.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.NonBlockingDelay_IsExpired) for NonBlockingDelay_IsExpired
     timing_delays.o(.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.NonBlockingDelay_Start) for NonBlockingDelay_Start
     timing_delays.o(.ARM.exidx.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.CreateNonBlockingDelay) for [Anonymous Symbol]
+    timing_delays.o(.text.getCurrentMicros) refers to stm32l0xx_hal.o(.text.HAL_GetTick) for HAL_GetTick
+    timing_delays.o(.text.getCurrentMicros) refers to uidiv_div0.o(.text) for __aeabi_uidiv
+    timing_delays.o(.ARM.exidx.text.getCurrentMicros) refers to timing_delays.o(.text.getCurrentMicros) for [Anonymous Symbol]
     strtod.o(i.__softfp_strtod) refers (Special) to iusefp.o(.text) for __I$use$fp
     strtod.o(i.__softfp_strtod) refers to strtod.o(.text) for __strtod_int
     strtod.o(i.strtod) refers (Special) to iusefp.o(.text) for __I$use$fp
@@ -3231,11 +3236,12 @@ Removing Unused input sections from the image.
     Removing timing_delays.o(.ARM.exidx.text.NonBlockingDelay_Start), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.NonBlockingDelay_IsExpired), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.CreateNonBlockingDelay), (8 bytes).
+    Removing timing_delays.o(.ARM.exidx.text.getCurrentMicros), (8 bytes).
     Removing dcmpgt.o(.text), (44 bytes).
     Removing dcmpeq.o(.text), (46 bytes).
     Removing dflti.o(.text), (40 bytes).
 
-1107 unused section(s) (total 57069 bytes) removed from the image.
+1108 unused section(s) (total 57077 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3669,132 +3675,134 @@ Image Symbol Table
     __arm_cp.12_0                            0x0800439c   Number         4  cjson.o(.text.cJSON_ParseWithLengthOpts)
     __arm_cp.12_1                            0x080043a0   Number         4  cjson.o(.text.cJSON_ParseWithLengthOpts)
     [Anonymous Symbol]                       0x080043a8   Section        0  core.o(.text.core_init)
-    [Anonymous Symbol]                       0x080043c0   Section        0  core.o(.text.core_loop)
-    __arm_cp.1_0                             0x08004478   Number         4  core.o(.text.core_loop)
-    __arm_cp.1_1                             0x0800447c   Number         4  core.o(.text.core_loop)
-    [Anonymous Symbol]                       0x08004480   Section        0  timing_delays.o(.text.delay_us)
-    __arm_cp.0_0                             0x080044a4   Number         4  timing_delays.o(.text.delay_us)
-    [Anonymous Symbol]                       0x080044a8   Section        0  usart.o(.text.fputc)
-    __arm_cp.0_0                             0x080044c0   Number         4  usart.o(.text.fputc)
-    __arm_cp.0_1                             0x080044c4   Number         4  usart.o(.text.fputc)
-    [Anonymous Symbol]                       0x080044c8   Section        0  motor_shield_v1.o(.text.get_dc_motor)
-    [Anonymous Symbol]                       0x080044e6   Section        0  74hc595.o(.text.gpio_pin_set)
-    [Anonymous Symbol]                       0x080044ec   Section        0  motor_shield_v1.o(.text.init_motor_shield_l29xx)
-    __arm_cp.6_0                             0x080045e0   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
-    __arm_cp.6_1                             0x080045e4   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
-    __arm_cp.6_2                             0x080045e8   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
-    [Anonymous Symbol]                       0x080045ec   Section        0  core.o(.text.json_action)
-    __arm_cp.3_54                            0x080049e0   Number         4  core.o(.text.json_action)
-    __arm_cp.3_49                            0x08004a6c   Number         4  core.o(.text.json_action)
-    __arm_cp.3_50                            0x08004a70   Number         4  core.o(.text.json_action)
-    __arm_cp.3_51                            0x08004a74   Number         4  core.o(.text.json_action)
-    __arm_cp.3_53                            0x08004a80   Number         4  core.o(.text.json_action)
-    __arm_cp.3_11                            0x08004af0   Number         4  core.o(.text.json_action)
-    __arm_cp.3_23                            0x08004b28   Number         4  core.o(.text.json_action)
-    __arm_cp.3_24                            0x08004b2c   Number         4  core.o(.text.json_action)
-    __arm_cp.3_25                            0x08004b30   Number         4  core.o(.text.json_action)
-    __arm_cp.3_26                            0x08004b34   Number         4  core.o(.text.json_action)
-    __arm_cp.3_27                            0x08004b38   Number         4  core.o(.text.json_action)
-    __arm_cp.3_29                            0x08004b54   Number         4  core.o(.text.json_action)
-    __arm_cp.3_30                            0x08004b58   Number         4  core.o(.text.json_action)
-    __arm_cp.3_31                            0x08004b5c   Number         4  core.o(.text.json_action)
-    __arm_cp.3_35                            0x08004b6c   Number         4  core.o(.text.json_action)
-    __arm_cp.3_36                            0x08004b70   Number         4  core.o(.text.json_action)
-    __arm_cp.3_38                            0x08004b7c   Number         4  core.o(.text.json_action)
-    __arm_cp.3_39                            0x08004b80   Number         4  core.o(.text.json_action)
-    [Anonymous Symbol]                       0x08004b84   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x08004c68   Number         4  main.o(.text.main)
-    __arm_cp.0_1                             0x08004c6c   Number         4  main.o(.text.main)
-    __arm_cp.0_2                             0x08004c70   Number         4  main.o(.text.main)
-    __arm_cp.0_3                             0x08004c74   Number         4  main.o(.text.main)
-    __arm_cp.0_5                             0x08004c84   Number         4  main.o(.text.main)
-    [Anonymous Symbol]                       0x08004c88   Section        0  servo.o(.text.map)
-    [Anonymous Symbol]                       0x08004cc4   Section        0  motor_shield_v1.o(.text.ms_encoder_init)
-    [Anonymous Symbol]                       0x08004d5c   Section        0  motor_shield_v1.o(.text.ms_gpio_init)
-    __arm_cp.1_0                             0x08004e14   Number         4  motor_shield_v1.o(.text.ms_gpio_init)
-    __arm_cp.1_1                             0x08004e18   Number         4  motor_shield_v1.o(.text.ms_gpio_init)
-    [Anonymous Symbol]                       0x08004e1c   Section        0  motor_shield_v1.o(.text.ms_init)
-    __arm_cp.0_0                             0x08004f04   Number         4  motor_shield_v1.o(.text.ms_init)
-    __arm_cp.0_1                             0x08004f08   Number         4  motor_shield_v1.o(.text.ms_init)
-    __arm_cp.0_2                             0x08004f0c   Number         4  motor_shield_v1.o(.text.ms_init)
-    [Anonymous Symbol]                       0x08004f10   Section        0  motor_shield_v1.o(.text.ms_motor_control)
-    __arm_cp.8_0                             0x08005034   Number         4  motor_shield_v1.o(.text.ms_motor_control)
-    [Anonymous Symbol]                       0x08005038   Section        0  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_0                             0x080051b0   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_1                             0x080051b4   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_2                             0x080051b8   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_3                             0x080051bc   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_4                             0x080051c0   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    __arm_cp.2_5                             0x080051c4   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
-    parse_hex4                               0x080051c9   Thumb Code   192  cjson.o(.text.parse_hex4)
-    [Anonymous Symbol]                       0x080051c8   Section        0  cjson.o(.text.parse_hex4)
-    parse_string                             0x08005289   Thumb Code  1056  cjson.o(.text.parse_string)
-    [Anonymous Symbol]                       0x08005288   Section        0  cjson.o(.text.parse_string)
-    __arm_cp.85_0                            0x080056a8   Number         4  cjson.o(.text.parse_string)
-    __arm_cp.85_1                            0x080056ac   Number         4  cjson.o(.text.parse_string)
-    __arm_cp.85_2                            0x080056b0   Number         4  cjson.o(.text.parse_string)
-    parse_value                              0x080056b5   Thumb Code   836  cjson.o(.text.parse_value)
-    [Anonymous Symbol]                       0x080056b4   Section        0  cjson.o(.text.parse_value)
-    __arm_cp.13_0                            0x080059f8   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_1                            0x080059fc   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_2                            0x08005a00   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_3                            0x08005a04   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_4                            0x08005a08   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_5                            0x08005a0c   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_6                            0x08005a10   Number         4  cjson.o(.text.parse_value)
-    __arm_cp.13_7                            0x08005a14   Number         4  cjson.o(.text.parse_value)
-    [Anonymous Symbol]                       0x08005a18   Section        0  servo.o(.text.pwm_constructor)
-    [Anonymous Symbol]                       0x08005a44   Section        0  servo.o(.text.pwm_physical_set)
-    [Anonymous Symbol]                       0x08005b6c   Section        0  servo.o(.text.pwm_set)
-    [Anonymous Symbol]                       0x08005bc0   Section        0  servo.o(.text.pwm_stop)
-    [Anonymous Symbol]                       0x08005bfc   Section        0  servo.o(.text.servo_control)
-    [Anonymous Symbol]                       0x08005c74   Section        0  servo.o(.text.servos_init)
-    __arm_cp.2_0                             0x08005cdc   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_1                             0x08005ce0   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_2                             0x08005ce4   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_3                             0x08005ce8   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_4                             0x08005cec   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_5                             0x08005cf0   Number         4  servo.o(.text.servos_init)
-    __arm_cp.2_6                             0x08005cf4   Number         4  servo.o(.text.servos_init)
-    [Anonymous Symbol]                       0x08005cf8   Section        0  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_0                            0x08005f38   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_1                            0x08005f3c   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_2                            0x08005f40   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_3                            0x08005f44   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_4                            0x08005f48   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_5                            0x08005f4c   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_6                            0x08005f50   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_7                            0x08005f54   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_8                            0x08005f58   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    __arm_cp.10_9                            0x08005f5c   Number         4  motor_shield_v1.o(.text.soft_motor_control)
-    i.__0printf                              0x08005f78   Section        0  printfa.o(i.__0printf)
-    i.__ARM_clz                              0x08005f98   Section        0  depilogue.o(i.__ARM_clz)
-    i.__free$realloc                         0x08005fc8   Section        0  mallocr.o(i.__free$realloc)
-    i.__malloc$realloc                       0x0800602c   Section        0  mallocr.o(i.__malloc$realloc)
-    i.__scatterload_copy                     0x08006074   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08006082   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08006084   Section       14  handlers.o(i.__scatterload_zeroinit)
-    _fp_digits                               0x08006095   Thumb Code   344  printfa.o(i._fp_digits)
-    i._fp_digits                             0x08006094   Section        0  printfa.o(i._fp_digits)
-    i._is_digit                              0x08006208   Section        0  scanf_fp.o(i._is_digit)
-    _printf_core                             0x08006219   Thumb Code  1754  printfa.o(i._printf_core)
-    i._printf_core                           0x08006218   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x08006905   Thumb Code    32  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x08006904   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x08006925   Thumb Code    44  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x08006924   Section        0  printfa.o(i._printf_pre_padding)
-    internal_alloc                           0x08006951   Thumb Code    74  mallocr.o(i.internal_alloc)
-    i.internal_alloc                         0x08006950   Section        0  mallocr.o(i.internal_alloc)
-    i.puts                                   0x080069a0   Section        0  puts.o(i.puts)
-    i.realloc                                0x080069c0   Section        0  mallocr.o(i.realloc)
-    i.strtod                                 0x08006a34   Section        0  strtod.o(i.strtod)
-    i.strtof                                 0x08006a52   Section        0  strtof.o(i.strtof)
-    .constdata                               0x08006a66   Section       64  ctype_c.o(.constdata)
-    [Anonymous Symbol]                       0x08006ac8   Section        0  stm32l0xx_hal_uart.o(.rodata.cst16)
-    get_motor_bit.motor_bits                 0x08006ad8   Data           8  motor_shield_v1.o(.rodata.cst8)
-    [Anonymous Symbol]                       0x08006ad8   Section        0  motor_shield_v1.o(.rodata.cst8)
-    [Anonymous Symbol]                       0x08006ae0   Section        0  cjson.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08006af3   Section        0  core.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080043e4   Section        0  core.o(.text.core_loop)
+    __arm_cp.1_0                             0x0800449c   Number         4  core.o(.text.core_loop)
+    __arm_cp.1_1                             0x080044a0   Number         4  core.o(.text.core_loop)
+    [Anonymous Symbol]                       0x080044a4   Section        0  timing_delays.o(.text.delay_us)
+    __arm_cp.0_0                             0x080044c8   Number         4  timing_delays.o(.text.delay_us)
+    [Anonymous Symbol]                       0x080044cc   Section        0  usart.o(.text.fputc)
+    __arm_cp.0_0                             0x080044e4   Number         4  usart.o(.text.fputc)
+    __arm_cp.0_1                             0x080044e8   Number         4  usart.o(.text.fputc)
+    [Anonymous Symbol]                       0x080044ec   Section        0  timing_delays.o(.text.getCurrentMicros)
+    __arm_cp.4_0                             0x0800452c   Number         4  timing_delays.o(.text.getCurrentMicros)
+    [Anonymous Symbol]                       0x08004530   Section        0  motor_shield_v1.o(.text.get_dc_motor)
+    [Anonymous Symbol]                       0x0800454e   Section        0  74hc595.o(.text.gpio_pin_set)
+    [Anonymous Symbol]                       0x08004554   Section        0  motor_shield_v1.o(.text.init_motor_shield_l29xx)
+    __arm_cp.6_0                             0x08004648   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
+    __arm_cp.6_1                             0x0800464c   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
+    __arm_cp.6_2                             0x08004650   Number         4  motor_shield_v1.o(.text.init_motor_shield_l29xx)
+    [Anonymous Symbol]                       0x08004654   Section        0  core.o(.text.json_action)
+    __arm_cp.3_54                            0x08004a48   Number         4  core.o(.text.json_action)
+    __arm_cp.3_49                            0x08004ad4   Number         4  core.o(.text.json_action)
+    __arm_cp.3_50                            0x08004ad8   Number         4  core.o(.text.json_action)
+    __arm_cp.3_51                            0x08004adc   Number         4  core.o(.text.json_action)
+    __arm_cp.3_53                            0x08004ae8   Number         4  core.o(.text.json_action)
+    __arm_cp.3_11                            0x08004b58   Number         4  core.o(.text.json_action)
+    __arm_cp.3_23                            0x08004b90   Number         4  core.o(.text.json_action)
+    __arm_cp.3_24                            0x08004b94   Number         4  core.o(.text.json_action)
+    __arm_cp.3_25                            0x08004b98   Number         4  core.o(.text.json_action)
+    __arm_cp.3_26                            0x08004b9c   Number         4  core.o(.text.json_action)
+    __arm_cp.3_27                            0x08004ba0   Number         4  core.o(.text.json_action)
+    __arm_cp.3_29                            0x08004bbc   Number         4  core.o(.text.json_action)
+    __arm_cp.3_30                            0x08004bc0   Number         4  core.o(.text.json_action)
+    __arm_cp.3_31                            0x08004bc4   Number         4  core.o(.text.json_action)
+    __arm_cp.3_35                            0x08004bd4   Number         4  core.o(.text.json_action)
+    __arm_cp.3_36                            0x08004bd8   Number         4  core.o(.text.json_action)
+    __arm_cp.3_38                            0x08004be4   Number         4  core.o(.text.json_action)
+    __arm_cp.3_39                            0x08004be8   Number         4  core.o(.text.json_action)
+    [Anonymous Symbol]                       0x08004bec   Section        0  main.o(.text.main)
+    __arm_cp.0_0                             0x08004cd0   Number         4  main.o(.text.main)
+    __arm_cp.0_1                             0x08004cd4   Number         4  main.o(.text.main)
+    __arm_cp.0_2                             0x08004cd8   Number         4  main.o(.text.main)
+    __arm_cp.0_3                             0x08004cdc   Number         4  main.o(.text.main)
+    __arm_cp.0_5                             0x08004cec   Number         4  main.o(.text.main)
+    [Anonymous Symbol]                       0x08004cf0   Section        0  servo.o(.text.map)
+    [Anonymous Symbol]                       0x08004d2c   Section        0  motor_shield_v1.o(.text.ms_encoder_init)
+    [Anonymous Symbol]                       0x08004dc4   Section        0  motor_shield_v1.o(.text.ms_gpio_init)
+    __arm_cp.1_0                             0x08004e7c   Number         4  motor_shield_v1.o(.text.ms_gpio_init)
+    __arm_cp.1_1                             0x08004e80   Number         4  motor_shield_v1.o(.text.ms_gpio_init)
+    [Anonymous Symbol]                       0x08004e84   Section        0  motor_shield_v1.o(.text.ms_init)
+    __arm_cp.0_0                             0x08004f6c   Number         4  motor_shield_v1.o(.text.ms_init)
+    __arm_cp.0_1                             0x08004f70   Number         4  motor_shield_v1.o(.text.ms_init)
+    __arm_cp.0_2                             0x08004f74   Number         4  motor_shield_v1.o(.text.ms_init)
+    [Anonymous Symbol]                       0x08004f78   Section        0  motor_shield_v1.o(.text.ms_motor_control)
+    __arm_cp.8_0                             0x0800509c   Number         4  motor_shield_v1.o(.text.ms_motor_control)
+    [Anonymous Symbol]                       0x080050a0   Section        0  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_0                             0x08005218   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_1                             0x0800521c   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_2                             0x08005220   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_3                             0x08005224   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_4                             0x08005228   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    __arm_cp.2_5                             0x0800522c   Number         4  motor_shield_v1.o(.text.ms_pwm_init)
+    parse_hex4                               0x08005231   Thumb Code   192  cjson.o(.text.parse_hex4)
+    [Anonymous Symbol]                       0x08005230   Section        0  cjson.o(.text.parse_hex4)
+    parse_string                             0x080052f1   Thumb Code  1056  cjson.o(.text.parse_string)
+    [Anonymous Symbol]                       0x080052f0   Section        0  cjson.o(.text.parse_string)
+    __arm_cp.85_0                            0x08005710   Number         4  cjson.o(.text.parse_string)
+    __arm_cp.85_1                            0x08005714   Number         4  cjson.o(.text.parse_string)
+    __arm_cp.85_2                            0x08005718   Number         4  cjson.o(.text.parse_string)
+    parse_value                              0x0800571d   Thumb Code   836  cjson.o(.text.parse_value)
+    [Anonymous Symbol]                       0x0800571c   Section        0  cjson.o(.text.parse_value)
+    __arm_cp.13_0                            0x08005a60   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_1                            0x08005a64   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_2                            0x08005a68   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_3                            0x08005a6c   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_4                            0x08005a70   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_5                            0x08005a74   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_6                            0x08005a78   Number         4  cjson.o(.text.parse_value)
+    __arm_cp.13_7                            0x08005a7c   Number         4  cjson.o(.text.parse_value)
+    [Anonymous Symbol]                       0x08005a80   Section        0  servo.o(.text.pwm_constructor)
+    [Anonymous Symbol]                       0x08005aac   Section        0  servo.o(.text.pwm_physical_set)
+    [Anonymous Symbol]                       0x08005bd4   Section        0  servo.o(.text.pwm_set)
+    [Anonymous Symbol]                       0x08005c28   Section        0  servo.o(.text.pwm_stop)
+    [Anonymous Symbol]                       0x08005c64   Section        0  servo.o(.text.servo_control)
+    [Anonymous Symbol]                       0x08005cdc   Section        0  servo.o(.text.servos_init)
+    __arm_cp.2_0                             0x08005d44   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_1                             0x08005d48   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_2                             0x08005d4c   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_3                             0x08005d50   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_4                             0x08005d54   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_5                             0x08005d58   Number         4  servo.o(.text.servos_init)
+    __arm_cp.2_6                             0x08005d5c   Number         4  servo.o(.text.servos_init)
+    [Anonymous Symbol]                       0x08005d60   Section        0  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_0                            0x08005fa0   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_1                            0x08005fa4   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_2                            0x08005fa8   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_3                            0x08005fac   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_4                            0x08005fb0   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_5                            0x08005fb4   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_6                            0x08005fb8   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_7                            0x08005fbc   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_8                            0x08005fc0   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    __arm_cp.10_9                            0x08005fc4   Number         4  motor_shield_v1.o(.text.soft_motor_control)
+    i.__0printf                              0x08005fe0   Section        0  printfa.o(i.__0printf)
+    i.__ARM_clz                              0x08006000   Section        0  depilogue.o(i.__ARM_clz)
+    i.__free$realloc                         0x08006030   Section        0  mallocr.o(i.__free$realloc)
+    i.__malloc$realloc                       0x08006094   Section        0  mallocr.o(i.__malloc$realloc)
+    i.__scatterload_copy                     0x080060dc   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080060ea   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080060ec   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x080060fd   Thumb Code   344  printfa.o(i._fp_digits)
+    i._fp_digits                             0x080060fc   Section        0  printfa.o(i._fp_digits)
+    i._is_digit                              0x08006270   Section        0  scanf_fp.o(i._is_digit)
+    _printf_core                             0x08006281   Thumb Code  1754  printfa.o(i._printf_core)
+    i._printf_core                           0x08006280   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x0800696d   Thumb Code    32  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x0800696c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x0800698d   Thumb Code    44  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x0800698c   Section        0  printfa.o(i._printf_pre_padding)
+    internal_alloc                           0x080069b9   Thumb Code    74  mallocr.o(i.internal_alloc)
+    i.internal_alloc                         0x080069b8   Section        0  mallocr.o(i.internal_alloc)
+    i.puts                                   0x08006a08   Section        0  puts.o(i.puts)
+    i.realloc                                0x08006a28   Section        0  mallocr.o(i.realloc)
+    i.strtod                                 0x08006a9c   Section        0  strtod.o(i.strtod)
+    i.strtof                                 0x08006aba   Section        0  strtof.o(i.strtof)
+    .constdata                               0x08006ace   Section       64  ctype_c.o(.constdata)
+    [Anonymous Symbol]                       0x08006b30   Section        0  stm32l0xx_hal_uart.o(.rodata.cst16)
+    get_motor_bit.motor_bits                 0x08006b40   Data           8  motor_shield_v1.o(.rodata.cst8)
+    [Anonymous Symbol]                       0x08006b40   Section        0  motor_shield_v1.o(.rodata.cst8)
+    [Anonymous Symbol]                       0x08006b48   Section        0  cjson.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08006b5b   Section        0  core.o(.rodata.str1.1)
     .data                                    0x20000000   Section        4  stdout.o(.data)
     .data                                    0x20000004   Section        4  mvars.o(.data)
     .data                                    0x20000008   Section        4  mvars.o(.data)
@@ -4062,50 +4070,51 @@ Image Symbol Table
     cJSON_IsTrue                             0x080041ad   Thumb Code    18  cjson.o(.text.cJSON_IsTrue)
     cJSON_ParseWithLength                    0x080041bf   Thumb Code    12  cjson.o(.text.cJSON_ParseWithLength)
     cJSON_ParseWithLengthOpts                0x080041cd   Thumb Code   464  cjson.o(.text.cJSON_ParseWithLengthOpts)
-    core_init                                0x080043a9   Thumb Code    24  core.o(.text.core_init)
-    core_loop                                0x080043c1   Thumb Code   184  core.o(.text.core_loop)
-    delay_us                                 0x08004481   Thumb Code    36  timing_delays.o(.text.delay_us)
-    fputc                                    0x080044a9   Thumb Code    24  usart.o(.text.fputc)
-    get_dc_motor                             0x080044c9   Thumb Code    30  motor_shield_v1.o(.text.get_dc_motor)
-    gpio_pin_set                             0x080044e7   Thumb Code     6  74hc595.o(.text.gpio_pin_set)
-    init_motor_shield_l29xx                  0x080044ed   Thumb Code   244  motor_shield_v1.o(.text.init_motor_shield_l29xx)
-    json_action                              0x080045ed   Thumb Code  1228  core.o(.text.json_action)
-    main                                     0x08004b85   Thumb Code   228  main.o(.text.main)
-    map                                      0x08004c89   Thumb Code    60  servo.o(.text.map)
-    ms_encoder_init                          0x08004cc5   Thumb Code   152  motor_shield_v1.o(.text.ms_encoder_init)
-    ms_gpio_init                             0x08004d5d   Thumb Code   184  motor_shield_v1.o(.text.ms_gpio_init)
-    ms_init                                  0x08004e1d   Thumb Code   232  motor_shield_v1.o(.text.ms_init)
-    ms_motor_control                         0x08004f11   Thumb Code   292  motor_shield_v1.o(.text.ms_motor_control)
-    ms_pwm_init                              0x08005039   Thumb Code   376  motor_shield_v1.o(.text.ms_pwm_init)
-    pwm_constructor                          0x08005a19   Thumb Code    42  servo.o(.text.pwm_constructor)
-    pwm_physical_set                         0x08005a45   Thumb Code   296  servo.o(.text.pwm_physical_set)
-    pwm_set                                  0x08005b6d   Thumb Code    84  servo.o(.text.pwm_set)
-    pwm_stop                                 0x08005bc1   Thumb Code    60  servo.o(.text.pwm_stop)
-    servo_control                            0x08005bfd   Thumb Code   120  servo.o(.text.servo_control)
-    servos_init                              0x08005c75   Thumb Code   104  servo.o(.text.servos_init)
-    soft_motor_control                       0x08005cf9   Thumb Code   576  motor_shield_v1.o(.text.soft_motor_control)
-    __0printf                                0x08005f79   Thumb Code    24  printfa.o(i.__0printf)
-    __1printf                                0x08005f79   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x08005f79   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x08005f79   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x08005f79   Thumb Code     0  printfa.o(i.__0printf)
-    __ARM_clz                                0x08005f99   Thumb Code    46  depilogue.o(i.__ARM_clz)
-    free                                     0x08005fc9   Thumb Code    94  mallocr.o(i.__free$realloc)
-    malloc                                   0x0800602d   Thumb Code    54  mallocr.o(i.__malloc$realloc)
-    __scatterload_copy                       0x08006075   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08006083   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08006085   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    _is_digit                                0x08006209   Thumb Code    14  scanf_fp.o(i._is_digit)
-    puts                                     0x080069a1   Thumb Code    28  puts.o(i.puts)
-    realloc                                  0x080069c1   Thumb Code   110  mallocr.o(i.realloc)
-    strtod                                   0x08006a35   Thumb Code    30  strtod.o(i.strtod)
-    strtof                                   0x08006a53   Thumb Code    20  strtof.o(i.strtof)
-    __ctype_categories                       0x08006a66   Data          64  ctype_c.o(.constdata)
-    AHBPrescTable                            0x08006aa6   Data          16  system_stm32l0xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08006ab6   Data           8  system_stm32l0xx.o(.rodata.APBPrescTable)
-    PLLMulTable                              0x08006abe   Data           9  system_stm32l0xx.o(.rodata.PLLMulTable)
-    Region$$Table$$Base                      0x08006b9c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08006bbc   Number         0  anon$$obj.o(Region$$Table)
+    core_init                                0x080043a9   Thumb Code    36  core.o(.text.core_init)
+    core_loop                                0x080043e5   Thumb Code   184  core.o(.text.core_loop)
+    delay_us                                 0x080044a5   Thumb Code    36  timing_delays.o(.text.delay_us)
+    fputc                                    0x080044cd   Thumb Code    24  usart.o(.text.fputc)
+    getCurrentMicros                         0x080044ed   Thumb Code    64  timing_delays.o(.text.getCurrentMicros)
+    get_dc_motor                             0x08004531   Thumb Code    30  motor_shield_v1.o(.text.get_dc_motor)
+    gpio_pin_set                             0x0800454f   Thumb Code     6  74hc595.o(.text.gpio_pin_set)
+    init_motor_shield_l29xx                  0x08004555   Thumb Code   244  motor_shield_v1.o(.text.init_motor_shield_l29xx)
+    json_action                              0x08004655   Thumb Code  1228  core.o(.text.json_action)
+    main                                     0x08004bed   Thumb Code   228  main.o(.text.main)
+    map                                      0x08004cf1   Thumb Code    60  servo.o(.text.map)
+    ms_encoder_init                          0x08004d2d   Thumb Code   152  motor_shield_v1.o(.text.ms_encoder_init)
+    ms_gpio_init                             0x08004dc5   Thumb Code   184  motor_shield_v1.o(.text.ms_gpio_init)
+    ms_init                                  0x08004e85   Thumb Code   232  motor_shield_v1.o(.text.ms_init)
+    ms_motor_control                         0x08004f79   Thumb Code   292  motor_shield_v1.o(.text.ms_motor_control)
+    ms_pwm_init                              0x080050a1   Thumb Code   376  motor_shield_v1.o(.text.ms_pwm_init)
+    pwm_constructor                          0x08005a81   Thumb Code    42  servo.o(.text.pwm_constructor)
+    pwm_physical_set                         0x08005aad   Thumb Code   296  servo.o(.text.pwm_physical_set)
+    pwm_set                                  0x08005bd5   Thumb Code    84  servo.o(.text.pwm_set)
+    pwm_stop                                 0x08005c29   Thumb Code    60  servo.o(.text.pwm_stop)
+    servo_control                            0x08005c65   Thumb Code   120  servo.o(.text.servo_control)
+    servos_init                              0x08005cdd   Thumb Code   104  servo.o(.text.servos_init)
+    soft_motor_control                       0x08005d61   Thumb Code   576  motor_shield_v1.o(.text.soft_motor_control)
+    __0printf                                0x08005fe1   Thumb Code    24  printfa.o(i.__0printf)
+    __1printf                                0x08005fe1   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x08005fe1   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x08005fe1   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x08005fe1   Thumb Code     0  printfa.o(i.__0printf)
+    __ARM_clz                                0x08006001   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    free                                     0x08006031   Thumb Code    94  mallocr.o(i.__free$realloc)
+    malloc                                   0x08006095   Thumb Code    54  mallocr.o(i.__malloc$realloc)
+    __scatterload_copy                       0x080060dd   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080060eb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080060ed   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    _is_digit                                0x08006271   Thumb Code    14  scanf_fp.o(i._is_digit)
+    puts                                     0x08006a09   Thumb Code    28  puts.o(i.puts)
+    realloc                                  0x08006a29   Thumb Code   110  mallocr.o(i.realloc)
+    strtod                                   0x08006a9d   Thumb Code    30  strtod.o(i.strtod)
+    strtof                                   0x08006abb   Thumb Code    20  strtof.o(i.strtof)
+    __ctype_categories                       0x08006ace   Data          64  ctype_c.o(.constdata)
+    AHBPrescTable                            0x08006b0e   Data          16  system_stm32l0xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08006b1e   Data           8  system_stm32l0xx.o(.rodata.APBPrescTable)
+    PLLMulTable                              0x08006b26   Data           9  system_stm32l0xx.o(.rodata.PLLMulTable)
+    Region$$Table$$Base                      0x08006c04   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08006c24   Number         0  anon$$obj.o(Region$$Table)
     __stdout                                 0x20000000   Data           4  stdout.o(.data)
     __microlib_freelist                      0x20000004   Data           4  mvars.o(.data)
     __microlib_freelist_initialised          0x20000008   Data           4  mvars.o(.data)
@@ -4142,69 +4151,69 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00006ce0, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00006d48, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00006bbc, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00006c24, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000c0   Data   RO            3    RESET               startup_stm32l053xx.o
-    0x080000c0   0x080000c0   0x00000000   Code   RO         1520  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x080000c0   0x080000c0   0x00000004   Code   RO         1888    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x080000c4   0x080000c4   0x00000004   Code   RO         1891    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         1893    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         1895    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x080000c8   0x080000c8   0x00000008   Code   RO         1896    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         1898    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         1900    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x080000d0   0x080000d0   0x00000004   Code   RO         1889    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x080000c0   0x080000c0   0x00000000   Code   RO         1522  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x080000c0   0x080000c0   0x00000004   Code   RO         1890    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x080000c4   0x080000c4   0x00000004   Code   RO         1893    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1895    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1897    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x080000c8   0x080000c8   0x00000008   Code   RO         1898    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1900    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1902    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x080000d0   0x080000d0   0x00000004   Code   RO         1891    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x080000d4   0x080000d4   0x0000001c   Code   RO            4    .text               startup_stm32l053xx.o
-    0x080000f0   0x080000f0   0x00000060   Code   RO         1533    .text               mc_p.l(uldiv.o)
-    0x08000150   0x08000150   0x00000024   Code   RO         1537    .text               mc_p.l(memcpya.o)
-    0x08000174   0x08000174   0x00000024   Code   RO         1539    .text               mc_p.l(memseta.o)
-    0x08000198   0x08000198   0x0000000e   Code   RO         1541    .text               mc_p.l(strlen.o)
-    0x080001a6   0x080001a6   0x0000001c   Code   RO         1543    .text               mc_p.l(strcmp.o)
-    0x080001c2   0x080001c2   0x0000001e   Code   RO         1547    .text               mc_p.l(strncmp.o)
-    0x080001e0   0x080001e0   0x00000374   Code   RO         1842    .text               mc_p.l(scanf_fp.o)
-    0x08000554   0x08000554   0x000000b2   Code   RO         1846    .text               mf_p.l(fadd.o)
-    0x08000606   0x08000606   0x0000007a   Code   RO         1848    .text               mf_p.l(fmul.o)
-    0x08000680   0x08000680   0x0000007c   Code   RO         1850    .text               mf_p.l(fdiv.o)
-    0x080006fc   0x080006fc   0x00000164   Code   RO         1852    .text               mf_p.l(dadd.o)
-    0x08000860   0x08000860   0x000000d0   Code   RO         1854    .text               mf_p.l(dmul.o)
-    0x08000930   0x08000930   0x0000001c   Code   RO         1856    .text               mf_p.l(fcmple.o)
-    0x0800094c   0x0800094c   0x0000001c   Code   RO         1858    .text               mf_p.l(fcmplt.o)
-    0x08000968   0x08000968   0x0000001c   Code   RO         1860    .text               mf_p.l(fcmpge.o)
-    0x08000984   0x08000984   0x0000001c   Code   RO         1862    .text               mf_p.l(fcmpeq.o)
-    0x080009a0   0x080009a0   0x0000002c   Code   RO         1864    .text               mf_p.l(dcmple.o)
-    0x080009cc   0x080009cc   0x0000002c   Code   RO         1866    .text               mf_p.l(dcmpge.o)
-    0x080009f8   0x080009f8   0x00000016   Code   RO         1872    .text               mf_p.l(fflti.o)
-    0x08000a0e   0x08000a0e   0x0000000e   Code   RO         1874    .text               mf_p.l(ffltui.o)
-    0x08000a1c   0x08000a1c   0x0000001c   Code   RO         1878    .text               mf_p.l(dfltui.o)
-    0x08000a38   0x08000a38   0x00000032   Code   RO         1880    .text               mf_p.l(ffixi.o)
+    0x080000f0   0x080000f0   0x00000060   Code   RO         1535    .text               mc_p.l(uldiv.o)
+    0x08000150   0x08000150   0x00000024   Code   RO         1539    .text               mc_p.l(memcpya.o)
+    0x08000174   0x08000174   0x00000024   Code   RO         1541    .text               mc_p.l(memseta.o)
+    0x08000198   0x08000198   0x0000000e   Code   RO         1543    .text               mc_p.l(strlen.o)
+    0x080001a6   0x080001a6   0x0000001c   Code   RO         1545    .text               mc_p.l(strcmp.o)
+    0x080001c2   0x080001c2   0x0000001e   Code   RO         1549    .text               mc_p.l(strncmp.o)
+    0x080001e0   0x080001e0   0x00000374   Code   RO         1844    .text               mc_p.l(scanf_fp.o)
+    0x08000554   0x08000554   0x000000b2   Code   RO         1848    .text               mf_p.l(fadd.o)
+    0x08000606   0x08000606   0x0000007a   Code   RO         1850    .text               mf_p.l(fmul.o)
+    0x08000680   0x08000680   0x0000007c   Code   RO         1852    .text               mf_p.l(fdiv.o)
+    0x080006fc   0x080006fc   0x00000164   Code   RO         1854    .text               mf_p.l(dadd.o)
+    0x08000860   0x08000860   0x000000d0   Code   RO         1856    .text               mf_p.l(dmul.o)
+    0x08000930   0x08000930   0x0000001c   Code   RO         1858    .text               mf_p.l(fcmple.o)
+    0x0800094c   0x0800094c   0x0000001c   Code   RO         1860    .text               mf_p.l(fcmplt.o)
+    0x08000968   0x08000968   0x0000001c   Code   RO         1862    .text               mf_p.l(fcmpge.o)
+    0x08000984   0x08000984   0x0000001c   Code   RO         1864    .text               mf_p.l(fcmpeq.o)
+    0x080009a0   0x080009a0   0x0000002c   Code   RO         1866    .text               mf_p.l(dcmple.o)
+    0x080009cc   0x080009cc   0x0000002c   Code   RO         1868    .text               mf_p.l(dcmpge.o)
+    0x080009f8   0x080009f8   0x00000016   Code   RO         1874    .text               mf_p.l(fflti.o)
+    0x08000a0e   0x08000a0e   0x0000000e   Code   RO         1876    .text               mf_p.l(ffltui.o)
+    0x08000a1c   0x08000a1c   0x0000001c   Code   RO         1880    .text               mf_p.l(dfltui.o)
+    0x08000a38   0x08000a38   0x00000032   Code   RO         1882    .text               mf_p.l(ffixi.o)
     0x08000a6a   0x08000a6a   0x00000002   PAD
-    0x08000a6c   0x08000a6c   0x00000048   Code   RO         1882    .text               mf_p.l(dfixi.o)
-    0x08000ab4   0x08000ab4   0x00000028   Code   RO         1884    .text               mf_p.l(f2d.o)
-    0x08000adc   0x08000adc   0x00000038   Code   RO         1886    .text               mf_p.l(d2f.o)
-    0x08000b14   0x08000b14   0x0000003e   Code   RO         1907    .text               mc_p.l(uidiv_div0.o)
-    0x08000b52   0x08000b52   0x00000030   Code   RO         1913    .text               mc_p.l(llmul.o)
-    0x08000b82   0x08000b82   0x00000020   Code   RO         1915    .text               mc_p.l(llshl.o)
-    0x08000ba2   0x08000ba2   0x00000022   Code   RO         1917    .text               mc_p.l(llushr.o)
-    0x08000bc4   0x08000bc4   0x00000026   Code   RO         1919    .text               mc_p.l(llsshr.o)
-    0x08000bea   0x08000bea   0x00000044   Code   RO         1925    .text               mc_p.l(_sgetc.o)
+    0x08000a6c   0x08000a6c   0x00000048   Code   RO         1884    .text               mf_p.l(dfixi.o)
+    0x08000ab4   0x08000ab4   0x00000028   Code   RO         1886    .text               mf_p.l(f2d.o)
+    0x08000adc   0x08000adc   0x00000038   Code   RO         1888    .text               mf_p.l(d2f.o)
+    0x08000b14   0x08000b14   0x0000003e   Code   RO         1909    .text               mc_p.l(uidiv_div0.o)
+    0x08000b52   0x08000b52   0x00000030   Code   RO         1915    .text               mc_p.l(llmul.o)
+    0x08000b82   0x08000b82   0x00000020   Code   RO         1917    .text               mc_p.l(llshl.o)
+    0x08000ba2   0x08000ba2   0x00000022   Code   RO         1919    .text               mc_p.l(llushr.o)
+    0x08000bc4   0x08000bc4   0x00000026   Code   RO         1921    .text               mc_p.l(llsshr.o)
+    0x08000bea   0x08000bea   0x00000044   Code   RO         1927    .text               mc_p.l(_sgetc.o)
     0x08000c2e   0x08000c2e   0x00000002   PAD
-    0x08000c30   0x08000c30   0x000000b4   Code   RO         1927    .text               mc_p.l(strtod.o)
-    0x08000ce4   0x08000ce4   0x0000000c   Code   RO         1929    .text               mc_p.l(strtof.o)
-    0x08000cf0   0x08000cf0   0x00000000   Code   RO         1931    .text               mc_p.l(iusefp.o)
-    0x08000cf0   0x08000cf0   0x00000082   Code   RO         1932    .text               mf_p.l(fepilogue.o)
-    0x08000d72   0x08000d72   0x000000be   Code   RO         1934    .text               mf_p.l(depilogue.o)
-    0x08000e30   0x08000e30   0x000000f0   Code   RO         1938    .text               mf_p.l(ddiv.o)
-    0x08000f20   0x08000f20   0x0000001c   Code   RO         1940    .text               mf_p.l(dfltul.o)
-    0x08000f3c   0x08000f3c   0x00000040   Code   RO         1942    .text               mf_p.l(dfixul.o)
-    0x08000f7c   0x08000f7c   0x00000028   Code   RO         1944    .text               mf_p.l(cdrcmple.o)
-    0x08000fa4   0x08000fa4   0x00000030   Code   RO         1946    .text               mc_p.l(init.o)
-    0x08000fd4   0x08000fd4   0x0000000e   Code   RO         1948    .text               mc_p.l(isspace_c.o)
+    0x08000c30   0x08000c30   0x000000b4   Code   RO         1929    .text               mc_p.l(strtod.o)
+    0x08000ce4   0x08000ce4   0x0000000c   Code   RO         1931    .text               mc_p.l(strtof.o)
+    0x08000cf0   0x08000cf0   0x00000000   Code   RO         1933    .text               mc_p.l(iusefp.o)
+    0x08000cf0   0x08000cf0   0x00000082   Code   RO         1934    .text               mf_p.l(fepilogue.o)
+    0x08000d72   0x08000d72   0x000000be   Code   RO         1936    .text               mf_p.l(depilogue.o)
+    0x08000e30   0x08000e30   0x000000f0   Code   RO         1940    .text               mf_p.l(ddiv.o)
+    0x08000f20   0x08000f20   0x0000001c   Code   RO         1942    .text               mf_p.l(dfltul.o)
+    0x08000f3c   0x08000f3c   0x00000040   Code   RO         1944    .text               mf_p.l(dfixul.o)
+    0x08000f7c   0x08000f7c   0x00000028   Code   RO         1946    .text               mf_p.l(cdrcmple.o)
+    0x08000fa4   0x08000fa4   0x00000030   Code   RO         1948    .text               mc_p.l(init.o)
+    0x08000fd4   0x08000fd4   0x0000000e   Code   RO         1950    .text               mc_p.l(isspace_c.o)
     0x08000fe2   0x08000fe2   0x00000002   PAD
-    0x08000fe4   0x08000fe4   0x00000024   Code   RO         1952    .text               mc_p.l(ctype_c.o)
+    0x08000fe4   0x08000fe4   0x00000024   Code   RO         1954    .text               mc_p.l(ctype_c.o)
     0x08001008   0x08001008   0x00000030   Code   RO         1441    .text.Button1_Pressed  sensor.o
     0x08001038   0x08001038   0x00000030   Code   RO         1443    .text.Button2_Pressed  sensor.o
     0x08001068   0x08001068   0x00000040   Code   RO         1445    .text.Button3_Pressed  sensor.o
@@ -4325,78 +4334,79 @@ Memory Map of the image
     0x080041be   0x080041be   0x0000000c   Code   RO         1184    .text.cJSON_ParseWithLength  cjson.o
     0x080041ca   0x080041ca   0x00000002   PAD
     0x080041cc   0x080041cc   0x000001dc   Code   RO         1176    .text.cJSON_ParseWithLengthOpts  cjson.o
-    0x080043a8   0x080043a8   0x00000018   Code   RO         1342    .text.core_init     core.o
-    0x080043c0   0x080043c0   0x000000c0   Code   RO         1344    .text.core_loop     core.o
-    0x08004480   0x08004480   0x00000028   Code   RO         1497    .text.delay_us      timing_delays.o
-    0x080044a8   0x080044a8   0x00000020   Code   RO           69    .text.fputc         usart.o
-    0x080044c8   0x080044c8   0x0000001e   Code   RO         1418    .text.get_dc_motor  motor_shield_v1.o
-    0x080044e6   0x080044e6   0x00000006   Code   RO         1359    .text.gpio_pin_set  74hc595.o
-    0x080044ec   0x080044ec   0x00000100   Code   RO         1420    .text.init_motor_shield_l29xx  motor_shield_v1.o
-    0x080045ec   0x080045ec   0x00000598   Code   RO         1348    .text.json_action   core.o
-    0x08004b84   0x08004b84   0x00000104   Code   RO           11    .text.main          main.o
-    0x08004c88   0x08004c88   0x0000003c   Code   RO         1373    .text.map           servo.o
-    0x08004cc4   0x08004cc4   0x00000098   Code   RO         1414    .text.ms_encoder_init  motor_shield_v1.o
-    0x08004d5c   0x08004d5c   0x000000c0   Code   RO         1410    .text.ms_gpio_init  motor_shield_v1.o
-    0x08004e1c   0x08004e1c   0x000000f4   Code   RO         1408    .text.ms_init       motor_shield_v1.o
-    0x08004f10   0x08004f10   0x00000128   Code   RO         1424    .text.ms_motor_control  motor_shield_v1.o
-    0x08005038   0x08005038   0x00000190   Code   RO         1412    .text.ms_pwm_init   motor_shield_v1.o
-    0x080051c8   0x080051c8   0x000000c0   Code   RO         1324    .text.parse_hex4    cjson.o
-    0x08005288   0x08005288   0x0000042c   Code   RO         1322    .text.parse_string  cjson.o
-    0x080056b4   0x080056b4   0x00000364   Code   RO         1178    .text.parse_value   cjson.o
-    0x08005a18   0x08005a18   0x0000002a   Code   RO         1375    .text.pwm_constructor  servo.o
-    0x08005a42   0x08005a42   0x00000002   PAD
-    0x08005a44   0x08005a44   0x00000128   Code   RO         1389    .text.pwm_physical_set  servo.o
-    0x08005b6c   0x08005b6c   0x00000054   Code   RO         1385    .text.pwm_set       servo.o
-    0x08005bc0   0x08005bc0   0x0000003c   Code   RO         1393    .text.pwm_stop      servo.o
-    0x08005bfc   0x08005bfc   0x00000078   Code   RO         1391    .text.servo_control  servo.o
-    0x08005c74   0x08005c74   0x00000084   Code   RO         1377    .text.servos_init   servo.o
-    0x08005cf8   0x08005cf8   0x00000280   Code   RO         1428    .text.soft_motor_control  motor_shield_v1.o
-    0x08005f78   0x08005f78   0x00000020   Code   RO         1784    i.__0printf         mc_p.l(printfa.o)
-    0x08005f98   0x08005f98   0x0000002e   Code   RO         1936    i.__ARM_clz         mf_p.l(depilogue.o)
-    0x08005fc6   0x08005fc6   0x00000002   PAD
-    0x08005fc8   0x08005fc8   0x00000064   Code   RO         1816    i.__free$realloc    mc_p.l(mallocr.o)
-    0x0800602c   0x0800602c   0x00000048   Code   RO         1817    i.__malloc$realloc  mc_p.l(mallocr.o)
-    0x08006074   0x08006074   0x0000000e   Code   RO         1957    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x08006082   0x08006082   0x00000002   Code   RO         1958    i.__scatterload_null  mc_p.l(handlers.o)
-    0x08006084   0x08006084   0x0000000e   Code   RO         1959    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x08006092   0x08006092   0x00000002   PAD
-    0x08006094   0x08006094   0x00000174   Code   RO         1791    i._fp_digits        mc_p.l(printfa.o)
-    0x08006208   0x08006208   0x0000000e   Code   RO         1844    i._is_digit         mc_p.l(scanf_fp.o)
-    0x08006216   0x08006216   0x00000002   PAD
-    0x08006218   0x08006218   0x000006ec   Code   RO         1792    i._printf_core      mc_p.l(printfa.o)
-    0x08006904   0x08006904   0x00000020   Code   RO         1793    i._printf_post_padding  mc_p.l(printfa.o)
-    0x08006924   0x08006924   0x0000002c   Code   RO         1794    i._printf_pre_padding  mc_p.l(printfa.o)
-    0x08006950   0x08006950   0x00000050   Code   RO         1818    i.internal_alloc    mc_p.l(mallocr.o)
-    0x080069a0   0x080069a0   0x00000020   Code   RO         1523    i.puts              mc_p.l(puts.o)
-    0x080069c0   0x080069c0   0x00000074   Code   RO         1819    i.realloc           mc_p.l(mallocr.o)
-    0x08006a34   0x08006a34   0x0000001e   Code   RO         1513    i.strtod            m_ps.l(strtod.o)
-    0x08006a52   0x08006a52   0x00000014   Code   RO         1517    i.strtof            m_ps.l(strtof.o)
-    0x08006a66   0x08006a66   0x00000040   Data   RO         1953    .constdata          mc_p.l(ctype_c.o)
-    0x08006aa6   0x08006aa6   0x00000010   Data   RO         1141    .rodata.AHBPrescTable  system_stm32l0xx.o
-    0x08006ab6   0x08006ab6   0x00000008   Data   RO         1142    .rodata.APBPrescTable  system_stm32l0xx.o
-    0x08006abe   0x08006abe   0x00000009   Data   RO         1143    .rodata.PLLMulTable  system_stm32l0xx.o
-    0x08006ac7   0x08006ac7   0x00000001   PAD
-    0x08006ac8   0x08006ac8   0x00000010   Data   RO         1095    .rodata.cst16       stm32l0xx_hal_uart.o
-    0x08006ad8   0x08006ad8   0x00000008   Data   RO         1432    .rodata.cst8        motor_shield_v1.o
-    0x08006ae0   0x08006ae0   0x00000013   Data   RO         1332    .rodata.str1.1      cjson.o
-    0x08006af3   0x08006af3   0x000000a7   Data   RO         1350    .rodata.str1.1      core.o
-    0x08006b9a   0x08006b9a   0x00000002   PAD
-    0x08006b9c   0x08006b9c   0x00000020   Data   RO         1956    Region$$Table       anon$$obj.o
+    0x080043a8   0x080043a8   0x0000003c   Code   RO         1342    .text.core_init     core.o
+    0x080043e4   0x080043e4   0x000000c0   Code   RO         1344    .text.core_loop     core.o
+    0x080044a4   0x080044a4   0x00000028   Code   RO         1497    .text.delay_us      timing_delays.o
+    0x080044cc   0x080044cc   0x00000020   Code   RO           69    .text.fputc         usart.o
+    0x080044ec   0x080044ec   0x00000044   Code   RO         1505    .text.getCurrentMicros  timing_delays.o
+    0x08004530   0x08004530   0x0000001e   Code   RO         1418    .text.get_dc_motor  motor_shield_v1.o
+    0x0800454e   0x0800454e   0x00000006   Code   RO         1359    .text.gpio_pin_set  74hc595.o
+    0x08004554   0x08004554   0x00000100   Code   RO         1420    .text.init_motor_shield_l29xx  motor_shield_v1.o
+    0x08004654   0x08004654   0x00000598   Code   RO         1348    .text.json_action   core.o
+    0x08004bec   0x08004bec   0x00000104   Code   RO           11    .text.main          main.o
+    0x08004cf0   0x08004cf0   0x0000003c   Code   RO         1373    .text.map           servo.o
+    0x08004d2c   0x08004d2c   0x00000098   Code   RO         1414    .text.ms_encoder_init  motor_shield_v1.o
+    0x08004dc4   0x08004dc4   0x000000c0   Code   RO         1410    .text.ms_gpio_init  motor_shield_v1.o
+    0x08004e84   0x08004e84   0x000000f4   Code   RO         1408    .text.ms_init       motor_shield_v1.o
+    0x08004f78   0x08004f78   0x00000128   Code   RO         1424    .text.ms_motor_control  motor_shield_v1.o
+    0x080050a0   0x080050a0   0x00000190   Code   RO         1412    .text.ms_pwm_init   motor_shield_v1.o
+    0x08005230   0x08005230   0x000000c0   Code   RO         1324    .text.parse_hex4    cjson.o
+    0x080052f0   0x080052f0   0x0000042c   Code   RO         1322    .text.parse_string  cjson.o
+    0x0800571c   0x0800571c   0x00000364   Code   RO         1178    .text.parse_value   cjson.o
+    0x08005a80   0x08005a80   0x0000002a   Code   RO         1375    .text.pwm_constructor  servo.o
+    0x08005aaa   0x08005aaa   0x00000002   PAD
+    0x08005aac   0x08005aac   0x00000128   Code   RO         1389    .text.pwm_physical_set  servo.o
+    0x08005bd4   0x08005bd4   0x00000054   Code   RO         1385    .text.pwm_set       servo.o
+    0x08005c28   0x08005c28   0x0000003c   Code   RO         1393    .text.pwm_stop      servo.o
+    0x08005c64   0x08005c64   0x00000078   Code   RO         1391    .text.servo_control  servo.o
+    0x08005cdc   0x08005cdc   0x00000084   Code   RO         1377    .text.servos_init   servo.o
+    0x08005d60   0x08005d60   0x00000280   Code   RO         1428    .text.soft_motor_control  motor_shield_v1.o
+    0x08005fe0   0x08005fe0   0x00000020   Code   RO         1786    i.__0printf         mc_p.l(printfa.o)
+    0x08006000   0x08006000   0x0000002e   Code   RO         1938    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x0800602e   0x0800602e   0x00000002   PAD
+    0x08006030   0x08006030   0x00000064   Code   RO         1818    i.__free$realloc    mc_p.l(mallocr.o)
+    0x08006094   0x08006094   0x00000048   Code   RO         1819    i.__malloc$realloc  mc_p.l(mallocr.o)
+    0x080060dc   0x080060dc   0x0000000e   Code   RO         1959    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x080060ea   0x080060ea   0x00000002   Code   RO         1960    i.__scatterload_null  mc_p.l(handlers.o)
+    0x080060ec   0x080060ec   0x0000000e   Code   RO         1961    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x080060fa   0x080060fa   0x00000002   PAD
+    0x080060fc   0x080060fc   0x00000174   Code   RO         1793    i._fp_digits        mc_p.l(printfa.o)
+    0x08006270   0x08006270   0x0000000e   Code   RO         1846    i._is_digit         mc_p.l(scanf_fp.o)
+    0x0800627e   0x0800627e   0x00000002   PAD
+    0x08006280   0x08006280   0x000006ec   Code   RO         1794    i._printf_core      mc_p.l(printfa.o)
+    0x0800696c   0x0800696c   0x00000020   Code   RO         1795    i._printf_post_padding  mc_p.l(printfa.o)
+    0x0800698c   0x0800698c   0x0000002c   Code   RO         1796    i._printf_pre_padding  mc_p.l(printfa.o)
+    0x080069b8   0x080069b8   0x00000050   Code   RO         1820    i.internal_alloc    mc_p.l(mallocr.o)
+    0x08006a08   0x08006a08   0x00000020   Code   RO         1525    i.puts              mc_p.l(puts.o)
+    0x08006a28   0x08006a28   0x00000074   Code   RO         1821    i.realloc           mc_p.l(mallocr.o)
+    0x08006a9c   0x08006a9c   0x0000001e   Code   RO         1515    i.strtod            m_ps.l(strtod.o)
+    0x08006aba   0x08006aba   0x00000014   Code   RO         1519    i.strtof            m_ps.l(strtof.o)
+    0x08006ace   0x08006ace   0x00000040   Data   RO         1955    .constdata          mc_p.l(ctype_c.o)
+    0x08006b0e   0x08006b0e   0x00000010   Data   RO         1141    .rodata.AHBPrescTable  system_stm32l0xx.o
+    0x08006b1e   0x08006b1e   0x00000008   Data   RO         1142    .rodata.APBPrescTable  system_stm32l0xx.o
+    0x08006b26   0x08006b26   0x00000009   Data   RO         1143    .rodata.PLLMulTable  system_stm32l0xx.o
+    0x08006b2f   0x08006b2f   0x00000001   PAD
+    0x08006b30   0x08006b30   0x00000010   Data   RO         1095    .rodata.cst16       stm32l0xx_hal_uart.o
+    0x08006b40   0x08006b40   0x00000008   Data   RO         1432    .rodata.cst8        motor_shield_v1.o
+    0x08006b48   0x08006b48   0x00000013   Data   RO         1332    .rodata.str1.1      cjson.o
+    0x08006b5b   0x08006b5b   0x000000a7   Data   RO         1350    .rodata.str1.1      core.o
+    0x08006c02   0x08006c02   0x00000002   PAD
+    0x08006c04   0x08006c04   0x00000020   Data   RO         1958    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08006bc0, Size: 0x00001b78, Max: 0x00002000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08006c28, Size: 0x00001b78, Max: 0x00002000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08006bc0   0x00000004   Data   RW         1902    .data               mc_p.l(stdout.o)
-    0x20000004   0x08006bc4   0x00000004   Data   RW         1921    .data               mc_p.l(mvars.o)
-    0x20000008   0x08006bc8   0x00000004   Data   RW         1922    .data               mc_p.l(mvars.o)
-    0x2000000c   0x08006bcc   0x00000008   Data   RW          431    .data..L_MergedGlobals  stm32l0xx_hal.o
-    0x20000014   0x08006bd4   0x00000004   Data   RW         1140    .data.SystemCoreClock  system_stm32l0xx.o
-    0x20000018   0x08006bd8   0x0000008c   Data   RW         1463    .data.button        sensor.o
-    0x200000a4   0x08006c64   0x0000000c   Data   RW         1331    .data.global_hooks  cjson.o
-    0x200000b0   0x08006c70   0x0000006c   Data   RW         1476    .data.hc_sr04       hc-sr04.o
-    0x2000011c   0x08006cdc   0x00000004   PAD
+    0x20000000   0x08006c28   0x00000004   Data   RW         1904    .data               mc_p.l(stdout.o)
+    0x20000004   0x08006c2c   0x00000004   Data   RW         1923    .data               mc_p.l(mvars.o)
+    0x20000008   0x08006c30   0x00000004   Data   RW         1924    .data               mc_p.l(mvars.o)
+    0x2000000c   0x08006c34   0x00000008   Data   RW          431    .data..L_MergedGlobals  stm32l0xx_hal.o
+    0x20000014   0x08006c3c   0x00000004   Data   RW         1140    .data.SystemCoreClock  system_stm32l0xx.o
+    0x20000018   0x08006c40   0x0000008c   Data   RW         1463    .data.button        sensor.o
+    0x200000a4   0x08006ccc   0x0000000c   Data   RW         1331    .data.global_hooks  cjson.o
+    0x200000b0   0x08006cd8   0x0000006c   Data   RW         1476    .data.hc_sr04       hc-sr04.o
+    0x2000011c   0x08006d44   0x00000004   PAD
     0x20000120        -       0x00000008   Zero   RW         1333    .bss..L_MergedGlobals  cjson.o
     0x20000128        -       0x00000014   Zero   RW         1489    .bss..L_MergedGlobals  robotic_arm.o
     0x2000013c        -       0x00000100   Zero   RW           84    .bss.MainBuf        usart.o
@@ -4424,7 +4434,7 @@ Image component sizes
 
        446          0          0          0          0       2825   74hc595.o
       3044        392         19         12          8      74291   cjson.o
-      1648        300        167          0          0       8437   core.o
+      1684        324        167          0          0       8461   core.o
         48          4          0          0          0       1839   dma.o
        468         20          0          0          0       2989   gpio.o
        220         24          0        108          0       2621   hc-sr04.o
@@ -4448,11 +4458,11 @@ Image component sizes
        186         24          0          0          0       2752   stm32l0xx_it.o
          2          0         33          4          0       2138   system_stm32l0xx.o
        952         56          0          0        256       7745   tim.o
-       102         12          0          0          0       1713   timing_delays.o
+       170         16          0          0          0       2357   timing_delays.o
        364         52          0          0        720       6778   usart.o
 
     ----------------------------------------------------------------------
-     20364       1598        470        272       6748     308244   Object Totals
+     20468       1626        470        272       6748     308912   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         24          0          3          0          4          0   (incl. Padding)
 
@@ -4542,15 +4552,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     27046       1838        534        284       6748     309888   Grand Totals
-     27046       1838        534        284       6748     309888   ELF Image Totals
-     27046       1838        534        284          0          0   ROM Totals
+     27150       1866        534        284       6748     310556   Grand Totals
+     27150       1866        534        284       6748     310556   ELF Image Totals
+     27150       1866        534        284          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                27580 (  26.93kB)
+    Total RO  Size (Code + RO Data)                27684 (  27.04kB)
     Total RW  Size (RW Data + ZI Data)              7032 (   6.87kB)
-    Total ROM Size (Code + RO Data + RW Data)      27864 (  27.21kB)
+    Total ROM Size (Code + RO Data + RW Data)      27968 (  27.31kB)
 
 ==============================================================================
 

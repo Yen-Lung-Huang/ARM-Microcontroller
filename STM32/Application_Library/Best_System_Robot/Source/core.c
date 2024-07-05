@@ -6,6 +6,8 @@ void core_init(void)
     servos_init();
     ms_init(MS_V1, false);
     ms_init(MS_L29XX, true);
+    
+    printf( "Micro Tick test: %d\r\n", getCurrentMicros());
 }
 
 /* Loop Configuration---------------------------------------*/

@@ -24,6 +24,7 @@ void delay_us(uint16_t us);
 void NonBlockingDelay_Start(NonBlockingDelay_TypeDef* self, uint32_t duration);
 bool NonBlockingDelay_IsExpired(NonBlockingDelay_TypeDef* self);
 NonBlockingDelay_TypeDef CreateNonBlockingDelay();
+uint32_t getCurrentMicros(void);
 
 
 #ifdef __cplusplus

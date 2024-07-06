@@ -1,5 +1,0 @@
-../Application_Library/servo.c:4:14:servo_constructor	16	static
-../Application_Library/servo.c:15:20:timer_ch2ccr	0	static
-../Application_Library/servo.c:10:6:servo_pwm_set	8	static
-../Application_Library/servo.c:31:6:HAL_GPIO_EXTI_Callback	24	static
-../Application_Library/servo.c:75:6:json2servo	64	static

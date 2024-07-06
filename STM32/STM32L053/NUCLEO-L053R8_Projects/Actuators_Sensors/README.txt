@@ -1,1 +1,0 @@
-The code in this folder is for the BEST system robot.

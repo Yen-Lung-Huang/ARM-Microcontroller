@@ -1,9 +1,9 @@
 [submodule "STM32"]
 	path = STM32
-	url = ./STM32
+	url = https://github.com/Yen-Lung-Huang/STM32
 [submodule "GD32"]
 	path = GD32
-	url = ./GD32
+	url = https://github.com/Yen-Lung-Huang/GD32
 [submodule "MG32"]
 	path = MG32
-	url = ./MG32
+	url = https://github.com/Yen-Lung-Huang/MG32

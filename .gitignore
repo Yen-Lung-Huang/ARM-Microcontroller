@@ -1,6 +1,11 @@
 # A .gitignore for Keil projects.
 # Taken mostly from http://www.keil.com/support/man/docs/uv4/uv4_b_filetypes.htm
 
+# Ignore all submodule folders
+**/STM32/**
+**/GD32/**
+**/MG32/**
+
 # Ignore all .vscode folders
 **/.vscode/**
 
@@ -89,3 +94,4 @@
 
 # Exception for [Other] folder
 !/[Other]/**
+

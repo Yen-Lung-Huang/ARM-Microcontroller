@@ -1,3 +1,0 @@
-../../../../Application_Library/Include/jsmn.h:275:14:jsmn_parse	40	static
-../../../../Application_Library/Include/jsmn.h:466:15:jsmn_init	0	static
-../Application_Library/jsmn.c:3:5:jsoneq	16	static

@@ -1,237 +1,0 @@
-Dependencies for Project 'uart_time', Target 'Target 1': (DO NOT MODIFY !)
-CompilerVersion: 6160000::V6.16::ARMCLANG
-F (.\uart.h)(0x611DFD6A)()
-F (.\uart.c)(0x611E069D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/uart.o -MD)
-I (uart.h)(0x611DFD6A)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
-I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-I (systick.h)(0x5DD4F3F3)
-F (.\main.c)(0x611E0780)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/main.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-I (systick.h)(0x5DD4F3F3)
-I (my_lib\my_board.h)(0x611DFD6A)
-I (uart.h)(0x611DFD6A)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
-I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
-F (.\systick.c)(0x5DD4F3F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/systick.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-I (systick.h)(0x5DD4F3F3)
-F (.\systick.h)(0x5DD4F3F3)()
-F (.\gd32f30x_it.c)(0x611E0539)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_it.o -MD)
-I (gd32f30x_it.h)(0x5CEFA354)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-I (systick.h)(0x5DD4F3F3)
-F (.\gd32f30x_it.h)(0x5CEFA354)()
-F (RTE\Device\GD32F303VE\gd32f30x_dma.c)(0x5BC68A4A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_dma.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_gpio.c)(0x5BC68A48)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_gpio.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_misc.c)(0x5BC68A48)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_misc.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_pmu.c)(0x5BC68A4A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_pmu.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_rcu.c)(0x5BC68A48)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_rcu.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_rtc.c)(0x5BC68A48)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_rtc.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\gd32f30x_usart.c)(0x5BC68A4A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/gd32f30x_usart.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-F (RTE\Device\GD32F303VE\startup_gd32f30x_hd.s)(0x5BC68A4C)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3-I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-Wa,armasm,--pd,"__UVISION_VERSION SETA 535" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"GD32F30X_HD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_gd32f30x_hd.o)
-F (RTE\Device\GD32F303VE\system_gd32f30x.c)(0x5BC68B14)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Packs/ARM/CMSIS/5.8.0/CMSIS/Driver/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Firmware/Peripherals/inc-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Include-ID:/Keil_v5/Packs/GigaDevice/GD32F30x_DFP/2.0.0/Device/Template-D__UVISION_VERSION="535" -D_RTE_ -DGD32F30X_HD -D_RTE_-o ./objects/system_gd32f30x.o -MD)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\gd32f30x.h)(0x5BC68ACA)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Include\system_gd32f30x.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Template\gd32f30x_libopt.h)(0x58B78AE0)
-I (RTE\_Target_1\RTE_Components.h)(0x611DFD31)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_dma.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_gpio.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_misc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_pmu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rcu.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_rtc.h)(0x5BC68A4A)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F30x_DFP\2.0.0\Device\Firmware\Peripherals\inc\gd32f30x_usart.h)(0x5BC68A4A)

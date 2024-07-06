@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+Build\ project\ excluding\ the\ dependencies=false
+Re-generate\ and\ use\ dependencies\ during\ project\ build=true
+Use\ existing\ dependencies\ during\ project\ build=false
+eclipse.preferences.version=1
+=======
+Build\ project\ excluding\ the\ dependencies=false
+Re-generate\ and\ use\ dependencies\ during\ project\ build=true
+Use\ existing\ dependencies\ during\ project\ build=false
+eclipse.preferences.version=1
+>>>>>>> 16c66438 (Upload from PC.)

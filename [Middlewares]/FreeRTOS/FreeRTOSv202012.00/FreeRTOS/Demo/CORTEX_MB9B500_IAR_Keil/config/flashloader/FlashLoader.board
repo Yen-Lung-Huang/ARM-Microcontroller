@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$PROJ_DIR$\config\flashloader\FlashMB9BF506.flash</loader>
+  </pass>
+</flash_board>
+
+
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$PROJ_DIR$\config\flashloader\FlashMB9BF506.flash</loader>
+  </pass>
+</flash_board>
+
+
+>>>>>>> 16c66438 (Upload from PC.)

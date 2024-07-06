@@ -1,0 +1,77 @@
+<<<<<<< HEAD
+ -B 
+
+"-p" 
+
+"C:\DevTools\IAR Systems\Embedded Workbench 7.2\rx\config\debugger\ior5f571ml.ddf" 
+
+"--endian" 
+
+"l" 
+
+"--double" 
+
+"32" 
+
+"--core" 
+
+"rxv2" 
+
+"--int" 
+
+"32" 
+
+"-d" 
+
+"emue20" 
+
+"--drv_mode" 
+
+"debugging" 
+
+"--drv_communication" 
+
+"USB" 
+
+
+
+
+=======
+ -B 
+
+"-p" 
+
+"C:\DevTools\IAR Systems\Embedded Workbench 7.2\rx\config\debugger\ior5f571ml.ddf" 
+
+"--endian" 
+
+"l" 
+
+"--double" 
+
+"32" 
+
+"--core" 
+
+"rxv2" 
+
+"--int" 
+
+"32" 
+
+"-d" 
+
+"emue20" 
+
+"--drv_mode" 
+
+"debugging" 
+
+"--drv_communication" 
+
+"USB" 
+
+
+
+
+>>>>>>> 16c66438 (Upload from PC.)

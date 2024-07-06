@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+ -device xc5vfx70tff1136-1 data/system.ucf 7 0
+=======
+ -device xc5vfx70tff1136-1 data/system.ucf 7 0
+>>>>>>> 16c66438 (Upload from PC.)

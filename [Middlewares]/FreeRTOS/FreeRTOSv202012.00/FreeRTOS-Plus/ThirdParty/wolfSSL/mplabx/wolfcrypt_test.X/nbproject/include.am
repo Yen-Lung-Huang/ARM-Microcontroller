@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+# vim:ft=automake
+# All paths should be given relative to the root
+#
+
+EXTRA_DIST += \
+         mplabx/wolfcrypt_test.X/Makefile
+
+EXTRA_DIST += \
+         mplabx/wolfcrypt_test.X/nbproject/configurations.xml \
+         mplabx/wolfcrypt_test.X/nbproject/project.xml
+
+=======
+# vim:ft=automake
+# All paths should be given relative to the root
+#
+
+EXTRA_DIST += \
+         mplabx/wolfcrypt_test.X/Makefile
+
+EXTRA_DIST += \
+         mplabx/wolfcrypt_test.X/nbproject/configurations.xml \
+         mplabx/wolfcrypt_test.X/nbproject/project.xml
+
+>>>>>>> 16c66438 (Upload from PC.)

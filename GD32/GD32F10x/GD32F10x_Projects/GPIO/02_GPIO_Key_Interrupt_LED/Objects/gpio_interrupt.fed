@@ -1,0 +1,118 @@
+;#<FEEDBACK># ARM Linker, 5060960: Last Updated: Mon Feb 07 13:39:42 2022
+;VERSION 0.2
+;FILE gd32f10x_exti_1.o
+__asm___15_gd32f10x_exti_c_3d6b70f4____REV16 <= USED 0
+__asm___15_gd32f10x_exti_c_3d6b70f4____REVSH <= USED 0
+__asm___15_gd32f10x_exti_c_3d6b70f4____RRX <= USED 0
+exti_deinit <= USED 0
+exti_event_disable <= USED 0
+exti_event_enable <= USED 0
+exti_flag_clear <= USED 0
+exti_flag_get <= USED 0
+exti_interrupt_disable <= USED 0
+exti_interrupt_enable <= USED 0
+exti_software_interrupt_disable <= USED 0
+exti_software_interrupt_enable <= USED 0
+;FILE gd32f10x_gpio_1.o
+__asm___15_gd32f10x_gpio_c_ed302560____REV16 <= USED 0
+__asm___15_gd32f10x_gpio_c_ed302560____REVSH <= USED 0
+__asm___15_gd32f10x_gpio_c_ed302560____RRX <= USED 0
+gpio_afio_deinit <= USED 0
+gpio_deinit <= USED 0
+gpio_ethernet_phy_select <= USED 0
+gpio_event_output_config <= USED 0
+gpio_event_output_disable <= USED 0
+gpio_event_output_enable <= USED 0
+gpio_input_port_get <= USED 0
+gpio_output_bit_get <= USED 0
+gpio_output_port_get <= USED 0
+gpio_pin_lock <= USED 0
+gpio_pin_remap_config <= USED 0
+gpio_port_write <= USED 0
+;FILE gd32f10x_it.o
+__asm___13_gd32f10x_it_c_bb8ca80c____REV16 <= USED 0
+__asm___13_gd32f10x_it_c_bb8ca80c____REVSH <= USED 0
+__asm___13_gd32f10x_it_c_bb8ca80c____RRX <= USED 0
+;FILE gd32f10x_misc_1.o
+__asm___15_gd32f10x_misc_c_25ea0539____REV16 <= USED 0
+__asm___15_gd32f10x_misc_c_25ea0539____REVSH <= USED 0
+__asm___15_gd32f10x_misc_c_25ea0539____RRX <= USED 0
+nvic_irq_disable <= USED 0
+nvic_vector_table_set <= USED 0
+system_lowpower_reset <= USED 0
+system_lowpower_set <= USED 0
+systick_clksource_set <= USED 0
+;FILE gd32f10x_pmu_1.o
+__asm___14_gd32f10x_pmu_c_ac4503ae____REV16 <= USED 0
+__asm___14_gd32f10x_pmu_c_ac4503ae____REVSH <= USED 0
+__asm___14_gd32f10x_pmu_c_ac4503ae____RRX <= USED 0
+pmu_backup_write_disable <= USED 0
+pmu_backup_write_enable <= USED 0
+pmu_deinit <= USED 0
+pmu_flag_clear <= USED 0
+pmu_flag_get <= USED 0
+pmu_lvd_disable <= USED 0
+pmu_lvd_select <= USED 0
+pmu_to_deepsleepmode <= USED 0
+pmu_to_sleepmode <= USED 0
+pmu_to_standbymode <= USED 0
+pmu_wakeup_pin_disable <= USED 0
+pmu_wakeup_pin_enable <= USED 0
+;FILE gd32f10x_rcu_1.o
+__asm___14_gd32f10x_rcu_c_60720801____REV16 <= USED 0
+__asm___14_gd32f10x_rcu_c_60720801____REVSH <= USED 0
+__asm___14_gd32f10x_rcu_c_60720801____RRX <= USED 0
+rcu_adc_clock_config <= USED 0
+rcu_ahb_clock_config <= USED 0
+rcu_all_reset_flag_clear <= USED 0
+rcu_apb1_clock_config <= USED 0
+rcu_apb2_clock_config <= USED 0
+rcu_bkp_reset_disable <= USED 0
+rcu_bkp_reset_enable <= USED 0
+rcu_ckout0_config <= USED 0
+rcu_clock_freq_get <= USED 0
+rcu_deepsleep_voltage_set <= USED 0
+rcu_deinit <= USED 0
+rcu_flag_get <= USED 0
+rcu_hxtal_clock_monitor_disable <= USED 0
+rcu_hxtal_clock_monitor_enable <= USED 0
+rcu_i2s1_clock_config <= USED 0
+rcu_i2s2_clock_config <= USED 0
+rcu_interrupt_disable <= USED 0
+rcu_interrupt_enable <= USED 0
+rcu_interrupt_flag_clear <= USED 0
+rcu_interrupt_flag_get <= USED 0
+rcu_irc8m_adjust_value_set <= USED 0
+rcu_osci_bypass_mode_disable <= USED 0
+rcu_osci_bypass_mode_enable <= USED 0
+rcu_osci_off <= USED 0
+rcu_osci_on <= USED 0
+rcu_osci_stab_wait <= USED 0
+rcu_periph_clock_disable <= USED 0
+rcu_periph_clock_sleep_disable <= USED 0
+rcu_periph_clock_sleep_enable <= USED 0
+rcu_periph_reset_disable <= USED 0
+rcu_periph_reset_enable <= USED 0
+rcu_pll1_config <= USED 0
+rcu_pll2_config <= USED 0
+rcu_pll_config <= USED 0
+rcu_predv0_config <= USED 0
+rcu_predv1_config <= USED 0
+rcu_rtc_clock_config <= USED 0
+rcu_system_clock_source_config <= USED 0
+rcu_system_clock_source_get <= USED 0
+rcu_usb_clock_config <= USED 0
+;FILE main.o
+__asm___6_main_c_main____REV16 <= USED 0
+__asm___6_main_c_main____REVSH <= USED 0
+__asm___6_main_c_main____RRX <= USED 0
+;FILE startup_gd32f10x_cl.o
+;FILE system_gd32f10x_1.o
+SystemCoreClockUpdate <= USED 0
+__asm___17_system_gd32f10x_c_5d646a67____REV16 <= USED 0
+__asm___17_system_gd32f10x_c_5d646a67____REVSH <= USED 0
+__asm___17_system_gd32f10x_c_5d646a67____RRX <= USED 0
+;FILE systick.o
+__asm___9_systick_c_12b3d2f7____REV16 <= USED 0
+__asm___9_systick_c_12b3d2f7____REVSH <= USED 0
+__asm___9_systick_c_12b3d2f7____RRX <= USED 0

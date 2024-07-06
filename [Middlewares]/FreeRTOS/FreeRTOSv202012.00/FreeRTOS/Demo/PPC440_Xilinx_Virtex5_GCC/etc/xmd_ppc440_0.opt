@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+connect ppc hw -debugdevice cpunr 1
+=======
+connect ppc hw -debugdevice cpunr 1
+>>>>>>> 16c66438 (Upload from PC.)

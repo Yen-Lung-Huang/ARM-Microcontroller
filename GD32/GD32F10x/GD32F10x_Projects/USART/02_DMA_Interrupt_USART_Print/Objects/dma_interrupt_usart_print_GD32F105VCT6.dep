@@ -1,224 +1,0 @@
-Dependencies for Project 'dma_interrupt_usart_print', Target 'GD32F105VCT6': (DO NOT MODIFY !)
-CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\Application\Source\main.c)(0x620F48B3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\..\..\Application_Library\Include\main.h)(0x620F4399)
-I (..\..\..\Application_Library\Include\gd32f10x_usart_config.h)(0x620B135D)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-I (..\..\..\Application_Library\Include\gd32f10x_dma_config.h)(0x620F59AC)
-F (..\..\..\Application_Library\Source\systick.c)(0x61EE67FC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (..\..\..\Application_Library\Include\systick.h)(0x61EE67FC)
-F (.\Application\Source\gd32f10x_it.c)(0x620F4E3D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_it.o --omf_browse .\objects\gd32f10x_it.crf --depend .\objects\gd32f10x_it.d)
-I (.\Application\Include\gd32f10x_it.h)(0x61EE67FC)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (..\..\..\Application_Library\Include\main.h)(0x620F4399)
-I (..\..\..\Application_Library\Include\systick.h)(0x61EE67FC)
-I (..\..\..\Application_Library\Include\gd32f10x_dma_config.h)(0x620F59AC)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-F (..\..\..\Application_Library\Source\gd32f10x_usart_config.c)(0x620B1DD6)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_usart_config.o --omf_browse .\objects\gd32f10x_usart_config.crf --depend .\objects\gd32f10x_usart_config.d)
-I (..\..\..\Application_Library\Include\gd32f10x_usart_config.h)(0x620B135D)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-F (..\..\..\Application_Library\Source\gd32f10x_dma_config.c)(0x620F59AC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_dma_config.o --omf_browse .\objects\gd32f10x_dma_config.crf --depend .\objects\gd32f10x_dma_config.d)
-I (..\..\..\Application_Library\Include\gd32f10x_dma_config.h)(0x620F59AC)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-F (RTE\Device\GD32F103VC\gd32f10x_dma.c)(0x5B62B116)()
-F (RTE\Device\GD32F103VC\gd32f10x_gpio.c)(0x5B62B114)()
-F (RTE\Device\GD32F103VC\gd32f10x_misc.c)(0x5B62B114)()
-F (RTE\Device\GD32F103VC\gd32f10x_pmu.c)(0x5B62B116)()
-F (RTE\Device\GD32F103VC\gd32f10x_rcu.c)(0x5B62B114)()
-F (RTE\Device\GD32F103VC\gd32f10x_usart.c)(0x5B62B114)()
-F (RTE\Device\GD32F103VC\startup_gd32f10x_hd.s)(0x5B62B116)()
-F (RTE\Device\GD32F103VC\system_gd32f10x.c)(0x5B62B116)()
-F (RTE\Device\GD32F105VC\gd32f10x_dma.c)(0x5B62B116)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_dma_1.o --omf_browse .\objects\gd32f10x_dma_1.crf --depend .\objects\gd32f10x_dma_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_gpio.c)(0x5B62B114)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_gpio_1.o --omf_browse .\objects\gd32f10x_gpio_1.crf --depend .\objects\gd32f10x_gpio_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_misc.c)(0x5B62B114)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_misc_1.o --omf_browse .\objects\gd32f10x_misc_1.crf --depend .\objects\gd32f10x_misc_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_pmu.c)(0x5B62B116)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_pmu_1.o --omf_browse .\objects\gd32f10x_pmu_1.crf --depend .\objects\gd32f10x_pmu_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_rcu.c)(0x5B62B114)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_rcu_1.o --omf_browse .\objects\gd32f10x_rcu_1.crf --depend .\objects\gd32f10x_rcu_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\gd32f10x_usart.c)(0x5B62B114)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f10x_usart_1.o --omf_browse .\objects\gd32f10x_usart_1.crf --depend .\objects\gd32f10x_usart_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-F (RTE\Device\GD32F105VC\startup_gd32f10x_cl.s)(0x5B62B116)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "GD32F10X_CL SETA 1" --pd "USE_STDPERIPH_DRIVER SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_gd32f10x_cl.lst --xref -o .\objects\startup_gd32f10x_cl.o --depend .\objects\startup_gd32f10x_cl.d)
-F (RTE\Device\GD32F105VC\system_gd32f10x.c)(0x5B62B116)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application\Include -I ..\..\..\Application_Library\Include-I.\RTE\_GD32F105VCT6-ID:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc-ID:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32F10X_CL -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\system_gd32f10x_1.o --omf_browse .\objects\system_gd32f10x_1.crf --depend .\objects\system_gd32f10x_1.d)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h)(0x60D3E8E2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D3E8E2)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\system_gd32f10x.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Include\gd32f10x_libopt.h)(0x595B0FDA)
-I (.\RTE\_GD32F105VCT6\RTE_Components.h)(0x62049EA4)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_dma.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_gpio.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_misc.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_pmu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_rcu.h)(0x5B62B116)
-I (D:\Keil_v5\Packs\GigaDevice\GD32F10x_DFP\2.0.2\Device\Firmware\Peripherals\inc\gd32f10x_usart.h)(0x5B62B116)

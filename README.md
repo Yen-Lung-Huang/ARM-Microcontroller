@@ -17,10 +17,12 @@ This repository is a collection of my personal notes and projects related to STM
 
 ### Prerequisites
 
-To work with the projects in this repository, you will need:
+To work with the projects in this repository, you may need:
 
 - **Keil MDK**: Integrated Development Environment for ARM microcontrollers. [Download Keil MDK](https://www.keil.com/download/)
-- **Visual Studio Code**: For editing and debugging code. [Download VS Code](https://code.visualstudio.com/)
+- **STM32CubeMX**: Optional but useful for generating initialization code for STM32. [Download STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)
+- **STM32CubeIDE**: Alternative to Keil MDK that integrates CubeMX functionality. [Download STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+- **Visual Studio Code**: Useful for editing and debugging code, but not necessary. [Download VS Code](https://code.visualstudio.com/)
 
 ### Installation
 

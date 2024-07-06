@@ -1750,8 +1750,6 @@ Section Cross References
     robotic_arm.o(.text.UpdateRoboticArmState) refers to servo.o(.bss.servo) for servo
     robotic_arm.o(.text.UpdateRoboticArmState) refers to sensor.o(.data.button) for button
     robotic_arm.o(.ARM.exidx.text.UpdateRoboticArmState) refers to robotic_arm.o(.text.UpdateRoboticArmState) for [Anonymous Symbol]
-    timing_delays.o(.text.delay_us) refers to tim.o(.bss.htim6) for htim6
-    timing_delays.o(.ARM.exidx.text.delay_us) refers to timing_delays.o(.text.delay_us) for [Anonymous Symbol]
     timing_delays.o(.text.NonBlockingDelay_Start) refers to stm32l0xx_hal.o(.text.HAL_GetTick) for HAL_GetTick
     timing_delays.o(.ARM.exidx.text.NonBlockingDelay_Start) refers to timing_delays.o(.text.NonBlockingDelay_Start) for [Anonymous Symbol]
     timing_delays.o(.text.NonBlockingDelay_IsExpired) refers to stm32l0xx_hal.o(.text.HAL_GetTick) for HAL_GetTick
@@ -1759,6 +1757,8 @@ Section Cross References
     timing_delays.o(.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.NonBlockingDelay_IsExpired) for NonBlockingDelay_IsExpired
     timing_delays.o(.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.NonBlockingDelay_Start) for NonBlockingDelay_Start
     timing_delays.o(.ARM.exidx.text.CreateNonBlockingDelay) refers to timing_delays.o(.text.CreateNonBlockingDelay) for [Anonymous Symbol]
+    timing_delays.o(.text.delay_us) refers to tim.o(.bss.htim6) for htim6
+    timing_delays.o(.ARM.exidx.text.delay_us) refers to timing_delays.o(.text.delay_us) for [Anonymous Symbol]
     timing_delays.o(.text.getCurrentMicros) refers to stm32l0xx_hal.o(.text.HAL_GetTick) for HAL_GetTick
     timing_delays.o(.text.getCurrentMicros) refers to uidiv_div0.o(.text) for __aeabi_uidiv
     timing_delays.o(.ARM.exidx.text.getCurrentMicros) refers to timing_delays.o(.text.getCurrentMicros) for [Anonymous Symbol]
@@ -3232,10 +3232,10 @@ Removing Unused input sections from the image.
     Removing robotic_arm.o(.text.UpdateRoboticArmState), (964 bytes).
     Removing robotic_arm.o(.ARM.exidx.text.UpdateRoboticArmState), (8 bytes).
     Removing timing_delays.o(.text), (0 bytes).
-    Removing timing_delays.o(.ARM.exidx.text.delay_us), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.NonBlockingDelay_Start), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.NonBlockingDelay_IsExpired), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.CreateNonBlockingDelay), (8 bytes).
+    Removing timing_delays.o(.ARM.exidx.text.delay_us), (8 bytes).
     Removing timing_delays.o(.ARM.exidx.text.getCurrentMicros), (8 bytes).
     Removing dcmpgt.o(.text), (44 bytes).
     Removing dcmpeq.o(.text), (46 bytes).
@@ -3453,8 +3453,8 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08001148   Section        0  sensor.o(.text.Button7_Pressed)
     [Anonymous Symbol]                       0x08001168   Section        0  sensor.o(.text.Button_CheckState)
     [Anonymous Symbol]                       0x08001198   Section        0  timing_delays.o(.text.CreateNonBlockingDelay)
-    __arm_cp.3_0                             0x080011a8   Number         4  timing_delays.o(.text.CreateNonBlockingDelay)
-    __arm_cp.3_1                             0x080011ac   Number         4  timing_delays.o(.text.CreateNonBlockingDelay)
+    __arm_cp.2_0                             0x080011a8   Number         4  timing_delays.o(.text.CreateNonBlockingDelay)
+    __arm_cp.2_1                             0x080011ac   Number         4  timing_delays.o(.text.CreateNonBlockingDelay)
     [Anonymous Symbol]                       0x080011b0   Section        0  stm32l0xx_it.o(.text.DMA1_Channel4_5_6_7_IRQHandler)
     __arm_cp.8_0                             0x080011bc   Number         4  stm32l0xx_it.o(.text.DMA1_Channel4_5_6_7_IRQHandler)
     [Anonymous Symbol]                       0x080011c0   Section        0  stm32l0xx_it.o(.text.EXTI0_1_IRQHandler)
@@ -3679,7 +3679,7 @@ Image Symbol Table
     __arm_cp.1_0                             0x0800449c   Number         4  core.o(.text.core_loop)
     __arm_cp.1_1                             0x080044a0   Number         4  core.o(.text.core_loop)
     [Anonymous Symbol]                       0x080044a4   Section        0  timing_delays.o(.text.delay_us)
-    __arm_cp.0_0                             0x080044c8   Number         4  timing_delays.o(.text.delay_us)
+    __arm_cp.3_0                             0x080044c8   Number         4  timing_delays.o(.text.delay_us)
     [Anonymous Symbol]                       0x080044cc   Section        0  usart.o(.text.fputc)
     __arm_cp.0_0                             0x080044e4   Number         4  usart.o(.text.fputc)
     __arm_cp.0_1                             0x080044e8   Number         4  usart.o(.text.fputc)
@@ -4222,7 +4222,7 @@ Memory Map of the image
     0x08001118   0x08001118   0x00000030   Code   RO         1451    .text.Button6_Pressed  sensor.o
     0x08001148   0x08001148   0x00000020   Code   RO         1453    .text.Button7_Pressed  sensor.o
     0x08001168   0x08001168   0x00000030   Code   RO         1455    .text.Button_CheckState  sensor.o
-    0x08001198   0x08001198   0x00000018   Code   RO         1503    .text.CreateNonBlockingDelay  timing_delays.o
+    0x08001198   0x08001198   0x00000018   Code   RO         1501    .text.CreateNonBlockingDelay  timing_delays.o
     0x080011b0   0x080011b0   0x00000010   Code   RO          109    .text.DMA1_Channel4_5_6_7_IRQHandler  stm32l0xx_it.o
     0x080011c0   0x080011c0   0x00000010   Code   RO          103    .text.EXTI0_1_IRQHandler  stm32l0xx_it.o
     0x080011d0   0x080011d0   0x00000010   Code   RO          105    .text.EXTI2_3_IRQHandler  stm32l0xx_it.o
@@ -4298,8 +4298,8 @@ Memory Map of the image
     0x080037b0   0x080037b0   0x00000044   Code   RO           47    .text.MX_TIM6_Init  tim.o
     0x080037f4   0x080037f4   0x00000038   Code   RO           71    .text.MX_USART2_UART_Init  usart.o
     0x0800382c   0x0800382c   0x00000002   Code   RO           93    .text.NMI_Handler   stm32l0xx_it.o
-    0x0800382e   0x0800382e   0x00000018   Code   RO         1501    .text.NonBlockingDelay_IsExpired  timing_delays.o
-    0x08003846   0x08003846   0x0000000e   Code   RO         1499    .text.NonBlockingDelay_Start  timing_delays.o
+    0x0800382e   0x0800382e   0x00000018   Code   RO         1499    .text.NonBlockingDelay_IsExpired  timing_delays.o
+    0x08003846   0x08003846   0x0000000e   Code   RO         1497    .text.NonBlockingDelay_Start  timing_delays.o
     0x08003854   0x08003854   0x00000002   Code   RO           99    .text.PendSV_Handler  stm32l0xx_it.o
     0x08003856   0x08003856   0x00000002   Code   RO           97    .text.SVC_Handler   stm32l0xx_it.o
     0x08003858   0x08003858   0x00000008   Code   RO          101    .text.SysTick_Handler  stm32l0xx_it.o
@@ -4336,7 +4336,7 @@ Memory Map of the image
     0x080041cc   0x080041cc   0x000001dc   Code   RO         1176    .text.cJSON_ParseWithLengthOpts  cjson.o
     0x080043a8   0x080043a8   0x0000003c   Code   RO         1342    .text.core_init     core.o
     0x080043e4   0x080043e4   0x000000c0   Code   RO         1344    .text.core_loop     core.o
-    0x080044a4   0x080044a4   0x00000028   Code   RO         1497    .text.delay_us      timing_delays.o
+    0x080044a4   0x080044a4   0x00000028   Code   RO         1503    .text.delay_us      timing_delays.o
     0x080044cc   0x080044cc   0x00000020   Code   RO           69    .text.fputc         usart.o
     0x080044ec   0x080044ec   0x00000044   Code   RO         1505    .text.getCurrentMicros  timing_delays.o
     0x08004530   0x08004530   0x0000001e   Code   RO         1418    .text.get_dc_motor  motor_shield_v1.o

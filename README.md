@@ -33,7 +33,7 @@ To work with the projects in this repository, you may need:
 2. Initialize submodules:
    ```bash
    cd ARM-Microcontroller
-   git submodule update --init --recursive
+   git submodule update --init --recursive --remote
    ```
 
 ### Project Setup

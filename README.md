@@ -38,7 +38,7 @@ To work with the projects in this repository, you may need:
 
 ### Project Setup
 
-Refer to the [Notion Page](https://yen-lung-huang.notion.site/KEIL-MDK-6a0c48f6123f4da9a6e4cb1625dc8c88?pvs=4) for detailed instructions on setting up Keil projects and tips for efficient development.
+Refer to the [Notion Page](https://www.notion.so/yen-lung-huang/KEIL-MDK-e8fd9418b31742e08e16959f8942a1ff?pvs=4) for detailed instructions on setting up Keil projects and tips for efficient development.
 
 ## Tips and Best Practices
 
@@ -52,9 +52,9 @@ Refer to the [Notion Page](https://yen-lung-huang.notion.site/KEIL-MDK-6a0c48f61
 
 ### Common Issues
 
-- **[Keil MDK crashes with ST-Link debugger](https://www.notion.so/yen-lung-huang/KEIL-MDK-6a0c48f6123f4da9a6e4cb1625dc8c88?pvs=4#7eb312c2c7a2479a8b835e0fffe28675)**: Replace the `STLinkUSBDriver.dll` in your MDK installation directory.
-- **[Invalid ROM Table error](https://www.notion.so/yen-lung-huang/KEIL-MDK-6a0c48f6123f4da9a6e4cb1625dc8c88?pvs=4#e15d1210f1704c99a78ca07336771146)**: Adjust settings in Keil.
-- **[Runtime Error: HardFault_Handler](https://www.notion.so/yen-lung-huang/KEIL-MDK-6a0c48f6123f4da9a6e4cb1625dc8c88?pvs=4#51b0328136534345908d507c4b7c8aa9)**: Configure CubeMX Project Manager settings for heap and stack sizes.
+- **[Keil MDK crashes with ST-Link debugger](https://www.notion.so/yen-lung-huang/KEIL-MDK-e8fd9418b31742e08e16959f8942a1ff?pvs=4#7e9f904ea3d841b9a9597c02b2edea53)**: Replace the `STLinkUSBDriver.dll` in your MDK installation directory.
+- **[Invalid ROM Table error](https://www.notion.so/yen-lung-huang/KEIL-MDK-e8fd9418b31742e08e16959f8942a1ff?pvs=4#95661809c758454ca3a063b72a8e96fb)**: Adjust settings in Keil.
+- **[Runtime Error: HardFault_Handler](https://www.notion.so/yen-lung-huang/KEIL-MDK-e8fd9418b31742e08e16959f8942a1ff?pvs=4#f5861c2bb42d40b2b1ce8270cd672d81)**: Configure CubeMX Project Manager settings for heap and stack sizes.
 
 ## Contributing
 
@@ -73,4 +73,4 @@ For any questions or suggestions, please open an issue or contact the repository
 
 ---
 
-For further details and tips, visit the [Notion Page](https://yen-lung-huang.notion.site/KEIL-MDK-6a0c48f6123f4da9a6e4cb1625dc8c88?pvs=4).
+For further details and tips, visit the [Notion Page](https://yen-lung-huang.notion.site/KEIL-MDK-e8fd9418b31742e08e16959f8942a1ff?pvs=4).
